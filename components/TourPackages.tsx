@@ -69,37 +69,39 @@ export default function TourPackages() {
           </p>
         </div>
 
-        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8 items-stretch">
 
           {packages.map((pkg) => (
             <div
               key={pkg.title}
-              className="bg-white rounded-2xl overflow-hidden shadow-md hover:shadow-xl hover:-translate-y-1 transition-all duration-300"
+              className="bg-white rounded-2xl overflow-hidden shadow-md hover:shadow-xl hover:-translate-y-1 transition-all duration-300 flex flex-col h-full"
             >
 
+              {/* Header */}
               <div className="bg-gradient-to-r from-red-600 to-red-500 p-6 text-white">
 
-                <div className="flex items-center justify-between">
+                <div className="flex items-center justify-between gap-3">
 
-                  <span className="text-sm font-semibold bg-white/20 px-3 py-1 rounded-full">
+                  <span className="text-sm font-semibold bg-white/20 px-3 py-1 rounded-full whitespace-nowrap">
                     {pkg.duration}
                   </span>
 
-                  <span className="text-sm">
+                  <span className="text-sm text-right">
                     {pkg.type}
                   </span>
 
                 </div>
 
-                <h3 className="mt-5 text-2xl font-bold">
+                <h3 className="mt-5 text-2xl font-bold min-h-[64px] flex items-center">
                   {pkg.title}
                 </h3>
 
               </div>
 
-              <div className="p-6">
+              {/* Body */}
+              <div className="p-6 flex flex-col flex-1">
 
-                <p className="text-gray-600 leading-relaxed">
+                <p className="text-gray-600 leading-relaxed min-h-[84px]">
                   {pkg.description}
                 </p>
 
@@ -115,10 +117,13 @@ export default function TourPackages() {
 
                 </div>
 
+                {/* Button always at bottom */}
                 <button
-                  className="mt-6 w-full bg-red-600 text-white py-3 rounded-xl font-semibold hover:bg-red-700 transition"
+                  className="mt-auto pt-6"
                 >
-                  Inquire Now →
+                  <span className="block w-full bg-red-600 text-white py-3 rounded-xl font-semibold hover:bg-red-700 transition">
+                    Inquire Now →
+                  </span>
                 </button>
 
               </div>
