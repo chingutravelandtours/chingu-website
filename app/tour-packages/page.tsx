@@ -1,3 +1,5 @@
+"use client";
+
 const packages = [
   {
     title: "Chongqing",
@@ -88,10 +90,18 @@ export default function TourPackagesPage() {
     dates: string,
     price: string
   ) => {
-    const message = `Hello CHINGU Travel and Tours!%0A%0AI would like to inquire about:%0A%0A${title} - ${duration}%0ADate: ${dates}%0APackage From: ${price} per person%0A%0APlease send me the complete package details. Thank you!`;
+    const message = `Hello CHINGU Travel and Tours!
+
+I would like to inquire about:
+
+${title} - ${duration}
+Date: ${dates}
+Package From: ${price} per person
+
+Please send me the complete package details. Thank you!`;
 
     window.open(
-      `https://wa.me/639193888999?text=${message}`,
+      `https://wa.me/639193888999?text=${encodeURIComponent(message)}`,
       "_blank"
     );
   };
@@ -125,6 +135,7 @@ export default function TourPackagesPage() {
               className="bg-white rounded-2xl border border-gray-100 shadow-md p-6 hover:shadow-xl transition"
             >
 
+              {/* Duration and Type */}
               <div className="flex items-center justify-between gap-3">
 
                 <span className="text-xs font-semibold text-red-600 bg-red-50 px-3 py-1 rounded-full">
@@ -137,10 +148,12 @@ export default function TourPackagesPage() {
 
               </div>
 
+              {/* Package Title */}
               <h2 className="mt-5 text-xl font-bold text-gray-900">
                 {pkg.title}
               </h2>
 
+              {/* Departure */}
               <div className="mt-4">
 
                 <p className="text-xs text-gray-400 uppercase">
@@ -153,6 +166,7 @@ export default function TourPackagesPage() {
 
               </div>
 
+              {/* Price */}
               <div className="mt-5">
 
                 <p className="text-xs text-gray-400 uppercase">
@@ -169,6 +183,7 @@ export default function TourPackagesPage() {
 
               </div>
 
+              {/* Availability */}
               <div className="mt-5">
 
                 <span
@@ -183,6 +198,7 @@ export default function TourPackagesPage() {
 
               </div>
 
+              {/* WhatsApp Inquiry */}
               <button
                 onClick={() =>
                   handleInquiry(
