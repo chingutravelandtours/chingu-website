@@ -1,51 +1,35 @@
 const packages = [
   {
+    title: "Chongqing",
+    subtitle: "Shopping Tour",
+    duration: "5D3N",
+    price: "₱31,437",
+    description:
+      "Discover Chongqing with an exciting shopping tour experience.",
+  },
+  {
     title: "Avatar Zhangjiajie",
+    subtitle: "Shopping Tour",
     duration: "6D5N",
-    type: "Shopping Tour",
-    price: "₱33,327",
+    price: "₱31,437",
     description:
       "Explore the breathtaking landscapes of Zhangjiajie.",
   },
   {
-    title: "Zhangjiajie + Chongqing + Shanghai",
+    title: "Avatar Zhangjiajie + Fenghuang",
+    subtitle: "Pure Fun",
+    duration: "6D5N",
+    price: "₱50,337",
+    description:
+      "Experience the stunning scenery of Zhangjiajie and historic Fenghuang.",
+  },
+  {
+    title: "Chongqing + Zhangjiajie + Shanghai",
+    subtitle: "Shopping Tour",
     duration: "7D6N",
-    type: "Shopping Tour",
     price: "₱55,944",
     description:
-      "Experience three exciting Chinese destinations.",
-  },
-  {
-    title: "Beijing + Shanghai",
-    duration: "7D6N",
-    type: "Shopping Tour",
-    price: "₱55,944",
-    description:
-      "Discover China's historic capital and vibrant Shanghai.",
-  },
-  {
-    title: "Beijing + Xi'an",
-    duration: "7D6N",
-    type: "Shopping Tour",
-    price: "₱61,047",
-    description:
-      "Explore Beijing and the historic wonders of Xi'an.",
-  },
-  {
-    title: "Shanghai",
-    duration: "4D3N",
-    type: "Pure Fun",
-    price: "₱37,737",
-    description:
-      "Enjoy an exciting Shanghai getaway.",
-  },
-  {
-    title: "Canton Fair",
-    duration: "Business Tour",
-    type: "Business Tour",
-    price: "₱75,537",
-    description:
-      "Experience the Canton Fair on a business tour.",
+      "Experience three exciting Chinese destinations in one unforgettable trip.",
   },
 ];
 
@@ -65,35 +49,34 @@ export default function TourPackages() {
           </h2>
 
           <p className="mt-3 max-w-2xl mx-auto text-gray-500">
-            Discover our latest China tour packages for shopping,
-            leisure, and business travelers.
+            Discover our latest China tour packages for your next adventure.
           </p>
         </div>
 
-        {/* Tour Package Cards */}
-        <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6">
+        {/* Four Cards */}
+        <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-5">
 
           {packages.map((pkg) => (
             <div
               key={pkg.title}
-              className="bg-white border border-gray-100 rounded-2xl p-6 shadow-md hover:shadow-xl hover:-translate-y-1 transition-all duration-300 flex flex-col"
+              className="bg-white border border-gray-100 rounded-2xl p-5 shadow-md hover:shadow-xl hover:-translate-y-1 transition-all duration-300 flex flex-col"
             >
 
-              {/* Top Information */}
-              <div className="flex items-center justify-between mb-4">
+              {/* Duration + Type */}
+              <div className="flex items-center justify-between gap-2 mb-4">
 
-                <span className="text-xs font-semibold text-red-600 bg-red-50 px-3 py-1 rounded-full">
+                <span className="text-xs font-semibold text-red-600 bg-red-50 px-3 py-1 rounded-full whitespace-nowrap">
                   {pkg.duration}
                 </span>
 
-                <span className="text-xs text-gray-500">
-                  {pkg.type}
+                <span className="text-xs text-gray-500 text-right">
+                  {pkg.subtitle}
                 </span>
 
               </div>
 
-              {/* Package Name */}
-              <h3 className="text-xl font-bold text-gray-900 min-h-[56px]">
+              {/* Title */}
+              <h3 className="text-lg font-bold text-gray-900 min-h-[56px]">
                 {pkg.title}
               </h3>
 
@@ -119,7 +102,7 @@ export default function TourPackages() {
 
               </div>
 
-              {/* Inquiry Button */}
+              {/* Button */}
               <button
                 className="mt-5 w-full border border-red-600 text-red-600 py-2.5 rounded-xl text-sm font-semibold hover:bg-red-600 hover:text-white transition"
               >
@@ -133,13 +116,11 @@ export default function TourPackages() {
 
         {/* View All */}
         <div className="text-center mt-8">
-
           <button
             className="text-red-600 font-semibold hover:text-red-700"
           >
             View All Tour Packages →
           </button>
-
         </div>
 
       </div>
