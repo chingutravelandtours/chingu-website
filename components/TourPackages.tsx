@@ -45,84 +45,88 @@ const packages = [
 
 export default function TourPackages() {
   return (
-    <section className="bg-gray-50 py-16 px-6">
-      <div className="max-w-6xl mx-auto">
+    <section className="bg-white py-16 px-6">
+      <div className="max-w-7xl mx-auto">
 
-        <div className="text-center mb-8">
+        {/* Section Header */}
+        <div className="text-center mb-10">
           <p className="text-red-600 font-semibold uppercase tracking-widest text-sm">
             Explore With Us
           </p>
 
-          <h2 className="mt-1 text-3xl font-bold text-gray-900">
+          <h2 className="mt-2 text-3xl font-bold text-gray-900">
             Featured Tour Packages
           </h2>
 
-          <p className="mt-2 max-w-xl mx-auto text-sm text-gray-600">
+          <p className="mt-3 max-w-2xl mx-auto text-gray-500">
             Discover our latest China tour packages for shopping,
             leisure, and business travelers.
           </p>
         </div>
 
-        <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-5">
+        {/* Cards */}
+        <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6">
 
           {packages.map((pkg) => (
             <div
               key={pkg.title}
-              className="bg-white rounded-xl overflow-hidden shadow-sm hover:shadow-lg transition-all duration-300 flex flex-col"
+              className="bg-white border border-gray-100 rounded-2xl p-6 shadow-md hover:shadow-xl hover:-translate-y-1 transition-all duration-300 flex flex-col"
             >
 
-              {/* Header */}
-              <div className="bg-gradient-to-r from-red-600 to-red-500 px-5 py-4 text-white">
+              {/* Top Row */}
+              <div className="flex items-center justify-between mb-4">
 
-                <div className="flex items-center justify-between gap-2">
+                <span className="text-xs font-semibold text-red-600 bg-red-50 px-3 py-1 rounded-full">
+                  {pkg.duration}
+                </span>
 
-                  <span className="text-xs font-semibold bg-white/20 px-2.5 py-1 rounded-full">
-                    {pkg.duration}
-                  </span>
-
-                  <span className="text-xs">
-                    {pkg.type}
-                  </span>
-
-                </div>
-
-                <h3 className="mt-3 text-lg font-bold min-h-[48px] flex items-center">
-                  {pkg.title}
-                </h3>
+                <span className="text-xs text-gray-500">
+                  {pkg.type}
+                </span>
 
               </div>
 
-              {/* Body */}
-              <div className="p-5 flex flex-col flex-1">
+              {/* Title */}
+              <h3 className="text-xl font-bold text-gray-900 min-h-[56px]">
+                {pkg.title}
+              </h3>
 
-                <p className="text-sm text-gray-600 min-h-[42px]">
-                  {pkg.description}
+              {/* Description */}
+              <p className="mt-3 text-sm text-gray-500 leading-relaxed min-h-[48px]">
+                {pkg.description}
+              </p>
+
+              {/* Price */}
+              <div className="mt-5">
+
+                <p className="text-xs text-gray-400 uppercase tracking-wide">
+                  Package From
                 </p>
 
-                <div className="mt-4">
-                  <p className="text-[10px] text-gray-500 uppercase">
-                    Package From
-                  </p>
-
-                  <p className="text-2xl font-bold text-gray-900">
-                    {pkg.price}
-                  </p>
-                </div>
-
-                <button className="mt-4 w-full bg-red-600 text-white py-2.5 rounded-lg text-sm font-semibold hover:bg-red-700 transition">
-                  Inquire Now →
-                </button>
+                <p className="text-2xl font-bold text-gray-900">
+                  {pkg.price}
+                </p>
 
               </div>
+
+              {/* Button */}
+              <button
+                className="mt-5 w-full border border-red-600 text-red-600 py-2.5 rounded-xl text-sm font-semibold hover:bg-red-600 hover:text-white transition"
+              >
+                Inquire Now →
+              </button>
 
             </div>
           ))}
 
         </div>
 
-        <div className="text-center mt-7">
-          <button className="border-2 border-red-600 text-red-600 px-6 py-2 rounded-full text-sm font-semibold hover:bg-red-600 hover:text-white transition">
-            View All Tour Packages
+        {/* View All */}
+        <div className="text-center mt-8">
+          <button
+            className="text-red-600 font-semibold hover:text-red-700"
+          >
+            View All Tour Packages →
           </button>
         </div>
 
