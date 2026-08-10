@@ -1,7 +1,6 @@
 "use client";
 
 const packages = [
-
 // =========================
   // UOS CHINA PACKAGES
   // =========================
