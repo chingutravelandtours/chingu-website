@@ -4,7 +4,6 @@ const packages = [
     duration: "6D5N",
     type: "Shopping Tour",
     price: "$529",
-    commission: "$60",
     description:
       "Explore the breathtaking Avatar-inspired landscapes of Zhangjiajie.",
   },
@@ -13,7 +12,6 @@ const packages = [
     duration: "7D6N",
     type: "Shopping Tour",
     price: "$888",
-    commission: "$60",
     description:
       "Experience three exciting Chinese destinations in one memorable journey.",
   },
@@ -22,7 +20,6 @@ const packages = [
     duration: "7D6N",
     type: "Shopping Tour",
     price: "$888",
-    commission: "$60",
     description:
       "Discover China's iconic capital and the vibrant city of Shanghai.",
   },
@@ -31,7 +28,6 @@ const packages = [
     duration: "7D6N",
     type: "Shopping Tour",
     price: "$969",
-    commission: "$60",
     description:
       "Explore Beijing and discover the historic wonders of Xi'an.",
   },
@@ -40,7 +36,6 @@ const packages = [
     duration: "4D3N",
     type: "Pure Fun",
     price: "$599",
-    commission: "$60",
     description:
       "Enjoy a memorable Shanghai getaway packed with city experiences.",
   },
@@ -49,7 +44,6 @@ const packages = [
     duration: "Business Tour",
     type: "Business Tour",
     price: "$1,199",
-    commission: "$100",
     description:
       "Join a business-focused China tour and experience the Canton Fair.",
   },
