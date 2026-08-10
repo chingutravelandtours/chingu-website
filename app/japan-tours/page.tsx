@@ -1,12 +1,14 @@
 "use client";
 
+const USD_TO_PHP = 63;
+
 const packages = [
   {
     title: "Tokyo + Mt. Fuji + Yokohama",
     duration: "5D4N",
     date: "Sep. 13–17, 2026",
     city: "MNL",
-    price: "$899",
+    usd: 899,
     slots: 0,
   },
   {
@@ -14,7 +16,7 @@ const packages = [
     duration: "5D4N",
     date: "Sep. 18–22, 2026",
     city: "MNL",
-    price: "$799",
+    usd: 799,
     slots: 0,
   },
   {
@@ -22,7 +24,15 @@ const packages = [
     duration: "5D4N",
     date: "Sep. 25–29, 2026",
     city: "MNL",
-    price: "$799",
+    usd: 799,
+    slots: 0,
+  },
+  {
+    title: "Osaka + Kyoto + Nara",
+    duration: "5D4N",
+    date: "Sep. 26–30, 2026",
+    city: "MNL",
+    usd: 899,
     slots: 0,
   },
   {
@@ -30,7 +40,7 @@ const packages = [
     duration: "5D4N",
     date: "Oct. 9–13, 2026",
     city: "MNL",
-    price: "$899",
+    usd: 899,
     slots: 4,
   },
   {
@@ -38,50 +48,209 @@ const packages = [
     duration: "5D4N",
     date: "Oct. 15–19, 2026",
     city: "MNL",
-    price: "$899",
+    usd: 899,
     slots: 8,
+  },
+  {
+    title: "Tokyo + Mt. Fuji + Yokohama",
+    duration: "5D4N",
+    date: "Oct. 17–21, 2026",
+    city: "MNL",
+    usd: 899,
+    slots: 0,
+  },
+  {
+    title: "Tokyo + Mt. Fuji + Yokohama",
+    duration: "5D4N",
+    date: "Oct. 21–25, 2026",
+    city: "MNL",
+    usd: 899,
+    slots: 0,
+  },
+  {
+    title: "Discover Osaka + Kyoto + Nara",
+    duration: "5D4N",
+    date: "Oct. 22–26, 2026",
+    city: "MNL",
+    usd: 799,
+    slots: 0,
+  },
+  {
+    title: "Tokyo + Mt. Fuji + Yokohama",
+    duration: "5D4N",
+    date: "Oct. 23–27, 2026",
+    city: "MNL",
+    usd: 899,
+    slots: 0,
+  },
+  {
+    title: "Tokyo + Mt. Fuji + Yokohama",
+    duration: "5D4N",
+    date: "Oct. 24–28, 2026",
+    city: "MNL",
+    usd: 899,
+    slots: 0,
+  },
+  {
+    title: "Discover Osaka + Kyoto + Nara",
+    duration: "5D4N",
+    date: "Oct. 25–29, 2026",
+    city: "MNL",
+    usd: 859,
+    slots: 0,
+  },
+  {
+    title: "Japan – Osaka – Nara – Kyoto",
+    duration: "5D4N",
+    date: "Oct. 25–29, 2026",
+    city: "CEB",
+    usd: 1299,
+    slots: 0,
+  },
+  {
+    title: "Tokyo + Mt. Fuji + Yokohama",
+    duration: "5D4N",
+    date: "Oct. 27–31, 2026",
+    city: "CEB",
+    usd: 999,
+    slots: 0,
+  },
+  {
+    title: "Tokyo + Mt. Fuji + Yokohama",
+    duration: "5D4N",
+    date: "Oct. 31–Nov. 4, 2026",
+    city: "MNL",
+    usd: 949,
+    slots: 0,
+  },
+  {
+    title: "Discover Osaka + Kyoto + Nara",
+    duration: "5D4N",
+    date: "Nov. 4–8, 2026",
+    city: "MNL",
+    usd: 799,
+    slots: 0,
+  },
+  {
+    title: "Tokyo + Mt. Fuji",
+    duration: "5D4N",
+    date: "Nov. 6–10, 2026",
+    city: "MNL",
+    usd: 829,
+    slots: 0,
+  },
+  {
+    title: "Osaka + Kyoto + Nara",
+    duration: "5D4N",
+    date: "Nov. 13–17, 2026",
+    city: "MNL",
+    usd: 899,
+    slots: 0,
+  },
+  {
+    title: "Tokyo + Mt. Fuji + Yokohama",
+    duration: "5D4N",
+    date: "Nov. 14–18, 2026",
+    city: "MNL",
+    usd: 899,
+    slots: 0,
+  },
+  {
+    title: "Discover Osaka + Kyoto + Nara",
+    duration: "5D4N",
+    date: "Nov. 18–22, 2026",
+    city: "MNL",
+    usd: 859,
+    slots: 0,
+  },
+  {
+    title: "Discover Osaka + Kyoto + Nara",
+    duration: "5D4N",
+    date: "Nov. 19–23, 2026",
+    city: "CEB",
+    usd: 899,
+    slots: 4,
+  },
+  {
+    title: "Tokyo + Mt. Fuji + Yokohama",
+    duration: "5D4N",
+    date: "Nov. 21–25, 2026",
+    city: "CEB",
+    usd: 999,
+    slots: 0,
+  },
+  {
+    title: "Discover Osaka + Kyoto + Nara",
+    duration: "5D4N",
+    date: "Nov. 21–25, 2026",
+    city: "MNL",
+    usd: 859,
+    slots: 0,
+  },
+  {
+    title: "Japan – Osaka – Nara – Kyoto",
+    duration: "5D4N",
+    date: "Nov. 25–29, 2026",
+    city: "CEB",
+    usd: 1499,
+    slots: 30,
   },
   {
     title: "Tokyo + Mt. Fuji + Yokohama",
     duration: "5D4N",
     date: "Nov. 25–29, 2026",
     city: "MNL",
-    price: "$899",
+    usd: 899,
     slots: 1,
+  },
+  {
+    title: "CEBU – TOKYO – HAKONE",
+    duration: "8D7N",
+    date: "Nov. 26–Dec. 3, 2026",
+    city: "CEB",
+    usd: 2488,
+    slots: 30,
+  },
+  {
+    title: "Tokyo + Mt. Fuji + Yokohama",
+    duration: "5D4N",
+    date: "Nov. 28–Dec. 2, 2026",
+    city: "MNL",
+    usd: 899,
+    slots: 0,
   },
   {
     title: "Discover Osaka + Kyoto + Nara",
     duration: "5D4N",
     date: "Dec. 10–14, 2026",
     city: "CEB",
-    price: "$899",
+    usd: 899,
     slots: 22,
   },
   {
-    title: "Tokyo + Mt. Fuji",
-    duration: "5D4N Winter",
+    title: "Discover Osaka + Kyoto + Nara",
+    duration: "5D4N",
+    date: "Dec. 12–16, 2026",
+    city: "MNL",
+    usd: 859,
+    slots: 4,
+  },
+  {
+    title: "Tokyo + Mt. Fuji + Yokohama",
+    duration: "5D4N",
     date: "Dec. 16–20, 2026",
     city: "MNL",
-    price: "$999",
-    slots: 19,
-  },
-  {
-    title: "Osaka + Kyoto + Nara",
-    duration: "5D4N",
-    date: "Jan. 14–18, 2027",
-    city: "CEB",
-    price: "$899",
-    slots: 17,
-  },
-  {
-    title: "Tokyo + Mt. Fuji + Kamakura",
-    duration: "5D4N",
-    date: "Jan. 14–18, 2027",
-    city: "MNL",
-    price: "$899",
-    slots: 25,
+    usd: 949,
+    slots: 0,
   },
 ];
+
+const peso = (usd: number) =>
+  new Intl.NumberFormat("en-PH", {
+    style: "currency",
+    currency: "PHP",
+    maximumFractionDigits: 0,
+  }).format(usd * USD_TO_PHP);
 
 export default function JapanToursPage() {
   const handleInquiry = (pkg: (typeof packages)[number]) => {
@@ -94,7 +263,7 @@ ${pkg.title}
 Duration: ${pkg.duration}
 Departure: ${pkg.date}
 Departure City: ${pkg.city}
-Package Price: ${pkg.price} per person
+Package From: ${peso(pkg.usd)} per person
 
 Please send me the complete package details. Thank you!`
     );
@@ -106,36 +275,42 @@ Please send me the complete package details. Thank you!`
   };
 
   return (
-    <main className="min-h-screen bg-gray-50 py-16">
+    <main className="min-h-screen bg-gray-50 py-14">
       <div className="max-w-7xl mx-auto px-6">
 
-        <div className="text-center mb-12">
+        {/* Header */}
+        <div className="text-center mb-10">
           <p className="text-red-600 font-semibold uppercase tracking-widest text-sm">
             CHINGU Travel and Tours
           </p>
 
-          <h1 className="mt-2 text-4xl font-bold text-gray-900">
+          <h1 className="mt-2 text-3xl font-bold text-gray-900">
             Japan Tour Packages
           </h1>
 
-          <p className="mt-3 text-gray-500">
+          <p className="mt-3 text-gray-500 max-w-2xl mx-auto">
             Explore our Japan tour packages, departure dates and rates.
           </p>
         </div>
 
-        <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6">
+        {/* Packages */}
+        <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-5">
+
           {packages.map((pkg) => (
             <div
-              key={`${pkg.title}-${pkg.date}`}
-              className="bg-white rounded-2xl border border-gray-100 shadow-md p-6 hover:shadow-xl transition"
+              key={`${pkg.title}-${pkg.date}-${pkg.city}`}
+              className="bg-white rounded-2xl border border-gray-100 shadow-md p-5 hover:shadow-xl hover:-translate-y-1 transition-all duration-300 flex flex-col"
             >
-              <div className="flex items-center justify-between">
-                <span className="text-xs font-semibold text-red-600 bg-red-50 px-3 py-1 rounded-full">
+
+              {/* Duration + Status */}
+              <div className="flex items-center justify-between gap-2">
+
+                <span className="text-xs font-semibold text-red-600 bg-red-50 px-3 py-1 rounded-full whitespace-nowrap">
                   {pkg.duration}
                 </span>
 
                 <span
-                  className={`text-xs font-semibold px-3 py-1 rounded-full ${
+                  className={`text-xs font-semibold px-2.5 py-1 rounded-full whitespace-nowrap ${
                     pkg.slots > 0
                       ? "bg-green-50 text-green-600"
                       : "bg-gray-100 text-gray-500"
@@ -143,56 +318,70 @@ Please send me the complete package details. Thank you!`
                 >
                   {pkg.slots > 0
                     ? `${pkg.slots} slots`
-                    : "FULL / CLOSED"}
+                    : "CLOSED"}
                 </span>
+
               </div>
 
-              <h2 className="mt-5 text-xl font-bold text-gray-900">
+              {/* Title */}
+              <h2 className="mt-4 text-base font-bold text-gray-900 min-h-[48px]">
                 {pkg.title}
               </h2>
 
-              <div className="mt-4">
-                <p className="text-xs text-gray-400 uppercase">
+              {/* Departure */}
+              <div className="mt-3">
+
+                <p className="text-[10px] text-gray-400 uppercase tracking-wide">
                   Departure
                 </p>
 
-                <p className="mt-1 font-semibold text-gray-700">
+                <p className="mt-1 text-sm font-semibold text-gray-700">
                   {pkg.date}
                 </p>
+
               </div>
 
-              <div className="mt-4">
-                <p className="text-xs text-gray-400 uppercase">
+              {/* City */}
+              <div className="mt-3">
+
+                <p className="text-[10px] text-gray-400 uppercase tracking-wide">
                   Departure City
                 </p>
 
-                <p className="mt-1 font-semibold text-gray-700">
+                <p className="mt-1 text-sm font-semibold text-gray-700">
                   {pkg.city}
                 </p>
+
               </div>
 
-              <div className="mt-5">
-                <p className="text-xs text-gray-400 uppercase">
+              {/* Price */}
+              <div className="mt-4">
+
+                <p className="text-[10px] text-gray-400 uppercase tracking-wide">
                   Package From
                 </p>
 
-                <p className="text-2xl font-bold text-gray-900">
-                  {pkg.price}
+                <p className="text-xl font-bold text-gray-900">
+                  {peso(pkg.usd)}
                 </p>
 
-                <p className="text-xs text-gray-400">
+                <p className="text-[10px] text-gray-400 mt-1">
                   per person
                 </p>
+
               </div>
 
+              {/* Inquiry */}
               <button
                 onClick={() => handleInquiry(pkg)}
-                className="mt-6 w-full bg-red-600 text-white py-3 rounded-xl text-sm font-semibold hover:bg-red-700 transition"
+                className="mt-5 w-full border border-red-600 text-red-600 py-2.5 rounded-xl text-sm font-semibold hover:bg-red-600 hover:text-white transition"
               >
                 Inquire Now →
               </button>
+
             </div>
           ))}
+
         </div>
 
       </div>
