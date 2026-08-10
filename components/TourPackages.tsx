@@ -5,7 +5,7 @@ const packages = [
     type: "Shopping Tour",
     price: "$529",
     description:
-      "Explore the breathtaking Avatar-inspired landscapes of Zhangjiajie.",
+      "Explore the breathtaking landscapes of Zhangjiajie and experience an unforgettable China adventure.",
   },
   {
     title: "Zhangjiajie + Chongqing + Shanghai",
@@ -21,7 +21,7 @@ const packages = [
     type: "Shopping Tour",
     price: "$888",
     description:
-      "Discover China's iconic capital and the vibrant city of Shanghai.",
+      "Discover China's historic capital and the vibrant city of Shanghai.",
   },
   {
     title: "Beijing + Xi'an",
@@ -37,7 +37,7 @@ const packages = [
     type: "Pure Fun",
     price: "$599",
     description:
-      "Enjoy a memorable Shanghai getaway packed with city experiences.",
+      "Enjoy a memorable Shanghai getaway packed with exciting city experiences.",
   },
   {
     title: "Canton Fair",
@@ -54,7 +54,6 @@ export default function TourPackages() {
     <section className="bg-gray-50 py-20 px-6">
       <div className="max-w-7xl mx-auto">
 
-        {/* Header */}
         <div className="text-center mb-12">
           <p className="text-red-600 font-semibold uppercase tracking-widest">
             Explore With Us
@@ -65,12 +64,11 @@ export default function TourPackages() {
           </h2>
 
           <p className="mt-4 max-w-2xl mx-auto text-gray-600">
-            Discover our latest China tour packages, carefully selected
-            for shopping, leisure, and business travelers.
+            Discover our latest China tour packages for shopping,
+            leisure, and business travelers.
           </p>
         </div>
 
-        {/* Packages */}
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
 
           {packages.map((pkg) => (
@@ -79,9 +77,10 @@ export default function TourPackages() {
               className="bg-white rounded-2xl overflow-hidden shadow-md hover:shadow-xl hover:-translate-y-1 transition-all duration-300"
             >
 
-              {/* Package Header */}
               <div className="bg-gradient-to-r from-red-600 to-red-500 p-6 text-white">
+
                 <div className="flex items-center justify-between">
+
                   <span className="text-sm font-semibold bg-white/20 px-3 py-1 rounded-full">
                     {pkg.duration}
                   </span>
@@ -89,35 +88,30 @@ export default function TourPackages() {
                   <span className="text-sm">
                     {pkg.type}
                   </span>
+
                 </div>
 
                 <h3 className="mt-5 text-2xl font-bold">
                   {pkg.title}
                 </h3>
+
               </div>
 
-              {/* Details */}
               <div className="p-6">
 
                 <p className="text-gray-600 leading-relaxed">
                   {pkg.description}
                 </p>
 
-                <div className="mt-6 flex items-end justify-between">
+                <div className="mt-6">
 
-                  <div>
-                    <p className="text-xs text-gray-500 uppercase">
-                      Package From
-                    </p>
+                  <p className="text-xs text-gray-500 uppercase">
+                    Package From
+                  </p>
 
-                    <p className="text-3xl font-bold text-gray-900">
-                      {pkg.price}
-                    </p>
-
-                    <p className="text-sm text-green-600 font-semibold mt-1">
-                      Agent commission: {pkg.commission}/pax
-                    </p>
-                  </div>
+                  <p className="text-3xl font-bold text-gray-900">
+                    {pkg.price}
+                  </p>
 
                 </div>
 
@@ -128,16 +122,20 @@ export default function TourPackages() {
                 </button>
 
               </div>
+
             </div>
           ))}
 
         </div>
 
-        {/* View All */}
         <div className="text-center mt-10">
-          <button className="border-2 border-red-600 text-red-600 px-8 py-3 rounded-full font-semibold hover:bg-red-600 hover:text-white transition">
+
+          <button
+            className="border-2 border-red-600 text-red-600 px-8 py-3 rounded-full font-semibold hover:bg-red-600 hover:text-white transition"
+          >
             View All Tour Packages
           </button>
+
         </div>
 
       </div>
