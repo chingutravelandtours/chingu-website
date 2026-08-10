@@ -34,6 +34,26 @@ const packages = [
 ];
 
 export default function TourPackages() {
+  const handleInquiry = (
+    title: string,
+    duration: string,
+    price: string
+  ) => {
+    const message = `Hello CHINGU Travel and Tours!
+
+I would like to inquire about:
+
+${title} - ${duration}
+Package From: ${price} per person
+
+Please send me the available dates and complete package details. Thank you!`;
+
+    window.open(
+      `https://wa.me/639193888999?text=${encodeURIComponent(message)}`,
+      "_blank"
+    );
+  };
+
   return (
     <section className="bg-white py-16 px-6">
       <div className="max-w-7xl mx-auto">
@@ -102,8 +122,15 @@ export default function TourPackages() {
 
               </div>
 
-              {/* Button */}
+              {/* WhatsApp Button */}
               <button
+                onClick={() =>
+                  handleInquiry(
+                    pkg.title,
+                    pkg.duration,
+                    pkg.price
+                  )
+                }
                 className="mt-5 w-full border border-red-600 text-red-600 py-2.5 rounded-xl text-sm font-semibold hover:bg-red-600 hover:text-white transition"
               >
                 Inquire Now →
@@ -117,6 +144,9 @@ export default function TourPackages() {
         {/* View All */}
         <div className="text-center mt-8">
           <button
+            onClick={() => {
+              window.location.href = "/tour-packages";
+            }}
             className="text-red-600 font-semibold hover:text-red-700"
           >
             View All Tour Packages →
