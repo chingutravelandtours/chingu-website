@@ -672,6 +672,30 @@ const packages = [
     price: "₱55,944",
     status: "Available",
   },
+
+  // =========================
+  // GUANGZHOU LAND TOUR
+  // =========================
+  {
+    title: "Guangzhou Land Tour",
+    subtitle: "Land Tour",
+    duration: "4D3N",
+    dates: "Flexible Schedule",
+    price: "From ₱25,137",
+    status: "Min. 4 Pax",
+  },
+
+  // =========================
+  // XINJIANG LAND TOUR
+  // =========================
+  {
+    title: "Xinjiang Land Tour",
+    subtitle: "Land Tour",
+    duration: "4D3N",
+    dates: "Flexible Schedule",
+    price: "From ₱56,637",
+    status: "Min. 4 Pax",
+  },
 ];
 
 export default function TourPackagesPage() {
