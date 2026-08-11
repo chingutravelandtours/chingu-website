@@ -5,6 +5,7 @@ type Package = {
   subtitle: string;
   duration: string;
   price: number;
+  deposit?: number;
   description?: string;
   dates?: string;
   city?: string;
@@ -15,37 +16,40 @@ const USD_TO_PHP = 63;
 
 const packages: Package[] = [
   // EXISTING CHINA / POLAR PACKAGES
- {
+  {
     title: "Chongqing",
     subtitle: "Shopping",
     duration: "5D3N",
     dates: "Sep. 22–26, 2026",
     city: "MNL",
-    price: 549 / USD_TO_PHP,
+    price: 549 * USD_TO_PHP,
     slots: 20,
-    Deposit: 200 / USD_TO_PHP,
+    deposit: 200 * USD_TO_PHP,
   },
+
   {
     title: "Avatar Zhangjiajie",
     subtitle: "Shopping Tour",
     duration: "6D5N",
-    price: 31437 / USD_TO_PHP,
+    price: 31437,
     description:
       "Explore the breathtaking landscapes of Zhangjiajie.",
   },
+
   {
     title: "Avatar Zhangjiajie + Fenghuang",
     subtitle: "Pure Fun",
     duration: "6D5N",
-    price: 50337 / USD_TO_PHP,
+    price: 50337,
     description:
       "Experience the stunning scenery of Zhangjiajie and historic Fenghuang.",
   },
+
   {
     title: "Chongqing + Zhangjiajie + Shanghai",
     subtitle: "Shopping Tour",
     duration: "7D6N",
-    price: 55944 / USD_TO_PHP,
+    price: 55944,
     description:
       "Experience three exciting Chinese destinations in one unforgettable trip.",
   },
@@ -57,88 +61,97 @@ const packages: Package[] = [
     duration: "7D6N",
     dates: "Jan. 6–12, 2027",
     city: "MNL",
-    price: 37737 / USD_TO_PHP,
+    price: 37737,
     slots: 20,
   },
+
   {
     title: "Shanghai + Anji",
     subtitle: "Skiing Tour",
     duration: "6D5N",
     dates: "Jan. 6–11, 2027",
     city: "MNL",
-    price: 43974 / USD_TO_PHP,
+    price: 43974,
     slots: 60,
   },
+
   {
     title: "Harbin",
     subtitle: "No Shopping",
     duration: "6D5N",
     dates: "Jan. 6–11, 2027",
     city: "MNL",
-    price: 87444 / USD_TO_PHP,
+    price: 87444,
     slots: 18,
   },
+
   {
     title: "Charming Yunnan",
     subtitle: "No Shopping",
     duration: "9D8N",
     dates: "Jan. 7–15, 2027",
     city: "MNL",
-    price: 87444 / USD_TO_PHP,
+    price: 87444,
     slots: 12,
   },
+
   {
     title: "Beijing",
     subtitle: "Shopping Tour",
     duration: "5D4N",
     dates: "Feb. 19–23, 2027",
     city: "MNL",
-    price: 27657 / USD_TO_PHP,
+    price: 27657,
     slots: 17,
   },
+
   {
     title: "Shanghai Mini Kyoto",
     subtitle: "Shopping Tour",
     duration: "5D4N",
     dates: "Feb. 20–24, 2027",
     city: "MNL",
-    price: 27027 / USD_TO_PHP,
+    price: 27027,
     slots: 32,
   },
+
   {
     title: "Avatar Furong Town",
     subtitle: "Charter Flight",
     duration: "5D4N",
     dates: "Feb. 20–24, 2027",
     city: "MNL",
-    price: 23877 / USD_TO_PHP,
+    price: 23877,
     slots: 145,
   },
+
   {
     title: "Beijing Skiing",
     subtitle: "Pure Fun",
     duration: "6D5N",
     dates: "Feb. 21–26, 2027",
     city: "MNL",
-    price: 32697 / USD_TO_PHP,
+    price: 32697,
     slots: 13,
   },
+
   {
     title: "Shanghai Mini Kyoto",
     subtitle: "Shopping Tour",
     duration: "6D5N",
     dates: "Feb. 21–26, 2027",
     city: "MNL",
-    price: 28287 / USD_TO_PHP,
+    price: 28287,
     slots: 60,
   },
+
   {
     title: "Avatar Furong + Xiamen",
     subtitle: "Shopping Tour",
     duration: "7D6N",
     dates: "Feb. 26–Mar. 4, 2027",
     city: "MNL",
-    price: 31437 / USD_TO_PHP,
+    price: 31437,
     slots: 18,
   },
 ];
@@ -159,6 +172,7 @@ Duration: ${pkg.duration}
 ${pkg.dates ? `Departure: ${pkg.dates}\n` : ""}
 ${pkg.city ? `Departure City: ${pkg.city}\n` : ""}
 Package From: ${formatPeso(pkg.price)} per person
+${pkg.deposit ? `Deposit: ${formatPeso(pkg.deposit)}\n` : ""}
 
 Please send me the complete package details. Thank you!`
     );
@@ -194,7 +208,6 @@ Please send me the complete package details. Thank you!`
         <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-5">
 
           {packages.map((pkg, index) => (
-
             <div
               key={`${pkg.title}-${pkg.duration}-${index}`}
               className="
@@ -213,7 +226,7 @@ Please send me the complete package details. Thank you!`
               "
             >
 
-              {/* DURATION + SLOTS */}
+              {/* DURATION + AVAILABILITY */}
               <div className="flex items-center justify-between gap-2">
 
                 {/* RED DURATION */}
@@ -314,6 +327,21 @@ Please send me the complete package details. Thank you!`
 
               </div>
 
+              {/* DEPOSIT */}
+              {pkg.deposit !== undefined && (
+                <div className="mt-3">
+
+                  <p className="text-[10px] text-gray-400 uppercase tracking-wide">
+                    Deposit
+                  </p>
+
+                  <p className="mt-1 text-sm font-bold text-gray-700">
+                    {formatPeso(pkg.deposit)}
+                  </p>
+
+                </div>
+              )}
+
               {/* INQUIRE BUTTON */}
               <button
                 onClick={() => handleInquiry(pkg)}
@@ -336,7 +364,6 @@ Please send me the complete package details. Thank you!`
               </button>
 
             </div>
-
           ))}
 
         </div>
