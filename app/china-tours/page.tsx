@@ -4,20 +4,22 @@ type Package = {
   title: string;
   subtitle: string;
   duration: string;
-  price: string;
+  price: number;
   description?: string;
   dates?: string;
   city?: string;
   slots?: number;
 };
 
+const USD_TO_PHP = 63;
+
 const packages: Package[] = [
-  // EXISTING CHINA PACKAGES
+  // EXISTING CHINA / POLAR PACKAGES
   {
     title: "Chongqing",
     subtitle: "Shopping Tour",
     duration: "5D3N",
-    price: "₱31,437",
+    price: 31437 / USD_TO_PHP,
     description:
       "Discover Chongqing with an exciting shopping tour experience.",
   },
@@ -25,7 +27,7 @@ const packages: Package[] = [
     title: "Avatar Zhangjiajie",
     subtitle: "Shopping Tour",
     duration: "6D5N",
-    price: "₱31,437",
+    price: 31437 / USD_TO_PHP,
     description:
       "Explore the breathtaking landscapes of Zhangjiajie.",
   },
@@ -33,7 +35,7 @@ const packages: Package[] = [
     title: "Avatar Zhangjiajie + Fenghuang",
     subtitle: "Pure Fun",
     duration: "6D5N",
-    price: "₱50,337",
+    price: 50337 / USD_TO_PHP,
     description:
       "Experience the stunning scenery of Zhangjiajie and historic Fenghuang.",
   },
@@ -41,19 +43,19 @@ const packages: Package[] = [
     title: "Chongqing + Zhangjiajie + Shanghai",
     subtitle: "Shopping Tour",
     duration: "7D6N",
-    price: "₱55,944",
+    price: 55944 / USD_TO_PHP,
     description:
       "Experience three exciting Chinese destinations in one unforgettable trip.",
   },
 
-  // ADDITIONAL CHINA PACKAGES
+  // ADDITIONAL CHINA / UOS PACKAGES
   {
     title: "Avatar + Furong",
     subtitle: "No Shopping",
     duration: "7D6N",
     dates: "Jan. 6–12, 2027",
     city: "MNL",
-    price: "₱37,737",
+    price: 37737 / USD_TO_PHP,
     slots: 20,
   },
   {
@@ -62,7 +64,7 @@ const packages: Package[] = [
     duration: "6D5N",
     dates: "Jan. 6–11, 2027",
     city: "MNL",
-    price: "₱43,974",
+    price: 43974 / USD_TO_PHP,
     slots: 60,
   },
   {
@@ -71,7 +73,7 @@ const packages: Package[] = [
     duration: "6D5N",
     dates: "Jan. 6–11, 2027",
     city: "MNL",
-    price: "₱87,444",
+    price: 87444 / USD_TO_PHP,
     slots: 18,
   },
   {
@@ -80,7 +82,7 @@ const packages: Package[] = [
     duration: "9D8N",
     dates: "Jan. 7–15, 2027",
     city: "MNL",
-    price: "₱87,444",
+    price: 87444 / USD_TO_PHP,
     slots: 12,
   },
   {
@@ -89,7 +91,7 @@ const packages: Package[] = [
     duration: "5D4N",
     dates: "Feb. 19–23, 2027",
     city: "MNL",
-    price: "₱27,657",
+    price: 27657 / USD_TO_PHP,
     slots: 17,
   },
   {
@@ -98,7 +100,7 @@ const packages: Package[] = [
     duration: "5D4N",
     dates: "Feb. 20–24, 2027",
     city: "MNL",
-    price: "₱27,027",
+    price: 27027 / USD_TO_PHP,
     slots: 32,
   },
   {
@@ -107,7 +109,7 @@ const packages: Package[] = [
     duration: "5D4N",
     dates: "Feb. 20–24, 2027",
     city: "MNL",
-    price: "₱23,877",
+    price: 23877 / USD_TO_PHP,
     slots: 145,
   },
   {
@@ -116,7 +118,7 @@ const packages: Package[] = [
     duration: "6D5N",
     dates: "Feb. 21–26, 2027",
     city: "MNL",
-    price: "₱32,697",
+    price: 32697 / USD_TO_PHP,
     slots: 13,
   },
   {
@@ -125,7 +127,7 @@ const packages: Package[] = [
     duration: "6D5N",
     dates: "Feb. 21–26, 2027",
     city: "MNL",
-    price: "₱28,287",
+    price: 28287 / USD_TO_PHP,
     slots: 60,
   },
   {
@@ -134,12 +136,16 @@ const packages: Package[] = [
     duration: "7D6N",
     dates: "Feb. 26–Mar. 4, 2027",
     city: "MNL",
-    price: "₱31,437",
+    price: 31437 / USD_TO_PHP,
     slots: 18,
   },
 ];
 
 export default function ChinaToursPage() {
+  const formatPeso = (amount: number) => {
+    return `₱${Math.round(amount).toLocaleString("en-PH")}`;
+  };
+
   const handleInquiry = (pkg: Package) => {
     const message = encodeURIComponent(
       `Hello CHINGU Travel and Tours!
@@ -150,7 +156,7 @@ ${pkg.title}
 Duration: ${pkg.duration}
 ${pkg.dates ? `Departure: ${pkg.dates}\n` : ""}
 ${pkg.city ? `Departure City: ${pkg.city}\n` : ""}
-Package From: ${pkg.price} per person
+Package From: ${formatPeso(pkg.price)} per person
 
 Please send me the complete package details. Thank you!`
     );
@@ -167,6 +173,7 @@ Please send me the complete package details. Thank you!`
 
         {/* HEADER */}
         <div className="text-center mb-12">
+
           <p className="text-red-600 font-semibold uppercase tracking-[4px] text-sm">
             CHINGU Travel and Tours
           </p>
@@ -176,21 +183,23 @@ Please send me the complete package details. Thank you!`
           </h1>
 
           <p className="mt-4 text-gray-500">
-            Explore our available China tour packages.
+            Explore our China tour packages, departure dates and rates.
           </p>
+
         </div>
 
-        {/* ALL CHINA PACKAGES */}
+        {/* CHINA PACKAGE GRID */}
         <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-5">
 
           {packages.map((pkg, index) => (
+
             <div
               key={`${pkg.title}-${pkg.duration}-${index}`}
               className="
                 bg-white
                 rounded-2xl
-                border-2
-                border-red-100
+                border
+                border-gray-100
                 shadow-md
                 p-5
                 hover:shadow-xl
@@ -202,9 +211,10 @@ Please send me the complete package details. Thank you!`
               "
             >
 
-              {/* DURATION + AVAILABILITY */}
+              {/* DURATION + SLOTS */}
               <div className="flex items-center justify-between gap-2">
 
+                {/* RED DURATION */}
                 <span
                   className="
                     text-xs
@@ -219,40 +229,27 @@ Please send me the complete package details. Thank you!`
                   {pkg.duration}
                 </span>
 
-                {pkg.slots !== undefined ? (
-                  <span
-                    className="
-                      text-xs
-                      font-semibold
-                      px-2.5
-                      py-1.5
-                      rounded-full
-                      bg-red-50
-                      text-red-600
-                    "
-                  >
-                    {pkg.slots} slots
-                  </span>
-                ) : (
-                  <span
-                    className="
-                      text-xs
-                      font-semibold
-                      px-2.5
-                      py-1.5
-                      rounded-full
-                      bg-red-50
-                      text-red-600
-                    "
-                  >
-                    Available
-                  </span>
-                )}
+                {/* GREEN AVAILABILITY */}
+                <span
+                  className="
+                    text-xs
+                    font-semibold
+                    px-2.5
+                    py-1.5
+                    rounded-full
+                    bg-green-50
+                    text-green-600
+                  "
+                >
+                  {pkg.slots !== undefined
+                    ? `${pkg.slots} slots`
+                    : "Available"}
+                </span>
 
               </div>
 
               {/* TITLE */}
-              <h2 className="mt-4 text-lg font-bold text-gray-900 min-h-[52px]">
+              <h2 className="mt-4 text-base font-bold text-gray-900 min-h-[48px]">
                 {pkg.title}
               </h2>
 
@@ -271,6 +268,7 @@ Please send me the complete package details. Thank you!`
               {/* DEPARTURE */}
               {pkg.dates && (
                 <div className="mt-5">
+
                   <p className="text-[10px] text-gray-400 uppercase tracking-wide">
                     Departure
                   </p>
@@ -278,12 +276,14 @@ Please send me the complete package details. Thank you!`
                   <p className="mt-1 text-sm font-semibold text-gray-700">
                     {pkg.dates}
                   </p>
+
                 </div>
               )}
 
               {/* DEPARTURE CITY */}
               {pkg.city && (
                 <div className="mt-3">
+
                   <p className="text-[10px] text-gray-400 uppercase tracking-wide">
                     Departure City
                   </p>
@@ -291,6 +291,7 @@ Please send me the complete package details. Thank you!`
                   <p className="mt-1 text-sm font-semibold text-gray-700">
                     {pkg.city}
                   </p>
+
                 </div>
               )}
 
@@ -302,7 +303,7 @@ Please send me the complete package details. Thank you!`
                 </p>
 
                 <p className="mt-1 text-2xl font-bold text-gray-900">
-                  {pkg.price}
+                  {formatPeso(pkg.price)}
                 </p>
 
                 <p className="text-[10px] text-gray-400">
@@ -333,6 +334,7 @@ Please send me the complete package details. Thank you!`
               </button>
 
             </div>
+
           ))}
 
         </div>
