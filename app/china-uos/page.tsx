@@ -136,7 +136,6 @@ Please send me the complete package details. Thank you!`
 
           <div className="mt-3">
             <span className="inline-flex items-center rounded-full bg-blue-50 px-3 py-1 text-xs font-semibold text-blue-600">
-              UOS Travel Supplier
             </span>
           </div>
         </div>
