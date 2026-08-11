@@ -15,13 +15,15 @@ const USD_TO_PHP = 63;
 
 const packages: Package[] = [
   // EXISTING CHINA / POLAR PACKAGES
-  {
+ {
     title: "Chongqing",
-    subtitle: "Shopping Tour",
+    subtitle: "Shopping",
     duration: "5D3N",
-    price: 31437 / USD_TO_PHP,
-    description:
-      "Discover Chongqing with an exciting shopping tour experience.",
+    dates: "Sep. 22–26, 2026",
+    city: "MNL",
+    price: 549 / USD_TO_PHP,
+    slots: 20,
+    Deposit: 200 / USD_TO_PHP,
   },
   {
     title: "Avatar Zhangjiajie",
