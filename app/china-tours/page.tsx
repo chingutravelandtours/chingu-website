@@ -17,7 +17,7 @@ const USD_TO_PHP = 63;
 const packages: Package[] = [
   // EXISTING CHINA / POLAR PACKAGES
   {
-    title: "Chongqing",
+    title: "ChongQing",
     subtitle: "Shopping",
     duration: "5D3N",
     dates: "Sep. 22–26, 2026",
@@ -28,30 +28,47 @@ const packages: Package[] = [
   },
 
   {
+    title: "ChongQing",
+    subtitle: "Shopping",
+    duration: "5D3N",
+    dates: "Oct. 15–19, 2026",
+    city: "MNL",
+    price: 549 * USD_TO_PHP,
+    slots: 20,
+    deposit: 200 * USD_TO_PHP,
+  },
+  
+  {
     title: "Avatar Zhangjiajie",
-    subtitle: "Shopping Tour",
+    subtitle: "Shopping",
     duration: "6D5N",
-    price: 31437,
-    description:
-      "Explore the breathtaking landscapes of Zhangjiajie.",
+    dates: "Oct. 27– Nov. 01, 2026",
+    city: "MNL",
+    price: 629 * USD_TO_PHP,
+    slots: 20,
+    deposit: 200 * USD_TO_PHP,
   },
 
   {
-    title: "Avatar Zhangjiajie + Fenghuang",
-    subtitle: "Pure Fun",
+    title: "Avatar Zhangjiajie",
+    subtitle: "Shopping",
     duration: "6D5N",
-    price: 50337,
-    description:
-      "Experience the stunning scenery of Zhangjiajie and historic Fenghuang.",
+    dates: "Nov. 10–15, 2026",
+    city: "MNL",
+    price: 529 * USD_TO_PHP,
+    slots: 20,
+    deposit: 200 * USD_TO_PHP,
   },
 
   {
     title: "Chongqing + Zhangjiajie + Shanghai",
-    subtitle: "Shopping Tour",
-    duration: "7D6N",
-    price: 55944,
-    description:
-      "Experience three exciting Chinese destinations in one unforgettable trip.",
+    subtitle: "Purefun",
+    duration: "6D5N",
+    dates: "Oct. 27– Nov. 01, 2026",
+    city: "MNL",
+    price: 629 * USD_TO_PHP,
+    minimum: 10 pax,
+    deposit: 400 * USD_TO_PHP,ip.",
   },
 
   // ADDITIONAL CHINA / UOS PACKAGES
