@@ -12,7 +12,7 @@ type Package = {
 };
 
 const packages: Package[] = [
-  // POLAR PACKAGES
+  // EXISTING CHINA PACKAGES
   {
     title: "Chongqing",
     subtitle: "Shopping Tour",
@@ -46,7 +46,7 @@ const packages: Package[] = [
       "Experience three exciting Chinese destinations in one unforgettable trip.",
   },
 
-  // UOS PACKAGES
+  // ADDITIONAL CHINA PACKAGES
   {
     title: "Avatar + Furong",
     subtitle: "No Shopping",
