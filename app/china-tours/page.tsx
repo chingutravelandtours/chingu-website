@@ -145,13 +145,11 @@ ${pkg.title}
 Duration: ${pkg.duration}
 ${
   pkg.dates
-    ? `Departure: ${pkg.dates}
-`
+    ? `Departure: ${pkg.dates}\n`
     : ""
 }${
   pkg.city
-    ? `Departure City: ${pkg.city}
-`
+    ? `Departure City: ${pkg.city}\n`
     : ""
 }Package From: ${pkg.price} per person
 
@@ -168,7 +166,7 @@ Please send me the complete package details. Thank you!`
     <main className="min-h-screen bg-gray-50 py-12 px-6">
       <div className="max-w-7xl mx-auto">
 
-        {/* HEADER */}
+        {/* MAIN HEADER */}
         <div className="text-center mb-12">
           <p className="text-red-600 font-semibold uppercase tracking-widest text-sm">
             CHINGU Travel and Tours
@@ -185,70 +183,90 @@ Please send me the complete package details. Thank you!`
 
         {/* POLAR PACKAGES */}
         <section>
-          <div className="text-center mb-8">
-            <h2 className="text-2xl md:text-3xl font-bold text-gray-900">
-              China Tour Packages
-            </h2>
-
-            <p className="mt-2 text-sm text-gray-500">
-              Explore our available China destinations and tour packages.
-            </p>
-          </div>
-
           <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-5">
-            {polarPackages.map((pkg) => (
-              <div
-                key={`${pkg.title}-${pkg.duration}`}
-                className="bg-white rounded-2xl border border-gray-100 shadow-md p-5 hover:shadow-xl hover:-translate-y-1 transition-all duration-300 flex flex-col"
-              >
-                <div className="flex items-center justify-between gap-2">
-                  <span className="text-xs font-semibold text-red-600 bg-red-50 px-3 py-1 rounded-full">
-                    {pkg.duration}
-                  </span>
+            {polarPackages.map((pkg) => {
+              const isPolar4D5N = pkg.duration === "4D5N";
 
-                  <span className="text-xs font-semibold text-gray-500 bg-gray-100 px-2.5 py-1 rounded-full">
-                    Available
-                  </span>
-                </div>
-
-                <h3 className="mt-4 text-lg font-bold text-gray-900 min-h-[48px]">
-                  {pkg.title}
-                </h3>
-
-                <p className="mt-2 text-xs text-gray-400">
-                  {pkg.subtitle}
-                </p>
-
-                <p className="mt-4 text-sm text-gray-500 leading-relaxed min-h-[60px]">
-                  {pkg.description}
-                </p>
-
-                <div className="mt-5">
-                  <p className="text-[10px] text-gray-400 uppercase tracking-wide">
-                    Package From
-                  </p>
-
-                  <p className="text-xl font-bold text-gray-900">
-                    {pkg.price}
-                  </p>
-
-                  <p className="text-[10px] text-gray-400">
-                    per person
-                  </p>
-                </div>
-
-                <button
-                  onClick={() => handleInquiry(pkg)}
-                  className="mt-5 w-full border border-red-600 text-red-600 py-2.5 rounded-xl text-sm font-semibold hover:bg-red-600 hover:text-white transition"
+              return (
+                <div
+                  key={`${pkg.title}-${pkg.duration}`}
+                  className={`rounded-2xl p-5 hover:shadow-xl hover:-translate-y-1 transition-all duration-300 flex flex-col ${
+                    isPolar4D5N
+                      ? "bg-blue-50 border-2 border-blue-200 shadow-md"
+                      : "bg-white border border-gray-100 shadow-md"
+                  }`}
                 >
-                  Inquire Now →
-                </button>
-              </div>
-            ))}
+                  {/* BADGES */}
+                  <div className="flex items-center justify-between gap-2">
+                    <span
+                      className={`text-xs font-semibold px-3 py-1 rounded-full ${
+                        isPolar4D5N
+                          ? "text-blue-700 bg-blue-100"
+                          : "text-red-600 bg-red-50"
+                      }`}
+                    >
+                      {pkg.duration}
+                    </span>
+
+                    <span
+                      className={`text-xs font-semibold px-2.5 py-1 rounded-full ${
+                        isPolar4D5N
+                          ? "text-blue-700 bg-blue-100"
+                          : "text-gray-500 bg-gray-100"
+                      }`}
+                    >
+                      Available
+                    </span>
+                  </div>
+
+                  {/* TITLE */}
+                  <h3 className="mt-4 text-lg font-bold text-gray-900 min-h-[48px]">
+                    {pkg.title}
+                  </h3>
+
+                  {/* TYPE */}
+                  <p className="mt-2 text-xs text-gray-400">
+                    {pkg.subtitle}
+                  </p>
+
+                  {/* DESCRIPTION */}
+                  <p className="mt-4 text-sm text-gray-500 leading-relaxed min-h-[60px]">
+                    {pkg.description}
+                  </p>
+
+                  {/* PRICE */}
+                  <div className="mt-5">
+                    <p className="text-[10px] text-gray-400 uppercase tracking-wide">
+                      Package From
+                    </p>
+
+                    <p className="text-xl font-bold text-gray-900">
+                      {pkg.price}
+                    </p>
+
+                    <p className="text-[10px] text-gray-400">
+                      per person
+                    </p>
+                  </div>
+
+                  {/* INQUIRE */}
+                  <button
+                    onClick={() => handleInquiry(pkg)}
+                    className={`mt-5 w-full py-2.5 rounded-xl text-sm font-semibold transition ${
+                      isPolar4D5N
+                        ? "border border-blue-600 text-blue-600 hover:bg-blue-600 hover:text-white"
+                        : "border border-red-600 text-red-600 hover:bg-red-600 hover:text-white"
+                    }`}
+                  >
+                    Inquire Now →
+                  </button>
+                </div>
+              );
+            })}
           </div>
         </section>
 
-        {/* UOS PACKAGES */}
+        {/* UOS / MORE CHINA PACKAGES */}
         <section className="mt-16">
           <div className="text-center mb-8">
             <h2 className="text-2xl md:text-3xl font-bold text-gray-900">
