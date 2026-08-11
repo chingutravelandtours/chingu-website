@@ -68,7 +68,7 @@ const packages: Package[] = [
     city: "MNL",
     price: 629 * USD_TO_PHP,
     minimum: 10 pax,
-    deposit: 400 * USD_TO_PHP,ip.",
+    deposit: 400 * USD_TO_PHP,
   },
 
   // ADDITIONAL CHINA / UOS PACKAGES
