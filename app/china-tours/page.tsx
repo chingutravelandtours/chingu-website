@@ -1,7 +1,26 @@
 "use client";
 
-const polarPackages = [
+type Package = {
+  theme: "red" | "blue";
+  title: string;
+  subtitle: string;
+  duration: string;
+  price: string;
+  description?: string;
+  dates?: string;
+  city?: string;
+  slots?: number;
+};
+
+/*
+  RED PACKAGES
+  =========================
+  These are the packages you want
+  displayed with RED styling.
+*/
+const redPackages: Package[] = [
   {
+    theme: "red",
     title: "Chongqing",
     subtitle: "Shopping Tour",
     duration: "5D3N",
@@ -10,6 +29,7 @@ const polarPackages = [
       "Discover Chongqing with an exciting shopping tour experience.",
   },
   {
+    theme: "red",
     title: "Avatar Zhangjiajie",
     subtitle: "Shopping Tour",
     duration: "6D5N",
@@ -18,6 +38,7 @@ const polarPackages = [
       "Explore the breathtaking landscapes of Zhangjiajie.",
   },
   {
+    theme: "red",
     title: "Avatar Zhangjiajie + Fenghuang",
     subtitle: "Pure Fun",
     duration: "6D5N",
@@ -26,6 +47,7 @@ const polarPackages = [
       "Experience the stunning scenery of Zhangjiajie and historic Fenghuang.",
   },
   {
+    theme: "red",
     title: "Chongqing + Zhangjiajie + Shanghai",
     subtitle: "Shopping Tour",
     duration: "7D6N",
@@ -35,8 +57,13 @@ const polarPackages = [
   },
 ];
 
-const uosPackages = [
+/*
+  BLUE PACKAGES
+  =========================
+*/
+const bluePackages: Package[] = [
   {
+    theme: "blue",
     title: "Avatar + Furong",
     subtitle: "No Shopping",
     duration: "7D6N",
@@ -46,6 +73,7 @@ const uosPackages = [
     slots: 20,
   },
   {
+    theme: "blue",
     title: "Shanghai + Anji",
     subtitle: "Skiing Tour",
     duration: "6D5N",
@@ -55,6 +83,7 @@ const uosPackages = [
     slots: 60,
   },
   {
+    theme: "blue",
     title: "Harbin",
     subtitle: "No Shopping",
     duration: "6D5N",
@@ -64,6 +93,7 @@ const uosPackages = [
     slots: 18,
   },
   {
+    theme: "blue",
     title: "Charming Yunnan",
     subtitle: "No Shopping",
     duration: "9D8N",
@@ -73,6 +103,7 @@ const uosPackages = [
     slots: 12,
   },
   {
+    theme: "blue",
     title: "Beijing",
     subtitle: "Shopping Tour",
     duration: "5D4N",
@@ -82,6 +113,7 @@ const uosPackages = [
     slots: 17,
   },
   {
+    theme: "blue",
     title: "Shanghai Mini Kyoto",
     subtitle: "Shopping Tour",
     duration: "5D4N",
@@ -91,6 +123,7 @@ const uosPackages = [
     slots: 32,
   },
   {
+    theme: "blue",
     title: "Avatar Furong Town",
     subtitle: "Charter Flight",
     duration: "5D4N",
@@ -100,6 +133,7 @@ const uosPackages = [
     slots: 145,
   },
   {
+    theme: "blue",
     title: "Beijing Skiing",
     subtitle: "Pure Fun",
     duration: "6D5N",
@@ -109,6 +143,7 @@ const uosPackages = [
     slots: 13,
   },
   {
+    theme: "blue",
     title: "Shanghai Mini Kyoto",
     subtitle: "Shopping Tour",
     duration: "6D5N",
@@ -118,6 +153,7 @@ const uosPackages = [
     slots: 60,
   },
   {
+    theme: "blue",
     title: "Avatar Furong + Xiamen",
     subtitle: "Shopping Tour",
     duration: "7D6N",
@@ -128,14 +164,18 @@ const uosPackages = [
   },
 ];
 
+/*
+  COMBINED LIST
+  =========================
+  Red + Blue in ONE list.
+*/
+const packages: Package[] = [
+  ...redPackages,
+  ...bluePackages,
+];
+
 export default function ChinaToursPage() {
-  const handleInquiry = (pkg: {
-    title: string;
-    duration: string;
-    dates?: string;
-    city?: string;
-    price: string;
-  }) => {
+  const handleInquiry = (pkg: Package) => {
     const message = encodeURIComponent(
       `Hello CHINGU Travel and Tours!
 
@@ -143,15 +183,9 @@ I would like to inquire about:
 
 ${pkg.title}
 Duration: ${pkg.duration}
-${
-  pkg.dates
-    ? `Departure: ${pkg.dates}\n`
-    : ""
-}${
-  pkg.city
-    ? `Departure City: ${pkg.city}\n`
-    : ""
-}Package From: ${pkg.price} per person
+${pkg.dates ? `Departure: ${pkg.dates}\n` : ""}
+${pkg.city ? `Departure City: ${pkg.city}\n` : ""}
+Package From: ${pkg.price} per person
 
 Please send me the complete package details. Thank you!`
     );
@@ -163,196 +197,186 @@ Please send me the complete package details. Thank you!`
   };
 
   return (
-    <main className="min-h-screen bg-gray-50 py-12 px-6">
+    <main className="min-h-screen bg-gray-50 py-12 px-5">
       <div className="max-w-7xl mx-auto">
 
-        {/* MAIN HEADER */}
+        {/* HEADER */}
         <div className="text-center mb-12">
-          <p className="text-red-600 font-semibold uppercase tracking-widest text-sm">
+          <p className="text-red-600 font-semibold uppercase tracking-[4px] text-sm">
             CHINGU Travel and Tours
           </p>
 
-          <h1 className="mt-2 text-3xl md:text-4xl font-bold text-gray-900">
+          <h1 className="mt-3 text-4xl md:text-5xl font-bold text-gray-900">
             China Tour Packages
           </h1>
 
-          <p className="mt-3 text-gray-500">
+          <p className="mt-4 text-gray-500">
             Explore our available China tour packages.
           </p>
         </div>
 
-        {/* POLAR PACKAGES */}
-        <section>
-          <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-5">
-            {polarPackages.map((pkg) => {
-              const isPolar4D5N = pkg.duration === "4D5N";
+        {/* COMBINED PACKAGES */}
+        <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-5">
 
-              return (
-                <div
-                  key={`${pkg.title}-${pkg.duration}`}
-                  className={`rounded-2xl p-5 hover:shadow-xl hover:-translate-y-1 transition-all duration-300 flex flex-col ${
-                    isPolar4D5N
-                      ? "bg-blue-50 border-2 border-blue-200 shadow-md"
-                      : "bg-white border border-gray-100 shadow-md"
-                  }`}
-                >
-                  {/* BADGES */}
-                  <div className="flex items-center justify-between gap-2">
-                    <span
-                      className={`text-xs font-semibold px-3 py-1 rounded-full ${
-                        isPolar4D5N
-                          ? "text-blue-700 bg-blue-100"
-                          : "text-red-600 bg-red-50"
-                      }`}
-                    >
-                      {pkg.duration}
-                    </span>
+          {packages.map((pkg, index) => {
+            const isRed = pkg.theme === "red";
 
-                    <span
-                      className={`text-xs font-semibold px-2.5 py-1 rounded-full ${
-                        isPolar4D5N
-                          ? "text-blue-700 bg-blue-100"
-                          : "text-gray-500 bg-gray-100"
-                      }`}
-                    >
-                      Available
-                    </span>
-                  </div>
-
-                  {/* TITLE */}
-                  <h3 className="mt-4 text-lg font-bold text-gray-900 min-h-[48px]">
-                    {pkg.title}
-                  </h3>
-
-                  {/* TYPE */}
-                  <p className="mt-2 text-xs text-gray-400">
-                    {pkg.subtitle}
-                  </p>
-
-                  {/* DESCRIPTION */}
-                  <p className="mt-4 text-sm text-gray-500 leading-relaxed min-h-[60px]">
-                    {pkg.description}
-                  </p>
-
-                  {/* PRICE */}
-                  <div className="mt-5">
-                    <p className="text-[10px] text-gray-400 uppercase tracking-wide">
-                      Package From
-                    </p>
-
-                    <p className="text-xl font-bold text-gray-900">
-                      {pkg.price}
-                    </p>
-
-                    <p className="text-[10px] text-gray-400">
-                      per person
-                    </p>
-                  </div>
-
-                  {/* INQUIRE */}
-                  <button
-                    onClick={() => handleInquiry(pkg)}
-                    className={`mt-5 w-full py-2.5 rounded-xl text-sm font-semibold transition ${
-                      isPolar4D5N
-                        ? "border border-blue-600 text-blue-600 hover:bg-blue-600 hover:text-white"
-                        : "border border-red-600 text-red-600 hover:bg-red-600 hover:text-white"
-                    }`}
-                  >
-                    Inquire Now →
-                  </button>
-                </div>
-              );
-            })}
-          </div>
-        </section>
-
-        {/* UOS / MORE CHINA PACKAGES */}
-        <section className="mt-16">
-          <div className="text-center mb-8">
-            <h2 className="text-2xl md:text-3xl font-bold text-gray-900">
-              More China Tour Packages
-            </h2>
-
-            <p className="mt-2 text-sm text-gray-500">
-              More available China tour packages and departure dates.
-            </p>
-          </div>
-
-          <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-5">
-            {uosPackages.map((pkg) => (
+            return (
               <div
-                key={`${pkg.title}-${pkg.dates}`}
-                className="bg-white rounded-2xl border border-gray-100 shadow-md p-5 hover:shadow-xl hover:-translate-y-1 transition-all duration-300 flex flex-col"
+                key={`${pkg.title}-${pkg.duration}-${index}`}
+                className={`
+                  rounded-2xl
+                  p-5
+                  shadow-md
+                  hover:shadow-xl
+                  hover:-translate-y-1
+                  transition-all
+                  duration-300
+                  flex
+                  flex-col
+                  bg-white
+                  border-2
+                  ${
+                    isRed
+                      ? "border-red-100"
+                      : "border-blue-100"
+                  }
+                `}
               >
-                {/* BADGES */}
+
+                {/* DURATION */}
                 <div className="flex items-center justify-between gap-2">
-                  <span className="text-xs font-semibold text-red-600 bg-red-50 px-3 py-1 rounded-full">
+
+                  <span
+                    className={`
+                      text-xs
+                      font-bold
+                      px-3
+                      py-1.5
+                      rounded-full
+                      ${
+                        isRed
+                          ? "bg-red-50 text-red-600"
+                          : "bg-blue-50 text-blue-600"
+                      }
+                    `}
+                  >
                     {pkg.duration}
                   </span>
 
-                  <span className="text-xs font-semibold text-green-600 bg-green-50 px-2.5 py-1 rounded-full">
-                    {pkg.slots} slots
-                  </span>
+                  {/* SLOTS / AVAILABILITY */}
+                  {pkg.slots !== undefined ? (
+                    <span className="text-xs font-semibold text-green-600 bg-green-50 px-2.5 py-1.5 rounded-full">
+                      {pkg.slots} slots
+                    </span>
+                  ) : (
+                    <span
+                      className={`
+                        text-xs
+                        font-semibold
+                        px-2.5
+                        py-1.5
+                        rounded-full
+                        ${
+                          isRed
+                            ? "bg-red-50 text-red-600"
+                            : "bg-blue-50 text-blue-600"
+                        }
+                      `}
+                    >
+                      Available
+                    </span>
+                  )}
+
                 </div>
 
                 {/* TITLE */}
-                <h3 className="mt-4 text-base font-bold text-gray-900 min-h-[48px]">
+                <h2 className="mt-4 text-lg font-bold text-gray-900 min-h-[52px]">
                   {pkg.title}
-                </h3>
+                </h2>
 
-                {/* TOUR TYPE */}
+                {/* SUBTITLE */}
                 <p className="mt-2 text-xs text-gray-400">
                   {pkg.subtitle}
                 </p>
 
+                {/* DESCRIPTION */}
+                {pkg.description && (
+                  <p className="mt-5 text-sm text-gray-500 leading-relaxed min-h-[60px]">
+                    {pkg.description}
+                  </p>
+                )}
+
                 {/* DEPARTURE */}
-                <div className="mt-4">
-                  <p className="text-[10px] text-gray-400 uppercase tracking-wide">
-                    Departure
-                  </p>
+                {pkg.dates && (
+                  <div className="mt-5">
+                    <p className="text-[10px] text-gray-400 uppercase tracking-wide">
+                      Departure
+                    </p>
 
-                  <p className="mt-1 text-sm font-semibold text-gray-700">
-                    {pkg.dates}
-                  </p>
-                </div>
+                    <p className="mt-1 text-sm font-semibold text-gray-700">
+                      {pkg.dates}
+                    </p>
+                  </div>
+                )}
 
-                {/* CITY */}
-                <div className="mt-3">
-                  <p className="text-[10px] text-gray-400 uppercase tracking-wide">
-                    Departure City
-                  </p>
+                {/* DEPARTURE CITY */}
+                {pkg.city && (
+                  <div className="mt-3">
+                    <p className="text-[10px] text-gray-400 uppercase tracking-wide">
+                      Departure City
+                    </p>
 
-                  <p className="mt-1 text-sm font-semibold text-gray-700">
-                    {pkg.city}
-                  </p>
-                </div>
+                    <p className="mt-1 text-sm font-semibold text-gray-700">
+                      {pkg.city}
+                    </p>
+                  </div>
+                )}
 
                 {/* PRICE */}
-                <div className="mt-4">
+                <div className="mt-auto pt-5">
+
                   <p className="text-[10px] text-gray-400 uppercase tracking-wide">
                     Package From
                   </p>
 
-                  <p className="text-xl font-bold text-gray-900">
+                  <p className="mt-1 text-2xl font-bold text-gray-900">
                     {pkg.price}
                   </p>
 
                   <p className="text-[10px] text-gray-400">
                     per person
                   </p>
+
                 </div>
 
-                {/* BUTTON */}
+                {/* INQUIRE BUTTON */}
                 <button
                   onClick={() => handleInquiry(pkg)}
-                  className="mt-5 w-full border border-red-600 text-red-600 py-2.5 rounded-xl text-sm font-semibold hover:bg-red-600 hover:text-white transition"
+                  className={`
+                    mt-5
+                    w-full
+                    py-2.5
+                    rounded-xl
+                    text-sm
+                    font-semibold
+                    border-2
+                    transition
+                    ${
+                      isRed
+                        ? "border-red-600 text-red-600 hover:bg-red-600 hover:text-white"
+                        : "border-blue-600 text-blue-600 hover:bg-blue-600 hover:text-white"
+                    }
+                  `}
                 >
                   Inquire Now →
                 </button>
+
               </div>
-            ))}
-          </div>
-        </section>
+            );
+          })}
+
+        </div>
 
       </div>
     </main>
