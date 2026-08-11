@@ -6,6 +6,7 @@ type Package = {
   duration: string;
   price: number;
   deposit?: number;
+  minimum?: number;
   description?: string;
   dates?: string;
   city?: string;
@@ -15,7 +16,9 @@ type Package = {
 const USD_TO_PHP = 63;
 
 const packages: Package[] = [
-  // EXISTING CHINA / POLAR PACKAGES
+  // =========================
+  // POLAR PACKAGES
+  // =========================
   {
     title: "ChongQing",
     subtitle: "Shopping",
@@ -37,12 +40,12 @@ const packages: Package[] = [
     slots: 20,
     deposit: 200 * USD_TO_PHP,
   },
-  
+
   {
     title: "Avatar Zhangjiajie",
     subtitle: "Shopping",
     duration: "6D5N",
-    dates: "Oct. 27– Nov. 01, 2026",
+    dates: "Oct. 27–Nov. 1, 2026",
     city: "MNL",
     price: 629 * USD_TO_PHP,
     slots: 20,
@@ -62,16 +65,18 @@ const packages: Package[] = [
 
   {
     title: "Chongqing + Zhangjiajie + Shanghai",
-    subtitle: "Purefun",
+    subtitle: "Pure Fun",
     duration: "6D5N",
-    dates: "Oct. 27– Nov. 01, 2026",
+    dates: "Oct. 27–Nov. 1, 2026",
     city: "MNL",
     price: 629 * USD_TO_PHP,
-    minimum: 10 pax,
+    minimum: 10,
     deposit: 400 * USD_TO_PHP,
   },
 
-  // ADDITIONAL CHINA / UOS PACKAGES
+  // =========================
+  // UOS PACKAGES
+  // =========================
   {
     title: "Avatar + Furong",
     subtitle: "No Shopping",
@@ -189,7 +194,8 @@ Duration: ${pkg.duration}
 ${pkg.dates ? `Departure: ${pkg.dates}\n` : ""}
 ${pkg.city ? `Departure City: ${pkg.city}\n` : ""}
 Package From: ${formatPeso(pkg.price)} per person
-${pkg.deposit ? `Deposit: ${formatPeso(pkg.deposit)}\n` : ""}
+${pkg.deposit !== undefined ? `Deposit: ${formatPeso(pkg.deposit)}\n` : ""}
+${pkg.minimum !== undefined ? `Minimum: ${pkg.minimum} pax\n` : ""}
 
 Please send me the complete package details. Thank you!`
     );
@@ -206,7 +212,6 @@ Please send me the complete package details. Thank you!`
 
         {/* HEADER */}
         <div className="text-center mb-12">
-
           <p className="text-red-600 font-semibold uppercase tracking-[4px] text-sm">
             CHINGU Travel and Tours
           </p>
@@ -218,7 +223,6 @@ Please send me the complete package details. Thank you!`
           <p className="mt-4 text-gray-500">
             Explore our China tour packages, departure dates and rates.
           </p>
-
         </div>
 
         {/* CHINA PACKAGE GRID */}
@@ -226,7 +230,7 @@ Please send me the complete package details. Thank you!`
 
           {packages.map((pkg, index) => (
             <div
-              key={`${pkg.title}-${pkg.duration}-${index}`}
+              key={`${pkg.title}-${pkg.duration}-${pkg.dates}-${index}`}
               className="
                 bg-white
                 rounded-2xl
@@ -300,7 +304,6 @@ Please send me the complete package details. Thank you!`
               {/* DEPARTURE */}
               {pkg.dates && (
                 <div className="mt-5">
-
                   <p className="text-[10px] text-gray-400 uppercase tracking-wide">
                     Departure
                   </p>
@@ -308,14 +311,12 @@ Please send me the complete package details. Thank you!`
                   <p className="mt-1 text-sm font-semibold text-gray-700">
                     {pkg.dates}
                   </p>
-
                 </div>
               )}
 
               {/* DEPARTURE CITY */}
               {pkg.city && (
                 <div className="mt-3">
-
                   <p className="text-[10px] text-gray-400 uppercase tracking-wide">
                     Departure City
                   </p>
@@ -323,13 +324,24 @@ Please send me the complete package details. Thank you!`
                   <p className="mt-1 text-sm font-semibold text-gray-700">
                     {pkg.city}
                   </p>
+                </div>
+              )}
 
+              {/* MINIMUM */}
+              {pkg.minimum !== undefined && (
+                <div className="mt-3">
+                  <p className="text-[10px] text-gray-400 uppercase tracking-wide">
+                    Minimum
+                  </p>
+
+                  <p className="mt-1 text-sm font-semibold text-gray-700">
+                    {pkg.minimum} pax
+                  </p>
                 </div>
               )}
 
               {/* PRICE */}
               <div className="mt-auto pt-5">
-
                 <p className="text-[10px] text-gray-400 uppercase tracking-wide">
                   Package From
                 </p>
@@ -341,13 +353,11 @@ Please send me the complete package details. Thank you!`
                 <p className="text-[10px] text-gray-400">
                   per person
                 </p>
-
               </div>
 
               {/* DEPOSIT */}
               {pkg.deposit !== undefined && (
                 <div className="mt-3">
-
                   <p className="text-[10px] text-gray-400 uppercase tracking-wide">
                     Deposit
                   </p>
@@ -355,7 +365,6 @@ Please send me the complete package details. Thank you!`
                   <p className="mt-1 text-sm font-bold text-gray-700">
                     {formatPeso(pkg.deposit)}
                   </p>
-
                 </div>
               )}
 
