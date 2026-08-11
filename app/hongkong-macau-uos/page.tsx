@@ -2,7 +2,7 @@
 
 const packages = [
   // =========================
-  // UOS HONG KONG / MACAU
+  // HONG KONG / MACAU
   // =========================
 
   {
@@ -377,7 +377,6 @@ Package Price: ${pkg.price} per person
 Downpayment: ${pkg.downpayment} per person
 Airline: ${pkg.airline}
 
-Supplier: UOS Travel
 
 Please send me the complete package details. Thank you!`
     );
@@ -444,7 +443,7 @@ Please send me the complete package details. Thank you!`
 
               {/* SUPPLIER */}
               <p className="mt-2 text-xs text-gray-400">
-                UOS • Hong Kong / Macau
+                 Hong Kong / Macau
               </p>
 
               {/* DATE */}
