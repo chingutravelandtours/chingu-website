@@ -403,7 +403,7 @@ Please send me the complete package details. Thank you!`
           </h1>
 
           <p className="mt-3 text-gray-500">
-            UOS Travel • Available Hong Kong and Macau tour packages
+            Available Hong Kong and Macau tour packages
           </p>
         </div>
 
