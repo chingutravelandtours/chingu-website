@@ -190,7 +190,7 @@ Please send me the complete package details. Thank you!`
                 bg-white
                 rounded-2xl
                 border-2
-                border-blue-100
+                border-red-100
                 shadow-md
                 p-5
                 hover:shadow-xl
@@ -212,8 +212,8 @@ Please send me the complete package details. Thank you!`
                     px-3
                     py-1.5
                     rounded-full
-                    bg-blue-50
-                    text-blue-600
+                    bg-red-50
+                    text-red-600
                   "
                 >
                   {pkg.duration}
@@ -227,8 +227,8 @@ Please send me the complete package details. Thank you!`
                       px-2.5
                       py-1.5
                       rounded-full
-                      bg-blue-50
-                      text-blue-600
+                      bg-red-50
+                      text-red-600
                     "
                   >
                     {pkg.slots} slots
@@ -241,8 +241,8 @@ Please send me the complete package details. Thank you!`
                       px-2.5
                       py-1.5
                       rounded-full
-                      bg-blue-50
-                      text-blue-600
+                      bg-red-50
+                      text-red-600
                     "
                   >
                     Available
@@ -322,9 +322,9 @@ Please send me the complete package details. Thank you!`
                   text-sm
                   font-semibold
                   border-2
-                  border-blue-600
-                  text-blue-600
-                  hover:bg-blue-600
+                  border-red-600
+                  text-red-600
+                  hover:bg-red-600
                   hover:text-white
                   transition
                 "
