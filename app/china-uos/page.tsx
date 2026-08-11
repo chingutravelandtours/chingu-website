@@ -106,7 +106,6 @@ Departure: ${pkg.dates}
 Departure City: ${pkg.city}
 Package From: ${pkg.price} per person
 
-Supplier: UOS Travel
 
 Please send me the complete package details. Thank you!`
     );
