@@ -106,19 +106,18 @@ Departure: ${pkg.dates}
 Departure City: ${pkg.city}
 Package From: ${pkg.price} per person
 
-
 Please send me the complete package details. Thank you!`
     );
 
     window.open(
-      `https://wa.me/639193888999?text=${message}`,
+      `https://wa.me/63919388999?text=${message}`,
       "_blank"
     );
   };
 
   return (
-    <main className="min-h-screen bg-gray-50 py-14">
-      <div className="max-w-7xl mx-auto px-6">
+    <main className="min-h-screen bg-gray-50 py-12 px-6">
+      <div className="max-w-7xl mx-auto">
 
         {/* HEADER */}
         <div className="text-center mb-10">
@@ -126,18 +125,13 @@ Please send me the complete package details. Thank you!`
             CHINGU Travel and Tours
           </p>
 
-          <h1 className="mt-2 text-3xl font-bold text-gray-900">
+          <h1 className="mt-2 text-3xl md:text-4xl font-bold text-gray-900">
             China Tour Packages
           </h1>
 
           <p className="mt-3 text-gray-500">
             Explore our available China tour packages.
           </p>
-
-          <div className="mt-3">
-            <span className="inline-flex items-center rounded-full bg-blue-50 px-3 py-1 text-xs font-semibold text-blue-600">
-            </span>
-          </div>
         </div>
 
         {/* PACKAGES */}
@@ -207,17 +201,6 @@ Please send me the complete package details. Thank you!`
                 </p>
               </div>
 
-              {/* SUPPLIER */}
-              <div className="mt-3">
-                <p className="text-[10px] text-gray-400 uppercase tracking-wide">
-                  Supplier
-                </p>
-
-                <p className="text-xs font-semibold text-gray-600">
-                  UOS Travel
-                </p>
-              </div>
-
               {/* BUTTON */}
               <button
                 onClick={() => handleInquiry(pkg)}
@@ -230,7 +213,6 @@ Please send me the complete package details. Thank you!`
           ))}
 
         </div>
-
       </div>
     </main>
   );
