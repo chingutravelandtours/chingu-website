@@ -100,7 +100,7 @@ const packages: Package[] = [
     title: "Chongqing + Zhangjiajie + Shanghai",
     subtitle: "Pure Fun",
     duration: "6D5N",
-    dates: "Nov. 10–15, 2026",
+    dates: "Dec. 22–27, 2026",
     city: "MNL",
     price: 699 * USD_TO_PHP,
     minimum: 20,
