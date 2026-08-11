@@ -1,7 +1,6 @@
 "use client";
 
 type Package = {
-  theme: "red" | "blue";
   title: string;
   subtitle: string;
   duration: string;
@@ -12,15 +11,9 @@ type Package = {
   slots?: number;
 };
 
-/*
-  RED PACKAGES
-  =========================
-  These are the packages you want
-  displayed with RED styling.
-*/
-const redPackages: Package[] = [
+const packages: Package[] = [
+  // POLAR PACKAGES
   {
-    theme: "red",
     title: "Chongqing",
     subtitle: "Shopping Tour",
     duration: "5D3N",
@@ -29,7 +22,6 @@ const redPackages: Package[] = [
       "Discover Chongqing with an exciting shopping tour experience.",
   },
   {
-    theme: "red",
     title: "Avatar Zhangjiajie",
     subtitle: "Shopping Tour",
     duration: "6D5N",
@@ -38,7 +30,6 @@ const redPackages: Package[] = [
       "Explore the breathtaking landscapes of Zhangjiajie.",
   },
   {
-    theme: "red",
     title: "Avatar Zhangjiajie + Fenghuang",
     subtitle: "Pure Fun",
     duration: "6D5N",
@@ -47,7 +38,6 @@ const redPackages: Package[] = [
       "Experience the stunning scenery of Zhangjiajie and historic Fenghuang.",
   },
   {
-    theme: "red",
     title: "Chongqing + Zhangjiajie + Shanghai",
     subtitle: "Shopping Tour",
     duration: "7D6N",
@@ -55,15 +45,9 @@ const redPackages: Package[] = [
     description:
       "Experience three exciting Chinese destinations in one unforgettable trip.",
   },
-];
 
-/*
-  BLUE PACKAGES
-  =========================
-*/
-const bluePackages: Package[] = [
+  // UOS PACKAGES
   {
-    theme: "blue",
     title: "Avatar + Furong",
     subtitle: "No Shopping",
     duration: "7D6N",
@@ -73,7 +57,6 @@ const bluePackages: Package[] = [
     slots: 20,
   },
   {
-    theme: "blue",
     title: "Shanghai + Anji",
     subtitle: "Skiing Tour",
     duration: "6D5N",
@@ -83,7 +66,6 @@ const bluePackages: Package[] = [
     slots: 60,
   },
   {
-    theme: "blue",
     title: "Harbin",
     subtitle: "No Shopping",
     duration: "6D5N",
@@ -93,7 +75,6 @@ const bluePackages: Package[] = [
     slots: 18,
   },
   {
-    theme: "blue",
     title: "Charming Yunnan",
     subtitle: "No Shopping",
     duration: "9D8N",
@@ -103,7 +84,6 @@ const bluePackages: Package[] = [
     slots: 12,
   },
   {
-    theme: "blue",
     title: "Beijing",
     subtitle: "Shopping Tour",
     duration: "5D4N",
@@ -113,7 +93,6 @@ const bluePackages: Package[] = [
     slots: 17,
   },
   {
-    theme: "blue",
     title: "Shanghai Mini Kyoto",
     subtitle: "Shopping Tour",
     duration: "5D4N",
@@ -123,7 +102,6 @@ const bluePackages: Package[] = [
     slots: 32,
   },
   {
-    theme: "blue",
     title: "Avatar Furong Town",
     subtitle: "Charter Flight",
     duration: "5D4N",
@@ -133,7 +111,6 @@ const bluePackages: Package[] = [
     slots: 145,
   },
   {
-    theme: "blue",
     title: "Beijing Skiing",
     subtitle: "Pure Fun",
     duration: "6D5N",
@@ -143,7 +120,6 @@ const bluePackages: Package[] = [
     slots: 13,
   },
   {
-    theme: "blue",
     title: "Shanghai Mini Kyoto",
     subtitle: "Shopping Tour",
     duration: "6D5N",
@@ -153,7 +129,6 @@ const bluePackages: Package[] = [
     slots: 60,
   },
   {
-    theme: "blue",
     title: "Avatar Furong + Xiamen",
     subtitle: "Shopping Tour",
     duration: "7D6N",
@@ -162,16 +137,6 @@ const bluePackages: Package[] = [
     price: "₱31,437",
     slots: 18,
   },
-];
-
-/*
-  COMBINED LIST
-  =========================
-  Red + Blue in ONE list.
-*/
-const packages: Package[] = [
-  ...redPackages,
-  ...bluePackages,
 ];
 
 export default function ChinaToursPage() {
@@ -215,166 +180,160 @@ Please send me the complete package details. Thank you!`
           </p>
         </div>
 
-        {/* COMBINED PACKAGES */}
+        {/* ALL CHINA PACKAGES */}
         <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-5">
 
-          {packages.map((pkg, index) => {
-            const isRed = pkg.theme === "red";
+          {packages.map((pkg, index) => (
+            <div
+              key={`${pkg.title}-${pkg.duration}-${index}`}
+              className="
+                bg-white
+                rounded-2xl
+                border-2
+                border-blue-100
+                shadow-md
+                p-5
+                hover:shadow-xl
+                hover:-translate-y-1
+                transition-all
+                duration-300
+                flex
+                flex-col
+              "
+            >
 
-            return (
-              <div
-                key={`${pkg.title}-${pkg.duration}-${index}`}
-                className={`
-                  rounded-2xl
-                  p-5
-                  shadow-md
-                  hover:shadow-xl
-                  hover:-translate-y-1
-                  transition-all
-                  duration-300
-                  flex
-                  flex-col
-                  bg-white
-                  border-2
-                  ${
-                    isRed
-                      ? "border-red-100"
-                      : "border-blue-100"
-                  }
-                `}
-              >
+              {/* DURATION + AVAILABILITY */}
+              <div className="flex items-center justify-between gap-2">
 
-                {/* DURATION */}
-                <div className="flex items-center justify-between gap-2">
+                <span
+                  className="
+                    text-xs
+                    font-bold
+                    px-3
+                    py-1.5
+                    rounded-full
+                    bg-blue-50
+                    text-blue-600
+                  "
+                >
+                  {pkg.duration}
+                </span>
 
+                {pkg.slots !== undefined ? (
                   <span
-                    className={`
+                    className="
                       text-xs
-                      font-bold
-                      px-3
+                      font-semibold
+                      px-2.5
                       py-1.5
                       rounded-full
-                      ${
-                        isRed
-                          ? "bg-red-50 text-red-600"
-                          : "bg-blue-50 text-blue-600"
-                      }
-                    `}
+                      bg-blue-50
+                      text-blue-600
+                    "
                   >
-                    {pkg.duration}
+                    {pkg.slots} slots
                   </span>
-
-                  {/* SLOTS / AVAILABILITY */}
-                  {pkg.slots !== undefined ? (
-                    <span className="text-xs font-semibold text-green-600 bg-green-50 px-2.5 py-1.5 rounded-full">
-                      {pkg.slots} slots
-                    </span>
-                  ) : (
-                    <span
-                      className={`
-                        text-xs
-                        font-semibold
-                        px-2.5
-                        py-1.5
-                        rounded-full
-                        ${
-                          isRed
-                            ? "bg-red-50 text-red-600"
-                            : "bg-blue-50 text-blue-600"
-                        }
-                      `}
-                    >
-                      Available
-                    </span>
-                  )}
-
-                </div>
-
-                {/* TITLE */}
-                <h2 className="mt-4 text-lg font-bold text-gray-900 min-h-[52px]">
-                  {pkg.title}
-                </h2>
-
-                {/* SUBTITLE */}
-                <p className="mt-2 text-xs text-gray-400">
-                  {pkg.subtitle}
-                </p>
-
-                {/* DESCRIPTION */}
-                {pkg.description && (
-                  <p className="mt-5 text-sm text-gray-500 leading-relaxed min-h-[60px]">
-                    {pkg.description}
-                  </p>
+                ) : (
+                  <span
+                    className="
+                      text-xs
+                      font-semibold
+                      px-2.5
+                      py-1.5
+                      rounded-full
+                      bg-blue-50
+                      text-blue-600
+                    "
+                  >
+                    Available
+                  </span>
                 )}
-
-                {/* DEPARTURE */}
-                {pkg.dates && (
-                  <div className="mt-5">
-                    <p className="text-[10px] text-gray-400 uppercase tracking-wide">
-                      Departure
-                    </p>
-
-                    <p className="mt-1 text-sm font-semibold text-gray-700">
-                      {pkg.dates}
-                    </p>
-                  </div>
-                )}
-
-                {/* DEPARTURE CITY */}
-                {pkg.city && (
-                  <div className="mt-3">
-                    <p className="text-[10px] text-gray-400 uppercase tracking-wide">
-                      Departure City
-                    </p>
-
-                    <p className="mt-1 text-sm font-semibold text-gray-700">
-                      {pkg.city}
-                    </p>
-                  </div>
-                )}
-
-                {/* PRICE */}
-                <div className="mt-auto pt-5">
-
-                  <p className="text-[10px] text-gray-400 uppercase tracking-wide">
-                    Package From
-                  </p>
-
-                  <p className="mt-1 text-2xl font-bold text-gray-900">
-                    {pkg.price}
-                  </p>
-
-                  <p className="text-[10px] text-gray-400">
-                    per person
-                  </p>
-
-                </div>
-
-                {/* INQUIRE BUTTON */}
-                <button
-                  onClick={() => handleInquiry(pkg)}
-                  className={`
-                    mt-5
-                    w-full
-                    py-2.5
-                    rounded-xl
-                    text-sm
-                    font-semibold
-                    border-2
-                    transition
-                    ${
-                      isRed
-                        ? "border-red-600 text-red-600 hover:bg-red-600 hover:text-white"
-                        : "border-blue-600 text-blue-600 hover:bg-blue-600 hover:text-white"
-                    }
-                  `}
-                >
-                  Inquire Now →
-                </button>
 
               </div>
-            );
-          })}
+
+              {/* TITLE */}
+              <h2 className="mt-4 text-lg font-bold text-gray-900 min-h-[52px]">
+                {pkg.title}
+              </h2>
+
+              {/* TOUR TYPE */}
+              <p className="mt-2 text-xs text-gray-400">
+                {pkg.subtitle}
+              </p>
+
+              {/* DESCRIPTION */}
+              {pkg.description && (
+                <p className="mt-5 text-sm text-gray-500 leading-relaxed min-h-[60px]">
+                  {pkg.description}
+                </p>
+              )}
+
+              {/* DEPARTURE */}
+              {pkg.dates && (
+                <div className="mt-5">
+                  <p className="text-[10px] text-gray-400 uppercase tracking-wide">
+                    Departure
+                  </p>
+
+                  <p className="mt-1 text-sm font-semibold text-gray-700">
+                    {pkg.dates}
+                  </p>
+                </div>
+              )}
+
+              {/* DEPARTURE CITY */}
+              {pkg.city && (
+                <div className="mt-3">
+                  <p className="text-[10px] text-gray-400 uppercase tracking-wide">
+                    Departure City
+                  </p>
+
+                  <p className="mt-1 text-sm font-semibold text-gray-700">
+                    {pkg.city}
+                  </p>
+                </div>
+              )}
+
+              {/* PRICE */}
+              <div className="mt-auto pt-5">
+
+                <p className="text-[10px] text-gray-400 uppercase tracking-wide">
+                  Package From
+                </p>
+
+                <p className="mt-1 text-2xl font-bold text-gray-900">
+                  {pkg.price}
+                </p>
+
+                <p className="text-[10px] text-gray-400">
+                  per person
+                </p>
+
+              </div>
+
+              {/* INQUIRE BUTTON */}
+              <button
+                onClick={() => handleInquiry(pkg)}
+                className="
+                  mt-5
+                  w-full
+                  py-2.5
+                  rounded-xl
+                  text-sm
+                  font-semibold
+                  border-2
+                  border-blue-600
+                  text-blue-600
+                  hover:bg-blue-600
+                  hover:text-white
+                  transition
+                "
+              >
+                Inquire Now →
+              </button>
+
+            </div>
+          ))}
 
         </div>
 
