@@ -67,114 +67,33 @@ const packages: Package[] = [
     title: "Chongqing + Zhangjiajie + Shanghai",
     subtitle: "Pure Fun",
     duration: "6D5N",
-    dates: "Oct. 27–Nov. 1, 2026",
+    dates: "Sep. 1–6, 2026",
     city: "MNL",
-    price: 629 * USD_TO_PHP,
+    price: 799 * USD_TO_PHP,
     minimum: 10,
-    deposit: 400 * USD_TO_PHP,
+    deposit: 200 * USD_TO_PHP,
   },
 
-  // =========================
-  // UOS PACKAGES
-  // =========================
-  {
-    title: "Avatar + Furong",
-    subtitle: "No Shopping",
-    duration: "7D6N",
-    dates: "Jan. 6–12, 2027",
-    city: "MNL",
-    price: 37737,
-    slots: 20,
-  },
-
-  {
-    title: "Shanghai + Anji",
-    subtitle: "Skiing Tour",
-    duration: "6D5N",
-    dates: "Jan. 6–11, 2027",
-    city: "MNL",
-    price: 43974,
-    slots: 60,
-  },
-
-  {
-    title: "Harbin",
-    subtitle: "No Shopping",
-    duration: "6D5N",
-    dates: "Jan. 6–11, 2027",
-    city: "MNL",
-    price: 87444,
-    slots: 18,
-  },
-
-  {
-    title: "Charming Yunnan",
-    subtitle: "No Shopping",
-    duration: "9D8N",
-    dates: "Jan. 7–15, 2027",
-    city: "MNL",
-    price: 87444,
-    slots: 12,
-  },
-
-  {
-    title: "Beijing",
-    subtitle: "Shopping Tour",
-    duration: "5D4N",
-    dates: "Feb. 19–23, 2027",
-    city: "MNL",
-    price: 27657,
-    slots: 17,
-  },
-
-  {
-    title: "Shanghai Mini Kyoto",
-    subtitle: "Shopping Tour",
-    duration: "5D4N",
-    dates: "Feb. 20–24, 2027",
-    city: "MNL",
-    price: 27027,
-    slots: 32,
-  },
-
-  {
-    title: "Avatar Furong Town",
-    subtitle: "Charter Flight",
-    duration: "5D4N",
-    dates: "Feb. 20–24, 2027",
-    city: "MNL",
-    price: 23877,
-    slots: 145,
-  },
-
-  {
-    title: "Beijing Skiing",
+ {
+    title: "Chongqing + Zhangjiajie + Shanghai",
     subtitle: "Pure Fun",
     duration: "6D5N",
-    dates: "Feb. 21–26, 2027",
+    dates: "Oct. 27–Nov. 1, 2026",
     city: "MNL",
-    price: 32697,
-    slots: 13,
+    price: 779 * USD_TO_PHP,
+    minimum: 15,
+    deposit: 200 * USD_TO_PHP,
   },
 
   {
-    title: "Shanghai Mini Kyoto",
-    subtitle: "Shopping Tour",
+    title: "Chongqing + Zhangjiajie + Shanghai",
+    subtitle: "Pure Fun",
     duration: "6D5N",
-    dates: "Feb. 21–26, 2027",
+    dates: "Nov. 10–15, 2026",
     city: "MNL",
-    price: 28287,
-    slots: 60,
-  },
-
-  {
-    title: "Avatar Furong + Xiamen",
-    subtitle: "Shopping Tour",
-    duration: "7D6N",
-    dates: "Feb. 26–Mar. 4, 2027",
-    city: "MNL",
-    price: 31437,
-    slots: 18,
+    price: 749 * USD_TO_PHP,
+    minimum: 20,
+    deposit: 200 * USD_TO_PHP,
   },
 ];
 
