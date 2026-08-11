@@ -8,7 +8,7 @@ const packages = [
     duration: "5D4N",
     date: "Oct. 9–13, 2026",
     city: "MNL",
-    usd: 899,
+    usd: 839,
     slots: 7,
   },
   {
@@ -16,7 +16,7 @@ const packages = [
     duration: "5D4N",
     date: "Oct. 15–19, 2026",
     city: "MNL",
-    usd: 899,
+    usd: 839,
     slots: 6,
   },
   {
@@ -24,7 +24,7 @@ const packages = [
     duration: "5D4N",
     date: "Nov. 19–23, 2026",
     city: "CEB",
-    usd: 899,
+    usd: 839,
     slots: 4,
   },
   {
@@ -32,7 +32,7 @@ const packages = [
     duration: "5D4N",
     date: "Nov. 25–29, 2026",
     city: "MNL",
-    usd: 899,
+    usd: 839,
     slots: 1,
   },
   {
@@ -40,7 +40,7 @@ const packages = [
     duration: "5D4N",
     date: "Nov. 25–29, 2026",
     city: "CEB",
-    usd: 1499,
+    usd: 1409,
     slots: 30,
   },
   {
@@ -48,7 +48,7 @@ const packages = [
     duration: "8D7N",
     date: "Nov. 26–Dec. 3, 2026",
     city: "CEB",
-    usd: 2488,
+    usd: 2280,
     slots: 30,
   },
   {
@@ -56,7 +56,7 @@ const packages = [
     duration: "5D4N",
     date: "Dec. 10–14, 2026",
     city: "CEB",
-    usd: 899,
+    usd: 839,
     slots: 22,
   },
   {
@@ -64,7 +64,7 @@ const packages = [
     duration: "5D4N",
     date: "Dec. 12–16, 2026",
     city: "MNL",
-    usd: 859,
+    usd: 799,
     slots: 2,
   },
   {
@@ -80,7 +80,7 @@ const packages = [
     duration: "5D4N",
     date: "Jan. 13–17, 2027",
     city: "DVO",
-    usd: 999,
+    usd: 939,
     slots: 32,
   },
   {
@@ -88,7 +88,7 @@ const packages = [
     duration: "5D4N",
     date: "Jan. 14–18, 2027",
     city: "MNL",
-    usd: 899,
+    usd: 839,
     slots: 25,
   },
 ];
