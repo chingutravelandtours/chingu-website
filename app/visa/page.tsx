@@ -2,6 +2,7 @@
 
 import VisaCard from "./VisaCard";
 import { visaData } from "./visaData";
+^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
 export default function VisaPage() {
   return (
