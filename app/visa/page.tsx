@@ -1,3 +1,5 @@
+"use client";
+
 import VisaCard from "./VisaCard";
 import { visaData } from "./visaData";
 
