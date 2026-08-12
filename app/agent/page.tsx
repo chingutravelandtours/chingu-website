@@ -547,31 +547,6 @@ export default function AgentPage() {
         </div>
 
 
-        {/* APPLY BUTTON */}
-
-        <div className="mt-8 text-center">
-
-          <a
-            href="/agent/register"
-            className="
-              inline-block
-              bg-red-600
-              text-white
-              px-8
-              py-3
-              rounded-xl
-              font-semibold
-              hover:bg-red-700
-              transition
-              shadow-md
-            "
-          >
-            Apply as a Verified Travel Partner
-          </a>
-
-        </div>
-
-
         {/* FOOTER */}
 
         <p className="
