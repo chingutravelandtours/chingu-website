@@ -141,31 +141,31 @@ export default function AgentPage() {
             ">
 
               <svg
-                xmlns="http://www.w3.org/2000/svg"
-                viewBox="0 0 24 24"
-                fill="none"
-                stroke="currentColor"
-                strokeWidth="1.8"
-                className="w-7 h-7 text-red-600"
-              >
-                <path
-                  strokeLinecap="round"
-                  strokeLinejoin="round"
-                  d="M2.5 16.5 21 3l-5 8-6 2.5-7.5 3Z"
-                />
+  xmlns="http://www.w3.org/2000/svg"
+  viewBox="0 0 24 24"
+  fill="none"
+  stroke="currentColor"
+  strokeWidth="1.8"
+  className="w-7 h-7 text-red-600"
+>
+  <path
+    strokeLinecap="round"
+    strokeLinejoin="round"
+    d="M2 12L22 3L13 21L10 13L2 12Z"
+  />
 
-                <path
-                  strokeLinecap="round"
-                  strokeLinejoin="round"
-                  d="m9.5 13.5-2 6 5-5"
-                />
+  <path
+    strokeLinecap="round"
+    strokeLinejoin="round"
+    d="M10 13L22 3"
+  />
 
-                <path
-                  strokeLinecap="round"
-                  strokeLinejoin="round"
-                  d="M16 8.5 20 12"
-                />
-              </svg>
+  <path
+    strokeLinecap="round"
+    strokeLinejoin="round"
+    d="M10 13L7 19"
+  />
+</svg>
 
             </div>
 
