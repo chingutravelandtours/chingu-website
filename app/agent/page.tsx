@@ -1,30 +1,30 @@
 export default function AgentPage() {
   return (
-    <main className="min-h-screen bg-gray-50 flex items-center justify-center px-5">
+    <main className="min-h-screen bg-gray-50 flex items-center justify-center px-5 py-12">
 
-      <div className="text-center max-w-xl">
+      <div className="w-full max-w-5xl">
 
-        {/* LOGO / BRAND */}
-        <p className="text-red-600 font-semibold uppercase tracking-[4px] text-sm">
-          CHINGU Travel and Tours
-        </p>
+        {/* HEADER */}
+        <div className="text-center">
 
+          <p className="text-red-600 font-semibold uppercase tracking-[4px] text-sm">
+            CHINGU Travel and Tours
+          </p>
 
-        {/* TITLE */}
-        <h1 className="mt-4 text-4xl md:text-5xl font-bold text-gray-900">
-          B2B Agent Portal
-        </h1>
+          <h1 className="mt-4 text-4xl md:text-5xl font-bold text-gray-900">
+            B2B Agent Portal
+          </h1>
 
+          <p className="mt-4 text-gray-500 text-lg">
+            Welcome to CHINGU Travel and Tours Agent Portal.
+            Manage tour packages, visa assistance, bookings, and customer requests.
+          </p>
 
-        <p className="mt-4 text-gray-500 text-lg">
-          Welcome to CHINGU Travel and Tours Agent Portal.
-          Access tour packages, visa assistance, hotel bookings,
-          and customer requests in one place.
-        </p>
+        </div>
 
 
         {/* BUTTONS */}
-        <div className="mt-8 flex flex-col sm:flex-row gap-4 justify-center">
+        <div className="mt-10 flex flex-col sm:flex-row justify-center gap-5">
 
 
           {/* LOGIN */}
@@ -33,12 +33,14 @@ export default function AgentPage() {
             className="
               bg-red-600
               text-white
-              px-8
-              py-3
+              px-10
+              py-4
               rounded-xl
               font-semibold
+              text-center
               hover:bg-red-700
               transition
+              shadow-md
             "
           >
             Agent Login
@@ -52,10 +54,11 @@ export default function AgentPage() {
               border-2
               border-red-600
               text-red-600
-              px-8
-              py-3
+              px-10
+              py-4
               rounded-xl
               font-semibold
+              text-center
               hover:bg-red-600
               hover:text-white
               transition
@@ -70,43 +73,100 @@ export default function AgentPage() {
 
         {/* FEATURES */}
         <div className="
-          mt-10
+          mt-12
           grid
           grid-cols-1
-          sm:grid-cols-3
-          gap-4
+          md:grid-cols-3
+          gap-6
         ">
 
 
-          <div className="bg-white rounded-xl shadow p-5">
-            <h3 className="font-bold text-gray-900">
+          <div className="
+            bg-white
+            rounded-2xl
+            shadow-md
+            border
+            border-gray-100
+            p-6
+            text-center
+          ">
+
+            <div className="text-3xl">
+              ✈️
+            </div>
+
+            <h2 className="mt-4 font-bold text-gray-900">
               Tour Packages
-            </h3>
-            <p className="text-sm text-gray-500 mt-2">
-              View available destinations and rates.
+            </h2>
+
+            <p className="mt-2 text-sm text-gray-500">
+              View available destinations and agent rates.
             </p>
+
           </div>
 
 
-          <div className="bg-white rounded-xl shadow p-5">
-            <h3 className="font-bold text-gray-900">
+
+          <div className="
+            bg-white
+            rounded-2xl
+            shadow-md
+            border
+            border-gray-100
+            p-6
+            text-center
+          ">
+
+            <div className="text-3xl">
+              📄
+            </div>
+
+            <h2 className="mt-4 font-bold text-gray-900">
               Visa Assistance
-            </h3>
-            <p className="text-sm text-gray-500 mt-2">
-              Submit and track visa requests.
+            </h2>
+
+            <p className="mt-2 text-sm text-gray-500">
+              Submit and monitor visa applications.
             </p>
+
           </div>
 
 
-          <div className="bg-white rounded-xl shadow p-5">
-            <h3 className="font-bold text-gray-900">
+
+          <div className="
+            bg-white
+            rounded-2xl
+            shadow-md
+            border
+            border-gray-100
+            p-6
+            text-center
+          ">
+
+            <div className="text-3xl">
+              🏨
+            </div>
+
+            <h2 className="mt-4 font-bold text-gray-900">
               Booking Support
-            </h3>
-            <p className="text-sm text-gray-500 mt-2">
-              Manage customer inquiries.
+            </h2>
+
+            <p className="mt-2 text-sm text-gray-500">
+              Manage customer bookings and requests.
             </p>
+
           </div>
 
+
+        </div>
+
+
+        {/* FOOTER NOTE */}
+        <div className="text-center mt-10">
+
+          <p className="text-sm text-gray-400">
+            Already registered? Login to access your agent dashboard.
+          </p>
 
         </div>
 
