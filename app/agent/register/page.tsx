@@ -1,6 +1,7 @@
 "use client";
 
 import { useState } from "react";
+import type { ChangeEvent, FormEvent } from "react";
 
 export default function AgentRegisterPage() {
   const [form, setForm] = useState({
@@ -12,14 +13,14 @@ export default function AgentRegisterPage() {
     confirmPassword: "",
   });
 
-  const handleChange = (e: React.ChangeEvent<HTMLInputElement>) => {
+  const handleChange = (e: ChangeEvent<HTMLInputElement>) => {
     setForm({
       ...form,
       [e.target.name]: e.target.value,
     });
   };
 
-  const handleSubmit = (e: React.FormEvent) => {
+  const handleSubmit = (e: FormEvent) => {
     e.preventDefault();
 
     if (form.password !== form.confirmPassword) {
@@ -57,7 +58,7 @@ export default function AgentRegisterPage() {
         </div>
 
 
-        {/* FORM CARD */}
+        {/* CARD */}
         <div className="
           bg-white
           rounded-2xl
@@ -70,7 +71,7 @@ export default function AgentRegisterPage() {
           <form onSubmit={handleSubmit} className="space-y-5">
 
 
-            {/* NAME */}
+            {/* FULL NAME */}
             <div>
               <label className="text-sm font-semibold text-gray-700">
                 Full Name
@@ -86,6 +87,7 @@ export default function AgentRegisterPage() {
                   mt-2
                   w-full
                   border
+                  border-gray-200
                   rounded-xl
                   px-4
                   py-3
@@ -112,6 +114,7 @@ export default function AgentRegisterPage() {
                   mt-2
                   w-full
                   border
+                  border-gray-200
                   rounded-xl
                   px-4
                   py-3
@@ -139,6 +142,7 @@ export default function AgentRegisterPage() {
                   mt-2
                   w-full
                   border
+                  border-gray-200
                   rounded-xl
                   px-4
                   py-3
@@ -165,6 +169,7 @@ export default function AgentRegisterPage() {
                   mt-2
                   w-full
                   border
+                  border-gray-200
                   rounded-xl
                   px-4
                   py-3
@@ -191,6 +196,7 @@ export default function AgentRegisterPage() {
                   mt-2
                   w-full
                   border
+                  border-gray-200
                   rounded-xl
                   px-4
                   py-3
@@ -201,7 +207,7 @@ export default function AgentRegisterPage() {
             </div>
 
 
-            {/* CONFIRM */}
+            {/* CONFIRM PASSWORD */}
             <div>
               <label className="text-sm font-semibold text-gray-700">
                 Confirm Password
@@ -217,6 +223,7 @@ export default function AgentRegisterPage() {
                   mt-2
                   w-full
                   border
+                  border-gray-200
                   rounded-xl
                   px-4
                   py-3
@@ -227,7 +234,7 @@ export default function AgentRegisterPage() {
             </div>
 
 
-            {/* BUTTON */}
+            {/* SUBMIT */}
             <button
               type="submit"
               className="
@@ -250,12 +257,14 @@ export default function AgentRegisterPage() {
 
           <p className="text-center text-sm text-gray-500 mt-6">
             Already have an account?{" "}
+
             <a
               href="/agent/login"
               className="text-red-600 font-semibold hover:underline"
             >
               Login
             </a>
+
           </p>
 
 
@@ -266,4 +275,3 @@ export default function AgentRegisterPage() {
     </main>
   );
 }
-
