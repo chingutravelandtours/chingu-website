@@ -1,61 +1,118 @@
-// app/visa/VisaCard.tsx
-"use client";
+type Props = {
+  visa: {
+    country: string;
+    image: string;
+    title: string;
+    description: string;
+    processing: string;
+    fee: string;
+  };
+};
 
-import React from "react";
-import { VisaInfo } from "./visaData";
-
-interface VisaCardProps {
-  visa: VisaInfo;
-}
-
-export default function VisaCard({ visa }: VisaCardProps) {
+export default function VisaCard({ visa }: Props) {
   return (
-    <div className="bg-white rounded-2xl shadow-md border border-gray-100 overflow-hidden hover:shadow-xl transition-shadow duration-300 flex flex-col justify-between p-6">
-      <div>
-        {/* Country Name & Badge */}
-        <div className="flex items-center justify-between mb-3">
-          <h2 className="text-xl font-bold text-gray-900">
+    <div
+      className="
+        bg-white
+        rounded-2xl
+        overflow-hidden
+        shadow-md
+        border
+        border-gray-100
+        hover:-translate-y-2
+        transition
+        duration-300
+      "
+    >
+
+      {/* IMAGE */}
+      <img
+        src={visa.image}
+        alt={visa.country}
+        className="
+          w-full
+          h-44
+          object-cover
+        "
+      />
+
+      <div className="p-5">
+
+        <div className="flex justify-between items-start">
+
+          <h2 className="
+            text-xl
+            font-bold
+            text-gray-900
+          ">
             {visa.country}
           </h2>
-          <span className="text-xs font-semibold text-red-600 bg-red-50 px-2.5 py-1 rounded-full">
-            {visa.price}
+
+
+          <span className="
+            bg-red-50
+            text-red-600
+            text-xs
+            font-bold
+            px-3
+            py-1
+            rounded-full
+          ">
+            {visa.fee}
           </span>
+
         </div>
 
-        {/* Title */}
-        <h3 className="text-sm font-semibold text-gray-700 mb-2">
+
+        <h3 className="
+          mt-4
+          font-semibold
+          text-gray-800
+        ">
           {visa.title}
         </h3>
 
-        {/* Description */}
-        <p className="text-xs text-gray-500 leading-relaxed mb-4">
+
+        <p className="
+          mt-2
+          text-sm
+          text-gray-500
+          leading-relaxed
+        ">
           {visa.description}
         </p>
 
-        {/* Requirements (Kung mayroon sa data) */}
-        {visa.requirements && visa.requirements.length > 0 && (
-          <div className="mt-3 pt-3 border-t border-gray-100">
-            <p className="text-xs font-medium text-gray-600 mb-1">
-              Key Requirements:
-            </p>
-            <ul className="list-disc list-inside text-xs text-gray-500 space-y-1">
-              {visa.requirements.map((req, index) => (
-                <li key={index}>{req}</li>
-              ))}
-            </ul>
-          </div>
-        )}
+
+        <div className="
+          mt-4
+          text-sm
+          text-gray-600
+        ">
+          <span className="font-semibold">
+            Processing:
+          </span>{" "}
+          {visa.processing}
+        </div>
+
+
+        <button
+          className="
+            mt-5
+            w-full
+            bg-red-600
+            text-white
+            py-3
+            rounded-xl
+            font-semibold
+            hover:bg-red-700
+            transition
+          "
+        >
+          Apply Now →
+        </button>
+
       </div>
 
-      {/* Action Button */}
-      <div className="mt-6">
-        <button
-          onClick={() => alert(`Inquire for ${visa.country} Visa`)}
-          className="w-full bg-red-600 hover:bg-red-700 text-white font-medium py-2 px-4 rounded-xl text-sm transition-colors duration-200"
-        >
-          Apply Now
-        </button>
-      </div>
     </div>
   );
 }
