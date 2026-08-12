@@ -140,7 +140,7 @@ export default function AgentPage() {
               justify-center
             ">
 
-              <svg
+             <svg
   xmlns="http://www.w3.org/2000/svg"
   viewBox="0 0 24 24"
   fill="none"
@@ -151,19 +151,19 @@ export default function AgentPage() {
   <path
     strokeLinecap="round"
     strokeLinejoin="round"
-    d="M2 12L22 3L13 21L10 13L2 12Z"
+    d="M21 3L3 10.5l7 2.5 2.5 7L21 3Z"
   />
 
   <path
     strokeLinecap="round"
     strokeLinejoin="round"
-    d="M10 13L22 3"
+    d="M10 13l5-5"
   />
 
   <path
     strokeLinecap="round"
     strokeLinejoin="round"
-    d="M10 13L7 19"
+    d="M7 17l3-4"
   />
 </svg>
 
