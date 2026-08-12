@@ -21,7 +21,7 @@ export default function Navbar() {
           {/* HOME */}
           <a
             href="/"
-            className="hover:text-red-600 font-medium transition"
+            className="text-gray-800 hover:text-red-600 font-medium transition"
           >
             Home
           </a>
@@ -29,7 +29,7 @@ export default function Navbar() {
           {/* VISA */}
           <a
             href="/visa"
-            className="hover:text-red-600 font-medium transition"
+            className="text-gray-800 hover:text-red-600 font-medium transition"
           >
             Visa
           </a>
@@ -37,7 +37,7 @@ export default function Navbar() {
           {/* AGENT PORTAL */}
           <a
             href="/agent"
-            className="hover:text-red-600 font-medium transition"
+            className="text-gray-800 hover:text-red-600 font-medium transition"
           >
             Agent Portal
           </a>
@@ -45,7 +45,7 @@ export default function Navbar() {
           {/* CONTACT US */}
           <button
             onClick={() => setShowContact(true)}
-            className="hover:text-red-600 font-medium transition"
+            className="text-gray-800 hover:text-red-600 font-medium transition"
           >
             Contact Us
           </button>
