@@ -108,7 +108,7 @@ Thank you.
         rounded-2xl
         shadow-md
         border
-        border-gray-100
+        border-black
         p-8
         ">
 
