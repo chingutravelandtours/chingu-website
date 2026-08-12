@@ -110,11 +110,11 @@ export default function AgentRegisterPage() {
           </p>
 
           <h1 className="mt-3 text-4xl font-bold text-gray-900">
-            Agent Registration
+           B2B Registration
           </h1>
 
           <p className="mt-3 text-gray-500">
-            Submit your details for B2B agent verification.
+            Submit your details for B2B Travel Partners verification.
           </p>
 
         </div>
