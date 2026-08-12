@@ -3,6 +3,7 @@
 import { useState } from "react";
 
 export default function AgentRegisterPage() {
+
   const [form, setForm] = useState({
     name: "",
     agency: "",
@@ -10,40 +11,98 @@ export default function AgentRegisterPage() {
     phone: "",
     password: "",
     confirmPassword: "",
+
+    address: "",
+    dti: "",
+    permit: "",
+    dot: "",
+
+    governmentId: "",
+    businessRegistration: "",
+    mayorPermit: "",
+    dotCertificate: "",
+    authorizationLetter: "",
+
+    agreement: false,
   });
+
 
   const handleChange = (
     e: React.ChangeEvent<HTMLInputElement>
   ) => {
-    const { name, value } = e.target;
+
+    const { name, value, type, checked } = e.target;
 
     setForm((prev) => ({
       ...prev,
-      [name]: value,
+      [name]:
+        type === "checkbox"
+        ? checked
+        : value,
     }));
+
   };
 
-  const handleSubmit = (e: React.FormEvent<HTMLFormElement>) => {
+
+  const handleSubmit = (
+    e: React.FormEvent<HTMLFormElement>
+  ) => {
+
     e.preventDefault();
 
-    if (form.password !== form.confirmPassword) {
+
+    if(form.password !== form.confirmPassword){
+
       alert("Passwords do not match.");
       return;
+
     }
 
+
+    if(!form.agreement){
+
+      alert("Please accept the verification agreement.");
+      return;
+
+    }
+
+
     alert(
-      "Registration submitted successfully! Your account is pending approval."
+      "Registration submitted. Your account is pending verification."
     );
 
-    console.log("Agent Registration:", form);
+
+    console.log(form);
+
   };
 
+
+
+  const inputClass = `
+    mt-2
+    w-full
+    bg-white
+    text-black
+    border
+    border-gray-300
+    rounded-xl
+    px-4
+    py-3
+    outline-none
+    focus:border-red-500
+    focus:ring-2
+    focus:ring-red-100
+  `;
+
+
+
   return (
+
     <main className="min-h-screen bg-gray-50 flex items-center justify-center px-5 py-12">
 
       <div className="w-full max-w-lg">
 
-        {/* HEADER */}
+
         <div className="text-center mb-8">
 
           <p className="text-red-600 font-semibold uppercase tracking-[4px] text-sm">
@@ -55,269 +114,266 @@ export default function AgentRegisterPage() {
           </h1>
 
           <p className="mt-3 text-gray-500">
-            Create your B2B travel agent account.
+            Submit your details for B2B agent verification.
           </p>
 
         </div>
 
 
-        {/* FORM CARD */}
-        <div className="bg-white rounded-2xl shadow-md border border-gray-200 p-8">
 
-          <form onSubmit={handleSubmit} className="space-y-5">
-
-            {/* FULL NAME */}
-            <div>
-              <label
-                htmlFor="name"
-                className="block text-sm font-semibold text-gray-700"
-              >
-                Full Name
-              </label>
-
-              <input
-                id="name"
-                type="text"
-                name="name"
-                value={form.name}
-                onChange={handleChange}
-                placeholder="Juan Dela Cruz"
-                required
-                className="
-                  mt-2
-                  w-full
-                  bg-white
-                  text-black
-                  border
-                  border-gray-300
-                  rounded-xl
-                  px-4
-                  py-3
-                  outline-none
-                  focus:border-red-500
-                  focus:ring-2
-                  focus:ring-red-100
-                "
-              />
-            </div>
+        <div className="
+          bg-white
+          rounded-2xl
+          shadow-md
+          border
+          p-8
+        ">
 
 
-            {/* AGENCY */}
-            <div>
-              <label
-                htmlFor="agency"
-                className="block text-sm font-semibold text-gray-700"
-              >
-                Agency Name
-              </label>
-
-              <input
-                id="agency"
-                type="text"
-                name="agency"
-                value={form.agency}
-                onChange={handleChange}
-                placeholder="ABC Travel Agency"
-                required
-                className="
-                  mt-2
-                  w-full
-                  bg-white
-                  text-black
-                  border
-                  border-gray-300
-                  rounded-xl
-                  px-4
-                  py-3
-                  outline-none
-                  focus:border-red-500
-                  focus:ring-2
-                  focus:ring-red-100
-                "
-              />
-            </div>
+        <form onSubmit={handleSubmit} className="space-y-5">
 
 
-            {/* EMAIL */}
-            <div>
-              <label
-                htmlFor="email"
-                className="block text-sm font-semibold text-gray-700"
-              >
-                Email Address
-              </label>
 
-              <input
-                id="email"
-                type="email"
-                name="email"
-                value={form.email}
-                onChange={handleChange}
-                placeholder="agent@email.com"
-                required
-                className="
-                  mt-2
-                  w-full
-                  bg-white
-                  text-black
-                  border
-                  border-gray-300
-                  rounded-xl
-                  px-4
-                  py-3
-                  outline-none
-                  focus:border-red-500
-                  focus:ring-2
-                  focus:ring-red-100
-                "
-              />
-            </div>
+          <h2 className="text-xl font-bold">
+            Personal Information
+          </h2>
 
 
-            {/* PHONE */}
-            <div>
-              <label
-                htmlFor="phone"
-                className="block text-sm font-semibold text-gray-700"
-              >
-                Mobile Number
-              </label>
-
-              <input
-                id="phone"
-                type="tel"
-                name="phone"
-                value={form.phone}
-                onChange={handleChange}
-                placeholder="+63 9XX XXX XXXX"
-                required
-                className="
-                  mt-2
-                  w-full
-                  bg-white
-                  text-black
-                  border
-                  border-gray-300
-                  rounded-xl
-                  px-4
-                  py-3
-                  outline-none
-                  focus:border-red-500
-                  focus:ring-2
-                  focus:ring-red-100
-                "
-              />
-            </div>
+          <input
+            name="name"
+            placeholder="Full Name"
+            value={form.name}
+            onChange={handleChange}
+            required
+            className={inputClass}
+          />
 
 
-            {/* PASSWORD */}
-            <div>
-              <label
-                htmlFor="password"
-                className="block text-sm font-semibold text-gray-700"
-              >
-                Password
-              </label>
-
-              <input
-                id="password"
-                type="password"
-                name="password"
-                value={form.password}
-                onChange={handleChange}
-                placeholder="Create a password"
-                required
-                className="
-                  mt-2
-                  w-full
-                  bg-white
-                  text-black
-                  border
-                  border-gray-300
-                  rounded-xl
-                  px-4
-                  py-3
-                  outline-none
-                  focus:border-red-500
-                  focus:ring-2
-                  focus:ring-red-100
-                "
-              />
-            </div>
+          <input
+            name="email"
+            type="email"
+            placeholder="Email Address"
+            value={form.email}
+            onChange={handleChange}
+            required
+            className={inputClass}
+          />
 
 
-            {/* CONFIRM PASSWORD */}
-            <div>
-              <label
-                htmlFor="confirmPassword"
-                className="block text-sm font-semibold text-gray-700"
-              >
-                Confirm Password
-              </label>
-
-              <input
-                id="confirmPassword"
-                type="password"
-                name="confirmPassword"
-                value={form.confirmPassword}
-                onChange={handleChange}
-                placeholder="Confirm your password"
-                required
-                className="
-                  mt-2
-                  w-full
-                  bg-white
-                  text-black
-                  border
-                  border-gray-300
-                  rounded-xl
-                  px-4
-                  py-3
-                  outline-none
-                  focus:border-red-500
-                  focus:ring-2
-                  focus:ring-red-100
-                "
-              />
-            </div>
+          <input
+            name="phone"
+            placeholder="Mobile Number"
+            value={form.phone}
+            onChange={handleChange}
+            required
+            className={inputClass}
+          />
 
 
-            {/* SUBMIT */}
-            <button
-              type="submit"
-              className="
-                w-full
-                bg-red-600
-                text-white
-                py-3
-                rounded-xl
-                font-semibold
-                hover:bg-red-700
-                transition
-              "
-            >
-              Submit Registration
-            </button>
 
-          </form>
+          <h2 className="text-xl font-bold mt-8">
+            Agency Information
+          </h2>
 
 
-          {/* LOGIN LINK */}
-          <p className="text-center text-sm text-gray-500 mt-6">
-            Already have an account?{" "}
+          <input
+            name="agency"
+            placeholder="Agency Name"
+            value={form.agency}
+            onChange={handleChange}
+            required
+            className={inputClass}
+          />
 
-            <a
-              href="/agent/login"
-              className="text-red-600 font-semibold hover:underline"
-            >
-              Agent Login
-            </a>
-          </p>
+
+          <input
+            name="address"
+            placeholder="Business Address"
+            value={form.address}
+            onChange={handleChange}
+            required
+            className={inputClass}
+          />
+
+
+          <input
+            name="dti"
+            placeholder="DTI / SEC Registration Number"
+            value={form.dti}
+            onChange={handleChange}
+            required
+            className={inputClass}
+          />
+
+
+          <input
+            name="permit"
+            placeholder="Business / Mayor's Permit Number"
+            value={form.permit}
+            onChange={handleChange}
+            required
+            className={inputClass}
+          />
+
+
+          <input
+            name="dot"
+            placeholder="DOT Accreditation Number (Optional)"
+            value={form.dot}
+            onChange={handleChange}
+            className={inputClass}
+          />
+
+
+
+          <h2 className="text-xl font-bold mt-8">
+            Upload Verification Documents
+          </h2>
+
+
+
+          <label className="block text-sm font-semibold">
+            Government ID
+          </label>
+
+          <input
+            type="file"
+            name="governmentId"
+            onChange={handleChange}
+            required
+            className={inputClass}
+          />
+
+
+
+          <label className="block text-sm font-semibold">
+            Business Registration (DTI/SEC)
+          </label>
+
+          <input
+            type="file"
+            name="businessRegistration"
+            onChange={handleChange}
+            required
+            className={inputClass}
+          />
+
+
+
+          <label className="block text-sm font-semibold">
+            Mayor's Permit
+          </label>
+
+          <input
+            type="file"
+            name="mayorPermit"
+            onChange={handleChange}
+            required
+            className={inputClass}
+          />
+
+
+
+          <label className="block text-sm font-semibold">
+            DOT Certificate (Optional)
+          </label>
+
+          <input
+            type="file"
+            name="dotCertificate"
+            onChange={handleChange}
+            className={inputClass}
+          />
+
+
+
+          <label className="block text-sm font-semibold">
+            Authorization Letter (Optional)
+          </label>
+
+          <input
+            type="file"
+            name="authorizationLetter"
+            onChange={handleChange}
+            className={inputClass}
+          />
+
+
+
+          <h2 className="text-xl font-bold mt-8">
+            Security
+          </h2>
+
+
+          <input
+            type="password"
+            name="password"
+            placeholder="Password"
+            value={form.password}
+            onChange={handleChange}
+            required
+            className={inputClass}
+          />
+
+
+          <input
+            type="password"
+            name="confirmPassword"
+            placeholder="Confirm Password"
+            value={form.confirmPassword}
+            onChange={handleChange}
+            required
+            className={inputClass}
+          />
+
+
+
+          <label className="flex gap-3 items-start text-sm text-gray-600">
+
+            <input
+              type="checkbox"
+              name="agreement"
+              checked={form.agreement}
+              onChange={handleChange}
+              className="mt-1"
+            />
+
+            <span>
+              I agree that CHINGU Travel and Tours may verify
+              my submitted information and documents for agent approval.
+            </span>
+
+          </label>
+
+
+
+
+          <button
+            type="submit"
+            className="
+              w-full
+              bg-red-600
+              text-white
+              py-3
+              rounded-xl
+              font-semibold
+              hover:bg-red-700
+            "
+          >
+            Submit For Verification
+          </button>
+
+
+
+        </form>
+
 
         </div>
 
       </div>
 
     </main>
+
   );
+
 }
