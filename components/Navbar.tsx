@@ -34,12 +34,12 @@ export default function Navbar() {
             Visa
           </a>
 
-          {/* AGENT PORTAL */}
+          {/* B2B PORTAL */}
           <a
             href="/agent"
             className="text-gray-800 hover:text-red-600 font-medium transition"
           >
-            Agent Portal
+            B2B Portal
           </a>
 
           {/* CONTACT US */}
