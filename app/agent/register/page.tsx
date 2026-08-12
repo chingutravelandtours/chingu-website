@@ -87,7 +87,7 @@ export default function AgentRegisterPage() {
                   mt-2
                   w-full
                   bg-white
-                  text-gray-900
+                  text-black
                   border
                   border-gray-300
                   rounded-xl
@@ -123,7 +123,7 @@ export default function AgentRegisterPage() {
                   mt-2
                   w-full
                   bg-white
-                  text-gray-900
+                  text-black
                   border
                   border-gray-300
                   rounded-xl
@@ -159,7 +159,7 @@ export default function AgentRegisterPage() {
                   mt-2
                   w-full
                   bg-white
-                  text-gray-900
+                  text-black
                   border
                   border-gray-300
                   rounded-xl
@@ -195,7 +195,7 @@ export default function AgentRegisterPage() {
                   mt-2
                   w-full
                   bg-white
-                  text-gray-900
+                  text-black
                   border
                   border-gray-300
                   rounded-xl
@@ -231,7 +231,7 @@ export default function AgentRegisterPage() {
                   mt-2
                   w-full
                   bg-white
-                  text-gray-900
+                  text-black
                   border
                   border-gray-300
                   rounded-xl
@@ -267,7 +267,7 @@ export default function AgentRegisterPage() {
                   mt-2
                   w-full
                   bg-white
-                  text-gray-900
+                  text-black
                   border
                   border-gray-300
                   rounded-xl
