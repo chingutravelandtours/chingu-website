@@ -1,15 +1,13 @@
 import Link from "next/link";
 
 export default function Navbar() {
-
   return (
-
     <nav
       className="
         w-full
         bg-white
-        px-8
-        py-4
+        px-10
+        py-5
         flex
         items-center
         justify-between
@@ -17,27 +15,20 @@ export default function Navbar() {
       "
     >
 
-
       {/* LOGO */}
 
       <Link href="/">
-
         <h1
           className="
             text-red-700
             font-bold
-            text-xl
-            hover:scale-105
-            transition-transform
-            duration-300
+            text-2xl
+            tracking-wide
           "
         >
           CHINGU Travel and Tours
         </h1>
-
       </Link>
-
-
 
 
 
@@ -47,13 +38,11 @@ export default function Navbar() {
         className="
           flex
           items-center
-          gap-8
+          gap-10
           text-gray-700
-          text-sm
           font-medium
         "
       >
-
 
         <Link
           href="/"
@@ -64,8 +53,6 @@ export default function Navbar() {
         >
           Home
         </Link>
-
-
 
 
         <Link
@@ -79,8 +66,6 @@ export default function Navbar() {
         </Link>
 
 
-
-
         <Link
           href="/contact"
           className="
@@ -92,17 +77,15 @@ export default function Navbar() {
         </Link>
 
 
-
-
-
         <Link
           href="/login"
           className="
             bg-red-600
             text-white
-            px-5
-            py-2
+            px-7
+            py-3
             rounded-full
+            font-semibold
             hover:bg-red-700
             transition
           "
@@ -113,10 +96,6 @@ export default function Navbar() {
 
       </div>
 
-
-
     </nav>
-
   );
-
 }
