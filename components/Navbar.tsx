@@ -4,34 +4,35 @@ export default function Navbar() {
 
   return (
 
-    <nav className="
-      w-full
-      bg-white
-      shadow-sm
-      px-8
-      py-4
-      flex
-      items-center
-      justify-between
-    ">
+    <nav
+      className="
+        w-full
+        bg-white
+        px-8
+        py-4
+        flex
+        items-center
+        justify-between
+        shadow-sm
+      "
+    >
 
 
       {/* LOGO */}
 
-      <Link href="/" >
+      <Link href="/">
 
         <h1
           className="
             text-red-700
             font-bold
-            text-2xl
-            tracking-wide
+            text-xl
             hover:scale-105
             transition-transform
             duration-300
           "
         >
-          CHINGU
+          CHINGU Travel and Tours
         </h1>
 
       </Link>
@@ -42,13 +43,16 @@ export default function Navbar() {
 
       {/* MENU */}
 
-      <div className="
-        flex
-        items-center
-        gap-8
-        text-gray-700
-        font-medium
-      ">
+      <div
+        className="
+          flex
+          items-center
+          gap-8
+          text-gray-700
+          text-sm
+          font-medium
+        "
+      >
 
 
         <Link
@@ -63,39 +67,17 @@ export default function Navbar() {
 
 
 
+
         <Link
-          href="/services"
+          href="/b2b"
           className="
             hover:text-red-600
             transition
           "
         >
-          Services
+          B2B Portal
         </Link>
 
-
-
-        <Link
-          href="/hotels"
-          className="
-            hover:text-red-600
-            transition
-          "
-        >
-          Hotels
-        </Link>
-
-
-
-        <Link
-          href="/visa"
-          className="
-            hover:text-red-600
-            transition
-          "
-        >
-          Visa
-        </Link>
 
 
 
@@ -112,25 +94,21 @@ export default function Navbar() {
 
 
 
+
         <Link
-
           href="/login"
-
           className="
             bg-red-600
             text-white
-            px-6
+            px-5
             py-2
             rounded-full
             hover:bg-red-700
             transition
           "
-
         >
           Login
-
         </Link>
-
 
 
       </div>
