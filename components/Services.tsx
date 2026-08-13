@@ -1,3 +1,13 @@
+import Link from "next/link";
+
+import { 
+  Plane, 
+  Hotel, 
+  FileCheck, 
+  Globe2,
+  Ship,
+} from "lucide-react"; 
+ 
 const services = [
   {
     title: "Flight Booking",
@@ -60,7 +70,13 @@ export default function Services() {
           </p> 
         </div> 
  
-        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-5 gap-6"> 
+        <div className="
+          grid 
+          grid-cols-1 
+          md:grid-cols-2 
+          lg:grid-cols-5 
+          gap-6
+        "> 
  
           {services.map((service) => { 
             const Icon = service.icon; 
@@ -68,26 +84,76 @@ export default function Services() {
             return ( 
               <div 
                 key={service.title} 
-                className="group rounded-2xl border border-gray-100 bg-white p-7 shadow-md hover:shadow-xl hover:-translate-y-2 transition-all duration-300" 
+                className="
+                  group 
+                  rounded-2xl 
+                  border 
+                  border-gray-100 
+                  bg-white 
+                  p-7 
+                  shadow-md 
+                  hover:shadow-xl 
+                  hover:-translate-y-2 
+                  transition-all 
+                  duration-300
+                " 
               > 
-                <div className="w-14 h-14 rounded-xl bg-red-50 flex items-center justify-center group-hover:bg-red-600 transition-colors duration-300"> 
+
+                <div className="
+                  w-14 
+                  h-14 
+                  rounded-xl 
+                  bg-red-50 
+                  flex 
+                  items-center 
+                  justify-center 
+                  group-hover:bg-red-600 
+                  transition-colors 
+                  duration-300
+                "> 
+
                   <Icon 
                     size={28} 
-                    className="text-red-600 group-hover:text-white transition-colors duration-300" 
-                  /> 
+                    className="
+                      text-red-600 
+                      group-hover:text-white 
+                      transition-colors 
+                      duration-300
+                    " 
+                  />
+
                 </div> 
  
-                <h3 className="mt-6 text-xl font-bold text-gray-900"> 
+                <h3 className="
+                  mt-6 
+                  text-xl 
+                  font-bold 
+                  text-gray-900
+                "> 
                   {service.title}
                 </h3> 
  
-                <p className="mt-3 text-gray-600 leading-relaxed"> 
+                <p className="
+                  mt-3 
+                  text-gray-600 
+                  leading-relaxed
+                "> 
                   {service.description}
                 </p> 
  
-                <button className="mt-5 text-red-600 font-semibold hover:text-red-700"> 
+                <Link
+                  href={service.link}
+                  className="
+                    mt-5
+                    inline-block
+                    text-red-600
+                    font-semibold
+                    hover:text-red-700
+                  "
+                >
                   Learn More →
-                </button> 
+                </Link>
+
               </div> 
             ); 
           })} 
