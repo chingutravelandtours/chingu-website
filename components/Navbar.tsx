@@ -58,7 +58,7 @@ export default function Navbar() {
 
 
         <Link
-          href="/agent/page"
+          href="/agent"
           className="
             hover:text-red-600
             transition
