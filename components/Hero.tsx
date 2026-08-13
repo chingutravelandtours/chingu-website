@@ -41,27 +41,14 @@ export default function Hero() {
             uppercase
           "
         >
-          WELCOME TO
+          WELCOME TO CHINGU TRAVEL AND TOURS
         </p>
 
 
 
 
 
-        <h1
-          className="
-            mt-3
-            text-white
-            text-5xl
-            md:text-7xl
-            font-bold
-            leading-tight
-          "
-        >
-          CHINGU
-          <br />
-          TRAVEL & TOURS
-        </h1>
+        
 
 
 
