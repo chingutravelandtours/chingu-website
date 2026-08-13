@@ -2,29 +2,17 @@
 
 export default function HotelPage() {
 
-
-  const inputStyle =
-    "w-full p-4 rounded-xl border border-gray-300 text-black placeholder:text-gray-500 bg-white focus:outline-none focus:border-red-600";
-
-
-  const labelStyle =
-    "block mb-2 font-semibold text-gray-900";
-
-
-
   return (
 
     <main className="min-h-screen bg-gray-50 py-16 px-5">
 
 
-      <div className="max-w-5xl mx-auto">
-
+      <div className="max-w-6xl mx-auto">
 
 
         {/* HEADER */}
 
-        <div className="text-center mb-12">
-
+        <div className="text-center mb-10">
 
           <p className="
             text-red-600
@@ -37,23 +25,18 @@ export default function HotelPage() {
           </p>
 
 
-
           <h1 className="
             mt-3
             text-5xl
             font-bold
             text-gray-900
           ">
-            Hotel Booking Inquiry
+            Hotel Booking
           </h1>
 
 
-
-          <p className="
-            mt-4
-            text-gray-600
-          ">
-            Find the perfect accommodation for your next journey.
+          <p className="mt-4 text-gray-600">
+            Find the perfect stay for your next journey.
           </p>
 
 
@@ -64,8 +47,70 @@ export default function HotelPage() {
 
 
 
+        {/* CATEGORY TABS */}
 
-        {/* FORM CARD */}
+
+        <div className="
+          bg-white
+          rounded-xl
+          shadow-md
+          p-3
+          flex
+          gap-3
+          overflow-x-auto
+          mb-5
+        ">
+
+
+          <button className="
+            px-6
+            py-3
+            rounded-lg
+            bg-gray-100
+            font-semibold
+          ">
+            🏨 Hotels
+          </button>
+
+
+          <button className="
+            px-6
+            py-3
+            text-gray-600
+          ">
+            🚢 Cruises
+          </button>
+
+
+          <button className="
+            px-6
+            py-3
+            text-gray-600
+          ">
+            🧳 Tours
+          </button>
+
+
+          <button className="
+            px-6
+            py-3
+            text-gray-600
+          ">
+            ✈ Flights
+          </button>
+
+
+        </div>
+
+
+
+
+
+
+
+
+        {/* SEARCH BOX */}
+
 
 
         <div className="
@@ -74,192 +119,54 @@ export default function HotelPage() {
           shadow-lg
           border
           border-gray-200
-          p-8
+          p-5
+          flex
+          flex-col
+          md:flex-row
+          items-center
+          gap-4
         ">
 
 
 
-
-
-
-          {/* CUSTOMER DETAILS */}
-
-
           <div className="
-            grid
-            md:grid-cols-2
-            gap-6
+            flex-1
+            border-r
+            border-gray-200
+            px-5
           ">
 
+            <p className="text-sm font-semibold text-gray-900">
+              Where
+            </p>
 
-
-            <div>
-
-              <label className={labelStyle}>
-                Guest Name
-              </label>
-
-
-              <input
-
-                type="text"
-
-                placeholder="Enter guest name"
-
-                className={inputStyle}
-
-              />
-
-            </div>
-
-
-
-
-
-
-            <div>
-
-              <label className={labelStyle}>
-                Email
-              </label>
-
-
-              <input
-
-                type="email"
-
-                placeholder="Enter email address"
-
-                className={inputStyle}
-
-              />
-
-            </div>
-
-
-
-
-
-
-
-            <div>
-
-              <label className={labelStyle}>
-                Contact Number
-              </label>
-
-
-              <input
-
-                type="text"
-
-                placeholder="Enter phone number"
-
-                className={inputStyle}
-
-              />
-
-            </div>
-
-
-
-
-
-
-
-            <div>
-
-              <label className={labelStyle}>
-                Number of Guests
-              </label>
-
-
-              <input
-
-                type="number"
-
-                placeholder="Example: 2"
-
-                className={inputStyle}
-
-              />
-
-            </div>
-
-
+            <p className="text-gray-400 mt-2">
+              Partner or destination
+            </p>
 
           </div>
 
 
 
-
-
-
-
-
-
-          {/* HOTEL DETAILS */}
 
 
 
           <div className="
-            grid
-            md:grid-cols-2
-            gap-6
-            mt-6
+            flex-1
+            border-r
+            border-gray-200
+            px-5
           ">
 
 
+            <p className="text-sm font-semibold text-gray-900">
+              When
+            </p>
 
 
-            <div>
-
-
-              <label className={labelStyle}>
-                Destination / City
-              </label>
-
-
-              <input
-
-                type="text"
-
-                placeholder="Example: Dubai, Japan, Korea"
-
-                className={inputStyle}
-
-              />
-
-
-            </div>
-
-
-
-
-
-
-
-            <div>
-
-
-              <label className={labelStyle}>
-                Preferred Hotel (Optional)
-              </label>
-
-
-              <input
-
-                type="text"
-
-                placeholder="Hotel name"
-
-                className={inputStyle}
-
-              />
-
-
-            </div>
-
+            <p className="text-gray-400 mt-2">
+              Add dates
+            </p>
 
 
           </div>
@@ -267,67 +174,23 @@ export default function HotelPage() {
 
 
 
-
-
-
-
-
-          {/* DATE */}
 
 
 
           <div className="
-            grid
-            md:grid-cols-2
-            gap-6
-            mt-6
+            flex-1
+            px-5
           ">
 
 
-
-            <div>
-
-
-              <label className={labelStyle}>
-                Check-in Date
-              </label>
+            <p className="text-sm font-semibold text-gray-900">
+              Who
+            </p>
 
 
-              <input
-
-                type="date"
-
-                className={inputStyle}
-
-              />
-
-
-            </div>
-
-
-
-
-
-
-            <div>
-
-
-              <label className={labelStyle}>
-                Check-out Date
-              </label>
-
-
-              <input
-
-                type="date"
-
-                className={inputStyle}
-
-              />
-
-
-            </div>
-
+            <p className="text-gray-400 mt-2">
+              Add travelers
+            </p>
 
 
           </div>
@@ -338,133 +201,18 @@ export default function HotelPage() {
 
 
 
-
-
-          {/* ROOM TYPE */}
-
-
-
-          <div className="mt-6">
-
-
-            <label className={labelStyle}>
-              Room Type
-            </label>
-
-
-
-            <select className={inputStyle}>
-
-
-              <option>
-                Select Room Type
-              </option>
-
-
-              <option>
-                Single Room
-              </option>
-
-
-              <option>
-                Double Room
-              </option>
-
-
-              <option>
-                Family Room
-              </option>
-
-
-              <option>
-                Suite Room
-              </option>
-
-
-
-            </select>
-
-
-
-          </div>
-
-
-
-
-
-
-
-
-
-          {/* REQUEST */}
-
-
-
-          <div className="mt-6">
-
-
-            <label className={labelStyle}>
-              Special Request
-            </label>
-
-
-
-            <textarea
-
-              placeholder="Breakfast, airport transfer, view preference, etc."
-
-              className="
-                w-full
-                h-32
-                p-4
-                rounded-xl
-                border
-                border-gray-300
-                text-black
-                placeholder:text-gray-500
-                focus:outline-none
-                focus:border-red-600
-              "
-
-            />
-
-
-
-          </div>
-
-
-
-
-
-
-
-
-
-          {/* BUTTON */}
-
-
-
-          <button
-
-            className="
-              mt-8
-              w-full
-              py-4
-              rounded-xl
-              bg-red-600
-              hover:bg-red-700
-              text-white
-              font-bold
-              transition
-            "
-
-          >
-
-            Request Hotel Quote →
+          <button className="
+            bg-black
+            text-white
+            w-14
+            h-14
+            rounded-full
+            text-xl
+          ">
+
+            🔍
 
           </button>
-
-
 
 
 
@@ -472,13 +220,10 @@ export default function HotelPage() {
 
 
 
-
       </div>
 
 
-
     </main>
-
 
   );
 
