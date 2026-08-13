@@ -1,59 +1,109 @@
 export default function Hero() {
   return (
     <section
-      className="relative h-[650px] flex items-center justify-center text-center bg-cover bg-center"
+      className="
+        relative
+        h-[650px]
+        flex
+        items-center
+        justify-center
+        text-center
+        bg-cover
+        bg-center
+      "
       style={{
-      backgroundImage: "url('/images/hero/travel.jpg.png')",
+        backgroundImage: "url('/images/hero/travel.jpg.png')",
       }}
     >
+
       {/* Dark Overlay */}
       <div className="absolute inset-0 bg-black/50"></div>
 
+
+
       {/* Content */}
-      <p
-className="
-text-red-500
-font-semibold
-text-sm
-tracking-[2px]
-uppercase
-"
->
-WELCOME TO
-</p>
+
+      <div
+        className="
+          relative
+          z-10
+          px-6
+        "
+      >
 
 
-<h1
-className="
-mt-3
-text-white
-text-5xl
-md:text-7xl
-font-bold
-leading-tight
-"
->
-CHINGU
-<br />
-TRAVEL & TOURS
-</h1>
+        <p
+          className="
+            text-white
+            font-semibold
+            text-sm
+            tracking-[2px]
+            uppercase
+          "
+        >
+          WELCOME TO
+        </p>
 
-        <h1 className="text-5xl md:text-7xl font-extrabold text-white leading-tight">
+
+
+
+
+        <h1
+          className="
+            mt-3
+            text-white
+            text-5xl
+            md:text-7xl
+            font-bold
+            leading-tight
+          "
+        >
+          CHINGU
+          <br />
+          TRAVEL & TOURS
+        </h1>
+
+
+
+
+
+
+        <h2
+          className="
+            mt-5
+            text-white
+            text-5xl
+            md:text-7xl
+            font-extrabold
+            leading-tight
+          "
+        >
           Explore the World
           <br />
           With Confidence
-        </h1>
+        </h2>
 
-        <p className="text-gray-200 text-xl mt-6">
+
+
+
+
+
+        <p
+          className="
+            text-gray-200
+            text-xl
+            mt-6
+          "
+        >
           Flights • Hotels • Visa Assistance • Tour Packages
         </p>
 
-        <div className="mt-10">
-          <button className="bg-red-600 hover:bg-red-700 text-white px-10 py-4 rounded-full text-lg font-semibold transition">
-            Book Now
-          </button>
-        </div>
+
+
       </div>
+
+
+
     </section>
   );
 }
