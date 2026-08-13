@@ -2,6 +2,10 @@
 
 import {
   Plane,
+  Hotel,
+  Globe2,
+  FileCheck,
+  Ship,
   MapPin,
   CalendarDays,
   Users,
@@ -12,111 +16,144 @@ import {
 export default function FlightPage() {
 
   return (
-
-    <main className="min-h-screen bg-gray-50">
-
-
-      {/* HERO */}
-
-      <section className="
-        bg-red-600
-        py-16
-        px-6
-        text-white
-        text-center
-      ">
-
-        <p className="
-          uppercase
-          tracking-widest
-          font-semibold
-          text-sm
-        ">
-          CHINGU Travel and Tours
-        </p>
+    <main className="min-h-screen bg-gray-50 py-12 px-6">
 
 
-        <h1 className="
-          mt-3
-          text-5xl
-          font-bold
-        ">
-          Book Your Best Flight Today
-        </h1>
+      <div className="max-w-6xl mx-auto">
 
 
-        <p className="
-          mt-4
-          text-lg
-        ">
-          Find convenient flights and travel options worldwide.
-        </p>
+        {/* HEADER */}
+
+        <div className="text-center mb-10">
+
+          <p className="
+            text-red-600
+            font-semibold
+            uppercase
+            tracking-widest
+            text-sm
+          ">
+            CHINGU Travel and Tours
+          </p>
 
 
-      </section>
+          <h1 className="
+            mt-3
+            text-5xl
+            font-bold
+            text-gray-900
+          ">
+            Book Your Best Flight Today
+          </h1>
 
+
+          <p className="
+            mt-4
+            text-gray-600
+            text-lg
+          ">
+            Find convenient flights and travel options worldwide.
+          </p>
+
+
+        </div>
 
 
 
-      {/* BOOKING BOX */}
 
-      <section className="
-        max-w-6xl
-        mx-auto
-        -mt-8
-        px-5
-      ">
-
+        {/* BOOKING CARD */}
 
         <div className="
           bg-white
           rounded-3xl
-          shadow-xl
+          shadow-lg
+          border
+          border-gray-100
           p-8
         ">
 
 
-          {/* TABS */}
+
+          {/* SERVICE TABS */}
 
           <div className="
             flex
+            flex-wrap
             gap-8
             border-b
-            pb-4
-            text-gray-600
-            font-semibold
+            pb-5
           ">
 
+
             <button className="
+              flex
+              items-center
+              gap-2
               text-red-600
+              font-semibold
               border-b-2
               border-red-600
-              pb-3
+              pb-4
             ">
-              ✈ Flights
+              <Plane size={20}/>
+              Flights
             </button>
 
 
-            <button>
-              🏨 Hotels
+
+            <button className="
+              flex
+              items-center
+              gap-2
+              text-gray-600
+              font-semibold
+            ">
+              <Hotel size={20}/>
+              Hotels
             </button>
 
 
-            <button>
-              🌍 Tours
+
+            <button className="
+              flex
+              items-center
+              gap-2
+              text-gray-600
+              font-semibold
+            ">
+              <Globe2 size={20}/>
+              Tours
             </button>
 
 
-            <button>
-              🛂 Visa
+
+            <button className="
+              flex
+              items-center
+              gap-2
+              text-gray-600
+              font-semibold
+            ">
+              <FileCheck size={20}/>
+              Visa
             </button>
 
 
-            <button>
-              🚢 Cruise
+
+            <button className="
+              flex
+              items-center
+              gap-2
+              text-gray-600
+              font-semibold
+            ">
+              <Ship size={20}/>
+              Cruise
             </button>
+
 
           </div>
+
 
 
 
@@ -130,24 +167,27 @@ export default function FlightPage() {
           ">
 
             <button className="
-              border
-              border-red-600
-              text-red-600
               px-5
               py-2
               rounded-full
+              border
+              border-red-600
+              text-red-600
+              font-semibold
             ">
-              One-way
+              One Way
             </button>
 
 
             <button className="
-              border
               px-5
               py-2
               rounded-full
+              border
+              border-gray-300
+              text-gray-600
             ">
-              Round-trip
+              Round Trip
             </button>
 
 
@@ -157,10 +197,11 @@ export default function FlightPage() {
 
 
 
-          {/* SEARCH FIELDS */}
+
+          {/* SEARCH FORM */}
 
           <div className="
-            mt-6
+            mt-7
             grid
             grid-cols-1
             md:grid-cols-2
@@ -169,16 +210,18 @@ export default function FlightPage() {
 
 
 
+            {/* FROM */}
+
             <div className="relative">
 
               <Plane
+                size={20}
                 className="
                   absolute
                   left-4
                   top-4
                   text-red-600
                 "
-                size={22}
               />
 
 
@@ -186,12 +229,14 @@ export default function FlightPage() {
                 className="
                   w-full
                   border
+                  border-gray-300
                   rounded-xl
                   py-4
                   pl-12
                   text-gray-900
                   placeholder:text-gray-400
                   outline-none
+                  focus:border-red-500
                 "
                 placeholder="Flying from"
               />
@@ -202,17 +247,18 @@ export default function FlightPage() {
 
 
 
+            {/* TO */}
+
             <div className="relative">
 
-
               <MapPin
+                size={20}
                 className="
                   absolute
                   left-4
                   top-4
                   text-red-600
                 "
-                size={22}
               />
 
 
@@ -220,12 +266,14 @@ export default function FlightPage() {
                 className="
                   w-full
                   border
+                  border-gray-300
                   rounded-xl
                   py-4
                   pl-12
                   text-gray-900
                   placeholder:text-gray-400
                   outline-none
+                  focus:border-red-500
                 "
                 placeholder="Flying to"
               />
@@ -237,17 +285,18 @@ export default function FlightPage() {
 
 
 
+            {/* DATE */}
+
             <div className="relative">
 
-
               <CalendarDays
+                size={20}
                 className="
                   absolute
                   left-4
                   top-4
                   text-red-600
                 "
-                size={22}
               />
 
 
@@ -256,10 +305,13 @@ export default function FlightPage() {
                 className="
                   w-full
                   border
+                  border-gray-300
                   rounded-xl
                   py-4
                   pl-12
                   text-gray-900
+                  outline-none
+                  focus:border-red-500
                 "
               />
 
@@ -270,17 +322,19 @@ export default function FlightPage() {
 
 
 
+
+            {/* PASSENGER */}
+
             <div className="relative">
 
-
               <Users
+                size={20}
                 className="
                   absolute
                   left-4
                   top-4
                   text-red-600
                 "
-                size={22}
               />
 
 
@@ -288,25 +342,27 @@ export default function FlightPage() {
                 className="
                   w-full
                   border
+                  border-gray-300
                   rounded-xl
                   py-4
                   pl-12
                   text-gray-900
+                  outline-none
+                  focus:border-red-500
                 "
               >
 
                 <option>
-                  1 Passenger, Economy
+                  1 Passenger - Economy
                 </option>
 
                 <option>
-                  2 Passengers, Economy
+                  2 Passengers - Economy
                 </option>
 
                 <option>
                   Business Class
                 </option>
-
 
               </select>
 
@@ -314,54 +370,49 @@ export default function FlightPage() {
             </div>
 
 
+
           </div>
 
 
 
 
 
-          {/* SWAP BUTTON */}
 
-          <div className="
-            mt-5
+          {/* SWAP */}
+
+          <button className="
+            mt-6
             flex
-            justify-center
+            items-center
+            gap-2
+            text-red-600
+            font-semibold
           ">
 
-            <button className="
-              flex
-              items-center
-              gap-2
-              text-red-600
-              font-semibold
-            ">
+            <ArrowRightLeft size={18}/>
 
-              <ArrowRightLeft size={18}/>
-              Swap Locations
+            Swap Locations
 
-            </button>
-
-          </div>
+          </button>
 
 
 
 
 
-          {/* BUTTON */}
 
-          <button
-            className="
-              mt-8
-              w-full
-              bg-red-600
-              text-white
-              py-4
-              rounded-xl
-              font-bold
-              hover:bg-red-700
-              transition
-            "
-          >
+          {/* SEARCH BUTTON */}
+
+          <button className="
+            mt-8
+            w-full
+            bg-red-600
+            text-white
+            py-4
+            rounded-xl
+            font-bold
+            hover:bg-red-700
+            transition
+          ">
 
             SEARCH FLIGHTS →
 
@@ -372,10 +423,9 @@ export default function FlightPage() {
         </div>
 
 
-      </section>
+      </div>
 
 
     </main>
-
   );
 }
