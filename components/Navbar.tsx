@@ -56,7 +56,7 @@ export default function Navbar() {
 
 
         <Link
-  href="/agent"
+  href="/b2b"
   className="
     hover:text-red-600
     transition
