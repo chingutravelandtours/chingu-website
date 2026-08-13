@@ -1,13 +1,14 @@
 import Link from "next/link";
 
-import { 
-  Plane, 
-  Hotel, 
-  FileCheck, 
+import {
+  Plane,
+  Hotel,
+  FileCheck,
   Globe2,
   Ship,
-} from "lucide-react"; 
- 
+} from "lucide-react";
+
+
 const services = [
   {
     title: "Flight Booking",
@@ -49,103 +50,154 @@ const services = [
     link: "/cruise",
   },
 ];
- 
-export default function Services() { 
-  return ( 
-    <section className="bg-white py-20 px-6"> 
-      <div className="max-w-7xl mx-auto"> 
- 
-        <div className="text-center mb-12"> 
-          <p className="text-red-600 font-semibold uppercase tracking-widest"> 
-            What We Offer 
-          </p> 
- 
-          <h2 className="mt-2 text-4xl font-bold text-gray-900"> 
-            Our Services 
-          </h2> 
- 
-          <p className="mt-4 max-w-2xl mx-auto text-gray-600"> 
+
+
+export default function Services() {
+  return (
+    <section className="bg-white py-20 px-6">
+
+      <div className="max-w-7xl mx-auto">
+
+
+        {/* HEADER */}
+
+        <div className="text-center mb-12">
+
+          <p className="
+            text-red-600
+            font-semibold
+            uppercase
+            tracking-widest
+          ">
+            What We Offer
+          </p>
+
+
+          <h2 className="
+            mt-2
+            text-4xl
+            font-bold
+            text-gray-900
+          ">
+            Our Services
+          </h2>
+
+
+          <p className="
+            mt-4
+            max-w-2xl
+            mx-auto
+            text-gray-600
+          ">
             From flights and hotels to visa assistance, tour packages, and cruises,
             CHINGU Travel and Tours is here to make your journey easier.
-          </p> 
-        </div> 
- 
+          </p>
+
+        </div>
+
+
+
+        {/* SERVICE CARDS */}
+
         <div className="
-          grid 
-          grid-cols-1 
-          md:grid-cols-2 
-          lg:grid-cols-5 
+          grid
+          grid-cols-1
+          md:grid-cols-2
+          lg:grid-cols-5
           gap-6
-        "> 
- 
-          {services.map((service) => { 
-            const Icon = service.icon; 
- 
-            return ( 
-              <div 
-                key={service.title} 
+        ">
+
+
+          {services.map((service) => {
+
+            const Icon = service.icon;
+
+
+            return (
+
+              <div
+                key={service.title}
                 className="
-                  group 
-                  rounded-2xl 
-                  border 
-                  border-gray-100 
-                  bg-white 
-                  p-7 
-                  shadow-md 
-                  hover:shadow-xl 
-                  hover:-translate-y-2 
-                  transition-all 
+                  group
+                  rounded-2xl
+                  border
+                  border-gray-100
+                  bg-white
+                  p-7
+                  shadow-md
+                  hover:shadow-xl
+                  hover:-translate-y-2
+                  transition-all
                   duration-300
-                " 
-              > 
+                  flex
+                  flex-col
+                  h-full
+                "
+              >
+
+
+                {/* ICON */}
 
                 <div className="
-                  w-14 
-                  h-14 
-                  rounded-xl 
-                  bg-red-50 
-                  flex 
-                  items-center 
-                  justify-center 
-                  group-hover:bg-red-600 
-                  transition-colors 
+                  w-14
+                  h-14
+                  rounded-xl
+                  bg-red-50
+                  flex
+                  items-center
+                  justify-center
+                  group-hover:bg-red-600
+                  transition-colors
                   duration-300
-                "> 
+                ">
 
-                  <Icon 
-                    size={28} 
+                  <Icon
+                    size={28}
                     className="
-                      text-red-600 
-                      group-hover:text-white 
-                      transition-colors 
+                      text-red-600
+                      group-hover:text-white
+                      transition-colors
                       duration-300
-                    " 
+                    "
                   />
 
-                </div> 
- 
+                </div>
+
+
+
+                {/* TITLE */}
+
                 <h3 className="
-                  mt-6 
-                  text-xl 
-                  font-bold 
+                  mt-6
+                  text-xl
+                  font-bold
                   text-gray-900
-                "> 
+                ">
                   {service.title}
-                </h3> 
- 
+                </h3>
+
+
+
+                {/* DESCRIPTION */}
+
                 <p className="
-                  mt-3 
-                  text-gray-600 
+                  mt-3
+                  text-gray-600
                   leading-relaxed
-                "> 
+                  h-24
+                ">
                   {service.description}
-                </p> 
- 
+                </p>
+
+
+
+                {/* LINK */}
+
                 <Link
                   href={service.link}
                   className="
-                    mt-5
-                    inline-block
+                    mt-auto
+                    pt-5
                     text-red-600
                     font-semibold
                     hover:text-red-700
@@ -154,12 +206,19 @@ export default function Services() {
                   Learn More →
                 </Link>
 
-              </div> 
-            ); 
-          })} 
- 
+
+              </div>
+
+            );
+
+          })}
+
+
         </div>
-      </div> 
-    </section> 
-  ); 
+
+
+      </div>
+
+    </section>
+  );
 }
