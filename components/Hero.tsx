@@ -75,16 +75,7 @@ export default function Hero() {
 
 
 
-        <p
-          className="
-            text-gray-200
-            text-xl
-            mt-6
-          "
-        >
-          Flights • Hotels • Visa Assistance • Tour Packages
-        </p>
-
+       
 
 
       </div>
