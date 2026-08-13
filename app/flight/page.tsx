@@ -24,7 +24,7 @@ export default function FlightPage() {
     px-4
     py-3
     text-black
-    placeholder:text-gray-400
+    placeholder:text-black
     bg-white
     outline-none
     focus:border-red-500
