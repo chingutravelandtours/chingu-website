@@ -90,8 +90,8 @@ export default function Services() {
             text-gray-600
           ">
             From flights and hotels to visa assistance, tour packages, and cruises,
-            CHINGU 
-            Travel and Tours is here to make your journey easier.
+            
+            CHINGU Travel and Tours is here to make your journey easier.
           </p>
 
         </div>
