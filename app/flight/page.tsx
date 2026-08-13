@@ -1,132 +1,166 @@
 "use client";
 
-import { useState } from "react";
+import {
+  Plane,
+  MapPin,
+  CalendarDays,
+  Users,
+  ArrowRightLeft,
+} from "lucide-react";
+
 
 export default function FlightPage() {
 
-  const [form, setForm] = useState({
-    from: "",
-    to: "",
-    departure: "",
-    returnDate: "",
-    passengers: "1",
-    travelClass: "Economy",
-    airline: "",
-    message: "",
-  });
-
-
-  const inputStyle = `
-    w-full
-    border
-    border-gray-300
-    rounded-xl
-    px-4
-    py-3
-    text-black
-    placeholder:text-black
-    bg-white
-    outline-none
-    focus:border-red-500
-    focus:ring-2
-    focus:ring-red-100
-  `;
-
-
-  const handleSubmit = () => {
-
-    const message = `
-Hello CHINGU Travel and Tours!
-
-I would like to request a flight quotation.
-
-From:
-${form.from}
-
-To:
-${form.to}
-
-Departure:
-${form.departure}
-
-Return:
-${form.returnDate}
-
-Passengers:
-${form.passengers}
-
-Class:
-${form.travelClass}
-
-Preferred Airline:
-${form.airline}
-
-Special Request:
-${form.message}
-
-Thank you.
-`;
-
-    window.open(
-      `https://wa.me/63919388999?text=${encodeURIComponent(message)}`,
-      "_blank"
-    );
-
-  };
-
-
   return (
 
-    <main className="min-h-screen bg-gray-50 py-12 px-5">
-
-      <div className="max-w-5xl mx-auto">
+    <main className="min-h-screen bg-gray-50">
 
 
-        <div className="text-center mb-10">
+      {/* HERO */}
 
-          <p className="
-          text-red-600
+      <section className="
+        bg-red-600
+        py-16
+        px-6
+        text-white
+        text-center
+      ">
+
+        <p className="
           uppercase
           tracking-widest
           font-semibold
           text-sm
-          ">
-            CHINGU Travel and Tours
-          </p>
+        ">
+          CHINGU Travel and Tours
+        </p>
 
 
-          <h1 className="
+        <h1 className="
           mt-3
           text-5xl
           font-bold
-          text-gray-900
-          ">
-            Flight Booking Inquiry
-          </h1>
+        ">
+          Book Your Best Flight Today
+        </h1>
 
 
-          <p className="
+        <p className="
           mt-4
-          text-gray-500
-          ">
-            Request your flight quotation and let us find the best options.
-          </p>
+          text-lg
+        ">
+          Find convenient flights and travel options worldwide.
+        </p>
 
-        </div>
 
+      </section>
+
+
+
+
+      {/* BOOKING BOX */}
+
+      <section className="
+        max-w-6xl
+        mx-auto
+        -mt-8
+        px-5
+      ">
 
 
         <div className="
           bg-white
-          rounded-2xl
-          shadow-md
-          border
-          border-gray-100
+          rounded-3xl
+          shadow-xl
           p-8
         ">
 
 
+          {/* TABS */}
+
           <div className="
+            flex
+            gap-8
+            border-b
+            pb-4
+            text-gray-600
+            font-semibold
+          ">
+
+            <button className="
+              text-red-600
+              border-b-2
+              border-red-600
+              pb-3
+            ">
+              ✈ Flights
+            </button>
+
+
+            <button>
+              🏨 Hotels
+            </button>
+
+
+            <button>
+              🌍 Tours
+            </button>
+
+
+            <button>
+              🛂 Visa
+            </button>
+
+
+            <button>
+              🚢 Cruise
+            </button>
+
+          </div>
+
+
+
+
+          {/* TRIP TYPE */}
+
+          <div className="
+            mt-6
+            flex
+            gap-3
+          ">
+
+            <button className="
+              border
+              border-red-600
+              text-red-600
+              px-5
+              py-2
+              rounded-full
+            ">
+              One-way
+            </button>
+
+
+            <button className="
+              border
+              px-5
+              py-2
+              rounded-full
+            ">
+              Round-trip
+            </button>
+
+
+          </div>
+
+
+
+
+
+          {/* SEARCH FIELDS */}
+
+          <div className="
+            mt-6
             grid
             grid-cols-1
             md:grid-cols-2
@@ -134,98 +168,212 @@ Thank you.
           ">
 
 
-            <input
-              className={inputStyle}
-              placeholder="From (Example: Manila)"
-              onChange={(e)=>setForm({...form,from:e.target.value})}
-            />
+
+            <div className="relative">
+
+              <Plane
+                className="
+                  absolute
+                  left-4
+                  top-4
+                  text-red-600
+                "
+                size={22}
+              />
 
 
-            <input
-              className={inputStyle}
-              placeholder="To (Example: Dubai)"
-              onChange={(e)=>setForm({...form,to:e.target.value})}
-            />
+              <input
+                className="
+                  w-full
+                  border
+                  rounded-xl
+                  py-4
+                  pl-12
+                  text-gray-900
+                  placeholder:text-gray-400
+                  outline-none
+                "
+                placeholder="Flying from"
+              />
+
+            </div>
 
 
-            <input
-              type="date"
-              className={inputStyle}
-              onChange={(e)=>setForm({...form,departure:e.target.value})}
-            />
 
 
-            <input
-              type="date"
-              className={inputStyle}
-              onChange={(e)=>setForm({...form,returnDate:e.target.value})}
-            />
+
+            <div className="relative">
 
 
-            <input
-              className={inputStyle}
-              placeholder="Number of Passengers"
-              value={form.passengers}
-              onChange={(e)=>setForm({...form,passengers:e.target.value})}
-            />
+              <MapPin
+                className="
+                  absolute
+                  left-4
+                  top-4
+                  text-red-600
+                "
+                size={22}
+              />
 
 
-            <select
-              className={inputStyle}
-              onChange={(e)=>setForm({...form,travelClass:e.target.value})}
-            >
-              <option>Economy</option>
-              <option>Premium Economy</option>
-              <option>Business</option>
-              <option>First Class</option>
-            </select>
+              <input
+                className="
+                  w-full
+                  border
+                  rounded-xl
+                  py-4
+                  pl-12
+                  text-gray-900
+                  placeholder:text-gray-400
+                  outline-none
+                "
+                placeholder="Flying to"
+              />
 
 
-            <input
-              className={inputStyle}
-              placeholder="Preferred Airline (Optional)"
-              onChange={(e)=>setForm({...form,airline:e.target.value})}
-            />
+            </div>
+
+
+
+
+
+            <div className="relative">
+
+
+              <CalendarDays
+                className="
+                  absolute
+                  left-4
+                  top-4
+                  text-red-600
+                "
+                size={22}
+              />
+
+
+              <input
+                type="date"
+                className="
+                  w-full
+                  border
+                  rounded-xl
+                  py-4
+                  pl-12
+                  text-gray-900
+                "
+              />
+
+
+            </div>
+
+
+
+
+
+            <div className="relative">
+
+
+              <Users
+                className="
+                  absolute
+                  left-4
+                  top-4
+                  text-red-600
+                "
+                size={22}
+              />
+
+
+              <select
+                className="
+                  w-full
+                  border
+                  rounded-xl
+                  py-4
+                  pl-12
+                  text-gray-900
+                "
+              >
+
+                <option>
+                  1 Passenger, Economy
+                </option>
+
+                <option>
+                  2 Passengers, Economy
+                </option>
+
+                <option>
+                  Business Class
+                </option>
+
+
+              </select>
+
+
+            </div>
 
 
           </div>
 
 
 
-          <textarea
-            className={`
-              ${inputStyle}
-              mt-5
-              h-32
-            `}
-            placeholder="Special Request"
-            onChange={(e)=>setForm({...form,message:e.target.value})}
-          />
 
 
+          {/* SWAP BUTTON */}
+
+          <div className="
+            mt-5
+            flex
+            justify-center
+          ">
+
+            <button className="
+              flex
+              items-center
+              gap-2
+              text-red-600
+              font-semibold
+            ">
+
+              <ArrowRightLeft size={18}/>
+              Swap Locations
+
+            </button>
+
+          </div>
+
+
+
+
+
+          {/* BUTTON */}
 
           <button
-            onClick={handleSubmit}
             className="
-              mt-6
+              mt-8
               w-full
               bg-red-600
               text-white
-              py-3
+              py-4
               rounded-xl
-              font-semibold
+              font-bold
               hover:bg-red-700
               transition
             "
           >
-            Request Flight Quote →
+
+            SEARCH FLIGHTS →
+
           </button>
+
 
 
         </div>
 
 
-      </div>
+      </section>
+
 
     </main>
 
