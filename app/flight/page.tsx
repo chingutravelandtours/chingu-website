@@ -23,7 +23,7 @@ export default function FlightPage() {
     rounded-xl
     px-4
     py-3
-    text-gray-900
+    text-black
     placeholder:text-gray-400
     bg-white
     outline-none
