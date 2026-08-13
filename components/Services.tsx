@@ -1,43 +1,44 @@
-import { 
-  Plane, 
-  Hotel, 
-  FileCheck, 
-  Globe2,
-  Ship,
-} from "lucide-react"; 
- 
-const services = [ 
-  { 
-    title: "Flight Booking", 
+const services = [
+  {
+    title: "Flight Booking",
     description:
-      "Find convenient flights and competitive fares for your next journey.", 
-    icon: Plane, 
-  }, 
-  { 
-    title: "Hotel Booking", 
-    description:
-      "Book comfortable stays for business trips, holidays, and family vacations.", 
-    icon: Hotel, 
-  }, 
-  { 
-    title: "Visa Assistance", 
-    description:
-      "Get guidance and assistance with your visa requirements and travel documents.", 
-    icon: FileCheck, 
-  }, 
-  { 
-    title: "Tour Packages", 
-    description:
-      "Discover carefully selected tour packages and unforgettable travel experiences.", 
-    icon: Globe2, 
+      "Find convenient flights and competitive fares for your next journey.",
+    icon: Plane,
+    link: "/flight",
   },
-  { 
-    title: "Cruise Packages", 
+
+  {
+    title: "Hotel Booking",
     description:
-      "Experience unforgettable cruise journeys with carefully selected ocean travel packages.", 
-    icon: Ship, 
+      "Book comfortable stays for business trips, holidays, and family vacations.",
+    icon: Hotel,
+    link: "/hotel",
   },
-]; 
+
+  {
+    title: "Visa Assistance",
+    description:
+      "Get guidance and assistance with your visa requirements and travel documents.",
+    icon: FileCheck,
+    link: "/visa",
+  },
+
+  {
+    title: "Tour Packages",
+    description:
+      "Discover carefully selected tour packages and unforgettable travel experiences.",
+    icon: Globe2,
+    link: "/tour-packages",
+  },
+
+  {
+    title: "Cruise Packages",
+    description:
+      "Experience unforgettable cruise journeys with carefully selected ocean travel packages.",
+    icon: Ship,
+    link: "/cruise",
+  },
+];
  
 export default function Services() { 
   return ( 
