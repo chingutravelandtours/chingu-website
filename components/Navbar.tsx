@@ -26,13 +26,7 @@ export default function Navbar() {
             Home
           </a>
 
-          {/* VISA */}
-          <a
-            href="/visa"
-            className="text-gray-800 hover:text-red-600 font-medium transition"
-          >
-            Visa
-          </a>
+          
 
           {/* B2B PORTAL */}
           <a
