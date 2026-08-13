@@ -98,7 +98,7 @@ export default function FlightPage() {
                   ${
                     tripType === type
                     ? "bg-red-600 text-white"
-                    : "bg-white text-gray-700"
+                    : "bg-white text-black"
                   }
                 `}
               >
