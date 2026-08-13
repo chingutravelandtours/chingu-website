@@ -64,6 +64,7 @@ export default function Navbar() {
 >
   B2B Portal
 </Link>
+        
 
         <Link
           href="/contact"
