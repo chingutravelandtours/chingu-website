@@ -10,10 +10,33 @@ export default function Hero() {
       <div className="absolute inset-0 bg-black/50"></div>
 
       {/* Content */}
-      <div className="relative z-10 max-w-4xl px-6">
-        <p className="uppercase tracking-[5px] text-red-500 font-semibold mb-3">
-          Welcome to Chingu Travel and Tours
-        </p>
+      <p
+className="
+text-red-500
+font-semibold
+text-sm
+tracking-[2px]
+uppercase
+"
+>
+WELCOME TO
+</p>
+
+
+<h1
+className="
+mt-3
+text-white
+text-5xl
+md:text-7xl
+font-bold
+leading-tight
+"
+>
+CHINGU
+<br />
+TRAVEL & TOURS
+</h1>
 
         <h1 className="text-5xl md:text-7xl font-extrabold text-white leading-tight">
           Explore the World
