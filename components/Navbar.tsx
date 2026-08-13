@@ -56,15 +56,14 @@ export default function Navbar() {
 
 
         <Link
-          href="/b2b"
-          className="
-            hover:text-red-600
-            transition
-          "
-        >
-          B2B Portal
-        </Link>
-
+  href="/agent"
+  className="
+    hover:text-red-600
+    transition
+  "
+>
+  B2B Portal
+</Link>
 
         <Link
           href="/contact"
