@@ -7,7 +7,7 @@ export default function Navbar() {
         w-full
         bg-white
         px-10
-        py-5
+        py-4
         flex
         items-center
         justify-between
@@ -22,11 +22,11 @@ export default function Navbar() {
           className="
             text-red-700
             font-bold
-            text-2xl
+            text-xl
             tracking-wide
           "
         >
-          CHINGU 
+          CHINGU Travel and Tours
         </h1>
       </Link>
 
@@ -38,8 +38,9 @@ export default function Navbar() {
         className="
           flex
           items-center
-          gap-10
+          gap-8
           text-gray-700
+          text-sm
           font-medium
         "
       >
@@ -55,16 +56,18 @@ export default function Navbar() {
         </Link>
 
 
+
         <Link
-  href="/b2b"
-  className="
-    hover:text-red-600
-    transition
-  "
->
-  B2B Portal
-</Link>
-        
+          href="/agent"
+          className="
+            hover:text-red-600
+            transition
+          "
+        >
+          B2B Portal
+        </Link>
+
+
 
         <Link
           href="/contact"
@@ -77,13 +80,14 @@ export default function Navbar() {
         </Link>
 
 
+
         <Link
           href="/login"
           className="
             bg-red-600
             text-white
-            px-7
-            py-3
+            px-6
+            py-2
             rounded-full
             font-semibold
             hover:bg-red-700
@@ -95,6 +99,7 @@ export default function Navbar() {
 
 
       </div>
+
 
     </nav>
   );
