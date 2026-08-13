@@ -97,6 +97,7 @@ export default function Services() {
 
 
 
+
         {/* SERVICE CARDS */}
 
         <div className="
@@ -165,6 +166,7 @@ export default function Services() {
 
 
 
+
                 {/* TITLE */}
 
                 <h3 className="
@@ -175,6 +177,7 @@ export default function Services() {
                 ">
                   {service.title}
                 </h3>
+
 
 
 
@@ -191,7 +194,8 @@ export default function Services() {
 
 
 
-                {/* LINK */}
+
+                {/* LEARN MORE */}
 
                 <Link
                   href={service.link}
@@ -201,10 +205,12 @@ export default function Services() {
                     text-red-600
                     font-semibold
                     hover:text-red-700
+                    transition
                   "
                 >
                   Learn More →
                 </Link>
+
 
 
               </div>
