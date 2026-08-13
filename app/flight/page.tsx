@@ -16,9 +16,26 @@ export default function FlightPage() {
   });
 
 
+  const inputStyle = `
+    w-full
+    border
+    border-gray-300
+    rounded-xl
+    px-4
+    py-3
+    text-gray-900
+    placeholder:text-gray-400
+    bg-white
+    outline-none
+    focus:border-red-500
+    focus:ring-2
+    focus:ring-red-100
+  `;
+
+
   const handleSubmit = () => {
 
-    const text = `
+    const message = `
 Hello CHINGU Travel and Tours!
 
 I would like to request a flight quotation.
@@ -29,10 +46,10 @@ ${form.from}
 To:
 ${form.to}
 
-Departure Date:
+Departure:
 ${form.departure}
 
-Return Date:
+Return:
 ${form.returnDate}
 
 Passengers:
@@ -50,10 +67,10 @@ ${form.message}
 Thank you.
 `;
 
-    const whatsapp =
-      `https://wa.me/63919388999?text=${encodeURIComponent(text)}`;
-
-    window.open(whatsapp, "_blank");
+    window.open(
+      `https://wa.me/63919388999?text=${encodeURIComponent(message)}`,
+      "_blank"
+    );
 
   };
 
@@ -64,8 +81,6 @@ Thank you.
 
       <div className="max-w-5xl mx-auto">
 
-
-        {/* HEADER */}
 
         <div className="text-center mb-10">
 
@@ -94,118 +109,114 @@ Thank you.
           mt-4
           text-gray-500
           ">
-            Find the best flight options for your next journey.
+            Request your flight quotation and let us find the best options.
           </p>
 
         </div>
 
 
 
-        {/* FORM */}
-
         <div className="
-        bg-white
-        rounded-2xl
-        shadow-md
-        border
-        border-black
-        p-8
+          bg-white
+          rounded-2xl
+          shadow-md
+          border
+          border-gray-100
+          p-8
         ">
 
 
           <div className="
-          grid
-          grid-cols-1
-          md:grid-cols-2
-          gap-5
+            grid
+            grid-cols-1
+            md:grid-cols-2
+            gap-5
           ">
 
 
             <input
-            placeholder="From (Example: Manila)"
-            className="input"
-            onChange={(e)=>setForm({...form,from:e.target.value})}
+              className={inputStyle}
+              placeholder="From (Example: Manila)"
+              onChange={(e)=>setForm({...form,from:e.target.value})}
             />
 
 
             <input
-            placeholder="To (Example: Dubai)"
-            className="input"
-            onChange={(e)=>setForm({...form,to:e.target.value})}
-            />
-
-
-
-            <input
-            type="date"
-            className="input"
-            onChange={(e)=>setForm({...form,departure:e.target.value})}
+              className={inputStyle}
+              placeholder="To (Example: Dubai)"
+              onChange={(e)=>setForm({...form,to:e.target.value})}
             />
 
 
             <input
-            type="date"
-            className="input"
-            onChange={(e)=>setForm({...form,returnDate:e.target.value})}
+              type="date"
+              className={inputStyle}
+              onChange={(e)=>setForm({...form,departure:e.target.value})}
             />
 
 
             <input
-            placeholder="Number of Passengers"
-            className="input"
-            onChange={(e)=>setForm({...form,passengers:e.target.value})}
+              type="date"
+              className={inputStyle}
+              onChange={(e)=>setForm({...form,returnDate:e.target.value})}
+            />
+
+
+            <input
+              className={inputStyle}
+              placeholder="Number of Passengers"
+              value={form.passengers}
+              onChange={(e)=>setForm({...form,passengers:e.target.value})}
             />
 
 
             <select
-            className="input"
-            onChange={(e)=>setForm({...form,travelClass:e.target.value})}
+              className={inputStyle}
+              onChange={(e)=>setForm({...form,travelClass:e.target.value})}
             >
-
               <option>Economy</option>
               <option>Premium Economy</option>
               <option>Business</option>
               <option>First Class</option>
-
             </select>
 
 
-
             <input
-            placeholder="Preferred Airline (Optional)"
-            className="input"
-            onChange={(e)=>setForm({...form,airline:e.target.value})}
+              className={inputStyle}
+              placeholder="Preferred Airline (Optional)"
+              onChange={(e)=>setForm({...form,airline:e.target.value})}
             />
+
 
           </div>
 
 
 
           <textarea
-          placeholder="Special Request"
-          className="
-          input
-          mt-5
-          h-32
-          "
-          onChange={(e)=>setForm({...form,message:e.target.value})}
+            className={`
+              ${inputStyle}
+              mt-5
+              h-32
+            `}
+            placeholder="Special Request"
+            onChange={(e)=>setForm({...form,message:e.target.value})}
           />
 
 
 
           <button
-          onClick={handleSubmit}
-          className="
-          mt-6
-          w-full
-          bg-red-600
-          text-white
-          py-3
-          rounded-xl
-          font-semibold
-          hover:bg-red-700
-          transition
-          "
+            onClick={handleSubmit}
+            className="
+              mt-6
+              w-full
+              bg-red-600
+              text-white
+              py-3
+              rounded-xl
+              font-semibold
+              hover:bg-red-700
+              transition
+            "
           >
             Request Flight Quote →
           </button>
@@ -215,7 +226,6 @@ Thank you.
 
 
       </div>
-
 
     </main>
 
