@@ -19,19 +19,17 @@ const packages: Package[] = [
   // =========================
   // POLAR PACKAGES
   // =========================
- {
-  title: "ChongQing",
-  subtitle: "Shopping",
-  duration: "5D3N",
-  dates: [
-    "Sep. 22–26, 2026",
-    "Oct. 15–19, 2026"
-  ],
-  city: "MNL",
-  price: 499 * USD_TO_PHP,
-  slots: 20,
-  deposit: 200 * USD_TO_PHP,
-},
+{
+    title: "ChongQing",
+    subtitle: "Shopping",
+    duration: "5D3N",
+    dates: "Oct. 15–19, 2026",
+    city: "MNL",
+    price: 499 * USD_TO_PHP,
+    slots: 20,
+    deposit: 200 * USD_TO_PHP,
+  },
+
 
   {
     title: "ChongQing",
