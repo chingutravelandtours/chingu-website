@@ -183,17 +183,6 @@ const packages: Package[] = [
     slots: 14,
     deposit: 400 * USD_TO_PHP,
   },
-
-  {
-    title: "Chongqing + Zhangjiajie + Shanghai",
-    subtitle: "Shopping",
-    duration: "6D5N",
-    dates: "Oct. 26–Nov. 2, 2026",
-    city: "MNL",
-    price: 938 * USD_TO_PHP,
-    slots: 4,
-    deposit: 200 * USD_TO_PHP,
-  },
 ];
 
 export default function ChinaToursPage() {
