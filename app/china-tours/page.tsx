@@ -64,7 +64,7 @@ const packages: Package[] = [
   },
 
   {
-    title: "Chongqing + Zhangjiajie + Shanghai",
+    title: "Avatar Zhangjiajie + Fenghuang",
     subtitle: "Pure Fun",
     duration: "6D5N",
     dates: "Sep. 1–6, 2026",
@@ -75,7 +75,7 @@ const packages: Package[] = [
   },
 
   {
-    title: "Chongqing + Zhangjiajie + Shanghai",
+    title: "Avatar Zhangjiajie + Fenghuang",
     subtitle: "Pure Fun",
     duration: "6D5N",
     dates: "Sep. 1–6, 2026",
@@ -86,7 +86,7 @@ const packages: Package[] = [
   },
 
   {
-    title: "Chongqing + Zhangjiajie + Shanghai",
+    title: "Avatar Zhangjiajie + Fenghuang",
     subtitle: "Pure Fun",
     duration: "6D5N",
     dates: "Sep. 1–6, 2026",
@@ -97,7 +97,7 @@ const packages: Package[] = [
   },
 
   {
-    title: "Chongqing + Zhangjiajie + Shanghai",
+    title: "Avatar Zhangjiajie + Fenghuang",
     subtitle: "Pure Fun",
     duration: "6D5N",
     dates: "Oct. 27–Nov. 1, 2026",
@@ -108,7 +108,7 @@ const packages: Package[] = [
   },
   
  {
-    title: "Chongqing + Zhangjiajie + Shanghai",
+    title: "Avatar Zhangjiajie + Fenghuang",
     subtitle: "Pure Fun",
     duration: "6D5N",
     dates: "Oct. 27–Nov. 1, 2026",
@@ -119,7 +119,7 @@ const packages: Package[] = [
   },
 
   {
-    title: "Chongqing + Zhangjiajie + Shanghai",
+    title: "Avatar Zhangjiajie + Fenghuang",
     subtitle: "Pure Fun",
     duration: "6D5N",
     dates: "Oct. 27–Nov. 1, 2026",
@@ -130,7 +130,7 @@ const packages: Package[] = [
   },
 
   {
-    title: "Chongqing + Zhangjiajie + Shanghai",
+    title: "Avatar Zhangjiajie + Fenghuang",
     subtitle: "Pure Fun",
     duration: "6D5N",
     dates: "Nov. 10–15, 2026",
@@ -141,7 +141,7 @@ const packages: Package[] = [
   },
 
   {
-    title: "Chongqing + Zhangjiajie + Shanghai",
+    title: "Avatar Zhangjiajie + Fenghuang",
     subtitle: "Pure Fun",
     duration: "6D5N",
     dates: "Nov. 10–15, 2026",
@@ -152,7 +152,7 @@ const packages: Package[] = [
   },
   
   {
-    title: "Chongqing + Zhangjiajie + Shanghai",
+    title: "Avatar Zhangjiajie + Fenghuang",
     subtitle: "Pure Fun",
     duration: "6D5N",
     dates: "Nov. 10–15, 2026",
