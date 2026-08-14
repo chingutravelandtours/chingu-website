@@ -186,7 +186,7 @@ const packages: Package[] = [
 
   {
     title: "Chongqing + Zhangjiajie + Shanghai",
-    subtitle: "PShopping",
+    subtitle: "Shopping",
     duration: "6D5N",
     dates: "Oct. 26–Nov. 2, 2026",
     city: "MNL",
