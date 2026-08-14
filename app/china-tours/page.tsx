@@ -95,6 +95,17 @@ const packages: Package[] = [
     minimum: 20,
     deposit: 200 * USD_TO_PHP,
   },
+
+  {
+    title: "Chongqing + Zhangjiajie + Shanghai",
+    subtitle: "Pure Fun",
+    duration: "6D5N",
+    dates: "Oct. 27–Nov. 1, 2026",
+    city: "MNL",
+    price: 749 * USD_TO_PHP,
+    minimum: 10,
+    deposit: 200 * USD_TO_PHP,
+  },
   
  {
     title: "Chongqing + Zhangjiajie + Shanghai",
@@ -103,6 +114,17 @@ const packages: Package[] = [
     dates: "Oct. 27–Nov. 1, 2026",
     city: "MNL",
     price: 729 * USD_TO_PHP,
+    minimum: 15,
+    deposit: 200 * USD_TO_PHP,
+  },
+
+  {
+    title: "Chongqing + Zhangjiajie + Shanghai",
+    subtitle: "Pure Fun",
+    duration: "6D5N",
+    dates: "Oct. 27–Nov. 1, 2026",
+    city: "MNL",
+    price: 699 * USD_TO_PHP,
     minimum: 15,
     deposit: 200 * USD_TO_PHP,
   },
