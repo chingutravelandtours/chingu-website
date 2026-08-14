@@ -19,43 +19,17 @@ const packages: Package[] = [
   // =========================
   // POLAR PACKAGES
   // =========================
-{
-  title: "ChongQing",
-  subtitle: "Shopping",
-  duration: "5D3N",
-
-  departureDates: [
-    "Sep. 22–26, 2026",
-    "Oct. 15–19, 2026"
-  ],
-
-  location: "Manila",
-
-  price: {
-    adult: {
-      amount: 499,
-      currency: "USD"
-    },
-
-    childNoBed: {
-      amount: 519,
-      currency: "USD",
-      age: "2-12 years old"
-    },
-
-    tip: {
-      amount: 25,
-      currency: "USD"
-    }
+ {
+    title: "ChongQing",
+    subtitle: "Shopping",
+    duration: "5D3N",
+    dates: "Sep. 22–26, 2026",
+    dates: "Oct. 15–19, 2026",
+    city: "MNL",
+    price: 499 * USD_TO_PHP,
+    slots: 20,
+    deposit: 200 * USD_TO_PHP,
   },
-
-  slots: 20,
-
-  deposit: {
-    amount: 200,
-    currency: "USD"
-  }
-}
 
   {
     title: "ChongQing",
