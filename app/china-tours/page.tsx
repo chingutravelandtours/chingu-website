@@ -171,9 +171,9 @@ const packages: Package[] = [
 }, 
 
   {
-  title: "Beijing + Shanghai",
+  title: "Beijing",
   subtitle: "Shopping",
-  duration: "7D6N",
+  duration: "4D3N",
   dates: "Oct. 12–18, 2026",
   city: "MNL",
   price: 499 * USD_TO_PHP,
