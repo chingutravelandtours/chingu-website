@@ -884,6 +884,50 @@ const packages: Package[] = [
   slots: 20,
   deposit: 200 * USD_TO_PHP,
 },
+
+  {
+  title: "Beijing + Inner Mongolia",
+  subtitle: "Shopping",
+  duration: "7D6N",
+  dates: "May 15–21, 2027",
+  city: "MNL",
+  price: 699 * USD_TO_PHP,
+  slots: 20,
+  deposit: 400 * USD_TO_PHP,
+},
+
+{
+  title: "Beijing + Inner Mongolia",
+  subtitle: "Shopping",
+  duration: "7D6N",
+  dates: "May 29–Jun. 4, 2027",
+  city: "MNL",
+  price: 699 * USD_TO_PHP,
+  slots: 20,
+  deposit: 400 * USD_TO_PHP,
+},
+
+{
+  title: "Beijing + Inner Mongolia",
+  subtitle: "Shopping",
+  duration: "7D6N",
+  dates: "Jun. 12–18, 2027",
+  city: "MNL",
+  price: 699 * USD_TO_PHP,
+  slots: 20,
+  deposit: 400 * USD_TO_PHP,
+},
+
+{
+  title: "Beijing + Inner Mongolia",
+  subtitle: "Shopping",
+  duration: "7D6N",
+  dates: "Jun. 26–Jul. 2, 2027",
+  city: "MNL",
+  price: 699 * USD_TO_PHP,
+  slots: 20,
+  deposit: 400 * USD_TO_PHP,
+},
 ];
 
 export default function ChinaToursPage() {
