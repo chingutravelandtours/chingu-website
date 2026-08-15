@@ -225,8 +225,7 @@ const packages: Package[] = [
     price: 1,033 * USD_TO_PHP,
     slots: 11,
     deposit: 400 * USD_TO_PHP,
-  },
- 
+  }, 
 ];
 
 export default function ChinaToursPage() {
