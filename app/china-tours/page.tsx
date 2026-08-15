@@ -411,7 +411,7 @@ Please send me the complete package details. Thank you!`
 >
       <div className="max-w-7xl mx-auto">
 
-        {/* HERO IMAGE */}
+       {/* HERO IMAGE */}
 <div className="mb-10">
   <img
     src="/images/china-banner.jpg"
