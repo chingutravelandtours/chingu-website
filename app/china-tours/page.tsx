@@ -345,28 +345,6 @@ const packages: Package[] = [
   slots: 20,
   deposit: 400 * USD_TO_PHP,
 },
-
-  {
-  title: "Beijing + XiÁn",
-  subtitle: "Shopping",
-  duration: "7D6N",
-  dates: "Aug. 23-29, 2026",
-  city: "MNL",
-  price: 919 * USD_TO_PHP,
-  slots: 15,
-  deposit: 400 * USD_TO_PHP,
-},
-
-  {
-  title: "Beijing + XiÁn",
-  subtitle: "Shopping",
-  duration: "7D6N",
-  dates: "Sep. 13-19, 2026",
-  city: "MNL",
-  price: 969 * USD_TO_PHP,
-  slots: 18,
-  deposit: 400 * USD_TO_PHP,
-},
 ];
 
 export default function ChinaToursPage() {
@@ -398,58 +376,26 @@ Please send me the complete package details. Thank you!`
   };
 
   return (
-   <main
-  className="
-    min-h-screen
-    bg-cover
-    bg-center
-  "
-  style={{
-    backgroundImage:
-      "url('/backgrounds/china-bg.jpg')",
-  }}
->
+    <main className="min-h-screen bg-gray-50 py-12 px-5">
       <div className="max-w-7xl mx-auto">
 
-       {/* HERO IMAGE */}
-<div className="mb-10">
-  <img
-    src="/images/china-banner.jpg"
-    alt="China Tour Packages"
-    className="
-      w-full
-      h-[350px]
-      object-cover
-      rounded-2xl
-      shadow-lg
-    "
-  />
-</div>
+        {/* HEADER */}
+        <div className="text-center mb-12">
+          <p className="text-red-600 font-semibold uppercase tracking-[4px] text-sm">
+            CHINGU Travel and Tours
+          </p>
 
+          <h1 className="mt-3 text-4xl md:text-5xl font-bold text-gray-900">
+            China Tour Packages
+          </h1>
 
-{/* HEADER */}
-<div className="text-center mb-12">
-  <p className="text-red-600 font-semibold uppercase tracking-[4px] text-sm">
-    CHINGU Travel and Tours
-  </p>
+          <p className="mt-4 text-gray-500">
+            Explore our China tour packages, departure dates and rates.
+          </p>
+        </div>
 
-  <h1 className="mt-3 text-4xl md:text-5xl font-bold text-gray-900">
-    China Tour Packages
-  </h1>
-
-  <p className="mt-4 text-gray-500">
-    Explore our China tour packages, departure dates and rates.
-  </p>
-</div>
         {/* CHINA PACKAGE GRID */}
-        <div className="
-  grid
-  grid-cols-1
-  sm:grid-cols-2
-  md:grid-cols-3
-  lg:grid-cols-5
-  gap-5
-">
+        <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-5">
 
           {packages.map((pkg, index) => (
             <div
