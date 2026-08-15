@@ -334,6 +334,17 @@ const packages: Package[] = [
   slots: 20,
   deposit: 400 * USD_TO_PHP,
 },
+
+  {
+  title: "Beijing + Inner Mongolia",
+  subtitle: "Shopping",
+  duration: "7D6N",
+  dates: "Oct. 12-18, 2026",
+  city: "MNL",
+  price: 799 * USD_TO_PHP,
+  slots: 20,
+  deposit: 400 * USD_TO_PHP,
+},
 ];
 
 export default function ChinaToursPage() {
