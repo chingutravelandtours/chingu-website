@@ -1060,6 +1060,138 @@ const packages: Package[] = [
   slots: 20,
   deposit: 400 * USD_TO_PHP,
 },
+
+  {
+  title: "Shanghai",
+  subtitle: "Purefun",
+  duration: "4D3N",
+  dates: "Jan. 3–6, 2027 (+$50)",
+  city: "MNL",
+  price: 569 * USD_TO_PHP,
+  slots: 20,
+  deposit: 200 * USD_TO_PHP,
+},
+
+{
+  title: "Shanghai",
+  subtitle: "Purefun",
+  duration: "4D3N",
+  dates: "Jan. 12–15, 2027",
+  city: "MNL",
+  price: 519 * USD_TO_PHP,
+  slots: 20,
+  deposit: 200 * USD_TO_PHP,
+},
+
+{
+  title: "Shanghai",
+  subtitle: "Purefun",
+  duration: "4D3N",
+  dates: "Jan. 26–29, 2027 (+$50)",
+  city: "MNL",
+  price: 569 * USD_TO_PHP,
+  slots: 20,
+  deposit: 200 * USD_TO_PHP,
+},
+
+{
+  title: "Shanghai",
+  subtitle: "Purefun",
+  duration: "4D3N",
+  dates: "Feb. 23–26, 2027",
+  city: "MNL",
+  price: 519 * USD_TO_PHP,
+  slots: 20,
+  deposit: 200 * USD_TO_PHP,
+},
+
+{
+  title: "Shanghai",
+  subtitle: "Purefun",
+  duration: "4D3N",
+  dates: "Mar. 16–19, 2027",
+  city: "MNL",
+  price: 519 * USD_TO_PHP,
+  slots: 20,
+  deposit: 200 * USD_TO_PHP,
+},
+
+{
+  title: "Shanghai",
+  subtitle: "Purefun",
+  duration: "4D3N",
+  dates: "Mar. 30–Apr. 2, 2027 (+$100)",
+  city: "MNL",
+  price: 619 * USD_TO_PHP,
+  slots: 20,
+  deposit: 200 * USD_TO_PHP,
+},
+
+{
+  title: "Shanghai",
+  subtitle: "Purefun",
+  duration: "4D3N",
+  dates: "Apr. 4–7, 2027 (+$100)",
+  city: "MNL",
+  price: 619 * USD_TO_PHP,
+  slots: 20,
+  deposit: 200 * USD_TO_PHP,
+},
+
+{
+  title: "Shanghai",
+  subtitle: "Purefun",
+  duration: "4D3N",
+  dates: "Apr. 20–23, 2027",
+  city: "MNL",
+  price: 619 * USD_TO_PHP,
+  slots: 20,
+  deposit: 200 * USD_TO_PHP,
+},
+
+{
+  title: "Shanghai",
+  subtitle: "Purefun",
+  duration: "4D3N",
+  dates: "May 15–18, 2027",
+  city: "MNL",
+  price: 619 * USD_TO_PHP,
+  slots: 20,
+  deposit: 200 * USD_TO_PHP,
+},
+
+{
+  title: "Shanghai",
+  subtitle: "Purefun",
+  duration: "4D3N",
+  dates: "Jun. 1–4, 2027",
+  city: "MNL",
+  price: 619 * USD_TO_PHP,
+  slots: 20,
+  deposit: 200 * USD_TO_PHP,
+},
+
+{
+  title: "Shanghai",
+  subtitle: "Purefun",
+  duration: "4D3N",
+  dates: "Jun. 15–18, 2027",
+  city: "MNL",
+  price: 619 * USD_TO_PHP,
+  slots: 20,
+  deposit: 200 * USD_TO_PHP,
+},
+
+{
+  title: "Shanghai",
+  subtitle: "Purefun",
+  duration: "4D3N",
+  dates: "Jun. 29–Jul. 2, 2027",
+  city: "MNL",
+  price: 569 * USD_TO_PHP,
+  slots: 20,
+  deposit: 200 * USD_TO_PHP,
+},
 ];
 
 export default function ChinaToursPage() {
