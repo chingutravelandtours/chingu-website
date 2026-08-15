@@ -1,31 +1,73 @@
 export const palawanHotels = [
   {
-    name: "El Nido Beach Resort",
+    name: "El Nido Resorts Pangulasian Island",
     location: "El Nido, Palawan",
-    country: "Philippines",
-    price: "$150 / Night",
-    image: "/hotels/palawan/elnido.jpg",
+    price: "$500 / Night",
+    image: "/hotels/palawan/pangulasian.jpg",
+    rating: "★★★★★",
+    room: "Island Villa",
+  },
+
+  {
+    name: "Lagen Island Resort",
+    location: "El Nido, Palawan",
+    price: "$450 / Night",
+    image: "/hotels/palawan/lagen.jpg",
+    rating: "★★★★★",
+    room: "Water Cottage",
+  },
+
+  {
+    name: "Miniloc Island Resort",
+    location: "El Nido, Palawan",
+    price: "$400 / Night",
+    image: "/hotels/palawan/miniloc.jpg",
     rating: "★★★★★",
     room: "Deluxe Room",
   },
 
   {
-    name: "Coron Island Resort",
+    name: "Two Seasons Coron Island Resort",
     location: "Coron, Palawan",
-    country: "Philippines",
-    price: "$120 / Night",
-    image: "/hotels/palawan/coron.jpg",
+    price: "$300 / Night",
+    image: "/hotels/palawan/two-seasons.jpg",
     rating: "★★★★★",
-    room: "Premium Villa",
+    room: "Water Villa",
   },
 
   {
-    name: "Puerto Princesa Hotel",
+    name: "Club Paradise Palawan",
+    location: "Coron, Palawan",
+    price: "$250 / Night",
+    image: "/hotels/palawan/club-paradise.jpg",
+    rating: "★★★★★",
+    room: "Beachfront Room",
+  },
+
+  {
+    name: "Princesa Garden Island Resort",
     location: "Puerto Princesa, Palawan",
-    country: "Philippines",
-    price: "$80 / Night",
-    image: "/hotels/palawan/puerto-princesa.jpg",
+    price: "$150 / Night",
+    image: "/hotels/palawan/princesa-garden.jpg",
     rating: "★★★★☆",
-    room: "Standard Room",
+    room: "Garden Villa",
+  },
+
+  {
+    name: "Astoria Palawan",
+    location: "Puerto Princesa, Palawan",
+    price: "$120 / Night",
+    image: "/hotels/palawan/astoria.jpg",
+    rating: "★★★★☆",
+    room: "Family Room",
+  },
+
+  {
+    name: "Coron Westown Resort",
+    location: "Coron, Palawan",
+    price: "$100 / Night",
+    image: "/hotels/palawan/coron-westown.jpg",
+    rating: "★★★★☆",
+    room: "Superior Room",
   },
 ];
