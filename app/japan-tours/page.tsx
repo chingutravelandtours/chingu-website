@@ -57,6 +57,61 @@ const packages: Package[] = [
     slots: 1,
     deposit: 300 * USD_TO_PHP,
   },
+
+  {
+  title: "Discover Osaka Kyoto Nara",
+  subtitle: "Japan",
+  duration: "5D4N",
+  dates: "Nov. 19–23, 2026",
+  city: "CEB",
+  price: 899 * USD_TO_PHP,
+  slots: 4,
+  deposit: 300 * USD_TO_PHP,
+},
+
+{
+  title: "Japan Osaka Nara Kyoto",
+  subtitle: "Japan",
+  duration: "5D4N",
+  dates: "Nov. 25–29, 2026",
+  city: "CEB",
+  price: 1499 * USD_TO_PHP,
+  slots: 27,
+  deposit: 500 * USD_TO_PHP,
+},
+
+{
+  title: "Cebu Tokyo Hakone",
+  subtitle: "Japan",
+  duration: "8D7N",
+  dates: "Nov. 26–Dec. 3, 2026",
+  city: "CEB",
+  price: 2488 * USD_TO_PHP,
+  slots: 30,
+  deposit: 500 * USD_TO_PHP,
+},
+
+{
+  title: "Discover Osaka Kyoto Nara",
+  subtitle: "Japan",
+  duration: "5D4N",
+  dates: "Dec. 10–14, 2026",
+  city: "CEB",
+  price: 899 * USD_TO_PHP,
+  slots: 6,
+  deposit: 300 * USD_TO_PHP,
+},
+
+{
+  title: "Discover Osaka + Kyoto + Nara",
+  subtitle: "Japan (3 in 1)",
+  duration: "5D4N",
+  dates: "Dec. 12–16, 2026",
+  city: "MNL",
+  price: 859 * USD_TO_PHP,
+  slots: 4,
+  deposit: 300 * USD_TO_PHP,
+},
 ];
 
 const peso = (amount: number) =>
