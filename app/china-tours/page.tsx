@@ -215,6 +215,17 @@ const packages: Package[] = [
     slots: 20,
     deposit: 400 * USD_TO_PHP,
   }
+
+   {
+    title: "Chonqing + Zhangjiajie + Shanghai (Shopping) 7D6N",
+    subtitle: "Shopping",
+    duration: "7D6N",
+    dates: "Dec. 21–27, 2026",
+    city: "MNL",
+    price: 1,033 * USD_TO_PHP,
+    slots: 11,
+    deposit: 400 * USD_TO_PHP,
+  }
 ];
 
 export default function ChinaToursPage() {
