@@ -585,7 +585,7 @@ const packages: Package[] = [
   city: "MNL",
   price: 838 * USD_TO_PHP,
   slots: 20,
-  deposit: 500 * USD_TO_PHP,,
+  deposit: 500 * USD_TO_PHP,
 },
 
 {
