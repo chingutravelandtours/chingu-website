@@ -1,41 +1,176 @@
-"use client";
+Pasted text.txt
+Document
+anong trabaho ng gumagawa nito
+ano lalagay ko sa caption
+ito yung website ko gawan mo ako ng picture na pwede ko lagay sa post ko
+Edit
+pwede mo ba itong ayusin kasi yung icon may barko at airplane hotel lang sana ito kahit wala ng mga icon
+Edit
 
-import { useState } from "react";
+Depende kung ano ang ilalagay mo sa palawan.tsx.
+
+Kung ang ibig mong gawin ay maglagay ng listahan ng hotels para sa Palawan, tama ang idea na gumawa ng hiwalay na file, pero mas magandang pangalan ay:
+
+palawan.ts
+
+o
+
+palawanHotels.ts
+
+dahil data lang siya, hindi isang page.
+
+Example:
+
+data
+ └── hotels
+      ├── palawan.ts
+      ├── boracay.ts
+      └── cebu.ts
+
+Sa palawan.ts:
+
+export const palawanHotels = [
+  {
+    name: "El Nido Beach Resort",
+    location: "Palawan, Philippines",
+    price: "$150 / Night",
+    image: "/hotels/palawan/elnido.jpg",
+  },
+
+
+  {
+    name: "Coron Island Resort",
+    location: "Palawan, Philippines",
+    price: "$120 / Night",
+    image: "/hotels/palawan/coron.jpg",
+  },
+
+
+];
+
+Tapos sa page.jsx mo:
+
+import { palawanHotels } from "@/data/hotels/palawan";
+
+Pero kung gusto mo gumawa ng sariling page na mabubuksan sa browser, halimbawa:
+
+/hotel/palawan
+
+ang tamang structure ay:
+
+app
+ └── hotel
+      └── palawan
+           └── page.tsx
+
+Hindi palawan.tsx lang.
+
+So:
+
+Hotel list/data → palawan.ts ✅
+Website page ng Palawan hotels → app/hotel/palawan/page.tsx ✅
+
+Para sa CHINGU Travel and Tours booking system, mas irerekomenda ko:
+
+data/hotels/palawan.ts
+
+para madali kang magdagdag ng Boracay, Cebu, Japan, China, etc.
+
+pahingi ng code
+
+Kung gagawa ka ng Palawan hotel data file para sa CHINGU Travel and Tours, ito ang code.
+
+Gumawa ng file:
+
+data/hotels/palawan.ts
+
+Ilagay ito:
+
+export const palawanHotels = [
+  {
+    name: "El Nido Beach Resort",
+    location: "El Nido, Palawan",
+    country: "Philippines",
+    price: "$150 / Night",
+    image: "/hotels/palawan/elnido.jpg",
+    rating: "★★★★★",
+    room: "Deluxe Room",
+  },
+
+
+  {
+    name: "Coron Island Resort",
+    location: "Coron, Palawan",
+    country: "Philippines",
+    price: "$120 / Night",
+    image: "/hotels/palawan/coron.jpg",
+    rating: "★★★★★",
+    room: "Premium Villa",
+  },
+
+
+  {
+    name: "Puerto Princesa Hotel",
+    location: "Puerto Princesa, Palawan",
+    country: "Philippines",
+    price: "$80 / Night",
+    image: "/hotels/palawan/puerto-princesa.jpg",
+    rating: "★★★★☆",
+    room: "Standard Room",
+  },
+];
+
+Folder ng pictures:
+
+public
+└── hotels
+    └── palawan
+        ├── elnido.jpg
+        ├── coron.jpg
+        └── puerto-princesa.jpg
+
+Tapos gamitin mo sa app/hotel/page.jsx:
+
+Sa taas:
+
+import { palawanHotels } from "@/data/hotels/palawan";
+
+Palitan yung:
+
+const hotels = [
+...
+];
+
+ng:
+
+const hotels = palawanHotels;
+
+Ngayon kapag nagdagdag ka ng ibang destination:
+
+data
+└── hotels
+    ├── palawan.ts
+    ├── boracay.ts
+    ├── cebu.ts
+    ├── japan.ts
+    └── china.ts
+
+Mas magiging parang totoong hotel booking database ang structure ng CHINGU website mo.
+
+gawan mo ako ng code sa hotels na walang cards sa baba
+
+Kung ang gusto mo ay Hotel Booking page lang muna at walang hotel cards/list sa baba, ito ang mas malinis na code. Lalabas lang ang search interface, tapos saka mo na ikakabit ang hotel results page kapag ready na.
+
+app/hotel/page.jsx
+
+"use client";
 
 
 export default function HotelBooking() {
 
 
-  const [searched, setSearched] = useState(false);
-  const [destination, setDestination] = useState("");
-
-
-  const hotels = [
-    {
-      name: "Grand Hyatt Shanghai",
-      location: "Shanghai, China",
-      price: "$180 / Night",
-      image: "/hotels/shanghai.jpg",
-    },
-
-    {
-      name: "InterContinental Beijing",
-      location: "Beijing, China",
-      price: "$150 / Night",
-      image: "/hotels/beijing.jpg",
-    },
-
-    {
-      name: "Wyndham Chongqing",
-      location: "Chongqing, China",
-      price: "$120 / Night",
-      image: "/hotels/chongqing.jpg",
-    },
-  ];
-
-
-
   return (
+
 
     <main className="
       min-h-screen
@@ -45,15 +180,22 @@ export default function HotelBooking() {
     ">
 
 
+
+
       <div className="
         max-w-6xl
         mx-auto
       ">
 
 
+
+
         {/* HEADER */}
 
+
         <div className="text-center">
+
+
 
 
           <p className="
@@ -67,14 +209,23 @@ export default function HotelBooking() {
           </p>
 
 
+
+
+
+
           <h1 className="
             mt-4
             text-5xl
+            md:text-6xl
             font-bold
             text-gray-900
           ">
             Hotel Booking
           </h1>
+
+
+
+
 
 
           <p className="
@@ -86,306 +237,64 @@ export default function HotelBooking() {
           </p>
 
 
+
+
         </div>
 
 
 
 
 
-        {/* SEARCH CARD */}
+
+
+
+
+
+        {/* SEARCH BOX */}
 
 
         <div className="
           mt-12
           bg-white
           rounded-3xl
-          shadow-md
-          border
-          border-gray-100
-          p-8
-        ">
 
+Result:
 
-          <div className="
-            grid
-            grid-cols-1
-            md:grid-cols-4
-            gap-6
-            items-end
-          ">
+CHINGU TRAVEL AND TOURS
 
 
-            {/* DESTINATION */}
+Hotel Booking
+Find the perfect stay for your next journey.
 
-            <div>
 
-              <label className="
-                font-bold
-                text-gray-900
-              ">
-                Destination
-              </label>
 
 
-              <input
-                type="text"
-                value={destination}
-                onChange={(e)=>setDestination(e.target.value)}
-                placeholder="City, hotel or property"
-                className="
-                  mt-3
-                  w-full
-                  bg-gray-50
-                  rounded-xl
-                  px-5
-                  py-4
-                  border
-                  border-gray-100
-                  outline-none
-                "
-              />
+--------------------------------
 
-            </div>
 
+Destination
+[ City, hotel or property ]
 
 
+Check-in / Check-out
+[ Select dates ]
 
 
-            {/* DATE */}
+Guests
+[ Add travelers ]
 
-            <div>
 
-              <label className="
-                font-bold
-                text-gray-900
-              ">
-                Check-in / Check-out
-              </label>
+       Search Hotels
 
 
-              <input
-                type="text"
-                placeholder="Select dates"
-                className="
-                  mt-3
-                  w-full
-                  bg-gray-50
-                  rounded-xl
-                  px-5
-                  py-4
-                  border
-                  border-gray-100
-                  outline-none
-                "
-              />
+--------------------------------
 
-            </div>
+Walang lalabas na hotel cards sa baba. Kapag ready ka na, saka natin gagawin ang:
 
+/hotel/results
+Palawan hotels
+Boracay hotels
+China hotels
+booking details page
 
-
-
-
-            {/* GUEST */}
-
-            <div>
-
-              <label className="
-                font-bold
-                text-gray-900
-              ">
-                Guests
-              </label>
-
-
-              <input
-                type="number"
-                placeholder="Add travelers"
-                className="
-                  mt-3
-                  w-full
-                  bg-gray-50
-                  rounded-xl
-                  px-5
-                  py-4
-                  border
-                  border-gray-100
-                  outline-none
-                "
-              />
-
-            </div>
-
-
-
-
-
-            {/* BUTTON */}
-
-            <button
-              onClick={()=>setSearched(true)}
-              className="
-                bg-red-600
-                hover:bg-red-700
-                text-white
-                font-semibold
-                rounded-full
-                px-8
-                py-4
-                shadow-md
-              "
-            >
-              Search Hotels
-            </button>
-
-
-
-          </div>
-
-
-        </div>
-
-
-
-
-
-
-
-        {/* HOTEL RESULT ONLY AFTER SEARCH */}
-
-
-        {searched && (
-
-          <div className="mt-12">
-
-
-            <h2 className="
-              text-3xl
-              font-bold
-              text-gray-900
-            ">
-              Hotel Results
-            </h2>
-
-
-
-
-            <div className="
-              mt-8
-              grid
-              grid-cols-1
-              md:grid-cols-3
-              gap-6
-            ">
-
-
-
-              {hotels
-              .filter((hotel)=>
-                hotel.location
-                .toLowerCase()
-                .includes(destination.toLowerCase())
-                ||
-                destination === ""
-              )
-              .map((hotel,index)=>(
-
-
-                <div
-                  key={index}
-                  className="
-                    bg-white
-                    rounded-2xl
-                    overflow-hidden
-                    shadow-md
-                    border
-                    border-gray-100
-                  "
-                >
-
-
-                  <img
-                    src={hotel.image}
-                    alt={hotel.name}
-                    className="
-                      w-full
-                      h-56
-                      object-cover
-                    "
-                  />
-
-
-
-                  <div className="p-6">
-
-
-                    <h3 className="
-                      text-xl
-                      font-bold
-                      text-gray-900
-                    ">
-                      {hotel.name}
-                    </h3>
-
-
-                    <p className="
-                      mt-2
-                      text-gray-500
-                    ">
-                      {hotel.location}
-                    </p>
-
-
-                    <p className="
-                      mt-3
-                      text-red-600
-                      font-bold
-                    ">
-                      {hotel.price}
-                    </p>
-
-
-
-                    <button
-                      className="
-                        mt-5
-                        w-full
-                        bg-red-600
-                        text-white
-                        py-3
-                        rounded-xl
-                        font-semibold
-                      "
-                    >
-                      Book Now
-                    </button>
-
-
-
-                  </div>
-
-
-                </div>
-
-
-              ))}
-
-
-
-            </div>
-
-
-          </div>
-
-        )}
-
-
-
-
-      </div>
-
-
-    </main>
-
-  );
-
-}
+Mas malinis ito para sa unang landing page.
