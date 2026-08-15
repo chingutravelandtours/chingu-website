@@ -928,6 +928,138 @@ const packages: Package[] = [
   slots: 20,
   deposit: 400 * USD_TO_PHP,
 },
+
+  {
+  title: "Beijing + Xi'an",
+  subtitle: "Shopping",
+  duration: "7D6N",
+  dates: "Dec. 31, 2026–Jan. 6, 2027 (+$150)",
+  city: "MNL",
+  price: 948 * USD_TO_PHP,
+  slots: 20,
+  deposit: 400 * USD_TO_PHP,
+},
+
+{
+  title: "Beijing + Xi'an",
+  subtitle: "Shopping",
+  duration: "7D6N",
+  dates: "Jan. 9–15, 2027",
+  city: "MNL",
+  price: 838 * USD_TO_PHP,
+  slots: 20,
+  deposit: 400 * USD_TO_PHP,
+},
+
+{
+  title: "Beijing + Xi'an",
+  subtitle: "Shopping",
+  duration: "7D6N",
+  dates: "Jan. 23–29, 2027 (+$50)",
+  city: "MNL",
+  price: 848 * USD_TO_PHP,
+  slots: 20,
+  deposit: 400 * USD_TO_PHP,
+},
+
+{
+  title: "Beijing + Xi'an",
+  subtitle: "Shopping",
+  duration: "7D6N",
+  dates: "Feb. 20–26, 2027",
+  city: "MNL",
+  price: 798* USD_TO_PHP,
+  slots: 20,
+  deposit: 400 * USD_TO_PHP,
+},
+
+{
+  title: "Beijing + Xi'an",
+  subtitle: "Shopping",
+  duration: "7D6N",
+  dates: "Mar. 13–19, 2027",
+  city: "MNL",
+  price: 798 * USD_TO_PHP,
+  slots: 20,
+  deposit: 400 * USD_TO_PHP,
+},
+
+{
+  title: "Beijing + Xi'an",
+  subtitle: "Shopping",
+  duration: "7D6N",
+  dates: "Mar. 27–Apr. 2, 2027 (+$100)",
+  city: "MNL",
+  price: 898 * USD_TO_PHP,
+  slots: 20,
+  deposit: 400 * USD_TO_PHP,
+},
+
+{
+  title: "Beijing + Xi'an",
+  subtitle: "Shopping",
+  duration: "7D6N",
+  dates: "Apr. 1–7, 2027 (+$150)",
+  city: "MNL",
+  price: 948 * USD_TO_PHP,
+  slots: 20,
+  deposit: 400 * USD_TO_PHP,
+},
+
+{
+  title: "Beijing + Xi'an",
+  subtitle: "Shopping",
+  duration: "7D6N",
+  dates: "Apr. 17–23, 2027",
+  city: "MNL",
+  price: 848 * USD_TO_PHP,
+  slots: 20,
+  deposit: 400 * USD_TO_PHP,
+},
+
+{
+  title: "Beijing + Xi'an",
+  subtitle: "Shopping",
+  duration: "7D6N",
+  dates: "May 15–21, 2027",
+  city: "MNL",
+  price: 998 * USD_TO_PHP,
+  slots: 20,
+  deposit: 400 * USD_TO_PHP,
+},
+
+{
+  title: "Beijing + Xi'an",
+  subtitle: "Shopping",
+  duration: "7D6N",
+  dates: "May 29–Jun. 4, 2027",
+  city: "MNL",
+  price: 948 * USD_TO_PHP,
+  slots: 20,
+  deposit: 400 * USD_TO_PHP,
+},
+
+{
+  title: "Beijing + Xi'an",
+  subtitle: "Shopping",
+  duration: "7D6N",
+  dates: "Jun. 12–18, 2027",
+  city: "MNL",
+  price: 798 * USD_TO_PHP,
+  slots: 20,
+  deposit: 400 * USD_TO_PHP,
+},
+
+{
+  title: "Beijing + Xi'an",
+  subtitle: "Shopping",
+  duration: "7D6N",
+  dates: "Jun. 26–Jul. 2, 2027",
+  city: "MNL",
+  price: 798 * USD_TO_PHP,
+  slots: 20,
+  deposit: 400 * USD_TO_PHP,
+},
 ];
 
 export default function ChinaToursPage() {
