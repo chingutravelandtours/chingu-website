@@ -752,6 +752,138 @@ const packages: Package[] = [
   slots: 20,
   deposit: 400 * USD_TO_PHP,
 },
+
+  {
+  title: "Beijing",
+  subtitle: "Shopping",
+  duration: "4D3N",
+  dates: "Dec. 31, 2026–Jan. 3, 2027 (+$150)",
+  city: "MNL",
+  price: 559 * USD_TO_PHP,
+  slots: 20,
+  deposit: 200 * USD_TO_PHP,
+},
+
+{
+  title: "Beijing",
+  subtitle: "Shopping",
+  duration: "4D3N",
+  dates: "Jan. 9–12, 2027",
+  city: "MNL",
+  price: 409 * USD_TO_PHP,
+  slots: 20,
+  deposit: 200 * USD_TO_PHP,
+},
+
+{
+  title: "Beijing",
+  subtitle: "Shopping",
+  duration: "4D3N",
+  dates: "Jan. 23–26, 2027 (+$50)",
+  city: "MNL",
+  price: 459 * USD_TO_PHP,
+  slots: 20,
+  deposit: 200 * USD_TO_PHP,
+},
+
+{
+  title: "Beijing",
+  subtitle: "Shopping",
+  duration: "4D3N",
+  dates: "Feb. 20–23, 2027",
+  city: "MNL",
+  price: 409 * USD_TO_PHP,
+  slots: 20,
+  deposit: 200 * USD_TO_PHP,
+},
+
+{
+  title: "Beijing",
+  subtitle: "Shopping",
+  duration: "4D3N",
+  dates: "Mar. 13–16, 2027",
+  city: "MNL",
+  price: 409 * USD_TO_PHP,
+  slots: 20,
+  deposit: 200 * USD_TO_PHP,
+},
+
+{
+  title: "Beijing",
+  subtitle: "Shopping",
+  duration: "4D3N",
+  dates: "Mar. 27–30, 2027 (+$100)",
+  city: "MNL",
+  price: 509 * USD_TO_PHP,
+  slots: 20,
+  deposit: 200 * USD_TO_PHP,
+},
+
+{
+  title: "Beijing",
+  subtitle: "Shopping",
+  duration: "4D3N",
+  dates: "Apr. 1–4, 2027 (+$150)",
+  city: "MNL",
+  price: 559 * USD_TO_PHP,
+  slots: 20,
+  deposit: 200 * USD_TO_PHP,
+},
+
+{
+  title: "Beijing",
+  subtitle: "Shopping",
+  duration: "4D3N",
+  dates: "Apr. 17–20, 2027",
+  city: "MNL",
+  price: 409 * USD_TO_PHP,
+  slots: 20,
+  deposit: 200 * USD_TO_PHP,
+},
+
+{
+  title: "Beijing",
+  subtitle: "Shopping",
+  duration: "4D3N",
+  dates: "May 15–18, 2027",
+  city: "MNL",
+  price: 409 * USD_TO_PHP,
+  slots: 20,
+  deposit: 200 * USD_TO_PHP,
+},
+
+{
+  title: "Beijing",
+  subtitle: "Shopping",
+  duration: "4D3N",
+  dates: "May 29–Jun. 1, 2027",
+  city: "MNL",
+  price: 409 * USD_TO_PHP,
+  slots: 20,
+  deposit: 200 * USD_TO_PHP,
+},
+
+{
+  title: "Beijing",
+  subtitle: "Shopping",
+  duration: "4D3N",
+  dates: "Jun. 12–15, 2027",
+  city: "MNL",
+  price: 459 * USD_TO_PHP,
+  slots: 20,
+  deposit: 200 * USD_TO_PHP,
+},
+
+{
+  title: "Beijing",
+  subtitle: "Shopping",
+  duration: "4D3N",
+  dates: "Jun. 26–29, 2027",
+  city: "MNL",
+  price: 409 * USD_TO_PHP,
+  slots: 20,
+  deposit: 200 * USD_TO_PHP,
+},
 ];
 
 export default function ChinaToursPage() {
