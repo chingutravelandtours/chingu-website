@@ -345,6 +345,83 @@ const packages: Package[] = [
   slots: 20,
   deposit: 400 * USD_TO_PHP,
 },
+  
+{
+  title: "Beijing + Xi'an",
+  subtitle: "Shopping",
+  duration: "7D6N",
+  dates: "Aug. 23–29, 2026",
+  city: "MNL",
+  price: 919 * USD_TO_PHP,
+  slots: 15,
+  deposit: 400 * USD_TO_PHP,
+},
+  
+{
+  title: "Beijing + Xi'an",
+  subtitle: "Shopping",
+  duration: "7D6N",
+  dates: "Sep. 13–19, 2026",
+  city: "MNL",
+  price: 919 * USD_TO_PHP,
+  slots: 18,
+  deposit: 400 * USD_TO_PHP,
+},
+  
+{
+  title: "Beijing + Xi'an",
+  subtitle: "Shopping",
+  duration: "7D6N",
+  dates: "Oct. 12–18, 2026 (NEW DATE)",
+  city: "MNL",
+  price: 919 * USD_TO_PHP,
+  slots: 20,
+  deposit: 400 * USD_TO_PHP,
+},
+  
+{
+  title: "Beijing + Xi'an",
+  subtitle: "Shopping",
+  duration: "7D6N",
+  dates: "Oct. 25–31, 2026 (+$50)",
+  city: "MNL",
+  price: 919 * USD_TO_PHP,
+  slots: 20,
+  deposit: 400 * USD_TO_PHP,
+},
+  
+{
+  title: "Beijing + Xi'an",
+  subtitle: "Shopping",
+  duration: "7D6N",
+  dates: "Nov. 1–7, 2026 (+$50)",
+  city: "MNL",
+  price: 919 * USD_TO_PHP,
+  slots: 20,
+  deposit: 400 * USD_TO_PHP,
+},
+  
+{
+  title: "Beijing + Xi'an",
+  subtitle: "Shopping",
+  duration: "7D6N",
+  dates: "Dec. 20–26, 2026 (+$200)",
+  city: "MNL",
+  price: 919 * USD_TO_PHP,
+  slots: 20,
+  deposit: 400 * USD_TO_PHP,
+},
+  
+{
+  title: "Beijing + Xi'an",
+  subtitle: "Shopping",
+  duration: "7D6N",
+  dates: "Dec. 31, 2026–Jan. 6, 2027 (+$150)",
+  city: "MNL",
+  price: 919 * USD_TO_PHP,
+  slots: 20,
+  deposit: 400 * USD_TO_PHP,
+},
 ];
 
 export default function ChinaToursPage() {
