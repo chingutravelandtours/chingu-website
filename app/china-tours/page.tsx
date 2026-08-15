@@ -477,6 +477,72 @@ const packages: Package[] = [
   slots: 20,
   deposit: 200 * USD_TO_PHP,
 },
+
+  {
+  title: "Winter Harbin",
+  subtitle: "Purefun",
+  duration: "6D5N",
+  dates: "Dec. 17–22, 2026",
+  city: "MNL",
+  price: 1249 * USD_TO_PHP,
+  slots: 20,
+  deposit: 400 * USD_TO_PHP,
+},
+
+{
+  title: "Winter Harbin",
+  subtitle: "Purefun",
+  duration: "5D4N",
+  dates: "Dec. 23–27, 2026 (+$200)",
+  city: "MNL",
+  price: 1449 * USD_TO_PHP,
+  slots: 17,
+  deposit: 400 * USD_TO_PHP,
+},
+
+{
+  title: "Winter Harbin",
+  subtitle: "Purefun",
+  duration: "5D4N",
+  dates: "Dec. 30, 2026–Jan. 3, 2027 (+$200)",
+  city: "MNL",
+  price: 1449 * USD_TO_PHP,
+  slots: 18,
+  deposit: 400 * USD_TO_PHP,
+},
+
+{
+  title: "Winter Harbin",
+  subtitle: "Purefun",
+  duration: "7D6N",
+  dates: "Jan. 3–9, 2027",
+  city: "MNL",
+  price: 1249 * USD_TO_PHP,
+  slots: 18,
+  deposit: 400 * USD_TO_PHP,
+},
+
+{
+  title: "Winter Harbin",
+  subtitle: "Purefun",
+  duration: "6D5N",
+  dates: "Jan. 14–19, 2027",
+  city: "MNL",
+  price: 1249 * USD_TO_PHP,
+  slots: 20,
+  deposit: 400 * USD_TO_PHP,
+},
+
+{
+  title: "Winter Harbin",
+  subtitle: "Purefun",
+  duration: "5D4N",
+  dates: "Feb. 16–20, 2027",
+  city: "MNL",
+  price: 1249 * USD_TO_PHP,
+  slots: 20,
+  deposit: 400 * USD_TO_PHP,
+},
 ];
 
 export default function ChinaToursPage() {
