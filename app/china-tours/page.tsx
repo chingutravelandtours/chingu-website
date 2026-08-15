@@ -398,7 +398,20 @@ Please send me the complete package details. Thank you!`
   };
 
   return (
-    <main className="min-h-screen bg-gray-50 py-12 px-5">
+    <main
+  className="
+    min-h-screen
+    py-12
+    px-5
+    bg-cover
+    bg-center
+    bg-fixed
+  "
+  style={{
+    backgroundImage:
+      "url('/backgrounds/china-bg.jpg')",
+  }}
+>
       <div className="max-w-7xl mx-auto">
 
         {/* HEADER */}
