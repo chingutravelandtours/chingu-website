@@ -277,7 +277,18 @@ const packages: Package[] = [
   city: "MNL",
   price: 838 * USD_TO_PHP,
   slots: 16,
-  deposit: 200 * USD_TO_PHP,
+  deposit: 400 * USD_TO_PHP,
+},
+
+  {
+  title: "Beijing + Shanghai",
+  subtitle: "Shopping",
+  duration: "7D6N",
+  dates: "Oct. 12-18, 2026",
+  city: "MNL",
+  price: 838 * USD_TO_PHP,
+  slots: 20,
+  deposit: 400 * USD_TO_PHP,
 },
 ];
 
