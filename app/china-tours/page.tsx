@@ -16,22 +16,19 @@ type Package = {
 const USD_TO_PHP = 60;
 
 const packages: Package[] = [
-  // =========================
-  // POLAR PACKAGES
-  // =========================
- {
-  title: "ChongQing",
-  subtitle: "Shopping",
-  duration: "5D3N",
-  dates: "Sep. 22–26, 2026",
-  city: "MNL",
-  price: 499 * USD_TO_PHP,
-  slots: 20,
-  deposit: 200 * USD_TO_PHP,
-},
+  {
+    title: "Chongqing",
+    subtitle: "Shopping",
+    duration: "5D3N",
+    dates: "Sep. 22–26, 2026",
+    city: "MNL",
+    price: 499 * USD_TO_PHP,
+    slots: 20,
+    deposit: 200 * USD_TO_PHP,
+  },
 
   {
-    title: "ChongQing",
+    title: "Chongqing",
     subtitle: "Shopping",
     duration: "5D3N",
     dates: "Oct. 15–19, 2026",
@@ -106,8 +103,8 @@ const packages: Package[] = [
     minimum: 10,
     deposit: 200 * USD_TO_PHP,
   },
-  
- {
+
+  {
     title: "Avatar Zhangjiajie + Fenghuang",
     subtitle: "Pure Fun",
     duration: "6D5N",
@@ -125,7 +122,7 @@ const packages: Package[] = [
     dates: "Oct. 27–Nov. 1, 2026",
     city: "MNL",
     price: 699 * USD_TO_PHP,
-    minimum: 15,
+    minimum: 20,
     deposit: 200 * USD_TO_PHP,
   },
 
@@ -150,7 +147,7 @@ const packages: Package[] = [
     minimum: 15,
     deposit: 200 * USD_TO_PHP,
   },
-  
+
   {
     title: "Avatar Zhangjiajie + Fenghuang",
     subtitle: "Pure Fun",
@@ -161,71 +158,6 @@ const packages: Package[] = [
     minimum: 20,
     deposit: 200 * USD_TO_PHP,
   },
-
-   {
-    title: "Chonqing + Zhangjiajie + Shanghai (Shopping) 7D6N",
-    subtitle: "Shopping",
-    duration: "7D6N",
-    dates: "Sep. 12–18, 2026",
-    city: "MNL",
-    price: 838 * USD_TO_PHP,
-    slots: 8,
-    deposit: 400 * USD_TO_PHP,
-  },
-
-   {
-    title: "Chongqing + Zhangjiajie + Shanghai",
-    subtitle: "Shopping",
-    duration: "6D5N",
-    dates: "Oct. 10–16, 2026",
-    city: "MNL",
-    price: 838 * USD_TO_PHP,
-    slots: 14,
-    deposit: 400 * USD_TO_PHP,
-  },
-
-   {
-    title: "Chonqing + Zhangjiajie + Shanghai (Shopping) 7D6N",
-    subtitle: "Shopping",
-    duration: "7D6N",
-    dates: "Oct. 26–Nov.2, 2026",
-    city: "MNL",
-    price: 938 * USD_TO_PHP,
-    slots: 6,
-    deposit: 400 * USD_TO_PHP,
-  },
-   {
-    title: "Chonqing + Zhangjiajie + Shanghai (Shopping) 7D6N",
-    subtitle: "Shopping",
-    duration: "7D6N",
-    dates: "Nov. 16–22, 2026",
-    city: "MNL",
-    price: 838 * USD_TO_PHP,
-    slots: 5,
-    deposit: 400 * USD_TO_PHP,
-  },
-
-   {
-    title: "Chonqing + Zhangjiajie + Shanghai (Shopping) 7D6N",
-    subtitle: "Shopping",
-    duration: "7D6N",
-    dates: "Nov. 28–Dec.4, 2026",
-    city: "MNL",
-    price: 838 * USD_TO_PHP,
-    slots: 20,
-    deposit: 400 * USD_TO_PHP,
-  }
-
-   {
-    title: "Chonqing + Zhangjiajie + Shanghai (Shopping) 7D6N",
-    subtitle: "Shopping",
-    duration: "7D6N",
-    dates: "Dec. 21–27, 2026",
-    city: "MNL",
-    price: 1033 * USD_TO_PHP,
-    slots: 11,
-    deposit: 400 * USD_TO_PHP,
-  }
 ];
 
 export default function ChinaToursPage() {
