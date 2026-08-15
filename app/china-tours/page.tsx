@@ -562,7 +562,7 @@ const packages: Package[] = [
   dates: "Jul. 12–15, 2026",
   city: "MNL",
   price: 838 * USD_TO_PHP,
-  slots: undefined,
+  slots: 20,
   deposit: 500 * USD_TO_PHP,
 },
 
@@ -573,7 +573,7 @@ const packages: Package[] = [
   dates: "Jul. 26–29, 2026",
   city: "MNL",
   price: 838 * USD_TO_PHP,
-  slots: undefined,
+  slots: 20,
   deposit: 500 * USD_TO_PHP,
 },
 
@@ -584,7 +584,7 @@ const packages: Package[] = [
   dates: "Aug. 9–12, 2026",
   city: "MNL",
   price: 838 * USD_TO_PHP,
-  slots: undefined,
+  slots: 20,
   deposit: 500 * USD_TO_PHP,,
 },
 
@@ -595,7 +595,7 @@ const packages: Package[] = [
   dates: "Aug. 23–26, 2026",
   city: "MNL",
   price: 838 * USD_TO_PHP,
-  slots: undefined,
+  slots: 20,
   deposit: 500 * USD_TO_PHP,
 },
 
@@ -606,7 +606,7 @@ const packages: Package[] = [
   dates: "Sep. 6–9, 2026",
   city: "MNL",
   price: 838 * USD_TO_PHP,
-  slots: undefined,
+  slots: 20,
   deposit: 500 * USD_TO_PHP,
 },
 
