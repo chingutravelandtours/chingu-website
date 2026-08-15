@@ -253,9 +253,20 @@ const packages: Package[] = [
   duration: "4D3N",
   dates: "Dec. 20-23, 2026",
   city: "MNL",
-  price: 699 * USD_TO_PHP,
+  price: 649 * USD_TO_PHP,
   slots: 20,
-  deposit: 400 * USD_TO_PHP,
+  deposit: 200 * USD_TO_PHP,
+},
+
+  {
+  title: "Beijing",
+  subtitle: "Shopping",
+  duration: "4D3N",
+  dates: "Dec. 31, 2026 - Jan. 3, 2027",
+  city: "MNL",
+  price: 599 * USD_TO_PHP,
+  slots: 20,
+  deposit: 200 * USD_TO_PHP,
 },
 ];
 
