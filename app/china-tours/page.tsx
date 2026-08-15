@@ -398,14 +398,11 @@ Please send me the complete package details. Thank you!`
   };
 
   return (
-    <main
+   <main
   className="
     min-h-screen
-    py-12
-    px-5
     bg-cover
     bg-center
-    bg-fixed
   "
   style={{
     backgroundImage:
