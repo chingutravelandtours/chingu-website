@@ -169,6 +169,17 @@ const packages: Package[] = [
   slots: 16,
   deposit: 200 * USD_TO_PHP,
 }, 
+
+  {
+  title: "Beijing + Shanghai",
+  subtitle: "Shopping",
+  duration: "7D6N",
+  dates: "Oct. 12–18, 2026",
+  city: "MNL",
+  price: 499 * USD_TO_PHP,
+  slots: 3,
+  deposit: 200 * USD_TO_PHP,
+},
 ];
 
 export default function ChinaToursPage() {
