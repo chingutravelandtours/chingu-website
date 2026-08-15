@@ -1,14 +1,3 @@
-Pasted text.txt
-Document
-anong trabaho ng gumagawa nito
-ano lalagay ko sa caption
-ito yung website ko gawan mo ako ng picture na pwede ko lagay sa post ko
-Edit
-pwede mo ba itong ayusin kasi yung icon may barko at airplane hotel lang sana ito kahit wala ng mga icon
-Edit
-
-Para sa CHINGU Travel and Tours – Palawan Hotel Listing, puwede mong ilagay ang mga sample hotels/resorts na ito:
-
 export const palawanHotels = [
   {
     name: "El Nido Resorts Pangulasian Island",
