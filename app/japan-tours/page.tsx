@@ -112,6 +112,17 @@ const packages: Package[] = [
   slots: 4,
   deposit: 300 * USD_TO_PHP,
 },
+  
+  {
+  title: "Osaka + Kyoto + Nara",
+  subtitle: "Japan (3 in 1)",
+  duration: "5D4N",
+  dates: "Dec. 16–20, 2026",
+  city: "MNL",
+  price: 999 * USD_TO_PHP,
+  slots: 12,
+  deposit: 300 * USD_TO_PHP,
+},
 ];
 
 const peso = (amount: number) =>
