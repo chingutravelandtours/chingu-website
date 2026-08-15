@@ -631,6 +631,28 @@ const packages: Package[] = [
   slots: 20,
   deposit: 500 * USD_TO_PHP,
 },
+
+  {
+  title: "GuangZhou",
+  subtitle: "Land Tour Purefun",
+  duration: "4D3N",
+  dates: "Flexible Schedule (Peak dates are subject to surcharge)",
+  city: "MNL",
+  price: 349 * USD_TO_PHP,
+  minimum: 4,
+  deposit: 200 * USD_TO_PHP,
+},
+
+{
+  title: "XinJiang",
+  subtitle: "Land Tour Purefun",
+  duration: "4D3N",
+  dates: "Flexible Schedule (Peak dates are subject to surcharge)",
+  city: "MNL",
+  price: 849 * USD_TO_PHP,
+  minimum: 4,
+  deposit: 500 * USD_TO_PHP,
+},
 ];
 
 export default function ChinaToursPage() {
