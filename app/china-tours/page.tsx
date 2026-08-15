@@ -1223,8 +1223,9 @@ Please send me the complete package details. Thank you!`
   };
 
   return (
-    <main className="min-h-screen bg-gray-50 py-12 px-5">
-      <div className="max-w-7xl mx-auto">
+     <main className="min-h-screen bg-gray-50 py-14">
+      <div className="max-w-7xl mx-auto px-6">
+
        
         {/* HEADER */}
         <div className="text-center mb-12">
