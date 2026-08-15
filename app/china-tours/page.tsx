@@ -422,6 +422,61 @@ const packages: Package[] = [
   slots: 20,
   deposit: 400 * USD_TO_PHP,
 },
+
+{
+  title: "Shanghai",
+  subtitle: "Purefun",
+  duration: "4D3N",
+  dates: "Sep. 16–19, 2026",
+  city: "MNL",
+  price: 549 * USD_TO_PHP,
+  slots: 20,
+  deposit: 200 * USD_TO_PHP,
+},
+
+{
+  title: "Shanghai",
+  subtitle: "Purefun",
+  duration: "4D3N",
+  dates: "Oct. 28–31, 2026 (+$50)",
+  city: "MNL",
+  price: 599 * USD_TO_PHP,
+  slots: 10,
+  deposit: 200 * USD_TO_PHP,
+},
+
+{
+  title: "Shanghai",
+  subtitle: "Purefun",
+  duration: "4D3N",
+  dates: "Nov. 4–7, 2026",
+  city: "MNL",
+  price: 549 * USD_TO_PHP,
+  slots: 10,
+  deposit: 200 * USD_TO_PHP,
+},
+
+{
+  title: "Shanghai",
+  subtitle: "Purefun",
+  duration: "4D3N",
+  dates: "Dec. 23–26, 2026 (+$100)",
+  city: "MNL",
+  price: 649 * USD_TO_PHP,
+  slots: 20,
+  deposit: 200 * USD_TO_PHP,
+},
+
+{
+  title: "Shanghai",
+  subtitle: "Purefun",
+  duration: "4D3N",
+  dates: "Jan. 3–6, 2027 (+$50)",
+  city: "MNL",
+  price: 599 * USD_TO_PHP,
+  slots: 20,
+  deposit: 200 * USD_TO_PHP,
+},
 ];
 
 export default function ChinaToursPage() {
