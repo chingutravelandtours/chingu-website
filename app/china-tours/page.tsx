@@ -784,8 +784,8 @@ Please send me the complete package details. Thank you!`
 
   return (
    <main className="min-h-screen bg-gray-50 py-12 px-5">
-      <div className="max-w-[1600px] mx-auto">
-
+     <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-5 gap-4">
+       
         {/* HEADER */}
         <div className="text-center mb-12">
           <p className="text-red-600 font-semibold uppercase tracking-[4px] text-sm">
