@@ -783,7 +783,8 @@ Please send me the complete package details. Thank you!`
   };
 
   return (
-   <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-5 gap-5">
+   <main className="min-h-screen bg-gray-50 py-12 px-5">
+      <div className="max-w-[1600px] mx-auto">
 
         {/* HEADER */}
         <div className="text-center mb-12">
