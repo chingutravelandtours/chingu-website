@@ -15,39 +15,6 @@ type Package = {
 
 const packages: Package[] = [
   {
-    title: "Tokyo + Mt. Fuji + Yokohama",
-    subtitle: "Japan",
-    duration: "5D4N",
-    dates: "Sep. 13–17, 2026",
-    city: "MNL",
-    price: 899 * USD_TO_PHP,
-    slots: 0,
-    deposit: 300 * USD_TO_PHP,
-  },
-
-  {
-    title: "Tokyo + Mt. Fuji",
-    subtitle: "Japan (Via 5J)",
-    duration: "5D4N",
-    dates: "Sep. 18–22, 2026",
-    city: "MNL",
-    price: 799 * USD_TO_PHP,
-    slots: 0,
-    deposit: 300 * USD_TO_PHP,
-  },
-
-  {
-    title: "Discover Osaka + Kyoto + Nara",
-    subtitle: "Japan (3 in 1)",
-    duration: "5D4N",
-    dates: "Sep. 25–29, 2026",
-    city: "MNL",
-    price: 799 * USD_TO_PHP,
-    slots: 0,
-    deposit: 300 * USD_TO_PHP,
-  },
-
-  {
     title: "Discover Osaka + Kyoto + Nara",
     subtitle: "Japan (3 in 1)",
     duration: "5D4N",
@@ -81,28 +48,6 @@ const packages: Package[] = [
   },
 
   {
-    title: "Tokyo + Mt. Fuji + Yokohama",
-    subtitle: "Japan",
-    duration: "5D4N",
-    dates: "Oct. 17–21, 2026",
-    city: "MNL",
-    price: 899 * USD_TO_PHP,
-    slots: 0,
-    deposit: 300 * USD_TO_PHP,
-  },
-
-  {
-    title: "Tokyo + Mt. Fuji + Yokohama",
-    subtitle: "Japan",
-    duration: "5D4N",
-    dates: "Oct. 21–25, 2026",
-    city: "MNL",
-    price: 899 * USD_TO_PHP,
-    slots: 0,
-    deposit: 300 * USD_TO_PHP,
-  },
-
-  {
     title: "Discover Osaka + Kyoto + Nara",
     subtitle: "Japan (3 in 1)",
     duration: "5D4N",
@@ -110,39 +55,6 @@ const packages: Package[] = [
     city: "MNL",
     price: 799 * USD_TO_PHP,
     slots: 1,
-    deposit: 300 * USD_TO_PHP,
-  },
-
-  {
-    title: "Tokyo + Mt. Fuji + Yokohama",
-    subtitle: "Japan",
-    duration: "5D4N",
-    dates: "Oct. 23–27, 2026",
-    city: "MNL",
-    price: 899 * USD_TO_PHP,
-    slots: 0,
-    deposit: 300 * USD_TO_PHP,
-  },
-
-  {
-    title: "Tokyo + Mt. Fuji + Yokohama",
-    subtitle: "Japan",
-    duration: "5D4N",
-    dates: "Oct. 24–28, 2026",
-    city: "MNL",
-    price: 899 * USD_TO_PHP,
-    slots: 0,
-    deposit: 300 * USD_TO_PHP,
-  },
-
-  {
-    title: "Discover Osaka + Kyoto + Nara",
-    subtitle: "Japan (3 in 1)",
-    duration: "5D4N",
-    dates: "Oct. 25–29, 2026",
-    city: "MNL",
-    price: 859 * USD_TO_PHP,
-    slots: 0,
     deposit: 300 * USD_TO_PHP,
   },
 ];
