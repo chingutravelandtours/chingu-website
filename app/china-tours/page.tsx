@@ -554,6 +554,83 @@ const packages: Package[] = [
   slots: 4,
   deposit: 500 * USD_TO_PHP,
 },
+
+  {
+  title: "YiWu International Trade Market",
+  subtitle: "Shopping",
+  duration: "4D3N",
+  dates: "Jul. 12–15, 2026",
+  city: "MNL",
+  price: 838 * USD_TO_PHP,
+  slots: undefined,
+  deposit: 500 * USD_TO_PHP,
+},
+
+{
+  title: "YiWu International Trade Market",
+  subtitle: "Shopping",
+  duration: "4D3N",
+  dates: "Jul. 26–29, 2026",
+  city: "MNL",
+  price: 838 * USD_TO_PHP,
+  slots: undefined,
+  deposit: 500 * USD_TO_PHP,
+},
+
+{
+  title: "YiWu International Trade Market",
+  subtitle: "Shopping",
+  duration: "4D3N",
+  dates: "Aug. 9–12, 2026",
+  city: "MNL",
+  price: 838 * USD_TO_PHP,
+  slots: undefined,
+  deposit: 500 * USD_TO_PHP,,
+},
+
+{
+  title: "YiWu International Trade Market",
+  subtitle: "Shopping",
+  duration: "4D3N",
+  dates: "Aug. 23–26, 2026",
+  city: "MNL",
+  price: 838 * USD_TO_PHP,
+  slots: undefined,
+  deposit: 500 * USD_TO_PHP,
+},
+
+{
+  title: "YiWu International Trade Market",
+  subtitle: "Shopping",
+  duration: "4D3N",
+  dates: "Sep. 6–9, 2026",
+  city: "MNL",
+  price: 838 * USD_TO_PHP,
+  slots: undefined,
+  deposit: 500 * USD_TO_PHP,
+},
+
+{
+  title: "YiWu International Trade Market",
+  subtitle: "Shopping",
+  duration: "4D3N",
+  dates: "Sep. 20–23, 2026",
+  city: "MNL",
+  price: 838 * USD_TO_PHP,
+  slots: undefined,
+  deposit: 500 * USD_TO_PHP,
+},
+
+{
+  title: "YiWu International Trade Market",
+  subtitle: "Shopping",
+  duration: "4D3N",
+  dates: "Oct. 18–21, 2026",
+  city: "MNL",
+  price: 838 * USD_TO_PHP,
+  slots: undefined,
+  deposit: 500 * USD_TO_PHP,
+},
 ];
 
 export default function ChinaToursPage() {
