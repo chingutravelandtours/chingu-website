@@ -149,15 +149,15 @@ const packages: Package[] = [
   },
 
   {
-    title: "Avatar Zhangjiajie + Fenghuang",
-    subtitle: "Pure Fun",
-    duration: "6D5N",
-    dates: "Nov. 10–15, 2026",
-    city: "MNL",
-    price: 699 * USD_TO_PHP,
-    minimum: 20,
-    deposit: 200 * USD_TO_PHP,
-  },
+  title: "Chongqing + Zhangjiajie + Shanghai (Shopping) 7D6N",
+  subtitle: "Shopping",
+  duration: "7D6N",
+  dates: "Dec. 21–27, 2026",
+  city: "MNL",
+  price: 1033 * USD_TO_PHP,
+  slots: 11,
+  deposit: 400 * USD_TO_PHP,
+},
 ];
 
 export default function ChinaToursPage() {
