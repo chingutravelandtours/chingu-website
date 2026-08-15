@@ -1,230 +1,141 @@
-"use client";
+<div className="min-h-screen bg-gray-50 px-5 py-16">
 
-export default function HotelPage() {
+  <div className="max-w-6xl mx-auto text-center">
 
-  return (
+    {/* HEADER */}
+    <p className="text-red-600 font-semibold uppercase tracking-[4px] text-sm">
+      CHINGU TRAVEL AND TOURS
+    </p>
 
-    <main className="min-h-screen bg-gray-50 py-16 px-5">
+    <h1 className="mt-4 text-5xl font-bold text-gray-900">
+      Hotel Booking
+    </h1>
+
+    <p className="mt-4 text-gray-500 text-lg">
+      Find the perfect stay for your next journey.
+    </p>
 
 
-      <div className="max-w-6xl mx-auto">
+    {/* SEARCH CARD */}
+    <div className="
+      mt-12
+      bg-white
+      rounded-3xl
+      shadow-md
+      border
+      border-gray-100
+      p-8
+    ">
+
+      <div className="
+        grid
+        grid-cols-1
+        md:grid-cols-4
+        gap-6
+        items-center
+      ">
 
 
-        {/* HEADER */}
-
-        <div className="text-center mb-10">
+        {/* DESTINATION */}
+        <div className="text-left">
 
           <p className="
-            text-red-600
-            uppercase
-            tracking-widest
-            font-semibold
-            text-sm
-          ">
-            CHINGU Travel and Tours
-          </p>
-
-
-          <h1 className="
-            mt-3
-            text-5xl
             font-bold
             text-gray-900
           ">
-            Hotel Booking
-          </h1>
-
-
-          <p className="mt-4 text-gray-600">
-            Find the perfect stay for your next journey.
+            Destination
           </p>
 
+          <div className="
+            mt-3
+            bg-gray-50
+            rounded-xl
+            px-5
+            py-4
+            text-gray-400
+          ">
+            City, hotel or property
+          </div>
 
         </div>
 
 
 
+        {/* DATE */}
+        <div className="text-left">
 
-
-
-        {/* CATEGORY TABS */}
-
-
-        <div className="
-          bg-white
-          rounded-xl
-          shadow-md
-          p-3
-          flex
-          gap-3
-          overflow-x-auto
-          mb-5
-        ">
-
-
-          <button className="
-            px-6
-            py-3
-            rounded-lg
-            bg-gray-100
-            font-semibold
+          <p className="
+            font-bold
+            text-gray-900
           ">
-            🏨 Hotels
-          </button>
+            Check-in / Check-out
+          </p>
 
-
-          <button className="
-            px-6
-            py-3
-            text-gray-600
+          <div className="
+            mt-3
+            bg-gray-50
+            rounded-xl
+            px-5
+            py-4
+            text-gray-400
           ">
-            🚢 Cruises
-          </button>
-
-
-          <button className="
-            px-6
-            py-3
-            text-gray-600
-          ">
-            🧳 Tours
-          </button>
-
-
-          <button className="
-            px-6
-            py-3
-            text-gray-600
-          ">
-            ✈ Flights
-          </button>
-
+            Select dates
+          </div>
 
         </div>
 
 
 
+        {/* GUEST */}
+        <div className="text-left">
 
-
-
-
-
-        {/* SEARCH BOX */}
-
-
-
-        <div className="
-          bg-white
-          rounded-3xl
-          shadow-lg
-          border
-          border-gray-200
-          p-5
-          flex
-          flex-col
-          md:flex-row
-          items-center
-          gap-4
-        ">
-
-
+          <p className="
+            font-bold
+            text-gray-900
+          ">
+            Guests
+          </p>
 
           <div className="
-            flex-1
-            border-r
-            border-gray-200
+            mt-3
+            bg-gray-50
+            rounded-xl
             px-5
+            py-4
+            text-gray-400
           ">
-
-            <p className="text-sm font-semibold text-gray-900">
-              Where
-            </p>
-
-            <p className="text-gray-400 mt-2">
-              Partner or destination
-            </p>
-
+            Add travelers
           </div>
 
+        </div>
 
 
 
-
-
-          <div className="
-            flex-1
-            border-r
-            border-gray-200
-            px-5
-          ">
-
-
-            <p className="text-sm font-semibold text-gray-900">
-              When
-            </p>
-
-
-            <p className="text-gray-400 mt-2">
-              Add dates
-            </p>
-
-
-          </div>
-
-
-
-
-
-
-
-          <div className="
-            flex-1
-            px-5
-          ">
-
-
-            <p className="text-sm font-semibold text-gray-900">
-              Who
-            </p>
-
-
-            <p className="text-gray-400 mt-2">
-              Add travelers
-            </p>
-
-
-          </div>
-
-
-
-
-
-
-
-          <button className="
-            bg-black
+        {/* BUTTON */}
+        <button
+          className="
+            mt-7
+            bg-red-600
+            hover:bg-red-700
             text-white
-            w-14
-            h-14
+            font-semibold
             rounded-full
-            text-xl
-          ">
+            px-8
+            py-5
+            transition
+          "
+        >
 
-            🔍
+          Search Hotels
 
-          </button>
-
-
-
-        </div>
-
+        </button>
 
 
       </div>
 
+    </div>
 
-    </main>
 
-  );
+  </div>
 
-}
+</div>
