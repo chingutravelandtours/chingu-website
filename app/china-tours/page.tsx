@@ -543,6 +543,17 @@ const packages: Package[] = [
   slots: 20,
   deposit: 400 * USD_TO_PHP,
 },
+
+  {
+  title: "Autumn Canton Fair: Phase 1",
+  subtitle: "Shopping",
+  duration: "4D3N",
+  dates: "Oct. 16–19, 2026 (+$100)",
+  city: "MNL",
+  price: 1249 * USD_TO_PHP,
+  slots: 4,
+  deposit: 500 * USD_TO_PHP,
+},
 ];
 
 export default function ChinaToursPage() {
