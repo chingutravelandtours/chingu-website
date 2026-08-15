@@ -1,4 +1,27 @@
 export default function HotelBooking() {
+
+  const hotels = [
+    {
+      name: "Grand Hyatt Shanghai",
+      location: "Shanghai, China",
+      price: "$180 / Night",
+      image: "/hotels/shanghai.jpg",
+    },
+    {
+      name: "InterContinental Beijing",
+      location: "Beijing, China",
+      price: "$150 / Night",
+      image: "/hotels/beijing.jpg",
+    },
+    {
+      name: "Wyndham Chongqing",
+      location: "Chongqing, China",
+      price: "$120 / Night",
+      image: "/hotels/chongqing.jpg",
+    },
+  ];
+
+
   return (
     <main className="min-h-screen bg-gray-50 px-5 py-16">
 
@@ -69,14 +92,9 @@ export default function HotelBooking() {
 
             <div>
 
-              <label className="
-                block
-                font-bold
-                text-gray-900
-              ">
+              <label className="block font-bold text-gray-900">
                 Destination
               </label>
-
 
               <input
                 type="text"
@@ -100,19 +118,13 @@ export default function HotelBooking() {
 
 
 
-
             {/* CHECK IN CHECK OUT */}
 
             <div>
 
-              <label className="
-                block
-                font-bold
-                text-gray-900
-              ">
+              <label className="block font-bold text-gray-900">
                 Check-in / Check-out
               </label>
-
 
               <input
                 type="text"
@@ -137,19 +149,13 @@ export default function HotelBooking() {
 
 
 
-
             {/* GUESTS */}
 
             <div>
 
-              <label className="
-                block
-                font-bold
-                text-gray-900
-              ">
+              <label className="block font-bold text-gray-900">
                 Guests
               </label>
-
 
               <input
                 type="number"
@@ -174,7 +180,6 @@ export default function HotelBooking() {
 
 
 
-
             {/* SEARCH BUTTON */}
 
             <button
@@ -190,11 +195,134 @@ export default function HotelBooking() {
                 shadow-md
               "
             >
-
               Search Hotels
-
             </button>
 
+
+          </div>
+
+
+        </div>
+
+
+
+
+
+        {/* FEATURED HOTELS */}
+
+        <div className="mt-14">
+
+
+          <h2 className="
+            text-3xl
+            font-bold
+            text-gray-900
+            text-center
+          ">
+            Featured Hotels
+          </h2>
+
+
+          <p className="
+            mt-3
+            text-gray-500
+            text-center
+          ">
+            Discover comfortable stays for your next journey.
+          </p>
+
+
+
+          <div className="
+            mt-8
+            grid
+            grid-cols-1
+            md:grid-cols-3
+            gap-6
+          ">
+
+
+            {hotels.map((hotel, index) => (
+
+              <div
+                key={index}
+                className="
+                  bg-white
+                  rounded-2xl
+                  overflow-hidden
+                  shadow-md
+                  border
+                  border-gray-100
+                "
+              >
+
+
+                <img
+                  src={hotel.image}
+                  alt={hotel.name}
+                  className="
+                    w-full
+                    h-56
+                    object-cover
+                  "
+                />
+
+
+
+                <div className="p-6">
+
+
+                  <h3 className="
+                    text-xl
+                    font-bold
+                    text-gray-900
+                  ">
+                    {hotel.name}
+                  </h3>
+
+
+                  <p className="
+                    mt-2
+                    text-gray-500
+                  ">
+                    {hotel.location}
+                  </p>
+
+
+
+                  <p className="
+                    mt-3
+                    text-red-600
+                    font-bold
+                  ">
+                    {hotel.price}
+                  </p>
+
+
+
+                  <button
+                    className="
+                      mt-5
+                      w-full
+                      bg-red-600
+                      hover:bg-red-700
+                      text-white
+                      py-3
+                      rounded-xl
+                      font-semibold
+                    "
+                  >
+                    Book Now
+                  </button>
+
+
+                </div>
+
+
+              </div>
+
+
+            ))}
 
 
           </div>
