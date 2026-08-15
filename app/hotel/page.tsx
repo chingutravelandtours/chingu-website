@@ -2,23 +2,48 @@ export default function HotelBooking() {
   return (
     <main className="min-h-screen bg-gray-50 px-5 py-16">
 
-      <div className="max-w-6xl mx-auto text-center">
+      <div className="max-w-6xl mx-auto">
+
 
         {/* HEADER */}
-        <p className="text-red-600 font-semibold uppercase tracking-[4px] text-sm">
-          CHINGU TRAVEL AND TOURS
-        </p>
+        <div className="text-center">
 
-        <h1 className="mt-4 text-5xl font-bold text-gray-900">
-          Hotel Booking
-        </h1>
+          <p className="
+            text-red-600
+            font-semibold
+            uppercase
+            tracking-[4px]
+            text-sm
+          ">
+            CHINGU TRAVEL AND TOURS
+          </p>
 
-        <p className="mt-4 text-gray-500 text-lg">
-          Find the perfect stay for your next journey.
-        </p>
+
+          <h1 className="
+            mt-4
+            text-5xl
+            md:text-6xl
+            font-bold
+            text-gray-900
+          ">
+            Hotel Booking
+          </h1>
 
 
-        {/* SEARCH BOX */}
+          <p className="
+            mt-4
+            text-gray-500
+            text-lg
+          ">
+            Find the perfect stay for your next journey.
+          </p>
+
+        </div>
+
+
+
+        {/* SEARCH CARD */}
+
         <div className="
           mt-12
           bg-white
@@ -29,6 +54,7 @@ export default function HotelBooking() {
           p-8
         ">
 
+
           <div className="
             grid
             grid-cols-1
@@ -38,12 +64,19 @@ export default function HotelBooking() {
           ">
 
 
-            {/* DESTINATION */}
-            <div className="text-left">
 
-              <p className="font-bold text-gray-900">
+            {/* DESTINATION */}
+
+            <div>
+
+              <label className="
+                block
+                font-bold
+                text-gray-900
+              ">
                 Destination
-              </p>
+              </label>
+
 
               <input
                 type="text"
@@ -52,45 +85,71 @@ export default function HotelBooking() {
                   mt-3
                   w-full
                   bg-gray-50
+                  border
+                  border-gray-100
                   rounded-xl
                   px-5
                   py-4
+                  text-gray-500
                   outline-none
+                  focus:border-red-500
                 "
               />
 
             </div>
 
 
-            {/* DATE */}
-            <div className="text-left">
 
-              <p className="font-bold text-gray-900">
+
+            {/* CHECK IN CHECK OUT */}
+
+            <div>
+
+              <label className="
+                block
+                font-bold
+                text-gray-900
+              ">
                 Check-in / Check-out
-              </p>
+              </label>
+
 
               <input
-                type="date"
+                type="text"
+                placeholder="Select dates"
                 className="
                   mt-3
                   w-full
                   bg-gray-50
+                  border
+                  border-gray-100
                   rounded-xl
                   px-5
                   py-4
+                  text-gray-500
                   outline-none
+                  focus:border-red-500
                 "
               />
 
             </div>
 
 
-            {/* GUEST */}
-            <div className="text-left">
 
-              <p className="font-bold text-gray-900">
+
+
+            {/* GUESTS */}
+
+            <div>
+
+              <label className="
+                block
+                font-bold
+                text-gray-900
+              ">
                 Guests
-              </p>
+              </label>
+
 
               <input
                 type="number"
@@ -99,17 +158,25 @@ export default function HotelBooking() {
                   mt-3
                   w-full
                   bg-gray-50
+                  border
+                  border-gray-100
                   rounded-xl
                   px-5
                   py-4
+                  text-gray-500
                   outline-none
+                  focus:border-red-500
                 "
               />
 
             </div>
 
 
-            {/* BUTTON */}
+
+
+
+            {/* SEARCH BUTTON */}
+
             <button
               className="
                 bg-red-600
@@ -120,17 +187,24 @@ export default function HotelBooking() {
                 px-8
                 py-4
                 transition
+                shadow-md
               "
             >
+
               Search Hotels
+
             </button>
+
 
 
           </div>
 
+
         </div>
 
+
       </div>
+
 
     </main>
   );
