@@ -123,6 +123,72 @@ const packages: Package[] = [
   slots: 12,
   deposit: 300 * USD_TO_PHP,
 },
+
+  {
+  title: "Adora Flora City Cruise",
+  subtitle: "Fly + Cruise",
+  duration: "7D6N",
+  dates: "Jan. 6–12, 2027",
+  city: "MNL",
+  price: 1588 * USD_TO_PHP,
+  slots: 20,
+  deposit: 500 * USD_TO_PHP,
+},
+
+{
+  title: "Adora Flora City Cruise",
+  subtitle: "Fly + Cruise",
+  duration: "6D5N",
+  dates: "Jan. 11–16, 2027",
+  city: "MNL",
+  price: 1488 * USD_TO_PHP,
+  slots: 20,
+  deposit: 500 * USD_TO_PHP,
+},
+
+{
+  title: "Osaka + Kyoto + Nara",
+  subtitle: "Japan (Via 5J)",
+  duration: "5D4N",
+  dates: "Jan. 13–17, 2027",
+  city: "DVO",
+  price: 999 * USD_TO_PHP,
+  slots: 32,
+  deposit: 300 * USD_TO_PHP,
+},
+
+{
+  title: "Osaka + Kyoto + Nara",
+  subtitle: "Japan (3 in 1)",
+  duration: "5D4N",
+  dates: "Jan. 13–17, 2027",
+  city: "MNL",
+  price: 859 * USD_TO_PHP,
+  slots: 30,
+  deposit: 300 * USD_TO_PHP,
+},
+
+{
+  title: "Discover Osaka Kyoto Nara",
+  subtitle: "Japan (3 in 1)",
+  duration: "5D4N",
+  dates: "Jan. 14–18, 2027",
+  city: "CEB",
+  price: 899 * USD_TO_PHP,
+  slots: 17,
+  deposit: 300 * USD_TO_PHP,
+},
+
+{
+  title: "Osaka + Kyoto + Nara",
+  subtitle: "Japan (3 in 1)",
+  duration: "5D4N",
+  dates: "Jan. 14–18, 2027",
+  city: "MNL",
+  price: 859 * USD_TO_PHP,
+  slots: 32,
+  deposit: 300 * USD_TO_PHP,
+},
 ];
 
 const peso = (amount: number) =>
