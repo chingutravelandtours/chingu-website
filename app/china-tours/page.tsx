@@ -13,7 +13,7 @@ type Package = {
   slots?: number;
 };
 
-const USD_TO_PHP = 60;
+const USD_TO_PHP = 63;
 
 const packages: Package[] = [
   {
