@@ -411,21 +411,36 @@ Please send me the complete package details. Thank you!`
 >
       <div className="max-w-7xl mx-auto">
 
-        {/* HEADER */}
-        <div className="text-center mb-12">
-          <p className="text-red-600 font-semibold uppercase tracking-[4px] text-sm">
-            CHINGU Travel and Tours
-          </p>
+        {/* HERO IMAGE */}
+<div className="mb-10">
+  <img
+    src="/images/china-banner.jpg"
+    alt="China Tour Packages"
+    className="
+      w-full
+      h-[350px]
+      object-cover
+      rounded-2xl
+      shadow-lg
+    "
+  />
+</div>
 
-          <h1 className="mt-3 text-4xl md:text-5xl font-bold text-gray-900">
-            China Tour Packages
-          </h1>
 
-          <p className="mt-4 text-gray-500">
-            Explore our China tour packages, departure dates and rates.
-          </p>
-        </div>
+{/* HEADER */}
+<div className="text-center mb-12">
+  <p className="text-red-600 font-semibold uppercase tracking-[4px] text-sm">
+    CHINGU Travel and Tours
+  </p>
 
+  <h1 className="mt-3 text-4xl md:text-5xl font-bold text-gray-900">
+    China Tour Packages
+  </h1>
+
+  <p className="mt-4 text-gray-500">
+    Explore our China tour packages, departure dates and rates.
+  </p>
+</div>
         {/* CHINA PACKAGE GRID */}
         <div className="
   grid
