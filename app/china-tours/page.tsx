@@ -223,7 +223,7 @@ const packages: Package[] = [
     dates: "Dec. 28–7, 2026",
     city: "MNL",
     price: 1,033 * USD_TO_PHP,
-    slots: 20,
+    slots: 11,
     deposit: 400 * USD_TO_PHP,
   },
  
