@@ -26,7 +26,7 @@ export default function Navbar() {
             tracking-wide
           "
         >
-          CHINGU Travel and Tours
+          CHINGU 
         </h1>
       </Link>
 
