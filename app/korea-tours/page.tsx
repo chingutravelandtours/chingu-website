@@ -1,4 +1,3 @@
-```tsx
 "use client";
 
 const USD_TO_PHP = 63;
@@ -184,4 +183,3 @@ const handleInquiry = (pkg: Package) => {
     </main>
   );
 }
-```
