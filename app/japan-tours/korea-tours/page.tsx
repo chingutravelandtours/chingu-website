@@ -15,13 +15,13 @@ type Package = {
 
 const packages: Package[] = [
   {
-    title: "Discover Osaka + Kyoto + Nara",
-    subtitle: "Japan (3 in 1)",
+    title: "Seoul + Nami Island + Everland",
+    subtitle: "South Korea",
     duration: "5D4N",
     dates: "Sep. 26–30, 2026",
     city: "MNL",
     price: 899 * USD_TO_PHP,
-    slots: 1,
+    slots: 10,
     deposit: 300 * USD_TO_PHP,
   },
 ];
