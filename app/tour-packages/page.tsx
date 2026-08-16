@@ -2,16 +2,18 @@
 
 const packages = [
   // =========================
-  // CHONGQING
+  // AVAILABILITY
   // =========================
   {
-    title: "Chongqing",
-    subtitle: "Shopping Tour",
-    duration: "5D3N",
-    dates: "Aug. 22–26, 2026",
-    price: "₱31,437",
-    status: "CLOSED",
-  },
+  title: "Adora Magic City Cruise",
+  subtitle: "Fly + Cruise (China Shenzhen + Vietnam Nha Trang)",
+  duration: "8D7N",
+  dates: "Aug. 21–28, 2026",
+  city: "MNL",
+  price: 1388 * USD_TO_PHP,
+  slots: 20,
+  deposit: 500 * USD_TO_PHP,
+},
   {
     title: "Chongqing",
     subtitle: "Shopping Tour",
