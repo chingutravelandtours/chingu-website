@@ -34,6 +34,62 @@ const destinations = [
   icon: "🇰🇷",
   href: "/korea-tours",
 },
+{
+  title: "Thailand",
+  subtitle: "Thailand Packages",
+  description: "Explore our available Thailand tour packages.",
+  icon: "🇹🇭",
+  href: "/thailand-tours",
+},
+{
+  title: "Vietnam",
+  subtitle: "Vietnam Packages",
+  description: "Explore our available Vietnam tour packages.",
+  icon: "🇻🇳",
+  href: "/vietnam-tours",
+},
+{
+  title: "Mongolia",
+  subtitle: "Mongolia Packages",
+  description: "Explore our available Mongolia tour packages.",
+  icon: "🇲🇳",
+  href: "/mongolia-tours",
+},
+{
+  title: "Singapore",
+  subtitle: "Singapore Packages",
+  description: "Explore our available Singapore tour packages.",
+  icon: "🇸🇬",
+  href: "/singapore-tours",
+},
+{
+  title: "Malaysia",
+  subtitle: "Malaysia Packages",
+  description: "Explore our available Malaysia tour packages.",
+  icon: "🇲🇾",
+  href: "/malaysia-tours",
+},
+{
+  title: "Indonesia",
+  subtitle: "Indonesia Packages",
+  description: "Explore our available Indonesia tour packages.",
+  icon: "🇮🇩",
+  href: "/indonesia-tours",
+},
+{
+  title: "Laos",
+  subtitle: "Laos Packages",
+  description: "Explore our available Laos tour packages.",
+  icon: "🇱🇦",
+  href: "/laos-tours",
+},
+{
+  title: "India",
+  subtitle: "India Packages",
+  description: "Explore our available India tour packages.",
+  icon: "🇮🇳",
+  href: "/india-tours",
+},
 ];
 
 export default function TourPackages() {
