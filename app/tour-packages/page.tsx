@@ -57,6 +57,177 @@ const packages = [
   price: "$478",
   status: "19 SLOTS",
 },
+
+	{
+  title: "Manila - Mini Kyoto - Shanghai",
+  subtitle: "China Eastern Airlines Tour",
+  duration: "5D4N",
+  dates: "Aug. 30–Sep. 03, 2026",
+  price: "$478",
+  status: "13 SLOTS",
+},
+
+  {
+  title: "Adora Mediterranea Cruise",
+  subtitle: "Fly + Cruise (China Beijing-Tianjin + Korea Jeju-Incheon)",
+  duration: "8D7N",
+  dates: "Aug. 31–Sep. 07, 2026",
+  price: "$1,488",
+  status: "20 SLOTS",
+},
+
+  {
+  title: "Chongqing + Chengdu",
+  subtitle: "China Air China Tour",
+  duration: "5D4N",
+  dates: "Sep. 01–05, 2026",
+  price: "$359",
+  status: "1 SLOT",
+},
+
+{
+  title: "Chongqing + Avatar + Fenghuang",
+  subtitle: "China Air China Tour",
+  duration: "7D6N",
+  dates: "Sep. 01–07, 2026",
+  price: "$588",
+  status: "1 SLOT",
+},
+
+{
+  title: "Beijing - Shanghai Pilgrimage",
+  subtitle: "China Tour",
+  duration: "7D6N",
+  dates: "Sep. 01–07, 2026",
+  price: "$999",
+  status: "OPEN",
+},
+
+  {
+  title: "Chongqing + Chengdu",
+  subtitle: "China Air China Tour",
+  duration: "5D4N",
+  dates: "Sep. 01–05, 2026",
+  price: "$369",
+  status: "3 SLOTS",
+},
+
+{
+  title: "Manila-Danang",
+  subtitle: "VieJetAir Charter Flight",
+  duration: "5D3N",
+  dates: "Sep. 02–05, 2026",
+  price: "₱21,888",
+  status: "12 SLOTS",
+},
+
+{
+  title: "Chongqing + Chengdu",
+  subtitle: "China Air China Tour",
+  duration: "5D4N",
+  dates: "Sep. 03–07, 2026",
+  price: "$389",
+  status: "3 SLOTS",
+},
+
+{
+  title: "Shanghai Mini Kyoto",
+  subtitle: "Philippine Airlines Tour",
+  duration: "5D4N",
+  dates: "Sep. 03–07, 2026",
+  price: "$399",
+  status: "1 SLOT",
+},
+
+{
+  title: "Beijing",
+  subtitle: "Air China Tour",
+  duration: "5D4N",
+  dates: "Sep. 03–07, 2026",
+  price: "$399",
+  status: "1 SLOT",
+},
+
+{
+  title: "Avatar",
+  subtitle: "China Eastern Airlines Tour",
+  duration: "4D3N",
+  dates: "Sep. 03–07, 2026",
+  price: "$478",
+  status: "30 SLOTS",
+},
+
+{
+  title: "Taiwan",
+  subtitle: "Cebu Pacific Tour",
+  duration: "4D3N",
+  dates: "Sep. 03–06, 2026",
+  price: "₱26,988",
+  status: "1 SLOT",
+},
+
+  {
+  title: "Hong Kong Disneyland + Macau + Shenzhen + Zhuhai",
+  subtitle: "Cebu Pacific Tour",
+  duration: "4D3N",
+  dates: "Sep. 03–06, 2026",
+  price: "$439",
+  status: "1 SLOT",
+},
+
+{
+  title: "Beijing + W Town",
+  subtitle: "MNL-PEK Tour",
+  duration: "5D4N",
+  dates: "Sep. 04–08, 2026",
+  price: "$650",
+  status: "10 SLOTS",
+},
+
+{
+  title: "Beijing-Shanghai Pilgrimage",
+  subtitle: "Philippine Airlines Tour",
+  duration: "7D6N",
+  dates: "Sep. 04–10, 2026",
+  price: "$999",
+  status: "30 SLOTS",
+},
+
+{
+  title: "Manila-Danang",
+  subtitle: "VieJetAir Charter Flight",
+  duration: "6D4N",
+  dates: "Sep. 04–10, 2026",
+  price: "₱23,888",
+  status: "31 SLOTS",
+},
+
+{
+  title: "Manila-Danang + Ba Na Hills",
+  subtitle: "VieJetAir Charter Flight",
+  duration: "6D4N",
+  dates: "Sep. 04–08, 2026",
+  price: "₱29,888",
+  status: "2 SLOTS",
+},
+
+{
+  title: "Chongqing + Chengdu",
+  subtitle: "China Air China Tour",
+  duration: "5D4N",
+  dates: "Sep. 05–09, 2026",
+  price: "$389",
+  status: "4 SLOTS",
+},
+
+{
+  title: "Beijing-Inner Mongolia",
+  subtitle: "China Southern Airlines Tour",
+  duration: "7D6N",
+  dates: "Sep. 05–11, 2026",
+  price: "$799",
+  status: "29 SLOTS",
+},
 ];
 
 export default function TourPackagesPage() {
