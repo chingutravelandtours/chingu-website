@@ -228,6 +228,115 @@ const packages = [
   price: "$799",
   status: "29 SLOTS",
 },
+
+	{
+  title: "Avatar + Furong (via Shenzhen)",
+  subtitle: "Shenzhen Airlines Tour",
+  duration: "6D5N",
+  dates: "Sep. 05–10, 2026",
+  price: "$499",
+  status: "1 SLOT",
+},
+
+{
+  title: "Shanghai + Chongqing",
+  subtitle: "China Eastern Airlines Tour",
+  duration: "6D5N",
+  dates: "Sep. 05–10, 2026",
+  price: "$599",
+  status: "30 SLOTS",
+},
+
+{
+  title: "Avatar + Furong + Mini Venice",
+  subtitle: "Qingdao Airlines Tour",
+  duration: "5D4N",
+  dates: "Sep. 05–09, 2026",
+  price: "$369",
+  status: "2 SLOTS",
+},
+
+{
+  title: "Adora Mediterranea Cruise",
+  subtitle: "Fly + Cruise (China Beijing-Tianjin + Korea Jeju-Incheon)",
+  duration: "8D7N",
+  dates: "Sep. 05–12, 2026",
+  price: "$1,488",
+  status: "20 SLOTS",
+},
+
+{
+  title: "Beijing-Shanghai Pilgrimage",
+  subtitle: "Philippine Airlines Tour",
+  duration: "7D6N",
+  dates: "Sep. 06–12, 2026",
+  price: "$999",
+  status: "30 SLOTS",
+},
+
+{
+  title: "East Europe (Via Beijing)",
+  subtitle: "Air China Tour",
+  duration: "10D8N",
+  dates: "Sep. 06–15, 2026",
+  price: "$2,788",
+  status: "20 SLOTS",
+},
+
+{
+  title: "Manila-Danang",
+  subtitle: "VieJetAir Charter Flight",
+  duration: "6D4N",
+  dates: "Sep. 06–10, 2026",
+  price: "₱23,888",
+  status: "67 SLOTS",
+},
+
+{
+  title: "Shanghai + Chongqing",
+  subtitle: "China Eastern Airlines Tour",
+  duration: "5D4N",
+  dates: "Sep. 06–10, 2026",
+  price: "$599",
+  status: "27 SLOTS",
+},
+
+
+{
+  title: "Inner Mongolia",
+  subtitle: "China Southern Airlines Tour",
+  duration: "7D6N",
+  dates: "Sep. 08–14, 2026",
+  price: "$899",
+  status: "1 SLOT",
+},
+
+{
+  title: "Beijing-Shanghai Pilgrimage",
+  subtitle: "Philippine Airlines Tour",
+  duration: "7D6N",
+  dates: "Sep. 08–14, 2026",
+  price: "$999",
+  status: "30 SLOTS",
+},
+
+{
+  title: "Manila-Xinjiang (via Beijing)",
+  subtitle: "Air China Airlines Tour",
+  duration: "8D7N",
+  dates: "Sep. 08–15, 2026",
+  price: "$1,099",
+  status: "15 SLOTS",
+},
+
+{
+  title: "Avatar + Furong (via Guangzhou)",
+  subtitle: "China Southern Airlines Tour",
+  duration: "7D6N",
+  dates: "Sep. 09–15, 2026",
+  price: "$499",
+  status: "1 SLOT",
+},
 ];
 
 export default function TourPackagesPage() {
