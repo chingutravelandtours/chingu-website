@@ -34,31 +34,35 @@ const peso = (amount: number) =>
     maximumFractionDigits: 0,
   }).format(amount);
 
-export default function KoreaToursPage() {
-  const handleInquiry = (pkg: Package) => {
-    const message = encodeURIComponent(
-      `Hello CHINGU Travel and Tours!
+```tsx
+const handleInquiry = (pkg: Package) => {
+  const message = encodeURIComponent(
+    [
+      "Hello CHINGU Travel and Tours!",
+      "",
+      "I would like to inquire about:",
+      "",
+      pkg.title,
+      `Package Type: ${pkg.subtitle}`,
+      `Duration: ${pkg.duration}`,
+      `Departure: ${pkg.dates}`,
+      `Departure City: ${pkg.city}`,
+      "",
+      `Package From: ${peso(pkg.price)} per person`,
+      "",
+      `Deposit: ${peso(pkg.deposit ?? 0)}`,
+      "",
+      "Please send me the complete package details. Thank you!",
+    ].join("\n")
+  );
 
-I would like to inquire about:
+  window.open(
+    "https://wa.me/63919388999?text=" + message,
+    "_blank"
+  );
+};
+```
 
-${pkg.title}
-Package Type: ${pkg.subtitle}
-Duration: ${pkg.duration}
-Departure: ${pkg.dates}
-Departure City: ${pkg.city}
-
-Package From: ${peso(pkg.price)} per person
-
-Deposit: ${peso(pkg.deposit ?? 0)}
-
-Please send me the complete package details. Thank you!`
-    );
-
-    window.open(
-      `https://wa.me/63919388999?text=${message}`,
-      "_blank"
-    );
-  };
 
   return (
     <main className="min-h-screen bg-gray-50 px-5 py-12">
