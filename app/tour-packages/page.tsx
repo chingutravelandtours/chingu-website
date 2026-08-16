@@ -378,7 +378,7 @@ Please send me the complete package details. Thank you!`;
           </h1>
 
           <p className="mt-3 text-gray-500 max-w-2xl mx-auto">
-            Explore our China tour packages, departure dates,
+            Explore our Tour packages, departure dates,
             starting rates, and availability.
           </p>
         </div>
