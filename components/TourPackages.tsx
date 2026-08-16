@@ -2,7 +2,15 @@
 
 import Link from "next/link";
 
-const destinations = [
+interface Destination {
+  title: string;
+  subtitle: string;
+  description: string;
+  icon: string;
+  href: string;
+}
+
+const destinations: Destination[] = [
   {
     title: "Japan",
     subtitle: "Japan Tour Packages",
@@ -22,26 +30,23 @@ const destinations = [
   {
     title: "Hong Kong & Macau",
     subtitle: "Hong Kong & Macau Packages",
-    description:
-      "Explore our available Hong Kong and Macau tour packages.",
+    description: "Explore our available Hong Kong and Macau tour packages.",
     icon: "🇭🇰",
     href: "/hongkong-macau-uos",
   },
-{
-  title: "South Korea",
-  subtitle: "Korea Packages",
-  description:
-    "Explore our available South Korea tour packages.",
-  icon: "KR",
-  href: "/korea-tours",
-},
+  {
+    title: "South Korea",
+    subtitle: "Korea Packages",
+    description: "Explore our available South Korea tour packages.",
+    icon: "🇰🇷",
+    href: "/korea-tours",
+  },
 ];
 
 export default function TourPackages() {
   return (
     <section className="bg-gray-50 py-16 px-6">
       <div className="max-w-7xl mx-auto">
-
         {/* SECTION HEADER */}
         <div className="text-center mb-10">
           <p className="text-red-600 font-semibold uppercase tracking-widest text-sm">
@@ -53,49 +58,49 @@ export default function TourPackages() {
           </h2>
 
           <p className="mt-3 max-w-2xl mx-auto text-gray-500">
-            Discover our available tour destinations and packages for your
-            next adventure.
+            Discover our available tour destinations and packages for your next
+            adventure.
           </p>
         </div>
 
         {/* DESTINATION CARDS */}
-<div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6 max-w-7xl mx-auto">
-  {destinations.map((destination) => (
-    <Link
-      key={destination.title}
-      href={destination.href}
-      className="group"
-    >
-      <div className="bg-white border border-gray-100 rounded-2xl p-6 shadow-md hover:shadow-xl hover:-translate-y-1 transition-all duration-300 h-full flex flex-col">
+        <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6 max-w-7xl mx-auto">
+          {destinations.map((destination) => (
+            <Link
+              key={destination.title}
+              href={destination.href}
+              className="group"
+            >
+              <div className="bg-white border border-gray-100 rounded-2xl p-6 shadow-md hover:shadow-xl hover:-translate-y-1 transition-all duration-300 h-full flex flex-col">
+                {/* ICON */}
+                <div className="text-5xl mb-5">{destination.icon}</div>
 
-        {/* ICON */}
-        <div className="text-5xl mb-5">
-          {destination.icon}
+                {/* TITLE */}
+                <h3 className="text-2xl font-bold text-gray-900 group-hover:text-red-600 transition">
+                  {destination.title}
+                </h3>
+
+                {/* SUBTITLE */}
+                <p className="mt-2 text-sm font-semibold text-red-600">
+                  {destination.subtitle}
+                </p>
+
+                {/* DESCRIPTION */}
+                <p className="mt-3 text-sm text-gray-500 leading-relaxed flex-grow">
+                  {destination.description}
+                </p>
+
+                {/* BUTTON */}
+                <div className="mt-6">
+                  <span className="block w-full text-center bg-red-600 text-white py-3 rounded-xl text-sm font-semibold group-hover:bg-red-700 transition">
+                    View Tour Packages →
+                  </span>
+                </div>
+              </div>
+            </Link>
+          ))}
         </div>
-
-        {/* TITLE */}
-        <h3 className="text-2xl font-bold text-gray-900 group-hover:text-red-600 transition">
-          {destination.title}
-        </h3>
-
-        {/* SUBTITLE */}
-        <p className="mt-2 text-sm font-semibold text-red-600">
-          {destination.subtitle}
-        </p>
-
-        {/* DESCRIPTION */}
-        <p className="mt-3 text-sm text-gray-500 leading-relaxed flex-grow">
-          {destination.description}
-        </p>
-
-        {/* BUTTON */}
-        <div className="mt-6">
-          <span className="block w-full text-center bg-red-600 text-white py-3 rounded-xl text-sm font-semibold group-hover:bg-red-700 transition">
-            View Tour Packages →
-          </span>
-        </div>
-
       </div>
-    </Link>
-  ))}
-</div>
+    </section>
+  );
+}
