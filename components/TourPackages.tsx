@@ -30,14 +30,16 @@ const destinations: Destination[] = [
   {
     title: "Hong Kong & Macau",
     subtitle: "Hong Kong & Macau Packages",
-    description: "Explore our available Hong Kong and Macau tour packages.",
+    description:
+      "Explore our available Hong Kong and Macau tour packages.",
     icon: "🇭🇰",
     href: "/hongkong-macau-uos",
   },
   {
     title: "South Korea",
     subtitle: "Korea Packages",
-    description: "Explore our available South Korea tour packages.",
+    description:
+      "Explore our available South Korea tour packages.",
     icon: "🇰🇷",
     href: "/korea-tours",
   },
@@ -45,38 +47,43 @@ const destinations: Destination[] = [
 
 export default function TourPackages() {
   return (
-    <section className="bg-gray-50 py-16 px-6">
-      <div className="max-w-7xl mx-auto">
+    <section className="bg-gray-50 px-6 py-16">
+      <div className="mx-auto max-w-7xl">
+
         {/* SECTION HEADER */}
-        <div className="text-center mb-10">
-          <p className="text-red-600 font-semibold uppercase tracking-widest text-sm">
+        <div className="mb-10 text-center">
+          <p className="text-sm font-semibold uppercase tracking-widest text-red-600">
             Explore With Us
           </p>
 
-          <h2 className="mt-2 text-3xl md:text-4xl font-bold text-gray-900">
+          <h2 className="mt-2 text-3xl font-bold text-gray-900 md:text-4xl">
             Featured Tour Packages
           </h2>
 
-          <p className="mt-3 max-w-2xl mx-auto text-gray-500">
+          <p className="mx-auto mt-3 max-w-2xl text-gray-500">
             Discover our available tour destinations and packages for your next
             adventure.
           </p>
         </div>
 
         {/* DESTINATION CARDS */}
-        <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6 max-w-7xl mx-auto">
+        <div className="mx-auto grid max-w-7xl grid-cols-1 gap-6 sm:grid-cols-2 lg:grid-cols-4">
+
           {destinations.map((destination) => (
             <Link
               key={destination.title}
               href={destination.href}
               className="group"
             >
-              <div className="bg-white border border-gray-100 rounded-2xl p-6 shadow-md hover:shadow-xl hover:-translate-y-1 transition-all duration-300 h-full flex flex-col">
+              <div className="flex h-full flex-col rounded-2xl border border-gray-100 bg-white p-6 shadow-md transition-all duration-300 hover:-translate-y-1 hover:shadow-xl">
+
                 {/* ICON */}
-                <div className="text-5xl mb-5">{destination.icon}</div>
+                <div className="mb-5 text-5xl">
+                  {destination.icon}
+                </div>
 
                 {/* TITLE */}
-                <h3 className="text-2xl font-bold text-gray-900 group-hover:text-red-600 transition">
+                <h3 className="text-2xl font-bold text-gray-900 transition group-hover:text-red-600">
                   {destination.title}
                 </h3>
 
@@ -86,23 +93,24 @@ export default function TourPackages() {
                 </p>
 
                 {/* DESCRIPTION */}
-                <p className="mt-3 text-sm text-gray-500 leading-relaxed flex-grow">
+                <p className="mt-3 flex-grow text-sm leading-relaxed text-gray-500">
                   {destination.description}
                 </p>
 
                 {/* BUTTON */}
                 <div className="mt-6">
-                  <span className="block w-full text-center bg-red-600 text-white py-3 rounded-xl text-sm font-semibold group-hover:bg-red-700 transition">
-                    View Tour Packages → 
-                  </span> 
-                </div> 
-              
-              </div> 
-            </Link> 
-          ))} 
-        </div> 
-      
-      </div> 
-    </section> 
-  ); 
+                  <span className="block w-full rounded-xl bg-red-600 py-3 text-center text-sm font-semibold text-white transition group-hover:bg-red-700">
+                    View Tour Packages →
+                  </span>
+                </div>
+
+              </div>
+            </Link>
+          ))}
+
+        </div>
+
+      </div>
+    </section>
+  );
 }
