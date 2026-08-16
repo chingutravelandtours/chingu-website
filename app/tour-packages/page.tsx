@@ -12,6 +12,51 @@ const packages = [
   price: "$1,388",
   status: "20 SLOTS",
 },
+
+  {
+  title: "Hong Kong + Macau",
+  subtitle: "Hong Kong + Macau Tour",
+  duration: "4D3N",
+  dates: "Aug. 22–25, 2026",
+  price: "$459",
+  status: "2 SLOTS",
+},
+
+  {
+  title: "Manila-Danang",
+  subtitle: "Charter Flight",
+  duration: "5D3N",
+  dates: "Aug. 26–29, 2026",
+  price: "₱24,888",
+  status: "1 SLOT",
+},
+
+  {
+  title: "Chongqing + Chengdu",
+  subtitle: "China Air China Tour",
+  duration: "5D4N",
+  dates: "Aug. 27–31, 2026",
+  price: "$389",
+  status: "1 SLOT",
+},
+
+  {
+  title: "Hanoi Sapa Ha Long Bay",
+  subtitle: "Vietnam Tour",
+  duration: "5D4N",
+  dates: "Aug. 27–31, 2026",
+  price: "₱39,888",
+  status: "1 SLOT",
+},
+
+  {
+  title: "Cebu - Shanghai Mini Kyoto",
+  subtitle: "China Eastern Airlines Tour",
+  duration: "5D4N",
+  dates: "Aug. 30–Sep. 03, 2026",
+  price: "$478",
+  status: "19 SLOTS",
+},
 ];
 
 export default function TourPackagesPage() {
