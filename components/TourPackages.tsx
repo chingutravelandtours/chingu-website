@@ -27,14 +27,14 @@ const destinations = [
     icon: "🇭🇰",
     href: "/hongkong-macau-uos",
   },
-  {
-    title: "South Korea",
-    subtitle: "Korea Packages",
-    description:
-      "Explore our available South Korea tour packages.",
-    icon: "KR",
-    href: "/korea",
-  },
+{
+  title: "South Korea",
+  subtitle: "Korea Packages",
+  description:
+    "Explore our available South Korea tour packages.",
+  icon: "KR",
+  href: "/korea-tours",
+},
 ];
 
 export default function TourPackages() {
