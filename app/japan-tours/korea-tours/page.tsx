@@ -33,7 +33,7 @@ const peso = (amount: number) =>
     maximumFractionDigits: 0,
   }).format(amount);
 
-export default function JapanToursPage() {
+export default function KoreaToursPage() {
 
   const handleInquiry = (pkg: Package) => {
 
