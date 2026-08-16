@@ -1,23 +1,14 @@
-```tsx
 "use client";
 
 import Link from "next/link";
 
-interface Destination {
-  title: string;
-  subtitle: string;
-  description: string;
-  icon: string;
-  href: string;
-}
-
-const destinations: Destination[] = [
+const destinations = [
   {
     title: "Japan",
     subtitle: "Japan Tour Packages",
     description:
       "Explore our Japan tour packages, departure dates, prices and available slots.",
-    icon: "JP",
+    icon: "🇯🇵",
     href: "/japan-tours",
   },
   {
@@ -25,7 +16,7 @@ const destinations: Destination[] = [
     subtitle: "China Tour Packages",
     description:
       "Explore our available China tour packages, destinations, dates and rates.",
-    icon: "CN",
+    icon: "🇨🇳",
     href: "/china-tours",
   },
   {
@@ -33,16 +24,8 @@ const destinations: Destination[] = [
     subtitle: "Hong Kong & Macau Packages",
     description:
       "Explore our available Hong Kong and Macau tour packages.",
-    icon: "HK",
+    icon: "🇭🇰",
     href: "/hongkong-macau-uos",
-  },
-  {
-    title: "South Korea",
-    subtitle: "Korea Packages",
-    description:
-      "Explore our available South Korea tour packages.",
-    icon: "KR",
-    href: "/korea-tours",
   },
 ];
 
