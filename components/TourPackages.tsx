@@ -93,14 +93,16 @@ export default function TourPackages() {
                 {/* BUTTON */}
                 <div className="mt-6">
                   <span className="block w-full text-center bg-red-600 text-white py-3 rounded-xl text-sm font-semibold group-hover:bg-red-700 transition">
-                    View Tour Packages →
-                  </span>
-                </div>
-              </div>
-            </Link>
-          ))}
-        </div>
-      </div>
-    </section>
-  );
+                    View Tour Packages → 
+                  </span> 
+                </div> 
+              
+              </div> 
+            </Link> 
+          ))} 
+        </div> 
+      
+      </div> 
+    </section> 
+  ); 
 }
