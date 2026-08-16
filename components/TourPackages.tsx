@@ -27,6 +27,13 @@ const destinations = [
     icon: "🇭🇰",
     href: "/hongkong-macau-uos",
   },
+  {
+  title: "Taiwan",
+  subtitle: "Taiwan Packages",
+  description: "Explore our available Taiwan tour packages.",
+  icon: "🇹🇼",
+  href: "/taiwan-tours",
+},
 {
   title: "South Korea",
   subtitle: "Korea Packages",
