@@ -1,3 +1,4 @@
+```tsx
 "use client";
 
 const USD_TO_PHP = 63;
@@ -34,11 +35,9 @@ const peso = (amount: number) =>
   }).format(amount);
 
 export default function KoreaToursPage() {
-
   const handleInquiry = (pkg: Package) => {
-
     const message = encodeURIComponent(
-`Hello CHINGU Travel and Tours!
+      `Hello CHINGU Travel and Tours!
 
 I would like to inquire about:
 
@@ -59,315 +58,128 @@ Please send me the complete package details. Thank you!`
       `https://wa.me/63919388999?text=${message}`,
       "_blank"
     );
-
   };
 
-
   return (
-    <main className="min-h-screen bg-gray-50 py-12 px-5">
-
-      <div className="max-w-[1600px] mx-auto">
-
+    <main className="min-h-screen bg-gray-50 px-5 py-12">
+      <div className="mx-auto max-w-[1600px]">
 
         {/* HEADER */}
-
-        <div className="text-center mb-12">
-
-          <p className="
-            text-red-600 
-            font-semibold 
-            uppercase 
-            tracking-[4px] 
-            text-sm
-          ">
+        <div className="mb-12 text-center">
+          <p className="text-sm font-semibold uppercase tracking-[4px] text-red-600">
             CHINGU Travel and Tours
           </p>
 
-
-          <h1 className="
-            mt-3 
-            text-4xl 
-            md:text-5xl 
-            font-bold 
-            text-gray-900
-          ">
+          <h1 className="mt-3 text-4xl font-bold text-gray-900 md:text-5xl">
             Korea Tour Packages
           </h1>
 
-
-          <p className="
-            mt-4 
-            text-gray-500
-          ">
+          <p className="mt-4 text-gray-500">
             Explore our Korea tour packages, departure dates and rates.
           </p>
-
         </div>
 
-
-
         {/* PACKAGE GRID */}
-
-        <div className="
-          grid 
-          grid-cols-1 
-          sm:grid-cols-2 
-          md:grid-cols-3 
-          lg:grid-cols-5 
-          gap-4
-        ">
-
+        <div className="grid grid-cols-1 gap-4 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-5">
 
           {packages.map((pkg, index) => (
-
             <div
               key={`${pkg.title}-${pkg.dates}-${index}`}
-              className="
-                bg-white
-                rounded-2xl
-                border
-                border-gray-100
-                shadow-md
-                p-4
-                hover:shadow-xl
-                hover:-translate-y-1
-                transition-all
-                duration-300
-                flex
-                flex-col
-              "
+              className="flex flex-col rounded-2xl border border-gray-100 bg-white p-4 shadow-md transition-all duration-300 hover:-translate-y-1 hover:shadow-xl"
             >
 
-
               {/* DURATION + STATUS */}
-
-              <div className="
-                flex 
-                justify-between 
-                items-center 
-                gap-2
-              ">
-
-
-                <span className="
-                  text-xs
-                  font-bold
-                  px-3
-                  py-1.5
-                  rounded-full
-                  bg-red-50
-                  text-red-600
-                ">
+              <div className="flex items-center justify-between gap-2">
+                <span className="rounded-full bg-red-50 px-3 py-1.5 text-xs font-bold text-red-600">
                   {pkg.duration}
                 </span>
 
-
-
-                <span className={`
-                  text-xs
-                  font-semibold
-                  px-2.5
-                  py-1.5
-                  rounded-full
-                  ${
+                <span
+                  className={`rounded-full px-2.5 py-1.5 text-xs font-semibold ${
                     pkg.slots && pkg.slots > 0
-                    ? "bg-green-50 text-green-600"
-                    : "bg-gray-100 text-gray-500"
-                  }
-                `}>
-                  {
-                    pkg.slots && pkg.slots > 0
+                      ? "bg-green-50 text-green-600"
+                      : "bg-gray-100 text-gray-500"
+                  }`}
+                >
+                  {pkg.slots && pkg.slots > 0
                     ? `${pkg.slots} slots`
-                    : "Available"
-                  }
+                    : "Sold Out"}
                 </span>
-
-
               </div>
 
-
-
-
               {/* TITLE */}
-
-              <h2 className="
-                mt-4
-                text-sm
-                font-bold
-                text-gray-900
-                min-h-[45px]
-              ">
+              <h2 className="mt-4 min-h-[45px] text-sm font-bold text-gray-900">
                 {pkg.title}
               </h2>
 
-
-
               {/* TYPE */}
-
-              <p className="
-                mt-2
-                text-xs
-                text-gray-400
-              ">
+              <p className="mt-2 text-xs text-gray-400">
                 {pkg.subtitle}
               </p>
 
-
-
-
               {/* DATE */}
-
               <div className="mt-4">
-
-                <p className="
-                  text-[10px]
-                  uppercase
-                  text-gray-400
-                ">
+                <p className="text-[10px] uppercase text-gray-400">
                   Departure
                 </p>
 
-
-                <p className="
-                  mt-1
-                  text-xs
-                  font-semibold
-                  text-gray-700
-                ">
+                <p className="mt-1 text-xs font-semibold text-gray-700">
                   {pkg.dates}
                 </p>
-
               </div>
 
-
-
-
               {/* CITY */}
-
               <div className="mt-3">
-
-                <p className="
-                  text-[10px]
-                  uppercase
-                  text-gray-400
-                ">
+                <p className="text-[10px] uppercase text-gray-400">
                   Departure City
                 </p>
 
-
-                <p className="
-                  mt-1
-                  text-xs
-                  font-semibold
-                  text-gray-700
-                ">
+                <p className="mt-1 text-xs font-semibold text-gray-700">
                   {pkg.city}
                 </p>
-
-
               </div>
 
-
-
-
-
               {/* PRICE */}
-
               <div className="mt-auto pt-5">
-
-                <p className="
-                  text-[10px]
-                  uppercase
-                  text-gray-400
-                ">
+                <p className="text-[10px] uppercase text-gray-400">
                   Package From
                 </p>
 
-
-                <p className="
-                  mt-1
-                  text-lg
-                  font-bold
-                  text-gray-900
-                ">
+                <p className="mt-1 text-lg font-bold text-gray-900">
                   {peso(pkg.price)}
                 </p>
 
-
-                <p className="
-                  text-[10px]
-                  text-gray-400
-                ">
+                <p className="text-[10px] text-gray-400">
                   per person
                 </p>
-
-
               </div>
 
-
-
-
               {/* DEPOSIT */}
-
               <div className="mt-3">
-
-                <p className="
-                  text-[10px]
-                  uppercase
-                  text-gray-400
-                ">
+                <p className="text-[10px] uppercase text-gray-400">
                   Deposit
                 </p>
 
-
-                <p className="
-                  text-xs
-                  font-bold
-                  text-gray-700
-                ">
+                <p className="text-xs font-bold text-gray-700">
                   {peso(pkg.deposit ?? 0)}
                 </p>
-
-
               </div>
 
-
-
-
               {/* BUTTON */}
-
               <button
+                type="button"
                 onClick={() => handleInquiry(pkg)}
-                className="
-                  mt-5
-                  w-full
-                  py-2
-                  rounded-xl
-                  text-xs
-                  font-semibold
-                  border-2
-                  border-red-600
-                  text-red-600
-                  hover:bg-red-600
-                  hover:text-white
-                  transition
-                "
+                className="mt-5 w-full rounded-xl border-2 border-red-600 py-2 text-xs font-semibold text-red-600 transition hover:bg-red-600 hover:text-white"
               >
                 Inquire Now →
               </button>
 
-
             </div>
-
           ))}
 
-
         </div>
-
-
       </div>
-
     </main>
   );
-
 }
+```
