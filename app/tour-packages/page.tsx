@@ -165,7 +165,7 @@ Please send me the complete package details. Thank you!`;
                       ? "bg-gray-100 text-gray-500"
                       : pkg.status.includes("FULL")
                       ? "bg-red-50 text-red-600"
-                      : "bg-green-50 text-blue-600"
+                      : "bg-green-50 text-green-600"
                   }`}
                 >
                   {pkg.status}
