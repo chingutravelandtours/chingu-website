@@ -100,12 +100,21 @@ export default function TourPackages() {
 
               </div>
             </Link>
-          ))}
+
+
+
+              </div>
+
+            );
+
+          })}
+
 
         </div>
 
+
       </div>
+
     </section>
   );
 }
-```
