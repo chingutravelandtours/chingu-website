@@ -93,6 +93,6 @@ export default function TourPackages() {
         </div>
 
       </div>
-   
+    </section>
   );
 }
