@@ -34,7 +34,6 @@ const peso = (amount: number) =>
     maximumFractionDigits: 0,
   }).format(amount);
 
-```tsx
 const handleInquiry = (pkg: Package) => {
   const message = encodeURIComponent(
     [
@@ -61,7 +60,6 @@ const handleInquiry = (pkg: Package) => {
     "_blank"
   );
 };
-```
 
 
   return (
