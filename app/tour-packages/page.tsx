@@ -5,16 +5,6 @@ const packages = [
   // AVAILABILITY
   // =========================
   {
-  title: "Adora Magic City Cruise",
-  subtitle: "Fly + Cruise (China Shenzhen + Vietnam Nha Trang)",
-  duration: "8D7N",
-  dates: "Aug. 21–28, 2026",
-  city: "MNL",
-  price: 1388 * USD_TO_PHP,
-  slots: 20,
-  deposit: 500 * USD_TO_PHP,
-},
-  {
     title: "Chongqing",
     subtitle: "Shopping Tour",
     duration: "5D3N",
