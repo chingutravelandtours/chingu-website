@@ -60,6 +60,17 @@ const packages: Package[] = [
     deposit: 300 * USD_TO_PHP,
   },
 
+  {
+  title: "Taipei + Alishan + Sun Moon Lake",
+  subtitle: "Taiwan Scenic Tour",
+  duration: "6D5N",
+  dates: "Jan. 15–20, 2027",
+  city: "MNL",
+  price: 999 * USD_TO_PHP,
+  slots: 20,
+  deposit: 300 * USD_TO_PHP,
+},
+
 ];
 
 
