@@ -32,7 +32,7 @@ const destinations = [
   subtitle: "Taiwan Packages",
   description: "Explore our available Taiwan tour packages.",
   icon: "🇹🇼",
-  href: "/taiwan-tours",
+  href: "/taiwan-tour",
 },
 {
   title: "South Korea",
