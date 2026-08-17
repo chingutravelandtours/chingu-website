@@ -17,8 +17,8 @@ type Package = {
 const packages: Package[] = [
 
  {
-  title: "Taiwan 4D3N",
-  subtitle: "Taiwan (5J) - Cebu Pacific",
+  title: "Taipei + Taichung",
+  subtitle: "Taiwan 4D3N (5J) - Cebu Pacific",
   duration: "4D3N",
   dates: "Sep. 03–06, 2026",
   city: "MNL",
@@ -26,6 +26,7 @@ const packages: Package[] = [
   slots: 1,
   deposit: 12000,
 },
+  
   {
     title: "Taipei + Yehliu + Shifen",
     subtitle: "Taiwan Experience",
