@@ -16,16 +16,16 @@ type Package = {
 
 const packages: Package[] = [
 
-  {
-    title: "Discover Taipei + Jiufen + Shifen",
-    subtitle: "Taiwan (3 in 1)",
-    duration: "5D4N",
-    dates: "Sep. 18–22, 2026",
-    city: "MNL",
-    price: 699 * USD_TO_PHP,
-    slots: 8,
-    deposit: 300 * USD_TO_PHP,
-  },
+ {
+  title: "Taiwan 4D3N",
+  subtitle: "Taiwan (5J) 
+  duration: "4D3N",
+  dates: "Sep. 03–06, 2026",
+  city: "MNL",
+  price: 26988,
+  slots: 1,
+  deposit: 12000,
+},
 
   {
     title: "Taipei + Yehliu + Shifen",
