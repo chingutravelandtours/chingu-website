@@ -390,6 +390,105 @@ const packages: Package[] = [
   deposit: 12000,
 },
 
+  {
+  title: "Taiwan 3D2N",
+  subtitle: "Taiwan (PR) - Philippine Airlines",
+  duration: "3D2N",
+  dates: "Nov. 20–22, 2026",
+  city: "MNL",
+  price: 468 * USD_TO_PHP,
+  slots: 18,
+  deposit: 200 * USD_TO_PHP,
+},
+
+{
+  title: "Taiwan 4D3N",
+  subtitle: "Taiwan (5J) - Cebu Pacific",
+  duration: "4D3N",
+  dates: "Nov. 20–23, 2026",
+  city: "MNL",
+  price: 27988,
+  slots: 4,
+  deposit: 12000,
+},
+
+{
+  title: "Taiwan 4D3N",
+  subtitle: "Taiwan (BR) - Eva Air",
+  duration: "4D3N",
+  dates: "Nov. 20–23, 2026",
+  city: "CEB",
+  price: 488 * USD_TO_PHP,
+  slots: 17,
+  deposit: 250 * USD_TO_PHP,
+},
+
+{
+  title: "Taiwan 4D2N",
+  subtitle: "Taiwan (Z2) - AirAsia",
+  duration: "4D2N",
+  dates: "Nov. 26–29, 2026",
+  city: "MNL",
+  price: 23888,
+  slots: 0,
+  deposit: 10000,
+},
+
+{
+  title: "Taiwan 4D3N",
+  subtitle: "Taiwan (5J) - Cebu Pacific",
+  duration: "4D3N",
+  dates: "Nov. 26–29, 2026",
+  city: "MNL",
+  price: 28988,
+  slots: 2,
+  deposit: 12000,
+},
+
+{
+  title: "Taiwan 4D3N",
+  subtitle: "Taiwan (JX) - Starlux",
+  duration: "4D3N",
+  dates: "Nov. 26–29, 2026",
+  city: "CEB",
+  price: 559 * USD_TO_PHP,
+  slots: 8,
+  deposit: 250 * USD_TO_PHP,
+},
+
+{
+  title: "Fascinating Taiwan 4D3N",
+  subtitle: "Taiwan (BR) - Eva Air",
+  duration: "4D3N",
+  dates: "Nov. 26–29, 2026",
+  city: "MNL",
+  price: 559 * USD_TO_PHP,
+  slots: 6,
+  deposit: 250 * USD_TO_PHP,
+},
+
+{
+  title: "Taiwan 4D3N",
+  subtitle: "Taiwan (BR) - Eva Air",
+  duration: "4D3N",
+  dates: "Nov. 27–30, 2026",
+  city: "CRK",
+  price: 519 * USD_TO_PHP,
+  slots: 25,
+  deposit: 250 * USD_TO_PHP,
+},
+
+{
+  title: "Taiwan 4D3N",
+  subtitle: "Taiwan (BR) - Eva Air",
+  duration: "4D3N",
+  dates: "Nov. 27–30, 2026",
+  city: "CEB",
+  price: 518 * USD_TO_PHP,
+  slots: 11,
+  deposit: 300 * USD_TO_PHP,
+},
+
 ];
 
 
