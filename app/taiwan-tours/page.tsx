@@ -28,37 +28,37 @@ const packages: Package[] = [
 },
   
   {
-    title: "Taipei + Yehliu + Shifen",
-    subtitle: "Taiwan Experience",
-    duration: "5D4N",
-    dates: "Oct. 10–14, 2026",
+    title: "Taipei + Taichung",
+    subtitle: "Taiwan (Z2) - AirAsia",
+    duration: "4D2N",
+    dates: "Sep. 10–13, 2026",
     city: "MNL",
-    price: 799 * USD_TO_PHP,
-    slots: 12,
-    deposit: 300 * USD_TO_PHP,
+    price: 23888,
+    slots: 1,
+    deposit: 10000,
   },
-
+  
   {
-    title: "Taiwan Food & Culture Experience",
-    subtitle: "Taipei Night Markets",
-    duration: "4D3N",
-    dates: "Nov. 5–8, 2026",
-    city: "MNL",
-    price: 599 * USD_TO_PHP,
-    slots: 10,
-    deposit: 250 * USD_TO_PHP,
-  },
+  title: "Taipei + Taichung",
+  subtitle: "Taiwan (Z2) - AirAsia",
+  duration: "4D2N",
+  dates: "Sep. 17–20, 2026",
+  city: "MNL",
+  price: 23888,
+  slots: 1,
+  deposit: 10000,
+},
 
-  {
-    title: "Taiwan Family Adventure Tour",
-    subtitle: "Taipei + Yangmingshan",
-    duration: "6D5N",
-    dates: "Dec. 5–10, 2026",
-    city: "MNL",
-    price: 899 * USD_TO_PHP,
-    slots: 15,
-    deposit: 300 * USD_TO_PHP,
-  },
+ {
+  title: "Cebu Taiwan Taipei",
+  subtitle: "Taiwan (JX)",
+  duration: "5D4N",
+  dates: "Sep. 21–25, 2026",
+  city: "CEB",
+  price: 659 * USD_TO_PHP,
+  slots: 13,
+  deposit: 250 * USD_TO_PHP,
+},
 
   {
   title: "Taipei + Alishan + Sun Moon Lake",
@@ -69,6 +69,17 @@ const packages: Package[] = [
   price: 999 * USD_TO_PHP,
   slots: 20,
   deposit: 300 * USD_TO_PHP,
+},
+
+  {
+  title: "Taiwan 4D3N",
+  subtitle: "Taiwan (5J) - Cebu Pacific",
+  duration: "4D3N",
+  dates: "Oct. 08–11, 2026",
+  city: "MNL",
+  price: 27988,
+  slots: 1,
+  deposit: 12000,
 },
 
 ];
