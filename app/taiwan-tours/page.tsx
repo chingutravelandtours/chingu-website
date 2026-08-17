@@ -61,17 +61,6 @@ const packages: Package[] = [
 },
 
   {
-  title: "Taipei + Alishan + Sun Moon Lake",
-  subtitle: "Taiwan Scenic Tour",
-  duration: "6D5N",
-  dates: "Jan. 15–20, 2027",
-  city: "MNL",
-  price: 999 * USD_TO_PHP,
-  slots: 20,
-  deposit: 300 * USD_TO_PHP,
-},
-
-  {
   title: "Taiwan 4D3N",
   subtitle: "Taiwan (5J) - Cebu Pacific",
   duration: "4D3N",
@@ -80,6 +69,17 @@ const packages: Package[] = [
   price: 27988,
   slots: 1,
   deposit: 12000,
+},
+
+  {
+  title: "Taiwan 4D3N",
+  subtitle: "Taiwan (BR) - Eva Air",
+  duration: "4D3N",
+  dates: "Oct. 09–12, 2026",
+  city: "CEB",
+  price: 518 * USD_TO_PHP,
+  slots: 13,
+  deposit: 300 * USD_TO_PHP,
 },
 
 ];
