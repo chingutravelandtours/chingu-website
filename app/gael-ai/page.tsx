@@ -51,11 +51,6 @@ export default function GaelPage() {
   alt="Gael AI Travel Assistant" 
   className="w-full h-full object-cover" 
 />
-              <Luggage 
-                size={42}
-                className="text-red-600"
-                strokeWidth={2.5}
-              />
             </div>
 
             <div>
