@@ -46,7 +46,11 @@ export default function GaelPage() {
           <div className="flex items-center gap-4">
 
             {/* GAEL ICON */}
-            <div className="w-20 h-20 rounded-full border-4 border-red-600 flex items-center justify-center">
+            <img 
+  src="/images/gael.png" 
+  alt="Gael AI Travel Assistant" 
+  className="w-full h-full object-cover" 
+/>
               <Luggage 
                 size={42}
                 className="text-red-600"
