@@ -6,26 +6,26 @@ export default function GaelPage() {
   const [message, setMessage] = useState("");
 
   const menu = [
-    {
-      title: "Tour Packages",
-      icon: "🧳",
-    },
-    {
-      title: "Flight Inquiry",
-      icon: "✈️",
-    },
-    {
-      title: "Hotel Reservation",
-      icon: "🏨",
-    },
-    {
-      title: "Visa Assistance",
-      icon: "🛂",
-    },
-    {
-      title: "Talk to Chingu Team",
-      icon: "🎧",
-    },
+   {
+    title: "Tour Packages",
+    icon: Luggage,
+  },
+  {
+    title: "Flight Inquiry",
+    icon: Plane,
+  },
+  {
+    title: "Hotel Reservation",
+    icon: Hotel,
+  },
+  {
+    title: "Visa Assistance",
+    icon: FileCheck,
+  },
+  {
+    title: "Talk to Chingu Team",
+    icon: Headset,
+  },
   ];
 
   return (
