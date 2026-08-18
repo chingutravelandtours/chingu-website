@@ -10,22 +10,27 @@ export default function GaelPage() {
     title: "Tour Packages",
     icon: Luggage,
   },
+    
   {
     title: "Flight Inquiry",
     icon: Plane,
   },
+    
   {
     title: "Hotel Reservation",
     icon: Hotel,
   },
+    
   {
     title: "Visa Assistance",
     icon: FileCheck,
   },
+    
   {
     title: "Talk to Chingu Team",
     icon: Headset,
   },
+    
   ];
 
   return (
