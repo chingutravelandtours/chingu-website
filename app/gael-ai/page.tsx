@@ -5,91 +5,189 @@ import { useState } from "react";
 export default function GaelPage() {
   const [message, setMessage] = useState("");
 
-  const options = [
-    "Tour Packages",
-    "Flight Inquiry",
-    "Hotel Reservation",
-    "Visa Assistance",
-    "Talk to Chingu Team",
+  const menu = [
+    {
+      title: "Tour Packages",
+      icon: "🧳",
+    },
+    {
+      title: "Flight Inquiry",
+      icon: "✈️",
+    },
+    {
+      title: "Hotel Reservation",
+      icon: "🏨",
+    },
+    {
+      title: "Visa Assistance",
+      icon: "🛂",
+    },
+    {
+      title: "Talk to Chingu Team",
+      icon: "🎧",
+    },
   ];
 
   return (
-    <main className="min-h-screen bg-gradient-to-b from-blue-50 to-white flex items-center justify-center p-6">
-      <div className="w-full max-w-2xl bg-white rounded-2xl shadow-xl p-8">
+    <main className="min-h-screen bg-white flex items-center justify-center p-4">
 
-        {/* Gael Header */}
-        <div className="text-center mb-8">
-          <div className="w-24 h-24 mx-auto rounded-full bg-blue-600 flex items-center justify-center text-white text-4xl font-bold">
-            G
+      <div className="w-full max-w-xl bg-white rounded-3xl shadow-2xl border border-red-100 overflow-hidden">
+
+
+        {/* HEADER */}
+        <div className="p-6 flex items-center justify-between border-b">
+
+          <div className="flex items-center gap-4">
+
+            <div className="w-20 h-20 rounded-full border-4 border-red-600 flex items-center justify-center text-4xl">
+              👩🏻‍💼
+            </div>
+
+            <div>
+              <h1 className="text-4xl font-bold text-red-600">
+                GAEL
+              </h1>
+
+              <p className="text-gray-700">
+                Chingu AI Travel Assistant
+              </p>
+            </div>
+
           </div>
 
-          <h1 className="text-3xl font-bold mt-4 text-gray-800">
-            Gael
-          </h1>
 
-          <p className="text-gray-500">
-            Chingu AI Travel Assistant
-          </p>
+          <div className="flex items-center gap-2 text-gray-700">
+            <span className="w-3 h-3 bg-green-500 rounded-full"></span>
+            Online
+          </div>
+
         </div>
 
 
-        {/* Welcome Message */}
-        <div className="bg-blue-50 rounded-xl p-5 mb-6">
-          <p className="text-gray-700">
-            Hi! I'm Gael, your Chingu Travel Assistant.
-            <br /><br />
-            I can help you with tour packages, flights,
-            hotels, visa assistance, and customized travel
-            experiences.
-          </p>
-        </div>
+
+        {/* MESSAGE */}
+
+        <div className="p-6">
+
+          <div className="bg-red-50 rounded-2xl p-5 text-gray-800">
+
+            <p className="text-lg">
+              Hi! I'm Gael, your Chingu Travel Assistant.
+            </p>
+
+            <br />
+
+            <p>
+              I can help you with tour packages,
+              flights, hotels, visa assistance,
+              and customized travel experiences.
+            </p>
+
+          </div>
 
 
-        {/* Buttons */}
-        <div className="grid gap-3">
-          {options.map((item) => (
-            <button
-              key={item}
-              className="border border-blue-600 text-blue-600 rounded-xl py-3 hover:bg-blue-600 hover:text-white transition"
-            >
-              {item}
-            </button>
-          ))}
-        </div>
+
+          {/* BUTTONS */}
+
+          <div className="mt-6 space-y-3">
+
+            {menu.map((item)=>(
+              <button
+                key={item.title}
+                className="
+                w-full
+                flex
+                items-center
+                justify-between
+                px-6
+                py-4
+                rounded-xl
+                border
+                border-red-500
+                text-red-600
+                font-semibold
+                text-lg
+                hover:bg-red-600
+                hover:text-white
+                transition
+                "
+              >
+
+                <span>
+                  {item.icon} &nbsp;
+                  {item.title}
+                </span>
+
+                <span>
+                  ›
+                </span>
+
+              </button>
+            ))}
+
+          </div>
 
 
-        {/* Chat Box */}
-        <div className="mt-8">
-          <label className="block text-sm text-gray-600 mb-2">
-            Ask Gael anything:
-          </label>
 
-          <div className="flex gap-2">
+          {/* CHAT */}
+
+          <div className="mt-8 flex gap-3">
+
             <input
               value={message}
-              onChange={(e) => setMessage(e.target.value)}
-              placeholder="Example: I want a Japan tour package"
-              className="flex-1 border rounded-xl px-4 py-3 outline-none"
+              onChange={(e)=>setMessage(e.target.value)}
+              placeholder="Ask Gael anything..."
+              className="
+              flex-1
+              border
+              rounded-xl
+              px-5
+              py-4
+              outline-none
+              focus:border-red-500
+              "
             />
 
+
             <button
-              className="bg-blue-600 text-white px-5 rounded-xl"
-              onClick={() => alert(
-                "Thank you! Gael received your inquiry: " + message
-              )}
+              className="
+              bg-red-600
+              text-white
+              px-6
+              rounded-xl
+              font-semibold
+              hover:bg-red-700
+              "
             >
               Send
             </button>
+
+
           </div>
+
+
         </div>
 
 
-        {/* Footer */}
-        <p className="text-center text-xs text-gray-400 mt-8">
-          Chingu Travel and Tours • Philippines & UAE Office
-        </p>
+
+        {/* FOOTER */}
+
+        <div className="text-center py-5 border-t">
+
+          <h3 className="text-red-600 font-bold">
+            Chingu Travel and Tours
+          </h3>
+
+          <p className="text-gray-600 text-sm">
+            Philippines & UAE Office
+          </p>
+
+        </div>
+
 
       </div>
+
+
     </main>
   );
 }
