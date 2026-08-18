@@ -39,9 +39,15 @@ export default function GaelPage() {
 
           <div className="flex items-center gap-4">
 
-            <div className="w-20 h-20 rounded-full border-4 border-red-600 flex items-center justify-center text-4xl">
-              👩🏻‍💼
+            {/* GAEL IMAGE */}
+            <div className="w-20 h-20 rounded-full border-4 border-red-600 overflow-hidden">
+              <img
+                src="/images/gael.png"
+                alt="Gael AI Travel Assistant"
+                className="w-full h-full object-cover"
+              />
             </div>
+
 
             <div>
               <h1 className="text-4xl font-bold text-red-600">
@@ -56,9 +62,13 @@ export default function GaelPage() {
           </div>
 
 
+          {/* ONLINE STATUS */}
           <div className="flex items-center gap-2 text-gray-700">
+
             <span className="w-3 h-3 bg-green-500 rounded-full"></span>
+
             Online
+
           </div>
 
         </div>
@@ -69,13 +79,16 @@ export default function GaelPage() {
 
         <div className="p-6">
 
+
           <div className="bg-red-50 rounded-2xl p-5 text-gray-800">
 
-            <p className="text-lg">
+            <p className="text-lg font-medium">
               Hi! I'm Gael, your Chingu Travel Assistant.
             </p>
 
+
             <br />
+
 
             <p>
               I can help you with tour packages,
@@ -83,17 +96,22 @@ export default function GaelPage() {
               and customized travel experiences.
             </p>
 
+
           </div>
 
 
 
-          {/* BUTTONS */}
+          {/* QUICK BUTTONS */}
 
           <div className="mt-6 space-y-3">
 
-            {menu.map((item)=>(
+
+            {menu.map((item) => (
+
               <button
+
                 key={item.title}
+
                 className="
                 w-full
                 flex
@@ -111,6 +129,7 @@ export default function GaelPage() {
                 hover:text-white
                 transition
                 "
+
               >
 
                 <span>
@@ -118,25 +137,34 @@ export default function GaelPage() {
                   {item.title}
                 </span>
 
+
                 <span>
                   ›
                 </span>
 
+
               </button>
+
             ))}
+
 
           </div>
 
 
 
-          {/* CHAT */}
+          {/* CHAT INPUT */}
 
           <div className="mt-8 flex gap-3">
 
+
             <input
+
               value={message}
-              onChange={(e)=>setMessage(e.target.value)}
+
+              onChange={(e) => setMessage(e.target.value)}
+
               placeholder="Ask Gael anything..."
+
               className="
               flex-1
               border
@@ -146,10 +174,12 @@ export default function GaelPage() {
               outline-none
               focus:border-red-500
               "
+
             />
 
 
             <button
+
               className="
               bg-red-600
               text-white
@@ -158,15 +188,20 @@ export default function GaelPage() {
               font-semibold
               hover:bg-red-700
               "
+
             >
+
               Send
+
             </button>
 
 
           </div>
 
 
+
         </div>
+
 
 
 
@@ -174,15 +209,23 @@ export default function GaelPage() {
 
         <div className="text-center py-5 border-t">
 
+
           <h3 className="text-red-600 font-bold">
+
             Chingu Travel and Tours
+
           </h3>
 
+
           <p className="text-gray-600 text-sm">
+
             Philippines & UAE Office
+
           </p>
 
+
         </div>
+
 
 
       </div>
