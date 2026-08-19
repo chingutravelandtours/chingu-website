@@ -57,7 +57,7 @@ export default function GaelPage() {
 
               <img
   src="/images/gael.png"
-  alt="Gael AI Travel Assistant"
+  alt="gael-ai"
   className="w-full h-full object-cover"
 />
 
