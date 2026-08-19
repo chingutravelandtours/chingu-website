@@ -14,7 +14,29 @@ export default function GaelPage() {
   const [message, setMessage] = useState("");
 
   const menu = [
-  
+    {
+      title: "Tour Packages",
+      icon: Luggage,
+    },
+    {
+      title: "Flight Inquiry",
+      icon: Plane,
+    },
+    {
+      title: "Hotel Reservation",
+      icon: Hotel,
+    },
+    {
+      title: "Visa Assistance",
+      icon: FileCheck,
+    },
+    {
+      title: "Talk to Chingu Team",
+      icon: Headset,
+    },
+  ];
+
+
   return (
 
     <main className="min-h-screen bg-white flex items-center justify-center p-4">
@@ -34,10 +56,10 @@ export default function GaelPage() {
             <div className="w-20 h-20 rounded-full border-4 border-red-600 overflow-hidden flex-shrink-0">
 
               <img
-                src="/images/gael.png"
-                alt="Gael AI Travel Assistant"
-                className="w-full h-full object-cover"
-              />
+  src="/images/gael.png"
+  alt="Gael AI Travel Assistant"
+  className="w-full h-full object-cover"
+/>
 
             </div>
 
