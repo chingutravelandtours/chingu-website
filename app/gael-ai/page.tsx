@@ -13,31 +13,32 @@ export default function GaelPage() {
 
   const [message, setMessage] = useState("");
 
- const menu = [
-  {
-    title: "Tour Packages",
-    icon: Luggage,
-  },
-  {
-    title: "Flight Inquiry",
-    icon: Plane,
-  },
-  {
-    title: "Hotel Reservation",
-    icon: Hotel,
-  },
-  {
-    title: "Visa Assistance",
-    icon: FileCheck,
-  },
-  {
-    title: "Talk to Chingu Team",
-    icon: Headset,
-  },
-];
+  const menu = [
+    {
+      title: "Tour Packages",
+      icon: Luggage,
+    },
+    {
+      title: "Flight Inquiry",
+      icon: Plane,
+    },
+    {
+      title: "Hotel Reservation",
+      icon: Hotel,
+    },
+    {
+      title: "Visa Assistance",
+      icon: FileCheck,
+    },
+    {
+      title: "Talk to Chingu Team",
+      icon: Headset,
+    },
+  ];
 
 
-return (
+  return (
+
     <main className="min-h-screen bg-white flex items-center justify-center p-4">
 
 
@@ -55,10 +56,10 @@ return (
             <div className="w-20 h-20 rounded-full border-4 border-red-600 overflow-hidden flex-shrink-0">
 
               <img
-  src="/images/gael.png"
-  alt="gael-ai"
-  className="w-full h-full object-cover"
-/>
+                src="/images/hero/gael.png"
+                alt="Gael AI Travel Assistant"
+                className="w-full h-full object-cover"
+              />
 
             </div>
 
@@ -75,7 +76,6 @@ return (
                 Chingu AI Travel Assistant
               </p>
 
-
             </div>
 
 
@@ -83,14 +83,12 @@ return (
 
 
 
-          {/* ONLINE */}
+          {/* ONLINE STATUS */}
           <div className="flex items-center gap-2 text-gray-700">
-
 
             <span className="w-3 h-3 bg-green-500 rounded-full"></span>
 
             Online
-
 
           </div>
 
@@ -101,18 +99,15 @@ return (
 
 
 
-        {/* CHAT CONTENT */}
+        {/* MESSAGE */}
 
         <div className="p-6">
 
 
-
-          {/* MESSAGE */}
-
           <div className="bg-red-50 rounded-2xl p-5 text-gray-800">
 
 
-            <p className="text-lg font-semibold">
+            <p className="text-lg font-medium">
 
               Hi! I'm Gael, your Chingu Travel Assistant.
 
@@ -138,7 +133,7 @@ return (
 
 
 
-          {/* MENU BUTTONS */}
+          {/* QUICK MENU */}
 
           <div className="mt-6 space-y-3">
 
@@ -165,8 +160,8 @@ return (
                   rounded-xl
                   border
                   border-red-500
-                  text-red-500
-                  font-semibold
+                  text-black
+                  font-normal
                   text-lg
                   hover:bg-red-600
                   hover:text-white
@@ -183,7 +178,7 @@ return (
 
                       size={25}
 
-                      strokeWidth={2.5}
+                      strokeWidth={2}
 
                       className="text-red-600"
 
@@ -201,7 +196,7 @@ return (
 
 
 
-                  <span>
+                  <span className="text-red-600">
 
                     ›
 
@@ -225,7 +220,7 @@ return (
 
 
 
-          {/* INPUT */}
+          {/* CHAT INPUT */}
 
           <div className="mt-8 flex gap-3">
 
@@ -288,7 +283,7 @@ return (
         <div className="text-center py-5 border-t">
 
 
-          <h3 className="text-red-600">
+          <h3 className="text-red-600 font-bold">
 
             Chingu Travel and Tours
 
