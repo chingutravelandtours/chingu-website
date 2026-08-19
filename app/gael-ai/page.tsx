@@ -38,7 +38,6 @@ export default function GaelPage() {
 
 
 return (
-
     <main className="min-h-screen bg-white flex items-center justify-center p-4">
 
 
