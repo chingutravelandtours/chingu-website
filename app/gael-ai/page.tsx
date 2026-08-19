@@ -165,7 +165,7 @@ return (
                   rounded-xl
                   border
                   border-red-500
-                  text-red-400
+                  text-red-500
                   font-semibold
                   text-lg
                   hover:bg-red-600
@@ -288,7 +288,7 @@ return (
         <div className="text-center py-5 border-t">
 
 
-          <h3 className="text-red-600 font-bold">
+          <h3 className="text-red-600">
 
             Chingu Travel and Tours
 
