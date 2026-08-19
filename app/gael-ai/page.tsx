@@ -166,7 +166,7 @@ export default function GaelPage() {
                   rounded-xl
                   border
                   border-red-500
-                  text-red-600
+                  text-black-300
                   font-semibold
                   text-lg
                   hover:bg-red-600
