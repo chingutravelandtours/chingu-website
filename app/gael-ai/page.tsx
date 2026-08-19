@@ -166,7 +166,7 @@ return (
                   rounded-xl
                   border
                   border-red-500
-                  text-black-300
+                  text-red-400
                   font-semibold
                   text-lg
                   hover:bg-red-600
