@@ -14,29 +14,7 @@ export default function GaelPage() {
   const [message, setMessage] = useState("");
 
   const menu = [
-    {
-      title: "Tour Packages",
-      icon: Luggage,
-    },
-    {
-      title: "Flight Inquiry",
-      icon: Plane,
-    },
-    {
-      title: "Hotel Reservation",
-      icon: Hotel,
-    },
-    {
-      title: "Visa Assistance",
-      icon: FileCheck,
-    },
-    {
-      title: "Talk to Chingu Team",
-      icon: Headset,
-    },
-  ];
-
-
+  
   return (
 
     <main className="min-h-screen bg-white flex items-center justify-center p-4">
