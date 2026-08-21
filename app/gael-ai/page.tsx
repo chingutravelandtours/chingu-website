@@ -57,16 +57,17 @@ export default function GaelPage() {
       });
 
 
-      const data = await response.json();
+     const data = await response.json();
 
+console.log("GAEL RESPONSE:", data);
 
-      setChat(prev => [
-        ...prev,
-        {
-          role: "gael",
-          text: data.reply || "Sorry, I cannot answer right now."
-        }
-      ]);
+setChat(prev => [
+  ...prev,
+  {
+    role: "gael",
+    text: data.reply || data.error || "Sorry, I cannot answer right now."
+  }
+]);
 
 
     } catch (error) {
