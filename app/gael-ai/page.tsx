@@ -6,12 +6,22 @@ import {
   Plane,
   Hotel,
   FileCheck,
-  Headset
+  Headset,
+  Send,
+  Trash2,
 } from "lucide-react";
 
 export default function GaelPage() {
 
   const [message, setMessage] = useState("");
+
+  const [chat, setChat] = useState([
+    {
+      role: "gael",
+      text: "Hi! I'm Gael, your Chingu Travel Assistant. 🌎✈️\n\nI can help you with tour packages, flights, hotels, visa assistance, and customized travel experiences.",
+    },
+  ]);
+
 
   const menu = [
     {
@@ -37,356 +47,545 @@ export default function GaelPage() {
   ];
 
 
-  return (
+  async function sendMessage() {
 
-    <main className="
-      min-h-screen
-      bg-gray-50
-      flex
-      items-center
-      justify-center
-      p-4
-    ">
+    if (!message.trim()) return;
 
 
-      <div className="
-        w-full
-        max-w-xl
-        bg-white
-        rounded-3xl
-        shadow-xl
-        border
-        border-red-100
-        overflow-hidden
-      ">
+    const userMessage = message;
 
 
-        {/* HEADER */}
+    setChat(prev => [
+      ...prev,
+      {
+        role:"user",
+        text:userMessage
+      }
+    ]);
 
-        <div className="
-          p-6
-          flex
-          items-center
-          justify-between
-          border-b
-        ">
 
+    setMessage("");
 
-          <div className="
-            flex
-            items-center
-            gap-4
-          ">
 
+    try {
 
-            {/* GAEL IMAGE */}
 
-            <div className="
-              w-32
-              h-32
-              rounded-full
-              overflow-hidden
-              bg-white
-              flex-shrink-0
-            ">
+      const response = await fetch("/api/chat",{
 
-              <img
-                src="/images/hero/gael.png"
-                alt="Gael AI Travel Assistant"
-                className="
-                  w-full
-                  h-full
-                  object-cover
-                "
-              />
+        method:"POST",
 
-            </div>
+        headers:{
+          "Content-Type":"application/json"
+        },
 
+        body:JSON.stringify({
+          message:userMessage
+        })
 
+      });
 
-            <div>
 
-              <h1
-                className="
-                  text-4xl
-                  font-medium
-                  text-red-600
-                  animate-pulse
-                "
-              >
-                GAEL
-              </h1>
+      const data = await response.json();
 
 
-              <p className="
-                text-gray-600
-                text-sm
-              ">
-                Chingu AI Travel Assistant
-              </p>
+      setChat(prev=>[
+        ...prev,
+        {
+          role:"gael",
+          text:data.reply || "Sorry, I cannot answer right now."
+        }
+      ]);
 
 
-            </div>
 
+    } catch(error){
 
-          </div>
 
+      setChat(prev=>[
+        ...prev,
+        {
+          role:"gael",
+          text:"Sorry, something went wrong. Please try again."
+        }
+      ]);
 
 
+    }
 
+  }
 
-          {/* ONLINE */}
 
-          <div className="
-            flex
-            items-center
-            gap-2
-            text-gray-600
-            text-sm
-          ">
 
-            <span className="
-              w-3
-              h-3
-              bg-green-500
-              rounded-full
-            ">
-            </span>
+  function clearChat(){
 
-            Online
+    setChat([
+      {
+        role:"gael",
+        text:"Hi! I'm Gael, your Chingu Travel Assistant. How can I help you today?"
+      }
+    ]);
 
-          </div>
+  }
 
 
-        </div>
 
+return (
 
+<main className="
+min-h-screen
+bg-white
+flex
+items-center
+justify-center
+p-5
+">
 
 
+<div className="
+w-full
+max-w-6xl
+bg-white
+rounded-3xl
+shadow-xl
+border
+border-red-100
+overflow-hidden
+grid
+md:grid-cols-[280px_1fr]
+">
 
-        {/* CHAT CONTENT */}
 
-        <div className="p-6">
 
+{/* SIDEBAR */}
 
+<div className="
+p-6
+border-r
+bg-white
+">
 
-          {/* MESSAGE */}
 
-          <div className="
-            bg-red-50
-            rounded-2xl
-            p-5
-            text-gray-700
-          ">
+<div className="
+text-center
+">
 
 
-            <p className="
-              text-lg
-              font-medium
-              text-gray-900
-            ">
-              Hi! I'm Gael, your Chingu Travel Assistant.
-            </p>
+<div className="
+w-24
+h-24
+mx-auto
+rounded-full
+border-4
+border-red-600
+overflow-hidden
+">
 
+<img
 
+src="/images/hero/gael.png"
 
-            <p className="
-              mt-4
-              leading-relaxed
-            ">
-              I can help you with tour packages,
-              flights, hotels, visa assistance,
-              and customized travel experiences.
-            </p>
+className="w-full h-full object-cover"
 
+/>
 
-          </div>
+</div>
 
 
+<h1 className="
+mt-4
+text-4xl
+font-bold
+text-red-600
+">
 
+GAEL
 
+</h1>
 
 
+<p className="
+text-gray-600
+">
 
-          {/* MENU */}
+Chingu AI Travel Assistant
 
-          <div className="
-            mt-6
-            space-y-3
-          ">
+</p>
 
 
-            {menu.map((item)=>{
 
-              const Icon = item.icon;
+<div className="
+mt-4
+inline-flex
+items-center
+gap-2
+bg-green-50
+text-green-600
+px-4
+py-2
+rounded-full
+">
 
+<span className="
+w-3
+h-3
+bg-green-500
+rounded-full
+">
+</span>
 
-              return (
+Online
 
-                <button
-                  key={item.title}
+</div>
 
-                  className="
-                    w-full
-                    flex
-                    items-center
-                    justify-between
-                    px-6
-                    py-4
-                    rounded-xl
-                    border
-                    border-red-400
-                    text-gray-700
-                    font-normal
-                    text-lg
-                    hover:bg-red-600
-                    hover:text-white
-                    transition
-                  "
-                >
 
 
-                  <div className="
-                    flex
-                    items-center
-                    gap-3
-                  ">
+</div>
 
 
-                    <Icon
-                      size={25}
-                      strokeWidth={2}
-                      className="text-red-600"
-                    />
 
 
-                    <span>
-                      {item.title}
-                    </span>
+<div className="
+mt-8
+space-y-3
+">
 
 
-                  </div>
+{
+menu.map((item)=>{
 
+const Icon=item.icon;
 
-                  <span>
-                    ›
-                  </span>
 
+return (
 
-                </button>
+<button
 
-              );
+key={item.title}
 
-            })}
+className="
+w-full
+flex
+items-center
+justify-between
+p-4
+rounded-xl
+border
+border-red-300
+text-red-600
+hover:bg-red-600
+hover:text-white
+transition
+"
 
 
-          </div>
+>
 
 
+<div className="
+flex
+items-center
+gap-3
+">
 
 
+<Icon size={22}/>
 
 
-          {/* INPUT */}
+<span className="
+font-semibold
+">
 
-          <div className="
-            mt-8
-            flex
-            gap-3
-          ">
+{item.title}
 
+</span>
 
-            <input
 
-              value={message}
+</div>
 
-              onChange={(e)=>setMessage(e.target.value)}
 
-              placeholder="Ask Gael anything..."
+<span>
+›
+</span>
 
-              className="
-                flex-1
-                border
-                border-gray-200
-                rounded-xl
-                px-5
-                py-4
-                text-gray-700
-                outline-none
-                focus:border-red-600
-              "
 
-            />
+</button>
 
+)
 
+})
 
-            <button
+}
 
-              className="
-                bg-red-600
-                text-white
-                px-6
-                rounded-xl
-                font-medium
-                hover:bg-red-700
-                transition
-              "
 
-            >
+</div>
 
-              Send
 
-            </button>
 
 
+<div className="
+mt-16
+text-center
+">
 
-          </div>
 
+<h3 className="
+font-bold
+text-red-600
+">
 
+Chingu Travel and Tours
 
+</h3>
 
-        </div>
 
+<p className="
+text-sm
+text-gray-500
+">
 
+Philippines & UAE Office
 
+</p>
 
 
+</div>
 
 
-        {/* FOOTER */}
 
-        <div className="
-          text-center
-          py-5
-          border-t
-        ">
+</div>
 
 
-          <h3 className="
-            text-red-600
-            font-medium
-          ">
-            Chingu Travel and Tours
-          </h3>
 
 
-          <p className="
-            text-gray-500
-            text-sm
-          ">
-            Philippines & UAE Office
-          </p>
 
+{/* CHAT AREA */}
 
-        </div>
 
+<div className="flex flex-col">
 
 
-      </div>
+<div className="
+p-6
+border-b
+flex
+justify-between
+items-center
+">
 
 
-    </main>
+<div>
 
-  );
+<h2 className="
+text-2xl
+font-bold
+text-red-600
+">
+
+GAEL
+
+</h2>
+
+
+<p className="text-gray-500">
+AI Travel Assistant
+</p>
+
+
+</div>
+
+
+
+<button
+
+onClick={clearChat}
+
+className="
+flex
+items-center
+gap-2
+border
+border-red-300
+text-red-600
+px-4
+py-2
+rounded-xl
+"
+
+>
+
+<Trash2 size={18}/>
+
+Clear Chat
+
+</button>
+
+
+</div>
+
+
+
+
+<div className="
+flex-1
+p-6
+space-y-5
+overflow-y-auto
+min-h-[500px]
+bg-gray-50
+">
+
+
+{
+chat.map((item,index)=>(
+
+
+<div
+
+key={index}
+
+className={
+
+item.role==="user"
+
+?
+"flex justify-end"
+
+:
+"flex justify-start"
+
+}
+
+
+>
+
+
+<div
+
+className={
+
+item.role==="user"
+
+?
+"bg-red-600 text-white rounded-2xl px-5 py-4 max-w-xl"
+
+:
+"bg-red-50 border border-red-100 rounded-2xl px-5 py-4 max-w-xl"
+
+}
+
+>
+
+{item.text}
+
+</div>
+
+
+</div>
+
+
+))
+
+}
+
+
+
+</div>
+
+
+
+
+
+<div className="
+p-5
+border-t
+flex
+gap-3
+">
+
+
+<input
+
+value={message}
+
+onChange={(e)=>setMessage(e.target.value)}
+
+onKeyDown={(e)=>{
+
+if(e.key==="Enter")
+sendMessage();
+
+}}
+
+placeholder="Ask Gael anything..."
+
+className="
+flex-1
+border
+rounded-xl
+px-5
+py-4
+outline-none
+focus:border-red-600
+"
+
+/>
+
+
+
+<button
+
+onClick={sendMessage}
+
+className="
+bg-red-600
+text-white
+px-6
+rounded-xl
+flex
+items-center
+gap-2
+font-semibold
+"
+
+>
+
+
+<Send size={18}/>
+
+Send
+
+
+</button>
+
+
+</div>
+
+
+
+<p className="
+text-center
+text-xs
+text-gray-400
+pb-4
+">
+
+🔒 Gael AI may make mistakes. Please verify important information with our travel experts.
+
+</p>
+
+
+
+</div>
+
+
+
+</div>
+
+
+</main>
+
+
+);
+
 
 }
