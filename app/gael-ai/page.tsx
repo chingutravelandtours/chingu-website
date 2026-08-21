@@ -39,39 +39,87 @@ export default function GaelPage() {
 
   return (
 
-    <main className="min-h-screen bg-white flex items-center justify-center p-4">
+    <main className="
+      min-h-screen
+      bg-gray-50
+      flex
+      items-center
+      justify-center
+      p-4
+    ">
 
 
-      <div className="w-full max-w-xl bg-white rounded-3xl shadow-2xl border border-red-100 overflow-hidden">
+      <div className="
+        w-full
+        max-w-xl
+        bg-white
+        rounded-3xl
+        shadow-xl
+        border
+        border-red-100
+        overflow-hidden
+      ">
 
 
         {/* HEADER */}
-        <div className="p-6 flex items-center justify-between border-b">
+
+        <div className="
+          p-6
+          flex
+          items-center
+          justify-between
+          border-b
+        ">
 
 
-          <div className="flex items-center gap-4">
+          <div className="
+            flex
+            items-center
+            gap-4
+          ">
 
 
             {/* GAEL IMAGE */}
-            <div className="w-20 h-20 rounded-full border-4 border-red-600 overflow-hidden bg-white">
-              
+
+            <div className="
+              w-20
+              h-20
+              rounded-full
+              overflow-hidden
+              bg-white
+              flex-shrink-0
+            ">
+
               <img
-  src="/images/hero/gael.png"
-  alt="Gael AI Travel Assistant"
-  className="w-full h-full object-cover"
-/>
+                src="/images/hero/gael.png"
+                alt="Gael AI Travel Assistant"
+                className="
+                  w-full
+                  h-full
+                  object-cover
+                "
+              />
+
             </div>
+
 
 
 
             <div>
 
-              <h1 className="text-4xl font-bold text-red-600">
+              <h1 className="
+                text-4xl
+                font-medium
+                text-red-600
+              ">
                 GAEL
               </h1>
 
 
-              <p className="text-gray-700">
+              <p className="
+                text-gray-600
+                text-sm
+              ">
                 Chingu AI Travel Assistant
               </p>
 
@@ -83,14 +131,27 @@ export default function GaelPage() {
 
 
 
-          {/* ONLINE */}
-          <div className="flex items-center gap-2 text-gray-700">
 
 
-            <span className="w-3 h-3 bg-green-500 rounded-full"></span>
+          {/* ONLINE STATUS */}
+
+          <div className="
+            flex
+            items-center
+            gap-2
+            text-gray-600
+            text-sm
+          ">
+
+            <span className="
+              w-3
+              h-3
+              bg-green-500
+              rounded-full
+            ">
+            </span>
 
             Online
-
 
           </div>
 
@@ -101,33 +162,42 @@ export default function GaelPage() {
 
 
 
-        {/* CHAT CONTENT */}
+
+        {/* CONTENT */}
 
         <div className="p-6">
 
 
 
-          {/* MESSAGE */}
-
-          <div className="bg-red-50 rounded-2xl p-5 text-gray-800">
 
 
-            <p className="text-lg font-semibold">
+          {/* INTRO MESSAGE */}
 
+          <div className="
+            bg-red-50
+            rounded-2xl
+            p-5
+            text-gray-700
+          ">
+
+
+            <p className="
+              text-lg
+              font-medium
+              text-gray-900
+            ">
               Hi! I'm Gael, your Chingu Travel Assistant.
-
             </p>
 
 
-            <br />
 
-
-            <p>
-
+            <p className="
+              mt-4
+              leading-relaxed
+            ">
               I can help you with tour packages,
               flights, hotels, visa assistance,
               and customized travel experiences.
-
             </p>
 
 
@@ -138,9 +208,14 @@ export default function GaelPage() {
 
 
 
-          {/* MENU BUTTONS */}
 
-          <div className="mt-6 space-y-3">
+
+          {/* MENU */}
+
+          <div className="
+            mt-6
+            space-y-3
+          ">
 
 
             {menu.map((item)=>{
@@ -152,48 +227,48 @@ export default function GaelPage() {
               return (
 
                 <button
-
                   key={item.title}
 
                   className="
-                  w-full
-                  flex
-                  items-center
-                  justify-between
-                  px-6
-                  py-4
-                  rounded-xl
-                  border
-                  border-red-500
-                  text-black-300
-                  font-semibold
-                  text-lg
-                  hover:bg-red-600
-                  hover:text-white
-                  transition
+                    w-full
+                    flex
+                    items-center
+                    justify-between
+                    px-6
+                    py-4
+                    rounded-xl
+                    border
+                    border-red-400
+                    text-gray-700
+                    font-normal
+                    text-lg
+                    hover:bg-red-600
+                    hover:text-white
+                    transition
                   "
-
                 >
 
 
-                  <div className="flex items-center gap-3">
+                  <div className="
+                    flex
+                    items-center
+                    gap-3
+                  ">
 
 
                     <Icon
-
                       size={25}
-
-                      strokeWidth={2.5}
-
-                      className="text-red-600"
-
+                      strokeWidth={2}
+                      className="
+                        text-red-600
+                        group-hover:text-white
+                      "
                     />
 
 
+
                     <span>
-
                       {item.title}
-
                     </span>
 
 
@@ -201,10 +276,9 @@ export default function GaelPage() {
 
 
 
+
                   <span>
-
                     ›
-
                   </span>
 
 
@@ -217,6 +291,7 @@ export default function GaelPage() {
             })}
 
 
+
           </div>
 
 
@@ -225,9 +300,14 @@ export default function GaelPage() {
 
 
 
-          {/* INPUT */}
+          {/* CHAT INPUT */}
 
-          <div className="mt-8 flex gap-3">
+
+          <div className="
+            mt-8
+            flex
+            gap-3
+          ">
 
 
             <input
@@ -239,13 +319,15 @@ export default function GaelPage() {
               placeholder="Ask Gael anything..."
 
               className="
-              flex-1
-              border
-              rounded-xl
-              px-5
-              py-4
-              outline-none
-              focus:border-red-600
+                flex-1
+                border
+                border-gray-200
+                rounded-xl
+                px-5
+                py-4
+                text-gray-700
+                outline-none
+                focus:border-red-600
               "
 
             />
@@ -255,12 +337,13 @@ export default function GaelPage() {
             <button
 
               className="
-              bg-red-600
-              text-white
-              px-6
-              rounded-xl
-              font-semibold
-              hover:bg-red-700
+                bg-red-600
+                text-white
+                px-6
+                rounded-xl
+                font-medium
+                hover:bg-red-700
+                transition
               "
 
             >
@@ -276,7 +359,11 @@ export default function GaelPage() {
 
 
 
+
         </div>
+
+
+
 
 
 
@@ -285,24 +372,32 @@ export default function GaelPage() {
 
         {/* FOOTER */}
 
-        <div className="text-center py-5 border-t">
+
+        <div className="
+          text-center
+          py-5
+          border-t
+        ">
 
 
-          <h3 className="text-red-600 font-bold">
-
+          <h3 className="
+            text-red-600
+            font-medium
+          ">
             Chingu Travel and Tours
-
           </h3>
 
 
-          <p className="text-gray-600 text-sm">
-
+          <p className="
+            text-gray-500
+            text-sm
+          ">
             Philippines & UAE Office
-
           </p>
 
 
         </div>
+
 
 
 
@@ -314,4 +409,5 @@ export default function GaelPage() {
     </main>
 
   );
+
 }
