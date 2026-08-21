@@ -19,17 +19,17 @@ export default function GaelPage() {
   const [loading, setLoading] = useState(false);
 
 
-  const [chat, setChat] = useState([
-    {
-      sender: "gael",
-      text: "Hi! I'm Gael, your Chingu Travel Assistant."
-    },
-    {
-      sender: "gael",
-      text: "I can help you with tour packages, flights, hotels, visa assistance, and customized travel experiences."
-    }
-  ]);
-
+  const [chat, setChat] = useState<
+  {
+    sender: "gael" | "user";
+    text: string;
+  }[]
+>([
+  {
+    sender: "gael",
+    text: "Hi! I'm Gael, your Chingu Travel Assistant."
+  }
+]);
 
 
 
