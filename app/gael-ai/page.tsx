@@ -104,19 +104,18 @@ export default function GaelPage() {
 
 
 
-
             <div>
 
               <h1
-  className="
-    text-4xl
-    font-medium
-    text-red-600
-    animate-gael
-  "
->
-  GAEL
-</h1>
+                className="
+                  text-4xl
+                  font-medium
+                  text-red-600
+                  animate-gael
+                "
+              >
+                GAEL
+              </h1>
 
 
               <p className="
@@ -136,7 +135,7 @@ export default function GaelPage() {
 
 
 
-          {/* ONLINE STATUS */}
+          {/* ONLINE */}
 
           <div className="
             flex
@@ -165,11 +164,13 @@ export default function GaelPage() {
 
 
 
-
-        {/* CONTENT */}
+        {/* CHAT CONTENT */}
 
         <div className="p-6">
 
+
+
+          {/* MESSAGE */}
 
           <div className="
             bg-red-50
@@ -286,7 +287,6 @@ export default function GaelPage() {
 
 
 
-
           {/* INPUT */}
 
           <div className="
@@ -345,7 +345,6 @@ export default function GaelPage() {
 
 
 
-
         </div>
 
 
@@ -386,34 +385,8 @@ export default function GaelPage() {
       </div>
 
 
-      {/* ANIMATION */}
-
-      <style jsx>{`
-
-        @keyframes gaelFloat {
-  0% {
-    transform: rotateY(-15deg) translateY(0px);
-  }
-
-  50% {
-    transform: rotateY(15deg) translateY(-4px);
-  }
-
-  100% {
-    transform: rotateY(-15deg) translateY(0px);
-  }
-}
-
-.animate-gael {
-  animation: gaelFloat 4s ease-in-out infinite;
-  transform-style: preserve-3d;
-}
-
-
-      `}</style>
-
-
     </main>
 
   );
+
 }
