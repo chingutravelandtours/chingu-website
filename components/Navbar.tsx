@@ -1,106 +1,110 @@
+"use client";
+
 import Link from "next/link";
+import { useState } from "react";
+import ContactModal from "./ContactModal";
 
 export default function Navbar() {
+
+  const [showContact, setShowContact] = useState(false);
+
   return (
-    <nav
-      className="
-        w-full
-        bg-white
-        px-10
-        py-4
-        flex
-        items-center
-        justify-between
-        shadow-sm
-      "
-    >
-
-      {/* LOGO */}
-
-      <Link href="/">
-        <h1
-          className="
-            text-red-700
-            font-bold
-            text-xl
-            tracking-wide
-          "
-        >
-          CHINGU Travel and Tours
-        </h1>
-      </Link>
-
-
-
-      {/* MENU */}
-
-      <div
+    <>
+      <nav
         className="
+          w-full
+          bg-white
+          px-10
+          py-4
           flex
           items-center
-          gap-8
-          text-gray-700
-          text-sm
-          font-medium
+          justify-between
+          shadow-sm
         "
       >
 
-        <Link
-          href="/"
-          className="
-            hover:text-red-600
-            transition
-          "
-        >
-          Home
+        {/* LOGO */}
+        <Link href="/">
+          <h1
+            className="
+              text-red-700
+              font-bold
+              text-xl
+              tracking-wide
+            "
+          >
+            CHINGU Travel and Tours
+          </h1>
         </Link>
 
 
-
-        <Link
-          href="/agent"
+        {/* MENU */}
+        <div
           className="
-            hover:text-red-600
-            transition
+            flex
+            items-center
+            gap-8
+            text-gray-700
+            text-sm
+            font-medium
           "
         >
-          B2B Portal
-        </Link>
+
+          <Link
+            href="/"
+            className="hover:text-red-600 transition"
+          >
+            Home
+          </Link>
 
 
-
-        <Link
-          href="/contact"
-          className="
-            hover:text-red-600
-            transition
-          "
-        >
-          Contact Us
-        </Link>
+          <Link
+            href="/agent"
+            className="hover:text-red-600 transition"
+          >
+            B2B Portal
+          </Link>
 
 
-
-        <Link
-          href="/login"
-          className="
-            bg-red-600
-            text-white
-            px-6
-            py-2
-            rounded-full
-            font-semibold
-            hover:bg-red-700
-            transition
-          "
-        >
-          Login
-        </Link>
+          {/* CONTACT BUTTON */}
+          <button
+            onClick={() => setShowContact(true)}
+            className="
+              hover:text-red-600
+              transition
+            "
+          >
+            Contact Us
+          </button>
 
 
-      </div>
+          <Link
+            href="/login"
+            className="
+              bg-red-600
+              text-white
+              px-6
+              py-2
+              rounded-full
+              font-semibold
+              hover:bg-red-700
+              transition
+            "
+          >
+            Login
+          </Link>
+
+        </div>
+
+      </nav>
 
 
-    </nav>
+      {showContact && (
+        <ContactModal
+          onClose={() => setShowContact(false)}
+        />
+      )}
+
+    </>
   );
 }
