@@ -1,15 +1,5 @@
 "use client";
 
-import { useState } from "react";
-import {
-  Luggage,
-  Plane,
-  Hotel,
-  FileCheck,
-  Headset
-} from "lucide-react";
-
-
 export default function GaelPage() {
 
 
@@ -27,27 +17,6 @@ const [loading,setLoading] = useState(false);
 
 
 
-const menu = [
-
-{
-title:"Tour Packages",
-icon:Luggage,
-},
-
-{
-title:"Flight Inquiry",
-icon:Plane,
-},
-
-{
-title:"Hotel Reservation",
-icon:Hotel,
-},
-
-{
-title:"Visa Assistance",
-icon:FileCheck,
-},
 
 {
 title:"Talk to Chingu Team",
