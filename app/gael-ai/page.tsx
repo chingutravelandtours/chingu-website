@@ -53,14 +53,13 @@ export default function GaelPage() {
 
 
             {/* GAEL IMAGE */}
-            <div className="w-20 h-20 rounded-full border-4 border-red-600 overflow-hidden flex-shrink-0">
-
+            <div className="w-20 h-20 rounded-full border-4 border-red-600 overflow-hidden bg-white">
+              
               <img
-                src="/images/gael.png"
-                alt="Gael AI Travel Assistant"
-                className="w-full h-full object-cover"
-              />
-
+  src="/images/hero/gael.png"
+  alt="Gael AI Travel Assistant"
+  className="w-full h-full object-cover"
+/>
             </div>
 
 
