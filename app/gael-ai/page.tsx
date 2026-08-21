@@ -82,8 +82,8 @@ export default function GaelPage() {
             {/* GAEL IMAGE */}
 
             <div className="
-              w-20
-              h-20
+              w-32
+              h-32
               rounded-full
               overflow-hidden
               bg-white
