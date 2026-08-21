@@ -111,7 +111,7 @@ export default function GaelPage() {
                   text-4xl
                   font-medium
                   text-red-600
-                  animate-gael
+                  animate-pulse
                 "
               >
                 GAEL
