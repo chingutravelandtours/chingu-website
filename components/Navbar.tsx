@@ -70,8 +70,11 @@ export default function Navbar() {
 
 
         <Link
-  href="/gael-ai"
-  className="hover:text-red-600 transition"
+  href="/contact"
+  className="
+    hover:text-red-600
+    transition
+  "
 >
   Contact Us
 </Link>
