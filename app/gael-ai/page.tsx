@@ -1,13 +1,7 @@
 "use client";
 
 import { useState } from "react";
-import {
-  Luggage,
-  Plane,
-  Hotel,
-  FileCheck,
-  Headset
-} from "lucide-react";
+import { Send } from "lucide-react";
 
 
 export default function GaelPage() {
@@ -27,46 +21,20 @@ const [loading,setLoading] = useState(false);
 
 
 
-const menu=[
-{
-title:"Tour Packages",
-icon:Luggage
-},
-{
-title:"Flight Inquiry",
-icon:Plane
-},
-{
-title:"Hotel Reservation",
-icon:Hotel
-},
-{
-title:"Visa Assistance",
-icon:FileCheck
-},
-{
-title:"Talk to Chingu Team",
-icon:Headset
-}
-];
-
-
-
-
 async function sendMessage(){
 
 
 if(!message.trim()) return;
 
 
-const userText=message;
+const userMessage = message;
 
 
 setChat(prev=>[
 ...prev,
 {
 role:"user",
-text:userText
+text:userMessage
 }
 ]);
 
@@ -74,6 +42,7 @@ text:userText
 setMessage("");
 
 setLoading(true);
+
 
 
 try{
@@ -88,27 +57,29 @@ headers:{
 },
 
 body:JSON.stringify({
-message:userText
+message:userMessage
 })
 
 });
 
 
-const data=await response.json();
+
+const data = await response.json();
 
 
 setChat(prev=>[
 ...prev,
 {
 role:"gael",
-text:data.reply
+text:data.reply || "Sorry, I cannot answer right now."
 }
 ]);
 
 
+
 }
 
-catch(error){
+catch{
 
 
 setChat(prev=>[
@@ -134,12 +105,13 @@ setLoading(false);
 
 return (
 
+
 <main className="
 min-h-screen
 bg-gray-50
 flex
-justify-center
 items-center
+justify-center
 p-4
 ">
 
@@ -156,16 +128,41 @@ overflow-hidden
 ">
 
 
+
 {/* HEADER */}
 
 <div className="
-px-6
-py-5
+px-5
+py-4
 border-b
 flex
-justify-between
 items-center
+justify-between
 ">
+
+
+<div className="
+flex
+items-center
+gap-3
+">
+
+
+<img
+
+src="/images/hero/gael.png"
+
+className="
+w-16
+h-16
+rounded-full
+object-cover
+border-2
+border-red-600
+"
+
+/>
+
 
 
 <div>
@@ -195,6 +192,11 @@ Chingu AI Travel Assistant
 </div>
 
 
+</div>
+
+
+
+
 
 <div className="
 flex
@@ -204,34 +206,41 @@ text-sm
 text-gray-600
 ">
 
+
 <span className="
 w-3
 h-3
 rounded-full
 bg-green-500
 ">
+
 </span>
+
 
 Online
 
-</div>
-
 
 </div>
 
 
+</div>
 
 
 
-{/* CHAT */}
+
+
+
+{/* CHAT AREA */}
+
 
 <div className="
 p-5
 space-y-4
+min-h-[420px]
 max-h-[500px]
 overflow-y-auto
+bg-white
 ">
-
 
 
 {
@@ -243,18 +252,42 @@ chat.map((item,index)=>(
 key={index}
 
 className={
+
 item.role==="user"
+
 ?
-"bg-red-600 text-white rounded-2xl p-4 ml-auto max-w-xs text-sm"
+"flex justify-end"
+
 :
-"bg-red-50 text-gray-700 rounded-2xl p-4 text-sm"
+"flex justify-start"
+
 }
 
 
 >
 
 
+<div
+
+className={
+
+item.role==="user"
+
+?
+
+"bg-red-600 text-white rounded-2xl px-4 py-3 max-w-xs text-sm"
+
+:
+
+"bg-red-50 text-gray-700 rounded-2xl px-4 py-3 max-w-xs text-sm"
+
+}
+
+>
+
 {item.text}
+
+</div>
 
 
 </div>
@@ -266,15 +299,15 @@ item.role==="user"
 
 
 
-
 {
 loading &&
 
 <div className="
 bg-red-50
-rounded-2xl
-p-4
 text-gray-500
+rounded-2xl
+px-4
+py-3
 text-sm
 ">
 
@@ -292,100 +325,13 @@ Gael is typing...
 
 
 
-{/* MENU */}
-
-<div className="
-px-5
-space-y-3
-">
-
-
-{
-menu.map((item)=>{
-
-
-const Icon=item.icon;
-
-
-return(
-
-<button
-
-key={item.title}
-
-className="
-w-full
-flex
-items-center
-justify-between
-px-5
-py-3
-rounded-xl
-border
-border-red-300
-text-gray-600
-text-sm
-hover:bg-red-600
-hover:text-white
-transition
-"
-
-
->
-
-
-<div className="
-flex
-items-center
-gap-3
-">
-
-
-<Icon
-
-size={20}
-
-className="text-red-600"
-
-/>
-
-
-<span>
-
-{item.title}
-
-</span>
-
-
-</div>
-
-
-<span>
-›
-</span>
-
-
-</button>
-
-
-)
-
-
-})
-
-}
-
-
-</div>
-
-
-
-
 
 {/* INPUT */}
 
+
 <div className="
-p-5
+border-t
+p-4
 flex
 gap-2
 ">
@@ -409,6 +355,7 @@ placeholder="Ask Gael anything..."
 className="
 flex-1
 border
+border-gray-200
 rounded-xl
 px-4
 py-3
@@ -430,12 +377,16 @@ bg-red-600
 text-white
 px-5
 rounded-xl
-text-sm
+flex
+items-center
+justify-center
 "
 
 >
 
-Send
+
+<Send size={18}/>
+
 
 </button>
 
@@ -446,7 +397,9 @@ Send
 
 
 
+
 {/* FOOTER */}
+
 
 <div className="
 border-t
@@ -480,7 +433,6 @@ Philippines & UAE Office
 
 
 </div>
-
 
 
 </main>
