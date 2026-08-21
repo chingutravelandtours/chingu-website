@@ -15,14 +15,6 @@ text:"Hi! I'm Gael, your Chingu Travel Assistant."
 
 const [loading,setLoading] = useState(false);
 
-
-
-
-{
-title:"Talk to Chingu Team",
-icon:Headset,
-},
-
 ];
 
 
