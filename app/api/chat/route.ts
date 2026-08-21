@@ -44,16 +44,18 @@ Rules:
     });
 
 
-  } catch (error) {
+  catch (error) {
+
+    console.error("GAEL ERROR:", error);
 
     return NextResponse.json(
       {
-        error: "Gael is currently unavailable."
+        error: "Gael is currently unavailable.",
+        details: String(error)
       },
       {
         status: 500
       }
     );
 
-  }
 }
