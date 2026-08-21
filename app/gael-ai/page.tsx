@@ -107,11 +107,17 @@ export default function GaelPage() {
 
             <div>
 
-              <h1 className="
-                text-4xl
-                font-medium
-                text-red-600
-              ">
+              <h1
+                className="
+                  text-4xl
+                  font-medium
+                  text-red-600
+                "
+                style={{
+                  animation: "gaelFloat 4s ease-in-out infinite",
+                  transformStyle: "preserve-3d",
+                }}
+              >
                 GAEL
               </h1>
 
@@ -168,11 +174,6 @@ export default function GaelPage() {
         <div className="p-6">
 
 
-
-
-
-          {/* INTRO MESSAGE */}
-
           <div className="
             bg-red-50
             rounded-2xl
@@ -209,7 +210,6 @@ export default function GaelPage() {
 
 
 
-
           {/* MENU */}
 
           <div className="
@@ -219,7 +219,6 @@ export default function GaelPage() {
 
 
             {menu.map((item)=>{
-
 
               const Icon = item.icon;
 
@@ -259,12 +258,8 @@ export default function GaelPage() {
                     <Icon
                       size={25}
                       strokeWidth={2}
-                      className="
-                        text-red-600
-                        group-hover:text-white
-                      "
+                      className="text-red-600"
                     />
-
 
 
                     <span>
@@ -275,21 +270,16 @@ export default function GaelPage() {
                   </div>
 
 
-
-
                   <span>
                     ›
                   </span>
-
 
 
                 </button>
 
               );
 
-
             })}
-
 
 
           </div>
@@ -300,8 +290,7 @@ export default function GaelPage() {
 
 
 
-          {/* CHAT INPUT */}
-
+          {/* INPUT */}
 
           <div className="
             mt-8
@@ -368,10 +357,7 @@ export default function GaelPage() {
 
 
 
-
-
         {/* FOOTER */}
-
 
         <div className="
           text-center
@@ -400,14 +386,33 @@ export default function GaelPage() {
 
 
 
-
-
       </div>
 
+
+      {/* ANIMATION */}
+
+      <style jsx>{`
+
+        @keyframes gaelFloat {
+
+          0% {
+            transform: rotateY(-15deg) translateY(0px);
+          }
+
+          50% {
+            transform: rotateY(15deg) translateY(-4px);
+          }
+
+          100% {
+            transform: rotateY(-15deg) translateY(0px);
+          }
+
+        }
+
+      `}</style>
 
 
     </main>
 
   );
-
 }
