@@ -108,18 +108,15 @@ export default function GaelPage() {
             <div>
 
               <h1
-                className="
-                  text-4xl
-                  font-medium
-                  text-red-600
-                "
-                style={{
-                  animation: "gaelFloat 4s ease-in-out infinite",
-                  transformStyle: "preserve-3d",
-                }}
-              >
-                GAEL
-              </h1>
+  className="
+    text-4xl
+    font-medium
+    text-red-600
+    animate-gael
+  "
+>
+  GAEL
+</h1>
 
 
               <p className="
@@ -394,18 +391,23 @@ export default function GaelPage() {
       <style jsx>{`
 
         @keyframes gaelFloat {
+  0% {
+    transform: rotateY(-15deg) translateY(0px);
+  }
 
-          0% {
-            transform: rotateY(-15deg) translateY(0px);
-          }
+  50% {
+    transform: rotateY(15deg) translateY(-4px);
+  }
 
-          50% {
-            transform: rotateY(15deg) translateY(-4px);
-          }
+  100% {
+    transform: rotateY(-15deg) translateY(0px);
+  }
+}
 
-          100% {
-            transform: rotateY(-15deg) translateY(0px);
-          }
+.animate-gael {
+  animation: gaelFloat 4s ease-in-out infinite;
+  transform-style: preserve-3d;
+}
 
         }
 
