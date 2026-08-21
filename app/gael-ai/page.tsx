@@ -1,606 +1,442 @@
 "use client";
 
+import { useState } from "react";
+
 export default function GaelPage() {
 
+  const [message, setMessage] = useState("");
 
-const [message,setMessage] = useState("");
+  const [chat, setChat] = useState([
+    {
+      role: "gael",
+      text: "Hi! I'm Gael, your Chingu Travel Assistant. I can help you with tours, flights, hotels, visa assistance, and customized travel experiences."
+    }
+  ]);
 
-const [chat,setChat] = useState([
-{
-role:"gael",
-text:"Hi! I'm Gael, your Chingu Travel Assistant."
-}
-]);
+  const [loading, setLoading] = useState(false);
 
 
-const [loading,setLoading] = useState(false);
 
-];
+  async function sendMessage() {
 
+    if (!message.trim()) return;
 
 
+    const userMessage = message;
 
 
-async function sendMessage(){
+    setChat(prev => [
+      ...prev,
+      {
+        role: "user",
+        text: userMessage
+      }
+    ]);
 
 
-if(!message.trim()) return;
+    setMessage("");
 
+    setLoading(true);
 
 
-const userMessage = message;
 
+    try {
 
+      const response = await fetch("/api/chat", {
 
-setChat(prev=>[
-...prev,
-{
-role:"user",
-text:userMessage
-}
-]);
+        method: "POST",
 
+        headers: {
+          "Content-Type": "application/json"
+        },
 
+        body: JSON.stringify({
+          message: userMessage
+        })
 
-setMessage("");
+      });
 
-setLoading(true);
 
+      const data = await response.json();
 
 
-try{
+      setChat(prev => [
+        ...prev,
+        {
+          role: "gael",
+          text: data.reply || "Sorry, I cannot answer right now."
+        }
+      ]);
 
 
-const response = await fetch("/api/chat",{
+    } catch (error) {
 
-method:"POST",
 
-headers:{
-"Content-Type":"application/json"
-},
+      setChat(prev => [
+        ...prev,
+        {
+          role: "gael",
+          text: "Sorry, I cannot connect right now."
+        }
+      ]);
 
-body:JSON.stringify({
+    }
 
-message:userMessage
 
-})
+    setLoading(false);
 
-});
+  }
 
 
 
-const data = await response.json();
 
 
+  return (
 
-setChat(prev=>[
+    <main className="
+      min-h-screen
+      bg-gray-50
+      flex
+      items-center
+      justify-center
+      p-4
+    ">
 
-...prev,
 
-{
+      <div className="
+        w-full
+        max-w-xl
+        bg-white
+        rounded-3xl
+        shadow-xl
+        border
+        border-red-100
+        overflow-hidden
+      ">
 
-role:"gael",
 
-text:data.reply || "Sorry, I cannot answer right now."
 
-}
+        {/* HEADER */}
 
-]);
+        <div className="
+          p-6
+          flex
+          items-center
+          justify-between
+          border-b
+        ">
 
 
+          <div className="
+            flex
+            items-center
+            gap-4
+          ">
 
-}
 
-catch(error){
+            {/* GAEL IMAGE */}
 
+            <div className="
+              w-32
+              h-32
+              rounded-full
+              overflow-hidden
+              bg-white
+            ">
 
-setChat(prev=>[
 
-...prev,
+              <img
 
-{
+                src="/images/hero/gael.png"
 
-role:"gael",
+                alt="Gael AI Travel Assistant"
 
-text:"Sorry, I cannot connect right now."
+                className="
+                  w-full
+                  h-full
+                  object-cover
+                "
 
-}
+              />
 
-]);
 
+            </div>
 
-}
 
 
+            <div>
 
-setLoading(false);
 
+              <h1 className="
+                text-4xl
+                font-medium
+                text-red-600
+                animate-pulse
+              ">
 
+                GAEL
 
-}
+              </h1>
 
 
 
+              <p className="
+                text-gray-600
+                text-sm
+              ">
 
+                Chingu AI Travel Assistant
 
-return (
+              </p>
 
-<main className="
-min-h-screen
-bg-gray-50
-flex
-items-center
-justify-center
-p-4
-">
 
+            </div>
 
-<div className="
-w-full
-max-w-xl
-bg-white
-rounded-3xl
-shadow-xl
-border
-border-red-100
-overflow-hidden
-">
 
+          </div>
 
 
-{/* HEADER */}
 
 
-<div className="
-p-6
-flex
-items-center
-justify-between
-border-b
-">
 
+          <div className="
+            flex
+            items-center
+            gap-2
+            text-gray-600
+            text-sm
+          ">
 
 
-<div className="
-flex
-items-center
-gap-4
-">
+            <span className="
+              w-3
+              h-3
+              bg-green-500
+              rounded-full
+            ">
 
+            </span>
 
 
-<div className="
-w-32
-h-32
-rounded-full
-overflow-hidden
-bg-white
-flex-shrink-0
-">
+            Online
 
 
-<img
+          </div>
 
-src="/images/hero/gael.png"
 
-alt="Gael AI Travel Assistant"
 
-className="
-w-full
-h-full
-object-cover
-"
+        </div>
 
-/>
 
 
-</div>
 
 
 
 
+        {/* CHAT AREA */}
 
-<div>
 
+        <div className="p-6">
 
-<h1
 
-className="
-text-4xl
-font-medium
-text-red-600
-animate-pulse
-"
+          <div className="
+            space-y-4
+            max-h-[450px]
+            overflow-y-auto
+          ">
 
->
 
-GAEL
+            {
+              chat.map((item,index)=>(
 
-</h1>
 
+                <div
 
+                  key={index}
 
-<p className="
-text-gray-600
-text-sm
-">
+                  className={
 
-Chingu AI Travel Assistant
+                    item.role === "user"
 
-</p>
+                    ?
 
+                    "bg-red-600 text-white rounded-2xl p-4 ml-auto max-w-md"
 
+                    :
 
-</div>
+                    "bg-red-50 rounded-2xl p-5 text-gray-700"
 
+                  }
 
+                >
 
-</div>
+                  {item.text}
 
+                </div>
 
 
+              ))
+            }
 
 
 
-<div className="
-flex
-items-center
-gap-2
-text-gray-600
-text-sm
-">
 
 
-<span className="
-w-3
-h-3
-bg-green-500
-rounded-full
-">
+            {
+              loading && (
 
-</span>
+                <div className="
+                  bg-red-50
+                  rounded-2xl
+                  p-5
+                  text-gray-500
+                ">
 
+                  Gael is typing...
 
-Online
+                </div>
 
+              )
+            }
 
-</div>
 
 
+          </div>
 
-</div>
 
 
 
 
 
 
-{/* CHAT CONTENT */}
 
 
+          {/* INPUT */}
 
-<div className="p-6">
 
+          <div className="
+            mt-8
+            flex
+            gap-3
+          ">
 
 
-<div className="
-space-y-4
-">
 
+            <input
 
 
-{
-chat.map((item,index)=>(
+              value={message}
 
 
-<div
+              onChange={(e)=>setMessage(e.target.value)}
 
-key={index}
 
-className={
+              onKeyDown={(e)=>{
 
-item.role==="user"
+                if(e.key==="Enter"){
 
-?
+                  sendMessage();
 
-"bg-red-600 text-white rounded-2xl p-4 ml-auto max-w-md"
+                }
 
-:
+              }}
 
-"bg-red-50 rounded-2xl p-5 text-gray-700"
 
-}
+              placeholder="Ask Gael anything..."
 
->
 
+              className="
+                flex-1
+                border
+                border-gray-200
+                rounded-xl
+                px-5
+                py-4
+                text-gray-700
+                outline-none
+                focus:border-red-600
+              "
 
-{item.text}
 
+            />
 
 
-</div>
 
 
+            <button
 
-))
+              onClick={sendMessage}
 
-}
+              className="
+                bg-red-600
+                text-white
+                px-6
+                rounded-xl
+                hover:bg-red-700
+                transition
+              "
 
+            >
 
+              Send
 
+            </button>
 
-{
-loading && (
 
-<div className="
-bg-red-50
-rounded-2xl
-p-5
-text-gray-500
-">
 
-Gael is typing...
+          </div>
 
-</div>
 
-)
 
-}
+        </div>
 
 
 
-</div>
 
 
 
 
 
 
+        {/* FOOTER */}
 
-{/* MENU */}
 
+        <div className="
+          text-center
+          py-5
+          border-t
+        ">
 
 
-<div className="
-mt-6
-space-y-3
-">
+          <h3 className="
+            text-red-600
+          ">
 
+            Chingu Travel and Tours
 
-{
-menu.map((item)=>{
+          </h3>
 
 
-const Icon=item.icon;
+          <p className="
+            text-gray-500
+            text-sm
+          ">
 
+            Philippines & UAE Office
 
+          </p>
 
-return (
 
+        </div>
 
-<button
 
-key={item.title}
 
-className="
-w-full
-flex
-items-center
-justify-between
-px-6
-py-4
-rounded-xl
-border
-border-red-400
-text-gray-700
-font-normal
-text-lg
-hover:bg-red-600
-hover:text-white
-transition
-"
 
->
+      </div>
 
 
-<div className="
-flex
-items-center
-gap-3
-">
+    </main>
 
-
-<Icon
-
-size={25}
-
-strokeWidth={2}
-
-className="text-red-600"
-
-/>
-
-
-
-<span>
-
-{item.title}
-
-</span>
-
-
-
-</div>
-
-
-
-<span>
-›
-</span>
-
-
-
-</button>
-
-
-
-)
-
-
-})
-
-}
-
-
-</div>
-
-
-
-
-
-
-
-
-{/* INPUT */}
-
-
-
-<div className="
-mt-8
-flex
-gap-3
-">
-
-
-
-<input
-
-
-value={message}
-
-
-onChange={(e)=>setMessage(e.target.value)}
-
-
-onKeyDown={(e)=>{
-
-if(e.key==="Enter"){
-
-sendMessage();
-
-}
-
-}}
-
-
-placeholder="Ask Gael anything..."
-
-
-className="
-flex-1
-border
-border-gray-200
-rounded-xl
-px-5
-py-4
-text-gray-700
-outline-none
-focus:border-red-600
-"
-
-/>
-
-
-
-
-
-<button
-
-
-onClick={sendMessage}
-
-
-className="
-bg-red-600
-text-white
-px-6
-rounded-xl
-font-medium
-hover:bg-red-700
-transition
-"
-
-
->
-
-
-Send
-
-
-</button>
-
-
-
-
-</div>
-
-
-
-
-
-</div>
-
-
-
-
-
-
-{/* FOOTER */}
-
-
-
-<div className="
-text-center
-py-5
-border-t
-">
-
-
-
-<h3 className="
-text-red-600
-font-medium
-">
-
-Chingu Travel and Tours
-
-</h3>
-
-
-
-<p className="
-text-gray-500
-text-sm
-">
-
-Philippines & UAE Office
-
-</p>
-
-
-
-</div>
-
-
-
-
-</div>
-
-
-</main>
-
-
-);
-
+  );
 
 }
