@@ -380,23 +380,7 @@ export default function VisaTrackingPage() {
     </main>
   );
 }
-Para makita ito
 
-Siguraduhin na ang file ay:
-
-app/
-└── visa-tracking/
-    └── page.tsx
-
-Then sa browser:
-
-/visa-tracking
-
-At yung Back to Visa Information ay babalik sa:
-
-/visa
-
-Important: Yung CTT-2026-001 hanggang CTT-2026-004 ay sample/demo records lamang. Huwag muna gamitin ang totoong client information sa code na ito.
 
 Your file library is full. New files won't be saved to your library, but you can still use them in this chat. To store new files for later, free up space or upgrade your storage.
 Upgrade
