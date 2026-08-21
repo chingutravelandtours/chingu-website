@@ -409,7 +409,6 @@ export default function GaelPage() {
   transform-style: preserve-3d;
 }
 
-        }
 
       `}</style>
 
