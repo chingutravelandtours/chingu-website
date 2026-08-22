@@ -15,13 +15,14 @@ export default function GaelPage() {
 
   const [loading, setLoading] = useState(false);
 
+
   const quickOptions = [
-  "✈️ Flight Booking",
-  "🌴 Tour Packages",
-  "🏨 Hotel Reservation",
-  "🛂 Visa Assistance",
-  "👩‍💼 Talk to Chingu Team"
-];
+    "✈️ Flight Booking",
+    "🌴 Tour Packages",
+    "🏨 Hotel Reservation",
+    "🛂 Visa Assistance",
+    "👩‍💼 Talk to Chingu Team"
+  ];
 
 
 
@@ -47,7 +48,6 @@ export default function GaelPage() {
     setLoading(true);
 
 
-
     try {
 
       const response = await fetch("/api/chat", {
@@ -65,21 +65,19 @@ export default function GaelPage() {
       });
 
 
-     const data = await response.json();
-
-console.log("GAEL RESPONSE:", data);
-
-setChat(prev => [
-  ...prev,
-  {
-    role: "gael",
-    text: data.reply || data.error || "Sorry, I cannot answer right now."
-  }
-]);
+      const data = await response.json();
 
 
-    } catch (error) {
+      setChat(prev => [
+        ...prev,
+        {
+          role: "gael",
+          text: data.reply || "Sorry, I cannot answer right now."
+        }
+      ]);
 
+
+    } catch {
 
       setChat(prev => [
         ...prev,
@@ -100,352 +98,379 @@ setChat(prev => [
 
 
 
-  return (
+  function selectOption(option:string){
 
-    <main className="
-      min-h-screen
-      bg-gray-50
-      flex
-      items-center
-      justify-center
-      p-4
-    ">
+    if(option === "👩‍💼 Talk to Chingu Team"){
 
+      window.open(
+        "https://wa.me/639193888999",
+        "_blank"
+      );
 
-      <div className="
-        w-full
-        max-w-xl
-        bg-white
-        rounded-3xl
-        shadow-xl
-        border
-        border-red-100
-        overflow-hidden
-      ">
+      return;
 
+    }
 
 
-        {/* HEADER */}
+    setMessage(option);
 
-        <div className="
-          p-6
-          flex
-          items-center
-          justify-between
-          border-b
-        ">
+  }
 
 
-          <div className="
-            flex
-            items-center
-            gap-4
-          ">
 
 
-            {/* GAEL IMAGE */}
 
-            <div className="
-              w-32
-              h-32
-              rounded-full
-              overflow-hidden
-              bg-white
-            ">
+return (
 
+<main className="
+min-h-screen
+bg-gray-50
+flex
+items-center
+justify-center
+p-4
+">
 
-              <img
 
-                src="/images/hero/gael.png"
+<div className="
+w-full
+max-w-xl
+bg-white
+rounded-3xl
+shadow-xl
+border
+border-red-100
+overflow-hidden
+">
 
-                alt="Gael AI Travel Assistant"
 
-                className="
-                  w-full
-                  h-full
-                  object-cover
-                "
+{/* HEADER */}
 
-              />
+<div className="
+p-6
+flex
+items-center
+justify-between
+border-b
+">
 
 
-            </div>
+<div className="
+flex
+items-center
+gap-4
+">
 
 
+<div className="
+w-32
+h-32
+rounded-full
+overflow-hidden
+bg-white
+">
 
-            <div>
 
+<img
 
-              <h1 className="
-                text-4xl
-                font-medium
-                text-red-600
-                animate-pulse
-              ">
+src="/images/hero/gael.png"
 
-                GAEL
+alt="Gael AI Travel Assistant"
 
-              </h1>
+className="
+w-full
+h-full
+object-cover
+"
 
+/>
 
 
-              <p className="
-                text-gray-600
-                text-sm
-              ">
+</div>
 
-                Chingu AI Travel Assistant
 
-              </p>
 
+<div>
 
-            </div>
+<h1 className="
+text-4xl
+font-medium
+text-red-600
+animate-pulse
+">
 
+GAEL
 
-          </div>
+</h1>
 
 
+<p className="
+text-gray-600
+text-sm
+">
 
+Chingu AI Travel Assistant
 
+</p>
 
-          <div className="
-            flex
-            items-center
-            gap-2
-            text-gray-600
-            text-sm
-          ">
 
+</div>
 
-            <span className="
-              w-3
-              h-3
-              bg-green-500
-              rounded-full
-            ">
 
-            </span>
+</div>
 
 
-            Online
 
 
-          </div>
+<div className="
+flex
+items-center
+gap-2
+text-gray-600
+text-sm
+">
 
+<span className="
+w-3
+h-3
+bg-green-500
+rounded-full
+">
+</span>
 
+Online
 
-        </div>
+</div>
 
 
+</div>
 
 
 
 
 
-        {/* CHAT AREA */}
+{/* CHAT */}
 
+<div className="p-6">
 
-        <div className="p-6">
 
+<div className="
+space-y-4
+max-h-[450px]
+overflow-y-auto
+">
 
-          <div className="
-            space-y-4
-            max-h-[450px]
-            overflow-y-auto
-          ">
 
+{chat.map((item,index)=>(
 
-            {
-              chat.map((item,index)=>(
 
+<div
 
-                <div
+key={index}
 
-                  key={index}
+className={
 
-                  className={
+item.role === "user"
 
-                    item.role === "user"
+?
 
-                    ?
+"bg-red-600 text-white rounded-2xl p-4 ml-auto max-w-md"
 
-                    "bg-red-600 text-white rounded-2xl p-4 ml-auto max-w-md"
+:
 
-                    :
+"bg-red-50 rounded-2xl p-5 text-gray-700"
 
-                    "bg-red-50 rounded-2xl p-5 text-gray-700"
+}
 
-                  }
+>
 
-                >
+{item.text}
 
-                  {item.text}
+</div>
 
-                </div>
 
+))}
 
-              ))
-            }
 
 
+{loading && (
 
+<div className="
+bg-red-50
+rounded-2xl
+p-5
+text-gray-500
+">
 
+Gael is typing...
 
-            {
-              loading && (
+</div>
 
-                <div className="
-                  bg-red-50
-                  rounded-2xl
-                  p-5
-                  text-gray-500
-                ">
+)}
 
-                  Gael is typing...
 
-                </div>
+</div>
 
-              )
-            }
 
 
 
-          </div>
 
+{/* QUICK OPTIONS */}
 
+<div className="
+mt-6
+space-y-3
+">
 
 
+{quickOptions.map((option)=>(
 
+<button
 
+key={option}
 
+onClick={()=>selectOption(option)}
 
+className="
+w-full
+border
+border-red-300
+rounded-xl
+px-5
+py-3
+text-gray-700
+hover:bg-red-600
+hover:text-white
+transition
+text-left
+"
 
-          {/* INPUT */}
+>
 
+{option}
 
-          <div className="
-            mt-8
-            flex
-            gap-3
-          ">
+</button>
 
+))}
 
 
-            <input
+</div>
 
 
-              value={message}
 
 
-              onChange={(e)=>setMessage(e.target.value)}
 
+{/* INPUT */}
 
-              onKeyDown={(e)=>{
+<div className="
+mt-8
+flex
+gap-3
+">
 
-                if(e.key==="Enter"){
 
-                  sendMessage();
+<input
 
-                }
+value={message}
 
-              }}
+onChange={(e)=>setMessage(e.target.value)}
 
+onKeyDown={(e)=>{
 
-              placeholder="Ask Gael anything..."
+if(e.key==="Enter"){
 
+sendMessage();
 
-              className="
-                flex-1
-                border
-                border-gray-200
-                rounded-xl
-                px-5
-                py-4
-                text-gray-700
-                outline-none
-                focus:border-red-600
-              "
+}
 
+}}
 
-            />
+placeholder="Ask Gael anything..."
 
+className="
+flex-1
+border
+border-gray-200
+rounded-xl
+px-5
+py-4
+text-gray-700
+outline-none
+focus:border-red-600
+"
 
+/>
 
 
-            <button
 
-              onClick={sendMessage}
+<button
 
-              className="
-                bg-red-600
-                text-white
-                px-6
-                rounded-xl
-                hover:bg-red-700
-                transition
-              "
+onClick={sendMessage}
 
-            >
+className="
+bg-red-600
+text-white
+px-6
+rounded-xl
+hover:bg-red-700
+transition
+"
 
-              Send
+>
 
-            </button>
+Send
 
+</button>
 
 
-          </div>
+</div>
 
 
 
-        </div>
+</div>
 
 
 
 
 
 
+{/* FOOTER */}
 
+<div className="
+text-center
+py-5
+border-t
+">
 
 
-        {/* FOOTER */}
+<h3 className="
+text-red-600
+">
 
+Chingu Travel and Tours
 
-        <div className="
-          text-center
-          py-5
-          border-t
-        ">
+</h3>
 
 
-          <h3 className="
-            text-red-600
-          ">
+<p className="
+text-gray-500
+text-sm
+">
 
-            Chingu Travel and Tours
+Philippines & UAE Office
 
-          </h3>
+</p>
 
 
-          <p className="
-            text-gray-500
-            text-sm
-          ">
+</div>
 
-            Philippines & UAE Office
 
-          </p>
+</div>
 
 
-        </div>
+</main>
 
+);
 
-
-
-      </div>
-
-
-    </main>
-
-  );
 
 }
