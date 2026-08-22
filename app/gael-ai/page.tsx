@@ -17,7 +17,7 @@ export default function GaelPage() {
 
 
   const quickOptions = [
-    "✈️ Flight Booking",
+    "✈️ Flight Inquiry",
     "🌴 Tour Packages",
     "🏨 Hotel Reservation",
     "🛂 Visa Assistance",
@@ -26,12 +26,12 @@ export default function GaelPage() {
 
 
 
-  async function sendMessage() {
+  async function sendMessage(customMessage?: string) {
 
-    if (!message.trim()) return;
+    const userMessage = customMessage || message;
 
 
-    const userMessage = message;
+    if (!userMessage.trim()) return;
 
 
     setChat(prev => [
@@ -46,6 +46,7 @@ export default function GaelPage() {
     setMessage("");
 
     setLoading(true);
+
 
 
     try {
@@ -65,29 +66,49 @@ export default function GaelPage() {
       });
 
 
+
       const data = await response.json();
 
 
+
       setChat(prev => [
+
         ...prev,
+
         {
+
           role: "gael",
-          text: data.reply || "Sorry, I cannot answer right now."
+
+          text:
+          data.reply ||
+          "Sorry, I cannot answer right now."
+
         }
+
       ]);
+
 
 
     } catch {
 
+
       setChat(prev => [
+
         ...prev,
+
         {
+
           role: "gael",
-          text: "Sorry, I cannot connect right now."
+
+          text:
+          "Sorry, I cannot connect right now."
+
         }
+
       ]);
 
     }
+
 
 
     setLoading(false);
@@ -99,6 +120,7 @@ export default function GaelPage() {
 
 
   function selectOption(option:string){
+
 
     if(option === "👩‍💼 Talk to Chingu Team"){
 
@@ -112,7 +134,7 @@ export default function GaelPage() {
     }
 
 
-    setMessage(option);
+    sendMessage(option);
 
   }
 
@@ -122,17 +144,20 @@ export default function GaelPage() {
 
 return (
 
-<main className="
+<main
+className="
 min-h-screen
 bg-gray-50
 flex
 items-center
 justify-center
 p-4
-">
+"
+>
 
 
-<div className="
+<div
+className="
 w-full
 max-w-xl
 bg-white
@@ -141,41 +166,48 @@ shadow-xl
 border
 border-red-100
 overflow-hidden
-">
+"
+>
+
 
 
 {/* HEADER */}
 
-<div className="
+<div
+className="
 p-6
 flex
 items-center
 justify-between
 border-b
-">
+"
+>
 
 
-<div className="
+<div
+className="
 flex
 items-center
 gap-4
-">
+"
+>
 
 
-<div className="
+<div
+className="
 w-32
 h-32
 rounded-full
 overflow-hidden
-bg-white
-">
+"
+>
 
 
 <img
 
 src="/images/hero/gael.png"
 
-alt="Gael AI Travel Assistant"
+alt="Gael"
 
 className="
 w-full
@@ -192,25 +224,24 @@ object-cover
 
 <div>
 
-<h1 className="
+<h1
+className="
 text-4xl
 font-medium
 text-red-600
-animate-pulse
-">
-
+"
+>
 GAEL
-
 </h1>
 
 
-<p className="
+<p
+className="
 text-gray-600
 text-sm
-">
-
+"
+>
 Chingu AI Travel Assistant
-
 </p>
 
 
@@ -222,23 +253,27 @@ Chingu AI Travel Assistant
 
 
 
-<div className="
+<div
+className="
 flex
 items-center
 gap-2
 text-gray-600
 text-sm
-">
+"
+>
 
-<span className="
+<span
+className="
 w-3
 h-3
 bg-green-500
 rounded-full
-">
-</span>
+"
+/>
 
 Online
+
 
 </div>
 
@@ -251,17 +286,24 @@ Online
 
 {/* CHAT */}
 
-<div className="p-6">
+<div
+className="
+p-6
+"
+>
 
 
-<div className="
+<div
+className="
 space-y-4
 max-h-[450px]
 overflow-y-auto
-">
+"
+>
 
 
-{chat.map((item,index)=>(
+{
+chat.map((item,index)=>(
 
 
 <div
@@ -289,24 +331,30 @@ item.role === "user"
 </div>
 
 
-))}
+))
+}
 
 
 
-{loading && (
 
-<div className="
+{
+loading && (
+
+<div
+className="
 bg-red-50
 rounded-2xl
 p-5
 text-gray-500
-">
+"
+>
 
 Gael is typing...
 
 </div>
 
-)}
+)
+}
 
 
 </div>
@@ -315,15 +363,19 @@ Gael is typing...
 
 
 
-{/* QUICK OPTIONS */}
+{/* QUICK BUTTONS */}
 
-<div className="
+<div
+className="
 mt-6
 space-y-3
-">
+"
+>
 
 
-{quickOptions.map((option)=>(
+{
+quickOptions.map(option=>(
+
 
 <button
 
@@ -351,7 +403,9 @@ text-left
 
 </button>
 
-))}
+
+))
+}
 
 
 </div>
@@ -362,11 +416,13 @@ text-left
 
 {/* INPUT */}
 
-<div className="
+<div
+className="
 mt-8
 flex
 gap-3
-">
+"
+>
 
 
 <input
@@ -394,7 +450,6 @@ border-gray-200
 rounded-xl
 px-5
 py-4
-text-gray-700
 outline-none
 focus:border-red-600
 "
@@ -405,15 +460,13 @@ focus:border-red-600
 
 <button
 
-onClick={sendMessage}
+onClick={()=>sendMessage()}
 
 className="
 bg-red-600
 text-white
 px-6
 rounded-xl
-hover:bg-red-700
-transition
 "
 
 >
@@ -434,28 +487,35 @@ Send
 
 
 
+
 {/* FOOTER */}
 
-<div className="
+<div
+className="
 text-center
 py-5
 border-t
-">
+"
+>
 
 
-<h3 className="
+<h3
+className="
 text-red-600
-">
+"
+>
 
 Chingu Travel and Tours
 
 </h3>
 
 
-<p className="
+<p
+className="
 text-gray-500
 text-sm
-">
+"
+>
 
 Philippines & UAE Office
 
@@ -465,10 +525,13 @@ Philippines & UAE Office
 </div>
 
 
+
+
 </div>
 
 
 </main>
+
 
 );
 
