@@ -15,6 +15,14 @@ export default function GaelPage() {
 
   const [loading, setLoading] = useState(false);
 
+  const quickOptions = [
+  "✈️ Flight Booking",
+  "🌴 Tour Packages",
+  "🏨 Hotel Reservation",
+  "🛂 Visa Assistance",
+  "👩‍💼 Talk to Chingu Team"
+];
+
 
 
   async function sendMessage() {
