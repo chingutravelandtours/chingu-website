@@ -14,6 +14,17 @@ type Package = {
 };
 
 const packages: Package[] = [
+ {
+  title: "Tokyo + Mt. Fuji + Yokohama",
+  subtitle: "Japan Tour Package",
+  duration: "5D4N",
+  dates: "Sep. 13–17, 2026",
+  city: "MNL",
+  price: 839 * USD_TO_PHP,
+  slots: 1,
+  deposit: 300 * USD_TO_PHP,
+},
+  
   {
     title: "Discover Osaka + Kyoto + Nara",
     subtitle: "Japan (3 in 1)",
