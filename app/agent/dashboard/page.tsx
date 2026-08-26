@@ -1,42 +1,110 @@
 "use client";
 
 import Link from "next/link";
-import {
-  Plane,
-  Hotel,
-  Map,
-  Smartphone,
-  Car,
-  Ship,
-  ShieldCheck,
-  FileText,
-  CalendarDays,
-  Wallet,
-  Bell,
-  Tag,
-  Headphones,
-  Settings,
-  Menu,
-  ChevronDown,
-  Search,
-  ArrowRight,
-  Globe2,
-  Ticket,
-  CreditCard,
-  LogOut,
-  X,
-} from "lucide-react";
-
 import { useState } from "react";
+
+const services = [
+  {
+    title: "Flight - Book & Buy",
+    icon: "✈",
+    description: "Search and book domestic and international flights.",
+    action: "SEARCH FLIGHT",
+  },
+  {
+    title: "Hotel - Book & Buy",
+    icon: "🏨",
+    description: "Find hotels and request competitive B2B rates.",
+    action: "SEARCH HOTEL",
+  },
+  {
+    title: "International Tour",
+    icon: "🌏",
+    description: "Browse verified international tour packages.",
+    action: "SEARCH TOUR",
+    href: "/agent/tourpackages",
+  },
+  {
+    title: "Domestic Tour",
+    icon: "🏝",
+    description: "Explore Philippine domestic tour packages.",
+    action: "SEARCH TOUR",
+  },
+  {
+    title: "eSIM Travel",
+    icon: "📱",
+    description: "Provide your travelers with affordable eSIM data plans.",
+    action: "VIEW eSIM",
+    href: "/agent/esim",
+  },
+  {
+    title: "Visa Service",
+    icon: "📄",
+    description: "Check visa information and travel requirements.",
+    action: "VIEW VISA",
+  },
+];
+
+const news = [
+  {
+    date: "Aug 26, 2026",
+    title: "New B2B travel products available",
+  },
+  {
+    date: "Aug 25, 2026",
+    title: "Vietnam travel partnership opportunities",
+  },
+  {
+    date: "Aug 24, 2026",
+    title: "New international tour packages",
+  },
+  {
+    date: "Aug 23, 2026",
+    title: "eSIM travel connectivity now available",
+  },
+];
+
+const promos = [
+  {
+    date: "AUG 2026",
+    title: "Special B2B Tour Package Offers",
+  },
+  {
+    date: "AUG 2026",
+    title: "Selected eSIM Partner Rates",
+  },
+  {
+    date: "ONGOING",
+    title: "Partner-only Travel Offers",
+  },
+  {
+    date: "ONGOING",
+    title: "Customized Tour Quotations",
+  },
+];
 
 export default function AgentDashboard() {
   const [sidebarOpen, setSidebarOpen] = useState(true);
-  const [mobileMenuOpen, setMobileMenuOpen] = useState(false);
+  const [mobileMenu, setMobileMenu] = useState(false);
+
+  const [origin, setOrigin] = useState("");
+  const [destination, setDestination] = useState("");
+  const [departure, setDeparture] = useState("");
+  const [returnDate, setReturnDate] = useState("");
+
+  const handleFlightSearch = () => {
+    if (!origin || !destination || !departure) {
+      alert("Please enter origin, destination and departure date.");
+      return;
+    }
+
+    alert(
+      `Flight search:\n${origin} → ${destination}\nDeparture: ${departure}${
+        returnDate ? `\nReturn: ${returnDate}` : ""
+      }`
+    );
+  };
 
   const handleLogout = () => {
-    // Temporary logout.
-    // Kapag may authentication/session na tayo,
-    // dito natin ilalagay ang tunay na logout logic.
     window.location.href = "/agent/login";
   };
 
@@ -44,136 +112,101 @@ export default function AgentDashboard() {
     <main className="min-h-screen bg-gray-100 text-gray-900">
 
       {/* =====================================================
-          HEADER
+          TOP HEADER
       ===================================================== */}
 
-      <header className="h-16 bg-white border-b border-gray-200 flex items-center justify-between px-4 lg:px-6 sticky top-0 z-50">
-
-        {/* LEFT SIDE */}
+      <header className="sticky top-0 z-50 h-16 bg-white border-b border-gray-200 flex items-center justify-between px-4 lg:px-6">
 
         <div className="flex items-center gap-3">
 
-          {/* Desktop sidebar button */}
           <button
             type="button"
             onClick={() => setSidebarOpen(!sidebarOpen)}
-            className="hidden md:flex p-2 rounded-lg hover:bg-gray-100 transition"
-            aria-label="Toggle sidebar"
+            className="hidden md:flex w-10 h-10 items-center justify-center rounded-lg hover:bg-gray-100 text-gray-600"
           >
-            <Menu size={22} />
+            ☰
           </button>
 
-          {/* Mobile menu */}
           <button
             type="button"
-            onClick={() => setMobileMenuOpen(true)}
-            className="flex md:hidden p-2 rounded-lg hover:bg-gray-100 transition"
-            aria-label="Open menu"
+            onClick={() => setMobileMenu(true)}
+            className="md:hidden w-10 h-10 rounded-lg hover:bg-gray-100"
           >
-            <Menu size={22} />
+            ☰
           </button>
 
-          {/* LOGO */}
+          {/* CHINGU BRAND */}
 
-          <Link
-            href="/agent/dashboard"
-            className="flex items-center gap-2"
-          >
+          <Link href="/agent/dashboard" className="flex items-center gap-2">
 
-            <div className="w-9 h-9 rounded-full bg-red-600 flex items-center justify-center text-white font-bold">
+            <div className="w-10 h-10 rounded-full bg-red-600 text-white flex items-center justify-center font-bold text-lg">
               C
             </div>
 
             <div className="leading-tight">
-              <div className="font-bold text-red-700 tracking-wide">
+              <div className="font-extrabold tracking-wide text-red-700">
                 CHINGU
               </div>
 
-              <div className="text-[10px] text-gray-500 font-semibold tracking-wide">
+              <div className="text-[9px] font-bold tracking-widest text-gray-500">
                 TRAVEL AND TOURS
               </div>
             </div>
 
           </Link>
 
-          <div className="hidden lg:block ml-4 text-sm font-semibold text-gray-500">
+          <span className="hidden lg:block ml-4 text-xs font-bold text-gray-400 border-l pl-4">
             B2B PARTNER PORTAL
-          </div>
+          </span>
 
         </div>
 
 
-        {/* RIGHT SIDE */}
+        {/* RIGHT HEADER */}
 
-        <div className="flex items-center gap-2">
-
-          {/* eSIM */}
+        <div className="flex items-center gap-3">
 
           <Link
             href="/agent/esim"
-            className="hidden md:flex items-center gap-2 border border-gray-200 rounded-lg px-3 py-2 text-xs font-semibold hover:border-red-300 hover:text-red-600 transition"
+            className="hidden sm:flex items-center gap-2 border border-gray-200 rounded-lg px-3 py-2 text-xs font-semibold hover:border-red-300 hover:text-red-600"
           >
-            <Smartphone
-              size={15}
-              className="text-red-600"
-            />
-
-            eSIM
+            📱 eSIM
           </Link>
-
-
-          {/* Notifications */}
 
           <button
             type="button"
-            className="relative p-2 rounded-lg hover:bg-gray-100 transition"
+            className="relative w-10 h-10 rounded-lg hover:bg-gray-100"
           >
-
-            <Bell size={20} />
-
-            <span className="absolute -top-1 -right-1 bg-red-600 text-white text-[10px] w-4 h-4 rounded-full flex items-center justify-center">
+            🔔
+            <span className="absolute top-1 right-1 w-4 h-4 bg-red-600 text-white rounded-full text-[9px] flex items-center justify-center">
               3
             </span>
-
           </button>
 
+          <div className="hidden sm:flex items-center gap-2 border-l pl-3">
 
-          {/* Profile */}
-
-          <div className="hidden sm:flex items-center gap-2 pl-3 border-l">
-
-            <div className="w-9 h-9 bg-gray-200 rounded-full flex items-center justify-center">
-              <span className="font-semibold text-gray-600">
-                EN
-              </span>
+            <div className="w-9 h-9 rounded-full bg-gray-200 flex items-center justify-center text-sm font-bold text-gray-600">
+              EN
             </div>
 
             <div className="hidden lg:block leading-tight">
-
-              <p className="text-sm font-semibold">
+              <p className="text-sm font-bold">
                 Eden NL
               </p>
 
-              <p className="text-xs text-gray-500">
-                Verified Partner
+              <p className="text-[10px] text-green-600 font-semibold">
+                VERIFIED PARTNER
               </p>
-
             </div>
 
-            <ChevronDown size={15} />
-
           </div>
-
-
-          {/* Logout */}
 
           <button
             type="button"
             onClick={handleLogout}
-            className="hidden sm:flex items-center gap-2 ml-2 p-2 text-gray-500 hover:text-red-600 transition"
-            title="Logout"
+            className="hidden sm:block text-gray-500 hover:text-red-600 text-sm font-semibold"
           >
-            <LogOut size={18} />
+            Logout
           </button>
 
         </div>
@@ -182,71 +215,46 @@ export default function AgentDashboard() {
 
 
       {/* =====================================================
-          MOBILE SIDEBAR
+          MOBILE MENU
       ===================================================== */}
 
-      {mobileMenuOpen && (
-        <div className="fixed inset-0 z-[60] md:hidden">
-
-          {/* Overlay */}
+      {mobileMenu && (
+        <div className="fixed inset-0 z-[100] md:hidden">
 
           <div
             className="absolute inset-0 bg-black/40"
-            onClick={() => setMobileMenuOpen(false)}
+            onClick={() => setMobileMenu(false)}
           />
 
-          {/* Menu */}
-
-          <aside className="relative w-72 max-w-[85%] h-full bg-white shadow-xl flex flex-col">
+          <aside className="relative w-72 h-full bg-white shadow-xl">
 
             <div className="h-16 border-b flex items-center justify-between px-4">
 
-              <div className="flex items-center gap-2">
-
-                <div className="w-9 h-9 rounded-full bg-red-600 flex items-center justify-center text-white font-bold">
-                  C
-                </div>
-
-                <div>
-                  <p className="font-bold text-red-700">
-                    CHINGU
-                  </p>
-
-                  <p className="text-[9px] text-gray-500 font-semibold">
-                    B2B PARTNER PORTAL
-                  </p>
-                </div>
-
+              <div className="font-bold text-red-700">
+                CHINGU B2B
               </div>
 
               <button
                 type="button"
-                onClick={() => setMobileMenuOpen(false)}
-                className="p-2 hover:bg-gray-100 rounded-lg"
+                onClick={() => setMobileMenu(false)}
+                className="text-xl"
               >
-                <X size={20} />
+                ×
               </button>
 
             </div>
 
+            <Navigation
+              onNavigate={() => setMobileMenu(false)}
+            />
 
-            <div className="flex-1 overflow-y-auto">
-
-              <SidebarNavigation
-                onNavigate={() => setMobileMenuOpen(false)}
-              />
-
-            </div>
-
-
-            <div className="p-4 border-t">
+            <div className="absolute bottom-0 left-0 right-0 p-4 border-t">
 
               <button
                 type="button"
                 onClick={handleLogout}
-                className="w-full flex items-center justify-center gap-2 bg-red-600 text-white rounded-lg py-3 text-sm font-semibold hover:bg-red-700 transition"
+                className="w-full bg-red-600 text-white rounded-lg py-3 font-semibold"
               >
-                <LogOut size={17} />
                 Logout
               </button>
 
@@ -262,44 +270,35 @@ export default function AgentDashboard() {
 
 
         {/* =====================================================
-            DESKTOP SIDEBAR
+            SIDEBAR
         ===================================================== */}
 
         {sidebarOpen && (
           <aside className="hidden md:flex w-60 shrink-0 bg-white border-r border-gray-200 min-h-[calc(100vh-64px)] flex-col">
 
             <div className="flex-1 overflow-y-auto">
-
-              <SidebarNavigation />
-
+              <Navigation />
             </div>
-
-
-            {/* ACCOUNT MANAGER */}
 
             <div className="p-4 border-t">
 
-              <div className="rounded-xl border border-red-200 bg-red-50 p-4">
+              <div className="rounded-xl bg-red-50 border border-red-100 p-4">
 
-                <p className="text-xs font-bold text-red-700">
-                  ACCOUNT MANAGER
+                <p className="text-[10px] uppercase font-bold text-red-600">
+                  Partner Support
                 </p>
 
-                <p className="mt-2 font-semibold text-sm">
-                  Chingu Partner Support
+                <p className="text-sm font-bold mt-2">
+                  Chingu Travel and Tours
                 </p>
 
-                <p className="text-xs text-gray-600 mt-1">
+                <p className="text-xs text-gray-500 mt-1">
                   +971 55 255 0096
-                </p>
-
-                <p className="text-xs text-gray-600 break-all">
-                  admin@chingutravelandtours.com
                 </p>
 
                 <a
                   href="mailto:admin@chingutravelandtours.com"
-                  className="mt-3 block w-full bg-red-600 hover:bg-red-700 text-white rounded-lg py-2 text-xs font-semibold text-center transition"
+                  className="block mt-3 bg-red-600 hover:bg-red-700 text-white rounded-lg py-2 text-center text-xs font-semibold"
                 >
                   CONTACT SUPPORT
                 </a>
@@ -313,10 +312,10 @@ export default function AgentDashboard() {
 
 
         {/* =====================================================
-            MAIN CONTENT
+            MAIN
         ===================================================== */}
 
-        <section className="flex-1 min-w-0 p-4 lg:p-6 overflow-x-hidden">
+        <section className="flex-1 min-w-0 p-4 lg:p-6">
 
           {/* WELCOME */}
 
@@ -326,97 +325,123 @@ export default function AgentDashboard() {
               Welcome back,
             </p>
 
-            <h1 className="text-2xl lg:text-3xl font-bold">
-              Eden NL
-            </h1>
+            <div className="flex flex-col lg:flex-row lg:items-end lg:justify-between gap-2">
 
-            <p className="text-sm text-gray-500 mt-1">
-              Manage your travel bookings, quotations and B2B services.
-            </p>
+              <div>
+
+                <h1 className="text-2xl lg:text-3xl font-extrabold">
+                  Eden NL
+                </h1>
+
+                <p className="text-sm text-gray-500 mt-1">
+                  Manage your bookings, quotations and B2B travel services.
+                </p>
+
+              </div>
+
+              <div className="text-xs text-green-700 bg-green-50 border border-green-200 px-3 py-2 rounded-lg font-semibold">
+                ✓ VERIFIED B2B PARTNER
+              </div>
+
+            </div>
 
           </div>
 
 
           {/* =====================================================
-              STAT CARDS
+              STATISTICS
           ===================================================== */}
 
-          <div className="grid grid-cols-1 sm:grid-cols-2 xl:grid-cols-5 gap-4 mb-5">
+          <div className="grid grid-cols-2 lg:grid-cols-4 xl:grid-cols-5 gap-4 mb-6">
 
             <StatCard
-              icon={<Wallet size={20} />}
               title="MY WALLET"
               value="₱0.00"
-              subtitle="Available Balance"
+              subtitle="Available balance"
+              icon="₱"
             />
 
             <StatCard
-              icon={<CalendarDays size={20} />}
               title="PENDING BOOKINGS"
               value="0"
-              subtitle="View bookings"
+              subtitle="Awaiting confirmation"
+              icon="◷"
             />
 
             <StatCard
-              icon={<ShieldCheck size={20} />}
               title="CONFIRMED BOOKINGS"
               value="0"
-              subtitle="View bookings"
+              subtitle="Confirmed bookings"
+              icon="✓"
             />
 
             <StatCard
-              icon={<Tag size={20} />}
               title="TOTAL SALES"
               value="₱0.00"
               subtitle="This month"
+              icon="₱"
             />
 
-            <StatCard
-              icon={<CreditCard size={20} />}
-              title="PARTNER STATUS"
-              value="VERIFIED"
-              subtitle="Active B2B Partner"
-            />
+            <div className="col-span-2 lg:col-span-4 xl:col-span-1">
+              <StatCard
+                title="PARTNER STATUS"
+                value="VERIFIED"
+                subtitle="Active account"
+                icon="★"
+              />
+            </div>
 
           </div>
 
 
           {/* =====================================================
-              FLIGHT + ESIM
+              FLIGHT SEARCH
           ===================================================== */}
 
-          <div className="grid grid-cols-1 xl:grid-cols-2 gap-5 mb-5">
+          <div className="bg-white border border-gray-200 rounded-xl shadow-sm mb-6 overflow-hidden">
 
+            <div className="bg-red-600 text-white px-5 py-3 flex items-center gap-2">
 
-            {/* FLIGHT */}
+              <span className="text-lg">
+                ✈
+              </span>
 
-            <DashboardCard
-              title="FLIGHT - BOOK & BUY"
-              icon={<Plane size={18} />}
-            >
+              <h2 className="font-bold text-sm">
+                FLIGHT - BOOK AND BUY
+              </h2>
 
-              <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
+            </div>
 
-                <InputBox
-                  label="From"
+            <div className="p-5">
+
+              <div className="grid grid-cols-1 md:grid-cols-2 xl:grid-cols-4 gap-4">
+
+                <Input
+                  label="Origin"
                   placeholder="Manila (MNL)"
+                  value={origin}
+                  onChange={setOrigin}
                 />
 
-                <InputBox
-                  label="To"
-                  placeholder="Select destination"
+                <Input
+                  label="Destination"
+                  placeholder="Dubai (DXB)"
+                  value={destination}
+                  onChange={setDestination}
                 />
 
-                <InputBox
-                  label="Departure"
-                  placeholder="Select date"
+                <Input
+                  label="Departure Date"
                   type="date"
+                  value={departure}
+                  onChange={setDeparture}
                 />
 
-                <InputBox
-                  label="Return"
-                  placeholder="Select date"
+                <Input
+                  label="Return Date"
                   type="date"
+                  value={returnDate}
+                  onChange={setReturnDate}
                 />
 
               </div>
@@ -424,255 +449,265 @@ export default function AgentDashboard() {
 
               <div className="grid grid-cols-1 md:grid-cols-3 gap-4 mt-4">
 
-                <SelectBox
+                <Select
                   label="Passenger"
-                  value="1 Adult"
+                  options={[
+                    "1 Adult",
+                    "2 Adults",
+                    "3 Adults",
+                    "4 Adults",
+                    "5 Adults",
+                  ]}
                 />
 
-                <SelectBox
-                  label="Cabin"
-                  value="Economy"
+                <Select
+                  label="Cabin Class"
+                  options={[
+                    "Economy",
+                    "Premium Economy",
+                    "Business",
+                    "First Class",
+                  ]}
                 />
 
-                <SelectBox
-                  label="Airline"
-                  value="Any Airline"
+                <Select
+                  label="Preferred Airline"
+                  options={[
+                    "Any Airline",
+                    "Emirates",
+                    "Philippine Airlines",
+                    "Cebu Pacific",
+                    "AirAsia",
+                  ]}
                 />
 
               </div>
 
 
-              <button
-                type="button"
-                className="mt-5 bg-red-600 hover:bg-red-700 text-white px-6 py-3 rounded-lg font-semibold text-sm flex items-center gap-2 transition"
-              >
-                <Search size={17} />
-                SEARCH FLIGHT
-              </button>
+              <div className="flex flex-wrap gap-2 mt-5">
 
-            </DashboardCard>
-
-
-            {/* ESIM */}
-
-            <DashboardCard
-              title="eSIM - TRAVEL CONNECTIVITY"
-              icon={<Smartphone size={18} />}
-              badge="NEW"
-            >
-
-              <div className="rounded-xl bg-red-50 border border-red-100 p-5">
-
-                <div className="flex items-center justify-between gap-4">
-
-                  <div>
-
-                    <h3 className="text-lg font-bold text-gray-900">
-                      Stay Connected Worldwide
-                    </h3>
-
-                    <p className="text-sm text-gray-600 mt-1">
-                      eSIM data plans for your international travelers.
-                    </p>
-
-                  </div>
-
-                  <Smartphone
-                    size={42}
-                    className="text-red-600 shrink-0"
-                  />
-
-                </div>
-
-
-                <div className="grid grid-cols-2 md:grid-cols-4 gap-3 mt-5">
-
-                  <QuickDestination
-                    country="Thailand"
-                    href="/agent/esim"
-                  />
-
-                  <QuickDestination
-                    country="Japan"
-                    href="/agent/esim"
-                  />
-
-                  <QuickDestination
-                    country="Korea"
-                    href="/agent/esim"
-                  />
-
-                  <QuickDestination
-                    country="Vietnam"
-                    href="/agent/esim"
-                  />
-
-                </div>
-
-
-                <Link
-                  href="/agent/esim"
-                  className="mt-5 inline-flex items-center gap-2 text-red-600 font-semibold text-sm hover:text-red-700"
+                <button
+                  type="button"
+                  onClick={handleFlightSearch}
+                  className="bg-red-600 hover:bg-red-700 text-white rounded-lg px-6 py-3 text-sm font-bold"
                 >
-                  View eSIM Plans
-                  <ArrowRight size={16} />
-                </Link>
+                  SEARCH FLIGHT
+                </button>
+
+                <button
+                  type="button"
+                  className="border border-gray-300 rounded-lg px-5 py-3 text-sm font-semibold hover:bg-gray-50"
+                >
+                  Clear
+                </button>
 
               </div>
 
-            </DashboardCard>
+            </div>
 
           </div>
 
 
           {/* =====================================================
-              INTERNATIONAL / HOTEL / VISA
+              SERVICES
           ===================================================== */}
 
-          <div className="grid grid-cols-1 md:grid-cols-2 xl:grid-cols-3 gap-5 mb-5">
+          <div className="mb-6">
 
-            <SearchServiceCard
-              icon={<Map size={20} />}
-              title="INTERNATIONAL TOUR"
-              description="Search verified B2B tour packages."
-              button="SEARCH TOUR"
-              href="/agent/tourpackages"
-            />
+            <div className="flex items-center justify-between mb-4">
 
-            <SearchServiceCard
-              icon={<Hotel size={20} />}
-              title="HOTEL - BOOK & BUY"
-              description="Request competitive hotel rates."
-              button="SEARCH HOTEL"
-            />
+              <div>
 
-            <SearchServiceCard
-              icon={<FileText size={20} />}
-              title="VISA SERVICE"
-              description="Check visa information and requirements."
-              button="VIEW VISA INFO"
-            />
+                <p className="text-xs uppercase tracking-widest text-red-600 font-bold">
+                  B2B SERVICES
+                </p>
+
+                <h2 className="text-xl font-bold">
+                  Travel Services
+                </h2>
+
+              </div>
+
+            </div>
+
+
+            <div className="grid grid-cols-1 md:grid-cols-2 xl:grid-cols-3 gap-5">
+
+              {services.map((service) => (
+
+                <ServiceCard
+                  key={service.title}
+                  {...service}
+                />
+
+              ))}
+
+            </div>
 
           </div>
 
 
           {/* =====================================================
-              DOMESTIC / CRUISE / INSURANCE
+              QUICK ACTIONS
           ===================================================== */}
 
-          <div className="grid grid-cols-1 md:grid-cols-3 gap-5 mb-5">
+          <div className="bg-white border border-gray-200 rounded-xl p-5 mb-6">
 
-            <SearchServiceCard
-              icon={<Plane size={20} />}
-              title="DOMESTIC TOUR"
-              description="Explore domestic tour products."
-              button="SEARCH TOUR"
-            />
+            <div className="flex items-center gap-2 mb-4">
 
-            <SearchServiceCard
-              icon={<Ship size={20} />}
-              title="CRUISE"
-              description="Search available cruise packages."
-              button="SEARCH CRUISE"
-            />
+              <span className="text-red-600">
+                ⚡
+              </span>
 
-            <SearchServiceCard
-              icon={<ShieldCheck size={20} />}
-              title="TRAVEL INSURANCE"
-              description="Find suitable travel protection."
-              button="SEARCH PLAN"
-            />
+              <h2 className="font-bold">
+                QUICK ACTIONS
+              </h2>
+
+            </div>
+
+
+            <div className="grid grid-cols-2 md:grid-cols-4 gap-3">
+
+              <QuickAction
+                icon="🧾"
+                title="New Quotation"
+              />
+
+              <QuickAction
+                icon="🎫"
+                title="My Bookings"
+              />
+
+              <QuickAction
+                icon="💳"
+                title="My Transactions"
+              />
+
+              <QuickAction
+                icon="📊"
+                title="Reports"
+              />
+
+            </div>
 
           </div>
 
 
           {/* =====================================================
-              NEWS + PROMOS
+              NEWS AND PROMOS
           ===================================================== */}
 
-          <div className="grid grid-cols-1 xl:grid-cols-2 gap-5 mb-5">
+          <div className="grid grid-cols-1 xl:grid-cols-2 gap-5 mb-6">
 
 
             {/* NEWS */}
 
-            <DashboardCard
-              title="NEWS & PRODUCT UPDATE"
-              icon={<Bell size={18} />}
-            >
+            <div className="bg-white border border-gray-200 rounded-xl shadow-sm overflow-hidden">
 
-              <div className="divide-y">
+              <div className="bg-red-600 text-white px-5 py-3 flex items-center gap-2">
 
-                <NewsRow
-                  date="Aug 26, 2026"
-                  text="New B2B travel products and partner updates"
-                />
+                <span>
+                  🔔
+                </span>
 
-                <NewsRow
-                  date="Aug 25, 2026"
-                  text="New international tour packages available"
-                />
-
-                <NewsRow
-                  date="Aug 24, 2026"
-                  text="Vietnam B2B partnership opportunities"
-                />
-
-                <NewsRow
-                  date="Aug 23, 2026"
-                  text="eSIM travel connectivity now available"
-                />
+                <h2 className="font-bold text-sm">
+                  NEWS & PRODUCT UPDATE
+                </h2>
 
               </div>
 
-              <button
-                type="button"
-                className="mt-4 text-red-600 font-semibold text-sm hover:text-red-700"
-              >
-                VIEW ALL NEWS →
-              </button>
 
-            </DashboardCard>
+              <div className="divide-y">
+
+                {news.map((item) => (
+
+                  <div
+                    key={`${item.date}-${item.title}`}
+                    className="p-4 hover:bg-gray-50"
+                  >
+
+                    <p className="text-[10px] uppercase font-bold text-gray-400">
+                      {item.date}
+                    </p>
+
+                    <p className="mt-1 text-sm font-semibold text-gray-700">
+                      {item.title}
+                    </p>
+
+                  </div>
+
+                ))}
+
+              </div>
+
+
+              <div className="p-4 border-t">
+
+                <button
+                  type="button"
+                  className="text-red-600 text-sm font-bold"
+                >
+                  VIEW ALL NEWS →
+                </button>
+
+              </div>
+
+            </div>
 
 
             {/* PROMOS */}
 
-            <DashboardCard
-              title="PROMO UPDATE"
-              icon={<Tag size={18} />}
-            >
+            <div className="bg-white border border-gray-200 rounded-xl shadow-sm overflow-hidden">
 
-              <div className="divide-y">
+              <div className="bg-red-600 text-white px-5 py-3 flex items-center gap-2">
 
-                <NewsRow
-                  date="AUG 2026"
-                  text="Special B2B tour package offers"
-                />
+                <span>
+                  🏷
+                </span>
 
-                <NewsRow
-                  date="AUG 2026"
-                  text="Selected eSIM partner rates"
-                />
-
-                <NewsRow
-                  date="AUG 2026"
-                  text="Limited-time travel promotions"
-                />
-
-                <NewsRow
-                  date="ONGOING"
-                  text="Partner-only travel offers"
-                />
+                <h2 className="font-bold text-sm">
+                  PROMO UPDATE
+                </h2>
 
               </div>
 
-              <button
-                type="button"
-                className="mt-4 text-red-600 font-semibold text-sm hover:text-red-700"
-              >
-                VIEW ALL PROMOS →
-              </button>
 
-            </DashboardCard>
+              <div className="divide-y">
+
+                {promos.map((promo) => (
+
+                  <div
+                    key={`${promo.date}-${promo.title}`}
+                    className="p-4 hover:bg-gray-50"
+                  >
+
+                    <p className="text-[10px] uppercase font-bold text-red-600">
+                      {promo.date}
+                    </p>
+
+                    <p className="mt-1 text-sm font-semibold text-gray-700">
+                      {promo.title}
+                    </p>
+
+                  </div>
+
+                ))}
+
+              </div>
+
+
+              <div className="p-4 border-t">
+
+                <button
+                  type="button"
+                  className="text-red-600 text-sm font-bold"
+                >
+                  VIEW ALL PROMOS →
+                </button>
+
+              </div>
+
+            </div>
 
           </div>
 
@@ -681,25 +716,25 @@ export default function AgentDashboard() {
               PARTNER SUPPORT
           ===================================================== */}
 
-          <div className="bg-white border border-gray-200 rounded-xl p-5 mb-5">
+          <div className="bg-white border border-gray-200 rounded-xl p-5 mb-6">
 
             <div className="flex flex-col md:flex-row md:items-center md:justify-between gap-4">
 
-              <div className="flex items-center gap-4">
+              <div className="flex items-start gap-4">
 
-                <div className="w-12 h-12 rounded-xl bg-red-50 flex items-center justify-center text-red-600 shrink-0">
-                  <Headphones />
+                <div className="w-12 h-12 bg-red-50 rounded-xl flex items-center justify-center text-xl">
+                  ☎
                 </div>
 
                 <div>
 
                   <h3 className="font-bold">
-                    Need assistance?
+                    Need assistance with your booking?
                   </h3>
 
-                  <p className="text-sm text-gray-500">
-                    Our partner support team is ready to help with bookings,
-                    quotations and B2B services.
+                  <p className="text-sm text-gray-500 mt-1">
+                    Our Chingu partner support team can assist with
+                    quotations, bookings and travel services.
                   </p>
 
                 </div>
@@ -708,9 +743,9 @@ export default function AgentDashboard() {
 
               <a
                 href="mailto:admin@chingutravelandtours.com"
-                className="bg-red-600 hover:bg-red-700 text-white px-5 py-3 rounded-lg font-semibold text-sm text-center transition"
+                className="bg-red-600 hover:bg-red-700 text-white rounded-lg px-5 py-3 text-sm font-bold text-center"
               >
-                CONTACT PARTNER SUPPORT
+                CONTACT SUPPORT
               </a>
 
             </div>
@@ -728,11 +763,11 @@ export default function AgentDashboard() {
 
               <div>
 
-                <h4 className="font-bold text-red-700">
+                <h3 className="font-extrabold text-red-700">
                   CHINGU TRAVEL AND TOURS
-                </h4>
+                </h3>
 
-                <p className="text-sm text-gray-500 mt-2">
+                <p className="text-xs text-gray-500 mt-2">
                   Verified B2B Travel Partner Network
                 </p>
 
@@ -741,39 +776,37 @@ export default function AgentDashboard() {
 
               <div>
 
-                <h4 className="font-semibold">
+                <h4 className="font-bold text-sm">
                   Partner Support
                 </h4>
 
-                <a
-                  href="tel:+971552550096"
-                  className="block text-sm text-gray-500 mt-2 hover:text-red-600"
-                >
+                <p className="text-xs text-gray-500 mt-2">
                   +971 55 255 0096
-                </a>
+                </p>
 
-                <a
-                  href="mailto:admin@chingutravelandtours.com"
-                  className="block text-sm text-gray-500 hover:text-red-600 break-all"
-                >
+                <p className="text-xs text-gray-500">
+                  +63 919 388 8999
+                </p>
+
+                <p className="text-xs text-gray-500 break-all">
                   admin@chingutravelandtours.com
-                </a>
+                </p>
 
               </div>
 
 
               <div>
 
-                <h4 className="font-semibold">
+                <h4 className="font-bold text-sm">
                   Office
                 </h4>
 
-                <p className="text-sm text-gray-500 mt-2">
+                <p className="text-xs text-gray-500 mt-2">
                   Philippines & UAE Office
                 </p>
 
-                <p className="text-sm text-gray-500">
-                  B2B Partner Services
+                <p className="text-xs text-gray-500 mt-1">
+                  B2B Travel Partner Services
                 </p>
 
               </div>
@@ -781,8 +814,12 @@ export default function AgentDashboard() {
             </div>
 
 
-            <div className="border-t mt-5 pt-4 text-center text-xs text-gray-400">
-              © 2026 CHINGU Travel and Tours. All Rights Reserved.
+            <div className="border-t mt-5 pt-4 text-center">
+
+              <p className="text-[11px] text-gray-400">
+                © 2026 CHINGU Travel and Tours. All Rights Reserved.
+              </p>
+
             </div>
 
           </footer>
@@ -797,206 +834,155 @@ export default function AgentDashboard() {
 
 
 /* ============================================================
-   SIDEBAR NAVIGATION
+   NAVIGATION
 ============================================================ */
 
-function SidebarNavigation({
+function Navigation({
   onNavigate,
 }: {
   onNavigate?: () => void;
 }) {
+  const items = [
+    {
+      label: "Dashboard",
+      icon: "▣",
+      href: "/agent/dashboard",
+      active: true,
+    },
+    {
+      label: "Flight - Book & Buy",
+      icon: "✈",
+      href: "#",
+    },
+    {
+      label: "Hotel - Book & Buy",
+      icon: "🏨",
+      href: "#",
+    },
+    {
+      label: "Tour Packages",
+      icon: "🌏",
+      href: "/agent/tourpackages",
+    },
+    {
+      label: "eSIM Travel",
+      icon: "📱",
+      href: "/agent/esim",
+      badge: "NEW",
+    },
+    {
+      label: "Car Rental",
+      icon: "🚗",
+      href: "#",
+    },
+    {
+      label: "Cruise",
+      icon: "🚢",
+      href: "#",
+    },
+    {
+      label: "Travel Insurance",
+      icon: "🛡",
+      href: "#",
+    },
+    {
+      label: "Visa Service",
+      icon: "📄",
+      href: "#",
+    },
+    {
+      label: "Ground Services",
+      icon: "🚐",
+      href: "#",
+    },
+    {
+      label: "Quotations",
+      icon: "🧾",
+      href: "#",
+    },
+    {
+      label: "Bookings",
+      icon: "🎫",
+      href: "#",
+    },
+    {
+      label: "My Transactions",
+      icon: "💳",
+      href: "#",
+    },
+    {
+      label: "My Wallet",
+      icon: "₱",
+      href: "#",
+    },
+    {
+      label: "My Reports",
+      icon: "📊",
+      href: "#",
+    },
+    {
+      label: "News & Updates",
+      icon: "🔔",
+      href: "#",
+    },
+    {
+      label: "Promo Center",
+      icon: "🏷",
+      href: "#",
+    },
+    {
+      label: "Partner Support",
+      icon: "☎",
+      href: "mailto:admin@chingutravelandtours.com",
+    },
+    {
+      label: "Account Settings",
+      icon: "⚙",
+      href: "#",
+    },
+  ];
+
   return (
     <nav className="p-3 space-y-1">
 
-      <SidebarItem
-        icon={<Wallet size={18} />}
-        label="Dashboard"
-        active
-        href="/agent/dashboard"
-        onNavigate={onNavigate}
-      />
+      {items.map((item) => (
 
-      <SidebarItem
-        icon={<Plane size={18} />}
-        label="Flight - Book & Buy"
-        href="#"
-        onNavigate={onNavigate}
-      />
-
-      <SidebarItem
-        icon={<Hotel size={18} />}
-        label="Hotel - Book & Buy"
-        href="#"
-        onNavigate={onNavigate}
-      />
-
-      <SidebarItem
-        icon={<Map size={18} />}
-        label="Tour Packages"
-        href="/agent/tourpackages"
-        onNavigate={onNavigate}
-      />
-
-      <SidebarItem
-        icon={<Smartphone size={18} />}
-        label="eSIM Travel Connect"
-        href="/agent/esim"
-        badge="NEW"
-        onNavigate={onNavigate}
-      />
-
-      <SidebarItem
-        icon={<Car size={18} />}
-        label="Car Rental"
-        href="#"
-        onNavigate={onNavigate}
-      />
-
-      <SidebarItem
-        icon={<Ship size={18} />}
-        label="Cruise"
-        href="#"
-        onNavigate={onNavigate}
-      />
-
-      <SidebarItem
-        icon={<ShieldCheck size={18} />}
-        label="Travel Insurance"
-        href="#"
-        onNavigate={onNavigate}
-      />
-
-      <SidebarItem
-        icon={<FileText size={18} />}
-        label="Visa Service"
-        href="#"
-        onNavigate={onNavigate}
-      />
-
-      <SidebarItem
-        icon={<Globe2 size={18} />}
-        label="Ground Services"
-        href="#"
-        onNavigate={onNavigate}
-      />
-
-      <SidebarItem
-        icon={<FileText size={18} />}
-        label="Quotations"
-        href="#"
-        onNavigate={onNavigate}
-      />
-
-      <SidebarItem
-        icon={<Ticket size={18} />}
-        label="Bookings"
-        href="#"
-        onNavigate={onNavigate}
-      />
-
-      <SidebarItem
-        icon={<CreditCard size={18} />}
-        label="My Transactions"
-        href="#"
-        onNavigate={onNavigate}
-      />
-
-      <SidebarItem
-        icon={<Wallet size={18} />}
-        label="My Wallet"
-        href="#"
-        onNavigate={onNavigate}
-      />
-
-      <SidebarItem
-        icon={<CalendarDays size={18} />}
-        label="My Reports"
-        href="#"
-        onNavigate={onNavigate}
-      />
-
-      <SidebarItem
-        icon={<Bell size={18} />}
-        label="News & Updates"
-        href="#"
-        onNavigate={onNavigate}
-      />
-
-      <SidebarItem
-        icon={<Tag size={18} />}
-        label="Promo Center"
-        href="#"
-        onNavigate={onNavigate}
-      />
-
-      <SidebarItem
-        icon={<Headphones size={18} />}
-        label="Partner Support"
-        href="mailto:admin@chingutravelandtours.com"
-        onNavigate={onNavigate}
-      />
-
-      <SidebarItem
-        icon={<Settings size={18} />}
-        label="Account Settings"
-        href="#"
-        onNavigate={onNavigate}
-      />
-
-    </nav>
-  );
-}
-
-
-/* ============================================================
-   SIDEBAR ITEM
-============================================================ */
-
-function SidebarItem({
-  icon,
-  label,
-  href,
-  active = false,
-  badge,
-  onNavigate,
-}: {
-  icon: React.ReactNode;
-  label: string;
-  href: string;
-  active?: boolean;
-  badge?: string;
-  onNavigate?: () => void;
-}) {
-  return (
-    <Link
-      href={href}
-      onClick={onNavigate}
-      className={`flex items-center gap-3 px-3 py-2.5 rounded-lg text-sm font-medium transition ${
-        active
-          ? "bg-red-600 text-white"
-          : "text-gray-700 hover:bg-red-50 hover:text-red-600"
-      }`}
-    >
-
-      {icon}
-
-      <span className="flex-1">
-        {label}
-      </span>
-
-      {badge && (
-        <span
-          className={`text-[9px] px-1.5 py-0.5 rounded font-bold ${
-            active
-              ? "bg-white text-red-600"
-              : "bg-red-600 text-white"
+        <Link
+          key={item.label}
+          href={item.href}
+          onClick={onNavigate}
+          className={`flex items-center gap-3 px-3 py-2.5 rounded-lg text-sm font-medium transition ${
+            item.active
+              ? "bg-red-600 text-white"
+              : "text-gray-700 hover:bg-red-50 hover:text-red-600"
           }`}
         >
-          {badge}
-        </span>
-      )}
 
-    </Link>
+          <span className="w-5 text-center">
+            {item.icon}
+          </span>
+
+          <span className="flex-1">
+            {item.label}
+          </span>
+
+          {item.badge && (
+            <span
+              className={`text-[8px] font-bold px-1.5 py-0.5 rounded ${
+                item.active
+                  ? "bg-white text-red-600"
+                  : "bg-red-600 text-white"
+              }`}
+            >
+              {item.badge}
+            </span>
+          )}
+
+        </Link>
+
+      ))}
+
+    </nav>
   );
 }
 
@@ -1006,76 +992,41 @@ function SidebarItem({
 ============================================================ */
 
 function StatCard({
-  icon,
   title,
   value,
   subtitle,
+  icon,
 }: {
-  icon: React.ReactNode;
   title: string;
   value: string;
   subtitle: string;
+  icon: string;
 }) {
   return (
-    <div className="bg-white border border-gray-200 rounded-xl p-4 shadow-sm hover:shadow-md transition">
+    <div className="bg-white border border-gray-200 rounded-xl p-4 shadow-sm">
 
-      <div className="w-10 h-10 rounded-lg bg-red-50 text-red-600 flex items-center justify-center">
-        {icon}
-      </div>
+      <div className="flex items-start justify-between gap-2">
 
-      <p className="text-[10px] font-bold text-gray-500 mt-3">
-        {title}
-      </p>
+        <div>
 
-      <p className="text-xl font-bold mt-1">
-        {value}
-      </p>
+          <p className="text-[9px] uppercase font-bold text-gray-400">
+            {title}
+          </p>
 
-      <p className="text-xs text-gray-400 mt-1">
-        {subtitle}
-      </p>
+          <p className="text-xl font-extrabold mt-2">
+            {value}
+          </p>
 
-    </div>
-  );
-}
+          <p className="text-[10px] text-gray-400 mt-1">
+            {subtitle}
+          </p>
 
+        </div>
 
-/* ============================================================
-   DASHBOARD CARD
-============================================================ */
+        <div className="w-9 h-9 rounded-lg bg-red-50 text-red-600 flex items-center justify-center font-bold">
+          {icon}
+        </div>
 
-function DashboardCard({
-  title,
-  icon,
-  children,
-  badge,
-}: {
-  title: string;
-  icon: React.ReactNode;
-  children: React.ReactNode;
-  badge?: string;
-}) {
-  return (
-    <div className="bg-white border border-gray-200 rounded-xl shadow-sm overflow-hidden">
-
-      <div className="bg-red-600 text-white px-4 py-3 flex items-center gap-2">
-
-        {icon}
-
-        <h2 className="font-bold text-sm flex-1">
-          {title}
-        </h2>
-
-        {badge && (
-          <span className="bg-white text-red-600 text-[10px] px-2 py-1 rounded font-bold">
-            {badge}
-          </span>
-        )}
-
-      </div>
-
-      <div className="p-4">
-        {children}
       </div>
 
     </div>
@@ -1087,25 +1038,31 @@ function DashboardCard({
    INPUT
 ============================================================ */
 
-function InputBox({
+function Input({
   label,
   placeholder,
   type = "text",
+  value,
+  onChange,
 }: {
   label: string;
-  placeholder: string;
+  placeholder?: string;
   type?: string;
+  value: string;
+  onChange: (value: string) => void;
 }) {
   return (
     <label className="block">
 
-      <span className="text-xs font-semibold text-gray-600">
+      <span className="text-xs font-bold text-gray-600">
         {label}
       </span>
 
       <input
         type={type}
+        value={value}
         placeholder={placeholder}
+        onChange={(e) => onChange(e.target.value)}
         className="mt-1 w-full border border-gray-300 rounded-lg px-3 py-2.5 text-sm outline-none focus:border-red-500 focus:ring-2 focus:ring-red-100"
       />
 
@@ -1118,36 +1075,29 @@ function InputBox({
    SELECT
 ============================================================ */
 
-function SelectBox({
+function Select({
   label,
-  value,
+  options,
 }: {
   label: string;
-  value: string;
+  options: string[];
 }) {
   return (
     <label className="block">
 
-      <span className="text-xs font-semibold text-gray-600">
+      <span className="text-xs font-bold text-gray-600">
         {label}
       </span>
 
       <select
-        defaultValue={value}
-        className="mt-1 w-full border border-gray-300 rounded-lg px-3 py-2.5 text-sm outline-none focus:border-red-500 focus:ring-2 focus:ring-red-100"
+        className="mt-1 w-full border border-gray-300 rounded-lg px-3 py-2.5 text-sm bg-white outline-none focus:border-red-500 focus:ring-2 focus:ring-red-100"
       >
 
-        <option value={value}>
-          {value}
-        </option>
-
-        <option value="Option 2">
-          Option 2
-        </option>
-
-        <option value="Option 3">
-          Option 3
-        </option>
+        {options.map((option) => (
+          <option key={option}>
+            {option}
+          </option>
+        ))}
 
       </select>
 
@@ -1157,119 +1107,93 @@ function SelectBox({
 
 
 /* ============================================================
-   QUICK DESTINATION
-============================================================ */
-
-function QuickDestination({
-  country,
-  href,
-}: {
-  country: string;
-  href: string;
-}) {
-  return (
-    <Link
-      href={href}
-      className="bg-white border border-gray-200 rounded-lg px-3 py-3 text-center hover:border-red-400 hover:shadow-sm transition"
-    >
-
-      <Globe2
-        size={20}
-        className="mx-auto text-red-600"
-      />
-
-      <p className="text-xs font-semibold mt-2">
-        {country}
-      </p>
-
-    </Link>
-  );
-}
-
-
-/* ============================================================
    SERVICE CARD
 ============================================================ */
 
-function SearchServiceCard({
-  icon,
+function ServiceCard({
   title,
+  icon,
   description,
-  button,
+  action,
   href,
 }: {
-  icon: React.ReactNode;
   title: string;
+  icon: string;
   description: string;
-  button: string;
+  action: string;
   href?: string;
 }) {
   const content = (
-    <>
-      <div className="p-5">
-
-        <p className="text-sm text-gray-500">
-          {description}
-        </p>
-
-        <span className="mt-5 w-full border border-red-600 text-red-600 hover:bg-red-600 hover:text-white py-2.5 rounded-lg text-sm font-semibold transition flex items-center justify-center">
-          {button}
-        </span>
-
-      </div>
-    </>
-  );
-
-  return (
-    <div className="bg-white border border-gray-200 rounded-xl shadow-sm overflow-hidden">
+    <div className="bg-white border border-gray-200 rounded-xl overflow-hidden shadow-sm hover:shadow-md hover:-translate-y-0.5 transition h-full">
 
       <div className="bg-red-600 text-white px-4 py-3 flex items-center gap-2">
 
-        {icon}
+        <span className="text-lg">
+          {icon}
+        </span>
 
-        <h3 className="font-bold text-sm">
+        <h3 className="text-sm font-bold">
           {title}
         </h3>
 
       </div>
 
-      {href ? (
-        <Link href={href}>
-          {content}
-        </Link>
-      ) : (
-        <div>
-          {content}
-        </div>
-      )}
+      <div className="p-5 flex flex-col h-[155px]">
+
+        <p className="text-sm text-gray-500 leading-relaxed flex-1">
+          {description}
+        </p>
+
+        <span className="mt-4 block w-full text-center border border-red-600 text-red-600 hover:bg-red-600 hover:text-white rounded-lg py-2.5 text-xs font-bold transition">
+          {action} →
+        </span>
+
+      </div>
 
     </div>
   );
+
+  if (href) {
+    return (
+      <Link href={href}>
+        {content}
+      </Link>
+    );
+  }
+
+  return content;
 }
 
 
 /* ============================================================
-   NEWS ROW
+   QUICK ACTION
 ============================================================ */
 
-function NewsRow({
-  date,
-  text,
+function QuickAction({
+  icon,
+  title,
 }: {
-  date: string;
-  text: string;
+  icon: string;
+  title: string;
 }) {
   return (
-    <div className="py-3 flex items-center gap-4">
+    <button
+      type="button"
+      className="border border-gray-200 rounded-lg p-4 text-left hover:border-red-300 hover:bg-red-50 transition"
+    >
 
-      <span className="text-[10px] font-bold text-gray-400 w-24 shrink-0">
-        {date}
-      </span>
+      <div className="text-xl">
+        {icon}
+      </div>
 
-      <p className="text-sm text-gray-700">
-        {text}
+      <p className="text-sm font-bold mt-2">
+        {title}
       </p>
 
-    </div>
+      <p className="text-[10px] text-gray-400 mt-1">
+        Open service
+      </p>
+
+    </button>
   );
 }
