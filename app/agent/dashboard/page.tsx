@@ -16,7 +16,6 @@ import {
   Tag,
   Headphones,
   Settings,
-  LogOut,
   Menu,
   ChevronDown,
   Search,
@@ -24,36 +23,63 @@ import {
   Globe2,
   Ticket,
   CreditCard,
+  LogOut,
+  X,
 } from "lucide-react";
 
 import { useState } from "react";
 
 export default function AgentDashboard() {
   const [sidebarOpen, setSidebarOpen] = useState(true);
+  const [mobileMenuOpen, setMobileMenuOpen] = useState(false);
+
+  const handleLogout = () => {
+    // Temporary logout.
+    // Kapag may authentication/session na tayo,
+    // dito natin ilalagay ang tunay na logout logic.
+    window.location.href = "/agent/login";
+  };
 
   return (
     <main className="min-h-screen bg-gray-100 text-gray-900">
 
       {/* =====================================================
-          TOP NAVIGATION
+          HEADER
       ===================================================== */}
 
       <header className="h-16 bg-white border-b border-gray-200 flex items-center justify-between px-4 lg:px-6 sticky top-0 z-50">
 
-        {/* LEFT */}
-        <div className="flex items-center gap-4">
+        {/* LEFT SIDE */}
 
+        <div className="flex items-center gap-3">
+
+          {/* Desktop sidebar button */}
           <button
+            type="button"
             onClick={() => setSidebarOpen(!sidebarOpen)}
-            className="p-2 rounded-lg hover:bg-gray-100"
+            className="hidden md:flex p-2 rounded-lg hover:bg-gray-100 transition"
+            aria-label="Toggle sidebar"
           >
             <Menu size={22} />
           </button>
+
+          {/* Mobile menu */}
+          <button
+            type="button"
+            onClick={() => setMobileMenuOpen(true)}
+            className="flex md:hidden p-2 rounded-lg hover:bg-gray-100 transition"
+            aria-label="Open menu"
+          >
+            <Menu size={22} />
+          </button>
+
+          {/* LOGO */}
 
           <Link
             href="/agent/dashboard"
             className="flex items-center gap-2"
           >
+
             <div className="w-9 h-9 rounded-full bg-red-600 flex items-center justify-center text-white font-bold">
               C
             </div>
@@ -62,38 +88,58 @@ export default function AgentDashboard() {
               <div className="font-bold text-red-700 tracking-wide">
                 CHINGU
               </div>
+
               <div className="text-[10px] text-gray-500 font-semibold tracking-wide">
                 TRAVEL AND TOURS
               </div>
             </div>
+
           </Link>
 
-          <div className="hidden md:block ml-4 text-sm font-semibold text-gray-500">
+          <div className="hidden lg:block ml-4 text-sm font-semibold text-gray-500">
             B2B PARTNER PORTAL
           </div>
 
         </div>
 
 
-        {/* RIGHT */}
-        <div className="flex items-center gap-3">
+        {/* RIGHT SIDE */}
+
+        <div className="flex items-center gap-2">
 
           {/* eSIM */}
-          <div className="hidden md:flex items-center gap-2 border border-gray-200 rounded-lg px-3 py-2 text-xs font-semibold">
-            <Smartphone size={15} className="text-red-600" />
-            eSIM
-          </div>
 
-          {/* Notification */}
-          <button className="relative p-2 rounded-lg hover:bg-gray-100">
+          <Link
+            href="/agent/esim"
+            className="hidden md:flex items-center gap-2 border border-gray-200 rounded-lg px-3 py-2 text-xs font-semibold hover:border-red-300 hover:text-red-600 transition"
+          >
+            <Smartphone
+              size={15}
+              className="text-red-600"
+            />
+
+            eSIM
+          </Link>
+
+
+          {/* Notifications */}
+
+          <button
+            type="button"
+            className="relative p-2 rounded-lg hover:bg-gray-100 transition"
+          >
+
             <Bell size={20} />
 
             <span className="absolute -top-1 -right-1 bg-red-600 text-white text-[10px] w-4 h-4 rounded-full flex items-center justify-center">
               3
             </span>
+
           </button>
 
+
           {/* Profile */}
+
           <div className="hidden sm:flex items-center gap-2 pl-3 border-l">
 
             <div className="w-9 h-9 bg-gray-200 rounded-full flex items-center justify-center">
@@ -103,157 +149,135 @@ export default function AgentDashboard() {
             </div>
 
             <div className="hidden lg:block leading-tight">
+
               <p className="text-sm font-semibold">
                 Eden NL
               </p>
+
               <p className="text-xs text-gray-500">
                 Verified Partner
               </p>
+
             </div>
 
             <ChevronDown size={15} />
 
           </div>
 
+
+          {/* Logout */}
+
+          <button
+            type="button"
+            onClick={handleLogout}
+            className="hidden sm:flex items-center gap-2 ml-2 p-2 text-gray-500 hover:text-red-600 transition"
+            title="Logout"
+          >
+            <LogOut size={18} />
+          </button>
+
         </div>
 
       </header>
+
+
+      {/* =====================================================
+          MOBILE SIDEBAR
+      ===================================================== */}
+
+      {mobileMenuOpen && (
+        <div className="fixed inset-0 z-[60] md:hidden">
+
+          {/* Overlay */}
+
+          <div
+            className="absolute inset-0 bg-black/40"
+            onClick={() => setMobileMenuOpen(false)}
+          />
+
+          {/* Menu */}
+
+          <aside className="relative w-72 max-w-[85%] h-full bg-white shadow-xl flex flex-col">
+
+            <div className="h-16 border-b flex items-center justify-between px-4">
+
+              <div className="flex items-center gap-2">
+
+                <div className="w-9 h-9 rounded-full bg-red-600 flex items-center justify-center text-white font-bold">
+                  C
+                </div>
+
+                <div>
+                  <p className="font-bold text-red-700">
+                    CHINGU
+                  </p>
+
+                  <p className="text-[9px] text-gray-500 font-semibold">
+                    B2B PARTNER PORTAL
+                  </p>
+                </div>
+
+              </div>
+
+              <button
+                type="button"
+                onClick={() => setMobileMenuOpen(false)}
+                className="p-2 hover:bg-gray-100 rounded-lg"
+              >
+                <X size={20} />
+              </button>
+
+            </div>
+
+
+            <div className="flex-1 overflow-y-auto">
+
+              <SidebarNavigation
+                onNavigate={() => setMobileMenuOpen(false)}
+              />
+
+            </div>
+
+
+            <div className="p-4 border-t">
+
+              <button
+                type="button"
+                onClick={handleLogout}
+                className="w-full flex items-center justify-center gap-2 bg-red-600 text-white rounded-lg py-3 text-sm font-semibold hover:bg-red-700 transition"
+              >
+                <LogOut size={17} />
+                Logout
+              </button>
+
+            </div>
+
+          </aside>
+
+        </div>
+      )}
 
 
       <div className="flex">
 
 
         {/* =====================================================
-            SIDEBAR
+            DESKTOP SIDEBAR
         ===================================================== */}
 
         {sidebarOpen && (
-          <aside className="hidden md:flex w-60 bg-white border-r border-gray-200 min-h-[calc(100vh-64px)] flex-col">
+          <aside className="hidden md:flex w-60 shrink-0 bg-white border-r border-gray-200 min-h-[calc(100vh-64px)] flex-col">
 
-            <nav className="p-3 space-y-1">
+            <div className="flex-1 overflow-y-auto">
 
-              <SidebarItem
-                icon={<Wallet size={18} />}
-                label="Dashboard"
-                active
-                href="/agent/dashboard"
-              />
+              <SidebarNavigation />
 
-              <SidebarItem
-                icon={<Plane size={18} />}
-                label="Flight - Book & Buy"
-                href="#"
-              />
-
-              <SidebarItem
-                icon={<Hotel size={18} />}
-                label="Hotel - Book & Buy"
-                href="#"
-              />
-
-              <SidebarItem
-                icon={<Map size={18} />}
-                label="Tour Packages"
-                href="/agent/tourpackages"
-              />
-
-              <SidebarItem
-                icon={<Smartphone size={18} />}
-                label="eSIM Travel Connect"
-                href="/agent/esim"
-                badge="NEW"
-              />
-
-              <SidebarItem
-                icon={<Car size={18} />}
-                label="Car Rental"
-                href="#"
-              />
-
-              <SidebarItem
-                icon={<Ship size={18} />}
-                label="Cruise"
-                href="#"
-              />
-
-              <SidebarItem
-                icon={<ShieldCheck size={18} />}
-                label="Travel Insurance"
-                href="#"
-              />
-
-              <SidebarItem
-                icon={<FileText size={18} />}
-                label="Visa Service"
-                href="#"
-              />
-
-              <SidebarItem
-                icon={<Globe2 size={18} />}
-                label="Ground Services"
-                href="#"
-              />
-
-              <SidebarItem
-                icon={<FileText size={18} />}
-                label="Quotations"
-                href="#"
-              />
-
-              <SidebarItem
-                icon={<Ticket size={18} />}
-                label="Bookings"
-                href="#"
-              />
-
-              <SidebarItem
-                icon={<CreditCard size={18} />}
-                label="My Transactions"
-                href="#"
-              />
-
-              <SidebarItem
-                icon={<Wallet size={18} />}
-                label="My Wallet"
-                href="#"
-              />
-
-              <SidebarItem
-                icon={<CalendarDays size={18} />}
-                label="My Reports"
-                href="#"
-              />
-
-              <SidebarItem
-                icon={<Bell size={18} />}
-                label="News & Updates"
-                href="#"
-              />
-
-              <SidebarItem
-                icon={<Tag size={18} />}
-                label="Promo Center"
-                href="#"
-              />
-
-              <SidebarItem
-                icon={<Headphones size={18} />}
-                label="Partner Support"
-                href="#"
-              />
-
-              <SidebarItem
-                icon={<Settings size={18} />}
-                label="Account Settings"
-                href="#"
-              />
-
-            </nav>
+            </div>
 
 
             {/* ACCOUNT MANAGER */}
 
-            <div className="mt-auto p-4">
+            <div className="p-4 border-t">
 
               <div className="rounded-xl border border-red-200 bg-red-50 p-4">
 
@@ -269,13 +293,16 @@ export default function AgentDashboard() {
                   +971 55 255 0096
                 </p>
 
-                <p className="text-xs text-gray-600">
+                <p className="text-xs text-gray-600 break-all">
                   admin@chingutravelandtours.com
                 </p>
 
-                <button className="mt-3 w-full bg-red-600 hover:bg-red-700 text-white rounded-lg py-2 text-xs font-semibold">
+                <a
+                  href="mailto:admin@chingutravelandtours.com"
+                  className="mt-3 block w-full bg-red-600 hover:bg-red-700 text-white rounded-lg py-2 text-xs font-semibold text-center transition"
+                >
                   CONTACT SUPPORT
-                </button>
+                </a>
 
               </div>
 
@@ -289,7 +316,7 @@ export default function AgentDashboard() {
             MAIN CONTENT
         ===================================================== */}
 
-        <section className="flex-1 p-4 lg:p-6 overflow-hidden">
+        <section className="flex-1 min-w-0 p-4 lg:p-6 overflow-x-hidden">
 
           {/* WELCOME */}
 
@@ -317,35 +344,35 @@ export default function AgentDashboard() {
           <div className="grid grid-cols-1 sm:grid-cols-2 xl:grid-cols-5 gap-4 mb-5">
 
             <StatCard
-              icon={<Wallet />}
+              icon={<Wallet size={20} />}
               title="MY WALLET"
               value="₱0.00"
               subtitle="Available Balance"
             />
 
             <StatCard
-              icon={<CalendarDays />}
+              icon={<CalendarDays size={20} />}
               title="PENDING BOOKINGS"
               value="0"
               subtitle="View bookings"
             />
 
             <StatCard
-              icon={<ShieldCheck />}
+              icon={<ShieldCheck size={20} />}
               title="CONFIRMED BOOKINGS"
               value="0"
               subtitle="View bookings"
             />
 
             <StatCard
-              icon={<Tag />}
+              icon={<Tag size={20} />}
               title="TOTAL SALES"
               value="₱0.00"
               subtitle="This month"
             />
 
             <StatCard
-              icon={<CreditCard />}
+              icon={<CreditCard size={20} />}
               title="PARTNER STATUS"
               value="VERIFIED"
               subtitle="Active B2B Partner"
@@ -394,6 +421,7 @@ export default function AgentDashboard() {
 
               </div>
 
+
               <div className="grid grid-cols-1 md:grid-cols-3 gap-4 mt-4">
 
                 <SelectBox
@@ -413,7 +441,11 @@ export default function AgentDashboard() {
 
               </div>
 
-              <button className="mt-5 bg-red-600 hover:bg-red-700 text-white px-6 py-3 rounded-lg font-semibold text-sm flex items-center gap-2">
+
+              <button
+                type="button"
+                className="mt-5 bg-red-600 hover:bg-red-700 text-white px-6 py-3 rounded-lg font-semibold text-sm flex items-center gap-2 transition"
+              >
                 <Search size={17} />
                 SEARCH FLIGHT
               </button>
@@ -431,7 +463,7 @@ export default function AgentDashboard() {
 
               <div className="rounded-xl bg-red-50 border border-red-100 p-5">
 
-                <div className="flex items-center justify-between">
+                <div className="flex items-center justify-between gap-4">
 
                   <div>
 
@@ -447,7 +479,7 @@ export default function AgentDashboard() {
 
                   <Smartphone
                     size={42}
-                    className="text-red-600"
+                    className="text-red-600 shrink-0"
                   />
 
                 </div>
@@ -480,7 +512,7 @@ export default function AgentDashboard() {
 
                 <Link
                   href="/agent/esim"
-                  className="mt-5 inline-flex items-center gap-2 text-red-600 font-semibold text-sm"
+                  className="mt-5 inline-flex items-center gap-2 text-red-600 font-semibold text-sm hover:text-red-700"
                 >
                   View eSIM Plans
                   <ArrowRight size={16} />
@@ -494,28 +526,28 @@ export default function AgentDashboard() {
 
 
           {/* =====================================================
-              TOUR / HOTEL / VISA
+              INTERNATIONAL / HOTEL / VISA
           ===================================================== */}
 
           <div className="grid grid-cols-1 md:grid-cols-2 xl:grid-cols-3 gap-5 mb-5">
 
-
             <SearchServiceCard
-              icon={<Map />}
+              icon={<Map size={20} />}
               title="INTERNATIONAL TOUR"
               description="Search verified B2B tour packages."
               button="SEARCH TOUR"
+              href="/agent/tourpackages"
             />
 
             <SearchServiceCard
-              icon={<Hotel />}
+              icon={<Hotel size={20} />}
               title="HOTEL - BOOK & BUY"
               description="Request competitive hotel rates."
               button="SEARCH HOTEL"
             />
 
             <SearchServiceCard
-              icon={<FileText />}
+              icon={<FileText size={20} />}
               title="VISA SERVICE"
               description="Check visa information and requirements."
               button="VIEW VISA INFO"
@@ -531,21 +563,21 @@ export default function AgentDashboard() {
           <div className="grid grid-cols-1 md:grid-cols-3 gap-5 mb-5">
 
             <SearchServiceCard
-              icon={<Plane />}
+              icon={<Plane size={20} />}
               title="DOMESTIC TOUR"
               description="Explore domestic tour products."
               button="SEARCH TOUR"
             />
 
             <SearchServiceCard
-              icon={<Ship />}
+              icon={<Ship size={20} />}
               title="CRUISE"
               description="Search available cruise packages."
               button="SEARCH CRUISE"
             />
 
             <SearchServiceCard
-              icon={<ShieldCheck />}
+              icon={<ShieldCheck size={20} />}
               title="TRAVEL INSURANCE"
               description="Find suitable travel protection."
               button="SEARCH PLAN"
@@ -592,14 +624,17 @@ export default function AgentDashboard() {
 
               </div>
 
-              <button className="mt-4 text-red-600 font-semibold text-sm">
+              <button
+                type="button"
+                className="mt-4 text-red-600 font-semibold text-sm hover:text-red-700"
+              >
                 VIEW ALL NEWS →
               </button>
 
             </DashboardCard>
 
 
-            {/* PROMO */}
+            {/* PROMOS */}
 
             <DashboardCard
               title="PROMO UPDATE"
@@ -630,7 +665,10 @@ export default function AgentDashboard() {
 
               </div>
 
-              <button className="mt-4 text-red-600 font-semibold text-sm">
+              <button
+                type="button"
+                className="mt-4 text-red-600 font-semibold text-sm hover:text-red-700"
+              >
                 VIEW ALL PROMOS →
               </button>
 
@@ -649,7 +687,7 @@ export default function AgentDashboard() {
 
               <div className="flex items-center gap-4">
 
-                <div className="w-12 h-12 rounded-xl bg-red-50 flex items-center justify-center text-red-600">
+                <div className="w-12 h-12 rounded-xl bg-red-50 flex items-center justify-center text-red-600 shrink-0">
                   <Headphones />
                 </div>
 
@@ -668,9 +706,12 @@ export default function AgentDashboard() {
 
               </div>
 
-              <button className="bg-red-600 hover:bg-red-700 text-white px-5 py-3 rounded-lg font-semibold text-sm">
+              <a
+                href="mailto:admin@chingutravelandtours.com"
+                className="bg-red-600 hover:bg-red-700 text-white px-5 py-3 rounded-lg font-semibold text-sm text-center transition"
+              >
                 CONTACT PARTNER SUPPORT
-              </button>
+              </a>
 
             </div>
 
@@ -704,13 +745,19 @@ export default function AgentDashboard() {
                   Partner Support
                 </h4>
 
-                <p className="text-sm text-gray-500 mt-2">
+                <a
+                  href="tel:+971552550096"
+                  className="block text-sm text-gray-500 mt-2 hover:text-red-600"
+                >
                   +971 55 255 0096
-                </p>
+                </a>
 
-                <p className="text-sm text-gray-500">
+                <a
+                  href="mailto:admin@chingutravelandtours.com"
+                  className="block text-sm text-gray-500 hover:text-red-600 break-all"
+                >
                   admin@chingutravelandtours.com
-                </p>
+                </a>
 
               </div>
 
@@ -726,7 +773,7 @@ export default function AgentDashboard() {
                 </p>
 
                 <p className="text-sm text-gray-500">
-                  www.chingutravelandtours.com
+                  B2B Partner Services
                 </p>
 
               </div>
@@ -750,6 +797,158 @@ export default function AgentDashboard() {
 
 
 /* ============================================================
+   SIDEBAR NAVIGATION
+============================================================ */
+
+function SidebarNavigation({
+  onNavigate,
+}: {
+  onNavigate?: () => void;
+}) {
+  return (
+    <nav className="p-3 space-y-1">
+
+      <SidebarItem
+        icon={<Wallet size={18} />}
+        label="Dashboard"
+        active
+        href="/agent/dashboard"
+        onNavigate={onNavigate}
+      />
+
+      <SidebarItem
+        icon={<Plane size={18} />}
+        label="Flight - Book & Buy"
+        href="#"
+        onNavigate={onNavigate}
+      />
+
+      <SidebarItem
+        icon={<Hotel size={18} />}
+        label="Hotel - Book & Buy"
+        href="#"
+        onNavigate={onNavigate}
+      />
+
+      <SidebarItem
+        icon={<Map size={18} />}
+        label="Tour Packages"
+        href="/agent/tourpackages"
+        onNavigate={onNavigate}
+      />
+
+      <SidebarItem
+        icon={<Smartphone size={18} />}
+        label="eSIM Travel Connect"
+        href="/agent/esim"
+        badge="NEW"
+        onNavigate={onNavigate}
+      />
+
+      <SidebarItem
+        icon={<Car size={18} />}
+        label="Car Rental"
+        href="#"
+        onNavigate={onNavigate}
+      />
+
+      <SidebarItem
+        icon={<Ship size={18} />}
+        label="Cruise"
+        href="#"
+        onNavigate={onNavigate}
+      />
+
+      <SidebarItem
+        icon={<ShieldCheck size={18} />}
+        label="Travel Insurance"
+        href="#"
+        onNavigate={onNavigate}
+      />
+
+      <SidebarItem
+        icon={<FileText size={18} />}
+        label="Visa Service"
+        href="#"
+        onNavigate={onNavigate}
+      />
+
+      <SidebarItem
+        icon={<Globe2 size={18} />}
+        label="Ground Services"
+        href="#"
+        onNavigate={onNavigate}
+      />
+
+      <SidebarItem
+        icon={<FileText size={18} />}
+        label="Quotations"
+        href="#"
+        onNavigate={onNavigate}
+      />
+
+      <SidebarItem
+        icon={<Ticket size={18} />}
+        label="Bookings"
+        href="#"
+        onNavigate={onNavigate}
+      />
+
+      <SidebarItem
+        icon={<CreditCard size={18} />}
+        label="My Transactions"
+        href="#"
+        onNavigate={onNavigate}
+      />
+
+      <SidebarItem
+        icon={<Wallet size={18} />}
+        label="My Wallet"
+        href="#"
+        onNavigate={onNavigate}
+      />
+
+      <SidebarItem
+        icon={<CalendarDays size={18} />}
+        label="My Reports"
+        href="#"
+        onNavigate={onNavigate}
+      />
+
+      <SidebarItem
+        icon={<Bell size={18} />}
+        label="News & Updates"
+        href="#"
+        onNavigate={onNavigate}
+      />
+
+      <SidebarItem
+        icon={<Tag size={18} />}
+        label="Promo Center"
+        href="#"
+        onNavigate={onNavigate}
+      />
+
+      <SidebarItem
+        icon={<Headphones size={18} />}
+        label="Partner Support"
+        href="mailto:admin@chingutravelandtours.com"
+        onNavigate={onNavigate}
+      />
+
+      <SidebarItem
+        icon={<Settings size={18} />}
+        label="Account Settings"
+        href="#"
+        onNavigate={onNavigate}
+      />
+
+    </nav>
+  );
+}
+
+
+/* ============================================================
    SIDEBAR ITEM
 ============================================================ */
 
@@ -759,22 +958,26 @@ function SidebarItem({
   href,
   active = false,
   badge,
+  onNavigate,
 }: {
   icon: React.ReactNode;
   label: string;
   href: string;
   active?: boolean;
   badge?: string;
+  onNavigate?: () => void;
 }) {
   return (
     <Link
       href={href}
+      onClick={onNavigate}
       className={`flex items-center gap-3 px-3 py-2.5 rounded-lg text-sm font-medium transition ${
         active
           ? "bg-red-600 text-white"
           : "text-gray-700 hover:bg-red-50 hover:text-red-600"
       }`}
     >
+
       {icon}
 
       <span className="flex-1">
@@ -782,10 +985,17 @@ function SidebarItem({
       </span>
 
       {badge && (
-        <span className="text-[9px] bg-red-500 text-white px-1.5 py-0.5 rounded font-bold">
+        <span
+          className={`text-[9px] px-1.5 py-0.5 rounded font-bold ${
+            active
+              ? "bg-white text-red-600"
+              : "bg-red-600 text-white"
+          }`}
+        >
           {badge}
         </span>
       )}
+
     </Link>
   );
 }
@@ -807,14 +1017,10 @@ function StatCard({
   subtitle: string;
 }) {
   return (
-    <div className="bg-white border border-gray-200 rounded-xl p-4 shadow-sm">
+    <div className="bg-white border border-gray-200 rounded-xl p-4 shadow-sm hover:shadow-md transition">
 
-      <div className="flex items-center justify-between">
-
-        <div className="w-10 h-10 rounded-lg bg-red-50 text-red-600 flex items-center justify-center">
-          {icon}
-        </div>
-
+      <div className="w-10 h-10 rounded-lg bg-red-50 text-red-600 flex items-center justify-center">
+        {icon}
       </div>
 
       <p className="text-[10px] font-bold text-gray-500 mt-3">
@@ -926,10 +1132,23 @@ function SelectBox({
         {label}
       </span>
 
-      <select className="mt-1 w-full border border-gray-300 rounded-lg px-3 py-2.5 text-sm outline-none focus:border-red-500">
-        <option>{value}</option>
-        <option>Option 2</option>
-        <option>Option 3</option>
+      <select
+        defaultValue={value}
+        className="mt-1 w-full border border-gray-300 rounded-lg px-3 py-2.5 text-sm outline-none focus:border-red-500 focus:ring-2 focus:ring-red-100"
+      >
+
+        <option value={value}>
+          {value}
+        </option>
+
+        <option value="Option 2">
+          Option 2
+        </option>
+
+        <option value="Option 3">
+          Option 3
+        </option>
+
       </select>
 
     </label>
@@ -977,12 +1196,30 @@ function SearchServiceCard({
   title,
   description,
   button,
+  href,
 }: {
   icon: React.ReactNode;
   title: string;
   description: string;
   button: string;
+  href?: string;
 }) {
+  const content = (
+    <>
+      <div className="p-5">
+
+        <p className="text-sm text-gray-500">
+          {description}
+        </p>
+
+        <span className="mt-5 w-full border border-red-600 text-red-600 hover:bg-red-600 hover:text-white py-2.5 rounded-lg text-sm font-semibold transition flex items-center justify-center">
+          {button}
+        </span>
+
+      </div>
+    </>
+  );
+
   return (
     <div className="bg-white border border-gray-200 rounded-xl shadow-sm overflow-hidden">
 
@@ -996,17 +1233,15 @@ function SearchServiceCard({
 
       </div>
 
-      <div className="p-5">
-
-        <p className="text-sm text-gray-500">
-          {description}
-        </p>
-
-        <button className="mt-5 w-full border border-red-600 text-red-600 hover:bg-red-600 hover:text-white py-2.5 rounded-lg text-sm font-semibold transition">
-          {button}
-        </button>
-
-      </div>
+      {href ? (
+        <Link href={href}>
+          {content}
+        </Link>
+      ) : (
+        <div>
+          {content}
+        </div>
+      )}
 
     </div>
   );
