@@ -1,5 +1,5 @@
-import Link from "next/link";
-
+import Link from "next/link"; 
+ 
 export default function Navbar() {
   return (
     <nav
@@ -16,7 +16,6 @@ export default function Navbar() {
     >
 
       {/* LOGO */}
-
       <Link href="/">
         <h1
           className="
@@ -31,9 +30,7 @@ export default function Navbar() {
       </Link>
 
 
-
       {/* MENU */}
-
       <div
         className="
           flex
@@ -56,7 +53,6 @@ export default function Navbar() {
         </Link>
 
 
-
         <Link
           href="/agent"
           className="
@@ -68,16 +64,27 @@ export default function Navbar() {
         </Link>
 
 
+        {/* eSIM MENU */}
+        <Link
+          href="/esim"
+          className="
+            hover:text-red-600
+            transition
+          "
+        >
+          eSIM
+        </Link>
+
 
         <Link
- href="/gael-ai"
- className="
- hover:text-red-600
- transition
- "
->
- Contact Us
-</Link>
+          href="/gael-ai"
+          className="
+            hover:text-red-600
+            transition
+          "
+        >
+          Contact Us
+        </Link>
 
 
         <Link
