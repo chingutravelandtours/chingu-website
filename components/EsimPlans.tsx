@@ -1,4 +1,4 @@
-const plans = [
+const esimplans = [
   {
     country: "Thailand",
     name: "DTAC Happy Tourist 219",
