@@ -7,7 +7,7 @@ export default function EsimPage() {
       {/* eSIM HERO */}
       <section className="w-full h-[450px] overflow-hidden">
   <img
-    src="/images/hero/esim.png"
+    src="/images/hero/esim (10).png"
     alt="Chingu Travel and Tours eSIM Travel Plans"
     className="w-full h-full object-cover object-center"
   />
