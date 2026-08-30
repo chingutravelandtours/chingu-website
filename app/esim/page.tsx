@@ -1,27 +1,22 @@
+
 import EsimPlans from "@/components/EsimPlans";
 
 export default function EsimPage() {
   return (
-    <main>
-      <section className="bg-red-600 text-white py-20 px-10">
-        <h1 className="text-5xl font-bold">
-          Stay Connected Anywhere
-        </h1>
+    <main className="bg-white">
 
-        <p className="mt-4">
-          Instant eSIM for your international travel.
-        </p>
-<section
-  className="relative w-full overflow-hidden"
->
-  <img
-    src="/images/esim.jpg"
-    alt="Chingu Travel and Tours eSIM Travel Plans"
-    className="w-full h-auto object-cover"
-  />
-</section>
-      
+      {/* eSIM HERO IMAGE */}
+      <section className="relative w-full overflow-hidden">
+        <img
+          src="/images/esim.jpg"
+          alt="Chingu Travel and Tours eSIM Travel Plans"
+          className="w-full h-auto object-cover"
+        />
+      </section>
+
+      {/* eSIM PLANS */}
       <EsimPlans />
+
     </main>
   );
 }
