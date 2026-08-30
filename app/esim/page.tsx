@@ -11,8 +11,16 @@ export default function EsimPage() {
         <p className="mt-4">
           Instant eSIM for your international travel.
         </p>
-      </section>
-
+<section
+  className="relative w-full overflow-hidden"
+>
+  <img
+    src="/images/esim.jpg"
+    alt="Chingu Travel and Tours eSIM Travel Plans"
+    className="w-full h-auto object-cover"
+  />
+</section>
+      
       <EsimPlans />
     </main>
   );
