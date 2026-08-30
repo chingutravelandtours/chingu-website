@@ -1,6 +1,6 @@
 import EsimPlans from "@/components/EsimPlans";
 
-export default function EsimPage.tsx() {
+export default function EsimPage() {
   return (
     <main>
       <section className="bg-red-600 text-white py-20 px-10">
