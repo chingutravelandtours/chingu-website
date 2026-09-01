@@ -1,21 +1,6 @@
 const countries = [
-  { name: "Aland Islands", flag: "🇦🇽", plans: 75 },
-  { name: "Albania", flag: "🇦🇱", plans: 70 },
-  { name: "Algeria", flag: "🇩🇿", plans: 53 },
-  { name: "Andorra", flag: "🇦🇩", plans: 58 },
-  { name: "Angola", flag: "🇦🇴", plans: 53 },
-  { name: "Anguilla", flag: "🇦🇮", plans: 59 },
-  { name: "Antigua and Barbuda", flag: "🇦🇬", plans: 59 },
-  { name: "Argentina", flag: "🇦🇷", plans: 53 },
-  { name: "Armenia", flag: "🇦🇲", plans: 53 },
-  { name: "Aruba", flag: "🇦🇼", plans: 26 },
-  { name: "Australia", flag: "🇦🇺", plans: 68 },
-  { name: "Austria", flag: "🇦🇹", plans: 73 },
-  { name: "Azerbaijan", flag: "🇦🇿", plans: 54 },
-  { name: "Bahamas", flag: "🇧🇸", plans: 68 },
-  { name: "Bahrain", flag: "🇧🇭", plans: 59 },
-  { name: "Bangladesh", flag: "🇧🇩", plans: 53 },
-  { name: "Barbados", flag: "🇧🇧", plans: 80 },
+  { name: "Aland Islands", flag: "🇦🇽" },
+
 ];
 
 export default function EsimPage() {
