@@ -1,5 +1,4 @@
 const countries = [
-  { name: "Afghanistan", flag: "🇦🇫", plans: 68 },
   { name: "Aland Islands", flag: "🇦🇽", plans: 75 },
   { name: "Albania", flag: "🇦🇱", plans: 70 },
   { name: "Algeria", flag: "🇩🇿", plans: 53 },
