@@ -1,5 +1,10 @@
+"use client";
+
 const countries = [
-  { name: "Aland Islands", flag: "🇦🇽" },
+  {
+    name: "Aland Islands",
+    flag: "🇦🇽",
+  },
 ];
 
 export default function EsimPage() {
@@ -7,7 +12,6 @@ export default function EsimPage() {
     <main className="min-h-screen bg-gray-50 py-10 px-6">
       <div className="max-w-7xl mx-auto">
 
-        {/* HEADER */}
         <div className="text-center mb-10">
           <h1 className="text-3xl md:text-4xl font-bold text-gray-900">
             eSIM
@@ -18,7 +22,6 @@ export default function EsimPage() {
           </p>
         </div>
 
-        {/* COUNTRIES */}
         <div
           className="
             grid
@@ -51,8 +54,6 @@ export default function EsimPage() {
                 duration-200
               "
             >
-
-              {/* FLAG */}
               <div
                 className="
                   text-4xl
@@ -65,7 +66,6 @@ export default function EsimPage() {
                 {country.flag}
               </div>
 
-              {/* COUNTRY NAME */}
               <h2
                 className="
                   font-bold
@@ -76,12 +76,6 @@ export default function EsimPage() {
               >
                 {country.name}
               </h2>
-
-              {/* PLAN COUNT */}
-              <p className="text-xs md:text-sm text-gray-500 mt-2">
-                {country.plans} Plans
-              </p>
-
             </a>
           ))}
         </div>
