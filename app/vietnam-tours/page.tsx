@@ -21,7 +21,7 @@ const packages: Package[] = [
     dates: "Flexible Dates",
     city: "DAD",
     price: 135 * USD_TO_PHP,
-    slots: 0,
+    slots: 10,
     deposit: 0,
   },
 
@@ -31,8 +31,8 @@ const packages: Package[] = [
     duration: "4D3N",
     dates: "Flexible Dates",
     city: "DAD",
-    price: 142 * USD_TO_PHP,
-    slots: 0,
+    price: 134 * USD_TO_PHP,
+    slots: 10,
     deposit: 0,
   },
 
@@ -42,8 +42,8 @@ const packages: Package[] = [
     duration: "5D4N",
     dates: "Flexible Dates",
     city: "DAD",
-    price: 195 * USD_TO_PHP,
-    slots: 0,
+    price: 185 * USD_TO_PHP,
+    slots: 10,
     deposit: 0,
   },
 
@@ -53,8 +53,8 @@ const packages: Package[] = [
     duration: "7D6N",
     dates: "Flexible Dates",
     city: "HAN",
-    price: 269 * USD_TO_PHP,
-    slots: 0,
+    price: 255 * USD_TO_PHP,
+    slots: 10,
     deposit: 0,
   },
 
@@ -64,8 +64,8 @@ const packages: Package[] = [
     duration: "10D9N",
     dates: "Flexible Dates",
     city: "SGN",
-    price: 379 * USD_TO_PHP,
-    slots: 0,
+    price: 361 * USD_TO_PHP,
+    slots: 10,
     deposit: 0,
   },
 ];
@@ -80,7 +80,7 @@ const peso = (amount: number) =>
 export default function VietnamToursPage() {
   const handleInquiry = (pkg: Package) => {
     const message = encodeURIComponent(
-`Hello CHINGU Travel and Tours!
+      `Hello CHINGU Travel and Tours!
 
 I would like to inquire about:
 
@@ -136,7 +136,7 @@ Thank you!`
             mt-4
             text-gray-500
           ">
-            Explore our Vietnam tour packages, destinations and rates.
+            Explore our Vietnam tour packages, departure dates and rates.
           </p>
 
         </div>
@@ -194,7 +194,6 @@ Thank you!`
                   {pkg.duration}
                 </span>
 
-
                 <span className={`
                   text-xs
                   font-semibold
@@ -203,17 +202,15 @@ Thank you!`
                   rounded-full
                   ${
                     pkg.slots && pkg.slots > 0
-                    ? "bg-green-50 text-green-600"
-                    : "bg-gray-100 text-gray-500"
+                      ? "bg-green-50 text-green-600"
+                      : "bg-gray-100 text-gray-500"
                   }
                 `}>
-
                   {
                     pkg.slots && pkg.slots > 0
-                    ? `${pkg.slots} slots`
-                    : "Available"
+                      ? `${pkg.slots} slots`
+                      : "Available"
                   }
-
                 </span>
 
               </div>
