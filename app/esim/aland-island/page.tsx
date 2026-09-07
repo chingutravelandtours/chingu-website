@@ -1,5 +1,10 @@
+"use client";
+
 const countries = [
-  { name: "Aland Islands", flag: "🇦🇽" },
+  {
+    name: "Aland Islands",
+    flag: "🇦🇽",
+  },
 ];
 
 export default function EsimPage() {
