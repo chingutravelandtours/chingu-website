@@ -881,16 +881,16 @@ Thank you!`
           <div className="hidden md:block mt-8 overflow-x-auto">
             <div className="min-w-[1100px]">
 
-              {/* TABLE HEADER */}
-              <div className="grid grid-cols-[1.5fr_1.1fr_0.8fr_0.7fr_0.9fr_1fr] gap-4 border-b border-gray-200 pb-4 text-sm font-semibold text-gray-700">
-                <div>Package</div>
-                <div>Starting / Ending</div>
-                <div>Duration</div>
-                <div>City</div>
-                <div>Status</div>
-                <div className="text-right">Prices From</div>
-              </div>
-
+               {/* TABLE HEADER */}
+             <div className="grid grid-cols-[1.4fr_1.1fr_0.7fr_0.6fr_0.8fr_0.9fr_0.8fr] gap-4 border-b border-gray-200 pb-4 text-sm font-semibold text-gray-700">
+  <div>Package</div>
+  <div>Starting / Ending</div>
+  <div>Duration</div>
+  <div>City</div>
+  <div>Status</div>
+  <div className="text-right">Prices From</div>
+  <div className="text-right">Deposit</div>
+</div>
               {/* TABLE ROWS */}
               {packages.map((pkg, index) => {
                 const available = (pkg.slots ?? 0) > 0;
