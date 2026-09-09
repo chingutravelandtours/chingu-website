@@ -14,17 +14,16 @@ type Package = {
 };
 
 const packages: Package[] = [
- {
-  title: "Tokyo + Mt. Fuji + Yokohama",
-  subtitle: "Japan Tour Package",
-  duration: "5D4N",
-  dates: "Sep. 13–17, 2026",
-  city: "MNL",
-  price: 839 * USD_TO_PHP,
-  slots: 1,
-  deposit: 300 * USD_TO_PHP,
-},
-  
+  {
+    title: "Tokyo + Mt. Fuji + Yokohama",
+    subtitle: "Japan",
+    duration: "5D4N",
+    dates: "Sep. 13–17, 2026",
+    city: "MNL",
+    price: 839 * USD_TO_PHP,
+    slots: 1,
+    deposit: 300 * USD_TO_PHP,
+  },
   {
     title: "Discover Osaka + Kyoto + Nara",
     subtitle: "Japan (3 in 1)",
@@ -35,7 +34,6 @@ const packages: Package[] = [
     slots: 1,
     deposit: 300 * USD_TO_PHP,
   },
-
   {
     title: "Osaka + Kyoto + Nara",
     subtitle: "Japan (3 in 1)",
@@ -46,7 +44,6 @@ const packages: Package[] = [
     slots: 4,
     deposit: 300 * USD_TO_PHP,
   },
-
   {
     title: "Osaka + Kyoto + Nara",
     subtitle: "Japan (3 in 1)",
@@ -57,7 +54,6 @@ const packages: Package[] = [
     slots: 2,
     deposit: 300 * USD_TO_PHP,
   },
-
   {
     title: "Discover Osaka + Kyoto + Nara",
     subtitle: "Japan (3 in 1)",
@@ -68,831 +64,756 @@ const packages: Package[] = [
     slots: 1,
     deposit: 300 * USD_TO_PHP,
   },
-
   {
-  title: "Discover Osaka Kyoto Nara",
-  subtitle: "Japan",
-  duration: "5D4N",
-  dates: "Nov. 19–23, 2026",
-  city: "CEB",
-  price: 899 * USD_TO_PHP,
-  slots: 4,
-  deposit: 300 * USD_TO_PHP,
-},
-
-{
-  title: "Japan Osaka Nara Kyoto",
-  subtitle: "Japan",
-  duration: "5D4N",
-  dates: "Nov. 25–29, 2026",
-  city: "CEB",
-  price: 1499 * USD_TO_PHP,
-  slots: 27,
-  deposit: 500 * USD_TO_PHP,
-},
-
-{
-  title: "Cebu Tokyo Hakone",
-  subtitle: "Japan",
-  duration: "8D7N",
-  dates: "Nov. 26–Dec. 3, 2026",
-  city: "CEB",
-  price: 2488 * USD_TO_PHP,
-  slots: 30,
-  deposit: 500 * USD_TO_PHP,
-},
-
-{
-  title: "Discover Osaka Kyoto Nara",
-  subtitle: "Japan",
-  duration: "5D4N",
-  dates: "Dec. 10–14, 2026",
-  city: "CEB",
-  price: 899 * USD_TO_PHP,
-  slots: 6,
-  deposit: 300 * USD_TO_PHP,
-},
-
-{
-  title: "Discover Osaka + Kyoto + Nara",
-  subtitle: "Japan (3 in 1)",
-  duration: "5D4N",
-  dates: "Dec. 12–16, 2026",
-  city: "MNL",
-  price: 859 * USD_TO_PHP,
-  slots: 4,
-  deposit: 300 * USD_TO_PHP,
-},
-  
+    title: "Discover Osaka Kyoto Nara",
+    subtitle: "Japan",
+    duration: "5D4N",
+    dates: "Nov. 19–23, 2026",
+    city: "CEB",
+    price: 899 * USD_TO_PHP,
+    slots: 4,
+    deposit: 300 * USD_TO_PHP,
+  },
   {
-  title: "Osaka + Kyoto + Nara",
-  subtitle: "Japan (3 in 1)",
-  duration: "5D4N",
-  dates: "Dec. 16–20, 2026",
-  city: "MNL",
-  price: 999 * USD_TO_PHP,
-  slots: 12,
-  deposit: 300 * USD_TO_PHP,
-},
-
+    title: "Japan Osaka Nara Kyoto",
+    subtitle: "Japan",
+    duration: "5D4N",
+    dates: "Nov. 25–29, 2026",
+    city: "CEB",
+    price: 1499 * USD_TO_PHP,
+    slots: 27,
+    deposit: 500 * USD_TO_PHP,
+  },
   {
-  title: "Adora Flora City Cruise",
-  subtitle: "Fly + Cruise",
-  duration: "7D6N",
-  dates: "Jan. 6–12, 2027",
-  city: "MNL",
-  price: 1588 * USD_TO_PHP,
-  slots: 20,
-  deposit: 500 * USD_TO_PHP,
-},
-
-{
-  title: "Adora Flora City Cruise",
-  subtitle: "Fly + Cruise",
-  duration: "6D5N",
-  dates: "Jan. 11–16, 2027",
-  city: "MNL",
-  price: 1488 * USD_TO_PHP,
-  slots: 20,
-  deposit: 500 * USD_TO_PHP,
-},
-
-{
-  title: "Osaka + Kyoto + Nara",
-  subtitle: "Japan (Via 5J)",
-  duration: "5D4N",
-  dates: "Jan. 13–17, 2027",
-  city: "DVO",
-  price: 999 * USD_TO_PHP,
-  slots: 32,
-  deposit: 300 * USD_TO_PHP,
-},
-
-{
-  title: "Osaka + Kyoto + Nara",
-  subtitle: "Japan (3 in 1)",
-  duration: "5D4N",
-  dates: "Jan. 13–17, 2027",
-  city: "MNL",
-  price: 859 * USD_TO_PHP,
-  slots: 30,
-  deposit: 300 * USD_TO_PHP,
-},
-
-{
-  title: "Discover Osaka Kyoto Nara",
-  subtitle: "Japan (3 in 1)",
-  duration: "5D4N",
-  dates: "Jan. 14–18, 2027",
-  city: "CEB",
-  price: 899 * USD_TO_PHP,
-  slots: 17,
-  deposit: 300 * USD_TO_PHP,
-},
-
-{
-  title: "Osaka + Kyoto + Nara",
-  subtitle: "Japan (3 in 1)",
-  duration: "5D4N",
-  dates: "Jan. 14–18, 2027",
-  city: "MNL",
-  price: 859 * USD_TO_PHP,
-  slots: 32,
-  deposit: 300 * USD_TO_PHP,
-},
-
+    title: "Cebu Tokyo Hakone",
+    subtitle: "Japan",
+    duration: "8D7N",
+    dates: "Nov. 26–Dec. 3, 2026",
+    city: "CEB",
+    price: 2488 * USD_TO_PHP,
+    slots: 30,
+    deposit: 500 * USD_TO_PHP,
+  },
   {
-  title: "Tokyo - Mt. Fuji - Kamakura",
-  subtitle: "Japan",
-  duration: "5D4N",
-  dates: "Jan. 14–18, 2027",
-  city: "MNL",
-  price: 899 * USD_TO_PHP,
-  slots: 21,
-  deposit: 300 * USD_TO_PHP,
-},
-
-{
-  title: "Osaka + Kyoto + Nara",
-  subtitle: "Japan (3 in 1)",
-  duration: "5D4N",
-  dates: "Jan. 15–19, 2027",
-  city: "MNL",
-  price: 859 * USD_TO_PHP,
-  slots: 10,
-  deposit: 300 * USD_TO_PHP,
-},
-
-{
-  title: "Osaka + Kyoto + Nara",
-  subtitle: "Japan (Via 5J)",
-  duration: "5D4N",
-  dates: "Jan. 16–20, 2027",
-  city: "DVO",
-  price: 999 * USD_TO_PHP,
-  slots: 28,
-  deposit: 300 * USD_TO_PHP,
-},
-
-{
-  title: "Tokyo + Mt. Fuji + Yokohama",
-  subtitle: "Japan",
-  duration: "5D4N",
-  dates: "Jan. 16–20, 2027",
-  city: "MNL",
-  price: 999 * USD_TO_PHP,
-  slots: 22,
-  deposit: 300 * USD_TO_PHP,
-},
-
-{
-  title: "Osaka + Kyoto + Nara",
-  subtitle: "Japan (3 in 1)",
-  duration: "5D4N",
-  dates: "Jan. 20–24, 2027",
-  city: "MNL",
-  price: 859 * USD_TO_PHP,
-  slots: 32,
-  deposit: 300 * USD_TO_PHP,
-},
-
-{
-  title: "Tokyo - Mt. Fuji - Enoshima",
-  subtitle: "Japan (Winter)",
-  duration: "5D4N",
-  dates: "Jan. 21–25, 2027",
-  city: "CEB",
-  price: 929 * USD_TO_PHP,
-  slots: 19,
-  deposit: 300 * USD_TO_PHP,
-},
-
-{
-  title: "Tokyo - Mt. Fuji - Kamakura",
-  subtitle: "Japan",
-  duration: "5D4N",
-  dates: "Jan. 21–25, 2027",
-  city: "MNL",
-  price: 899 * USD_TO_PHP,
-  slots: 0,
-  deposit: 300 * USD_TO_PHP,
-},
-
-{
-  title: "Osaka + Kyoto + Nara",
-  subtitle: "Japan (3 in 1)",
-  duration: "5D4N",
-  dates: "Jan. 21–25, 2027",
-  city: "MNL",
-  price: 859 * USD_TO_PHP,
-  slots: 0,
-  deposit: 300 * USD_TO_PHP,
-},
-
-{
-  title: "Tokyo - Mt. Fuji - Kamakura",
-  subtitle: "Japan",
-  duration: "5D4N",
-  dates: "Jan. 22–26, 2027",
-  city: "MNL",
-  price: 899 * USD_TO_PHP,
-  slots: 6,
-  deposit: 300 * USD_TO_PHP,
-},
-
-{
-  title: "Osaka + Kyoto + Nara",
-  subtitle: "Japan (3 in 1)",
-  duration: "5D4N",
-  dates: "Jan. 22–26, 2027",
-  city: "MNL",
-  price: 859 * USD_TO_PHP,
-  slots: 27,
-  deposit: 300 * USD_TO_PHP,
-},
-
-{
-  title: "Osaka + Kobe + Kyoto + Nara",
-  subtitle: "Japan (PAL)",
-  duration: "5D4N",
-  dates: "Jan. 23–27, 2027",
-  city: "DVO",
-  price: 1149 * USD_TO_PHP,
-  slots: 32,
-  deposit: 300 * USD_TO_PHP,
-},
-
-{
-  title: "Osaka + Kyoto + Nara",
-  subtitle: "Japan (3 in 1)",
-  duration: "5D4N",
-  dates: "Jan. 26–30, 2027",
-  city: "MNL",
-  price: 859 * USD_TO_PHP,
-  slots: 32,
-  deposit: 300 * USD_TO_PHP,
-},
-
-{
-  title: "Hokkaido Icebreaker",
-  subtitle: "Japan (VIA ANA) - No Shopping",
-  duration: "6D5N",
-  dates: "Feb. 2–7, 2027",
-  city: "MNL",
-  price: 2288 * USD_TO_PHP,
-  slots: 28,
-  deposit: 500 * USD_TO_PHP,
-},
-
-{
-  title: "Tokyo + Mt. Fuji + Yokohama",
-  subtitle: "Japan",
-  duration: "5D4N",
-  dates: "Feb. 10–14, 2027",
-  city: "MNL",
-  price: 899 * USD_TO_PHP,
-  slots: 1,
-  deposit: 300 * USD_TO_PHP,
-},
-
-{
-  title: "Tokyo + Mt. Fuji + Yokohama",
-  subtitle: "Japan",
-  duration: "5D4N",
-  dates: "Feb. 19–23, 2027",
-  city: "MNL",
-  price: 899 * USD_TO_PHP,
-  slots: 1,
-  deposit: 300 * USD_TO_PHP,
-},
-
-{
-  title: "Discover Osaka + Kyoto + Nara",
-  subtitle: "Japan (3 in 1)",
-  duration: "5D4N",
-  dates: "Feb. 19–23, 2027",
-  city: "MNL",
-  price: 799 * USD_TO_PHP,
-  slots: 0,
-  deposit: 300 * USD_TO_PHP,
-},
-
-{
-  title: "Nagoya + Takayama + Shirakawago + Osaka",
-  subtitle: "Japan (Winter)",
-  duration: "5D4N",
-  dates: "Feb. 20–24, 2027",
-  city: "MNL",
-  price: 1099 * USD_TO_PHP,
-  slots: 23,
-  deposit: 300 * USD_TO_PHP,
-},
-
-{
-  title: "Osaka + Kobe + Kyoto + Nara",
-  subtitle: "Japan (PAL)",
-  duration: "5D4N",
-  dates: "Feb. 20–24, 2027",
-  city: "DVO",
-  price: 1149 * USD_TO_PHP,
-  slots: 32,
-  deposit: 300 * USD_TO_PHP,
-},
-
-{
-  title: "Discover Osaka + Kyoto + Nara",
-  subtitle: "Japan (3 in 1)",
-  duration: "5D4N",
-  dates: "Feb. 26–Mar. 2, 2027",
-  city: "MNL",
-  price: 799 * USD_TO_PHP,
-  slots: 0,
-  deposit: 300 * USD_TO_PHP,
-},
-
-{
-  title: "Osaka + Kobe + Kyoto + Nara",
-  subtitle: "Japan (PAL)",
-  duration: "5D4N",
-  dates: "Mar. 4–8, 2027",
-  city: "DVO",
-  price: 1149 * USD_TO_PHP,
-  slots: 32,
-  deposit: 300 * USD_TO_PHP,
-},
-
-{
-  title: "Discover Osaka Kyoto Nara",
-  subtitle: "Japan (3 in 1)",
-  duration: "5D4N",
-  dates: "Mar. 4–8, 2027",
-  city: "CEB",
-  price: 899 * USD_TO_PHP,
-  slots: 21,
-  deposit: 300 * USD_TO_PHP,
-},
-
+    title: "Discover Osaka Kyoto Nara",
+    subtitle: "Japan",
+    duration: "5D4N",
+    dates: "Dec. 10–14, 2026",
+    city: "CEB",
+    price: 899 * USD_TO_PHP,
+    slots: 6,
+    deposit: 300 * USD_TO_PHP,
+  },
   {
-  title: "Tokyo - Mt. Fuji - Kamakura",
-  subtitle: "Japan",
-  duration: "5D4N",
-  dates: "Mar. 12–16, 2027",
-  city: "MNL",
-  price: 899 * USD_TO_PHP,
-  slots: 16,
-  deposit: 300 * USD_TO_PHP,
-},
-
-{
-  title: "Discover Osaka + Kyoto + Nara",
-  subtitle: "Japan (3 in 1)",
-  duration: "5D4N",
-  dates: "Mar. 12–16, 2027",
-  city: "MNL",
-  price: 899 * USD_TO_PHP,
-  slots: 23,
-  deposit: 300 * USD_TO_PHP,
-},
-
-{
-  title: "Discover Osaka + Kyoto + Nara",
-  subtitle: "Japan (3 in 1)",
-  duration: "5D4N",
-  dates: "Mar. 19–23, 2027",
-  city: "MNL",
-  price: 899 * USD_TO_PHP,
-  slots: 24,
-  deposit: 300 * USD_TO_PHP,
-},
-
-{
-  title: "Tokyo - Mt. Fuji - Kamakura",
-  subtitle: "Japan",
-  duration: "5D4N",
-  dates: "Mar. 19–23, 2027",
-  city: "MNL",
-  price: 949 * USD_TO_PHP,
-  slots: 4,
-  deposit: 300 * USD_TO_PHP,
-},
-
-{
-  title: "Tokyo - Mt. Fuji - Kamakura",
-  subtitle: "Japan",
-  duration: "5D4N",
-  dates: "Mar. 26–30, 2027",
-  city: "MNL",
-  price: 999 * USD_TO_PHP,
-  slots: 0,
-  deposit: 300 * USD_TO_PHP,
-},
-
-{
-  title: "Discover Osaka Kyoto Nara",
-  subtitle: "Japan (3 in 1)",
-  duration: "5D4N",
-  dates: "Mar. 27–31, 2027",
-  city: "CEB",
-  price: 999 * USD_TO_PHP,
-  slots: 25,
-  deposit: 300 * USD_TO_PHP,
-},
-
-{
-  title: "Discover Osaka + Kyoto + Nara",
-  subtitle: "Japan (3 in 1)",
-  duration: "5D4N",
-  dates: "Mar. 27–31, 2027",
-  city: "MNL",
-  price: 999 * USD_TO_PHP,
-  slots: 0,
-  deposit: 300 * USD_TO_PHP,
-},
-
-{
-  title: "Tokyo - Mt. Fuji - Kamakura",
-  subtitle: "Japan",
-  duration: "5D4N",
-  dates: "Mar. 28–Apr. 1, 2027",
-  city: "MNL",
-  price: 999 * USD_TO_PHP,
-  slots: 15,
-  deposit: 300 * USD_TO_PHP,
-},
-
-{
-  title: "Discover Osaka + Kyoto + Nara",
-  subtitle: "Japan (3 in 1)",
-  duration: "5D4N",
-  dates: "Mar. 28–Apr. 1, 2027",
-  city: "MNL",
-  price: 999 * USD_TO_PHP,
-  slots: 21,
-  deposit: 300 * USD_TO_PHP,
-},
-
-{
-  title: "Discover Osaka Kyoto Nara",
-  subtitle: "Japan (3 in 1)",
-  duration: "5D4N",
-  dates: "Apr. 1–5, 2027",
-  city: "CEB",
-  price: 999 * USD_TO_PHP,
-  slots: 19,
-  deposit: 300 * USD_TO_PHP,
-},
-
-{
-  title: "Discover Osaka Kyoto Nara",
-  subtitle: "Japan (3 in 1)",
-  duration: "5D4N",
-  dates: "Apr. 2–6, 2027",
-  city: "CEB",
-  price: 999 * USD_TO_PHP,
-  slots: 20,
-  deposit: 300 * USD_TO_PHP,
-},
-
-{
-  title: "Tokyo - Mt. Fuji - Kamakura",
-  subtitle: "Japan",
-  duration: "5D4N",
-  dates: "Apr. 3–7, 2027",
-  city: "MNL",
-  price: 949 * USD_TO_PHP,
-  slots: 5,
-  deposit: 300 * USD_TO_PHP,
-},
-
-{
-  title: "Discover Osaka Kyoto Nara",
-  subtitle: "Japan (3 in 1)",
-  duration: "5D4N",
-  dates: "Apr. 3–7, 2027",
-  city: "CEB",
-  price: 999 * USD_TO_PHP,
-  slots: 0,
-  deposit: 300 * USD_TO_PHP,
-},
-
-{
-  title: "Discover Osaka + Kyoto + Nara",
-  subtitle: "Japan (3 in 1)",
-  duration: "5D4N",
-  dates: "Apr. 5–9, 2027",
-  city: "MNL",
-  price: 899 * USD_TO_PHP,
-  slots: 18,
-  deposit: 300 * USD_TO_PHP,
-},
-
-{
-  title: "Discover Osaka Kyoto Nara",
-  subtitle: "Japan (3 in 1)",
-  duration: "5D4N",
-  dates: "Apr. 9–13, 2027",
-  city: "CEB",
-  price: 999 * USD_TO_PHP,
-  slots: 5,
-  deposit: 300 * USD_TO_PHP,
-},
-
-{
-  title: "Tokyo - Mt. Fuji - Kamakura",
-  subtitle: "Japan",
-  duration: "5D4N",
-  dates: "Apr. 9–13, 2027",
-  city: "MNL",
-  price: 949 * USD_TO_PHP,
-  slots: 0,
-  deposit: 300 * USD_TO_PHP,
-},
-
+    title: "Discover Osaka + Kyoto + Nara",
+    subtitle: "Japan (3 in 1)",
+    duration: "5D4N",
+    dates: "Dec. 12–16, 2026",
+    city: "MNL",
+    price: 859 * USD_TO_PHP,
+    slots: 4,
+    deposit: 300 * USD_TO_PHP,
+  },
   {
-  title: "Tokyo - Mt. Fuji - Kamakura",
-  subtitle: "Japan",
-  duration: "5D4N",
-  dates: "Apr. 12–16, 2027",
-  city: "MNL",
-  price: 929 * USD_TO_PHP,
-  slots: 32,
-  deposit: 300 * USD_TO_PHP,
-},
-
-{
-  title: "Osaka + Kyoto + Nara",
-  subtitle: "Japan (3 in 1)",
-  duration: "5D4N",
-  dates: "Apr. 13–17, 2027",
-  city: "MNL",
-  price: 859 * USD_TO_PHP,
-  slots: 32,
-  deposit: 300 * USD_TO_PHP,
-},
-
-{
-  title: "Tokyo - Mt. Fuji - Kamakura",
-  subtitle: "Japan",
-  duration: "5D4N",
-  dates: "Apr. 14–18, 2027",
-  city: "MNL",
-  price: 949 * USD_TO_PHP,
-  slots: 25,
-  deposit: 300 * USD_TO_PHP,
-},
-
-{
-  title: "Osaka + Kyoto + Nara",
-  subtitle: "Japan (3 in 1)",
-  duration: "5D4N",
-  dates: "Apr. 14–18, 2027",
-  city: "MNL",
-  price: 859 * USD_TO_PHP,
-  slots: 0,
-  deposit: 300 * USD_TO_PHP,
-},
-
-{
-  title: "Discover Osaka Kyoto Nara",
-  subtitle: "Japan (3 in 1)",
-  duration: "5D4N",
-  dates: "Apr. 15–19, 2027",
-  city: "CEB",
-  price: 899 * USD_TO_PHP,
-  slots: 32,
-  deposit: 300 * USD_TO_PHP,
-},
-
-{
-  title: "Tokyo - Mt. Fuji - Kamakura",
-  subtitle: "Japan",
-  duration: "5D4N",
-  dates: "Apr. 15–19, 2027",
-  city: "MNL",
-  price: 929 * USD_TO_PHP,
-  slots: 30,
-  deposit: 300 * USD_TO_PHP,
-},
-
-{
-  title: "Tokyo + Mt. Fuji + Kamakura",
-  subtitle: "Japan (Via PAL)",
-  duration: "5D4N",
-  dates: "Apr. 15–19, 2027",
-  city: "DVO",
-  price: 1199 * USD_TO_PHP,
-  slots: 30,
-  deposit: 300 * USD_TO_PHP,
-},
-
-{
-  title: "Osaka + Kyoto + Nara",
-  subtitle: "Japan (3 in 1)",
-  duration: "5D4N",
-  dates: "Apr. 16–20, 2027",
-  city: "MNL",
-  price: 859 * USD_TO_PHP,
-  slots: 0,
-  deposit: 300 * USD_TO_PHP,
-},
-
-{
-  title: "Osaka + Kobe + Kyoto + Nara",
-  subtitle: "Japan (PAL)",
-  duration: "5D4N",
-  dates: "Apr. 17–21, 2027",
-  city: "DVO",
-  price: 1149 * USD_TO_PHP,
-  slots: 32,
-  deposit: 300 * USD_TO_PHP,
-},
-
-{
-  title: "Tokyo - Mt. Fuji - Kamakura",
-  subtitle: "Japan",
-  duration: "5D4N",
-  dates: "Apr. 17–21, 2027",
-  city: "MNL",
-  price: 929 * USD_TO_PHP,
-  slots: 0,
-  deposit: 300 * USD_TO_PHP,
-},
-
-{
-  title: "Osaka + Kyoto + Nara",
-  subtitle: "Japan (3 in 1)",
-  duration: "5D4N",
-  dates: "Apr. 19–23, 2027",
-  city: "MNL",
-  price: 859 * USD_TO_PHP,
-  slots: 29,
-  deposit: 300 * USD_TO_PHP,
-},
-
-{
-  title: "Discover Osaka Kyoto Nara",
-  subtitle: "Japan (3 in 1)",
-  duration: "5D4N",
-  dates: "Apr. 21–25, 2027",
-  city: "CEB",
-  price: 899 * USD_TO_PHP,
-  slots: 32,
-  deposit: 300 * USD_TO_PHP,
-},
-
-{
-  title: "Osaka + Kyoto + Nara",
-  subtitle: "Japan (3 in 1)",
-  duration: "5D4N",
-  dates: "Apr. 22–26, 2027",
-  city: "MNL",
-  price: 859 * USD_TO_PHP,
-  slots: 30,
-  deposit: 300 * USD_TO_PHP,
-},
-
-{
-  title: "Osaka + Kyoto + Nara",
-  subtitle: "Japan (3 in 1)",
-  duration: "5D4N",
-  dates: "Apr. 23–27, 2027",
-  city: "MNL",
-  price: 859 * USD_TO_PHP,
-  slots: 7,
-  deposit: 300 * USD_TO_PHP,
-},
-
-{
-  title: "Osaka + Kyoto + Nara",
-  subtitle: "Japan (3 in 1)",
-  duration: "5D4N",
-  dates: "Apr. 26–30, 2027",
-  city: "MNL",
-  price: 859 * USD_TO_PHP,
-  slots: 7,
-  deposit: 300 * USD_TO_PHP,
-},
-
-{
-  title: "Tokyo - Mt. Fuji - Kamakura",
-  subtitle: "Japan",
-  duration: "5D4N",
-  dates: "May 6–10, 2027",
-  city: "MNL",
-  price: 899 * USD_TO_PHP,
-  slots: 26,
-  deposit: 300 * USD_TO_PHP,
-},
-
-{
-  title: "Discover Osaka Kyoto Nara",
-  subtitle: "Japan (3 in 1)",
-  duration: "5D4N",
-  dates: "May 7–11, 2027",
-  city: "CEB",
-  price: 899 * USD_TO_PHP,
-  slots: 32,
-  deposit: 300 * USD_TO_PHP,
-},
-
-{
-  title: "Osaka + Kyoto + Nara",
-  subtitle: "Japan (3 in 1)",
-  duration: "5D4N",
-  dates: "May 9–13, 2027",
-  city: "MNL",
-  price: 859 * USD_TO_PHP,
-  slots: 32,
-  deposit: 300 * USD_TO_PHP,
-},
-
-{
-  title: "Tokyo + Mt. Fuji + Kamakura",
-  subtitle: "Japan (Via PAL)",
-  duration: "5D4N",
-  dates: "May 13–17, 2027",
-  city: "DVO",
-  price: 1199 * USD_TO_PHP,
-  slots: 19,
-  deposit: 300 * USD_TO_PHP,
-},
-
-{
-  title: "Tokyo - Mt. Fuji - Kamakura",
-  subtitle: "Japan",
-  duration: "5D4N",
-  dates: "May 13–17, 2027",
-  city: "MNL",
-  price: 899 * USD_TO_PHP,
-  slots: 32,
-  deposit: 300 * USD_TO_PHP,
-},
-
-{
-  title: "Osaka + Kyoto + Nara",
-  subtitle: "Japan (3 in 1)",
-  duration: "5D4N",
-  dates: "May 15–19, 2027",
-  city: "MNL",
-  price: 859 * USD_TO_PHP,
-  slots: 29,
-  deposit: 300 * USD_TO_PHP,
-},
-
-{
-  title: "Osaka + Kyoto + Nara",
-  subtitle: "Japan (Via 5J)",
-  duration: "5D4N",
-  dates: "May 19–23, 2027",
-  city: "DVO",
-  price: 999 * USD_TO_PHP,
-  slots: 27,
-  deposit: 300 * USD_TO_PHP,
-},
-
-{
-  title: "Tokyo - Mt. Fuji - Kamakura",
-  subtitle: "Japan",
-  duration: "5D4N",
-  dates: "May 20–24, 2027",
-  city: "MNL",
-  price: 899 * USD_TO_PHP,
-  slots: 32,
-  deposit: 300 * USD_TO_PHP,
-},
-
-{
-  title: "Osaka + Kyoto + Nara",
-  subtitle: "Japan (3 in 1)",
-  duration: "5D4N",
-  dates: "May 22–26, 2027",
-  city: "MNL",
-  price: 859 * USD_TO_PHP,
-  slots: 28,
-  deposit: 300 * USD_TO_PHP,
-},
-
-{
-  title: "Tokyo - Mt. Fuji - Kamakura",
-  subtitle: "Japan",
-  duration: "5D4N",
-  dates: "May 26–30, 2027",
-  city: "MNL",
-  price: 899 * USD_TO_PHP,
-  slots: 32,
-  deposit: 300 * USD_TO_PHP,
-},
-
-{
-  title: "Osaka + Kyoto + Nara",
-  subtitle: "Japan (3 in 1)",
-  duration: "5D4N",
-  dates: "May 27–31, 2027",
-  city: "MNL",
-  price: 859 * USD_TO_PHP,
-  slots: 0,
-  deposit: 300 * USD_TO_PHP,
-},
+    title: "Osaka + Kyoto + Nara",
+    subtitle: "Japan (3 in 1)",
+    duration: "5D4N",
+    dates: "Dec. 16–20, 2026",
+    city: "MNL",
+    price: 999 * USD_TO_PHP,
+    slots: 12,
+    deposit: 300 * USD_TO_PHP,
+  },
+  {
+    title: "Adora Flora City Cruise",
+    subtitle: "Fly + Cruise",
+    duration: "7D6N",
+    dates: "Jan. 6–12, 2027",
+    city: "MNL",
+    price: 1588 * USD_TO_PHP,
+    slots: 20,
+    deposit: 500 * USD_TO_PHP,
+  },
+  {
+    title: "Adora Flora City Cruise",
+    subtitle: "Fly + Cruise",
+    duration: "6D5N",
+    dates: "Jan. 11–16, 2027",
+    city: "MNL",
+    price: 1488 * USD_TO_PHP,
+    slots: 20,
+    deposit: 500 * USD_TO_PHP,
+  },
+  {
+    title: "Osaka + Kyoto + Nara",
+    subtitle: "Japan (Via 5J)",
+    duration: "5D4N",
+    dates: "Jan. 13–17, 2027",
+    city: "DVO",
+    price: 999 * USD_TO_PHP,
+    slots: 32,
+    deposit: 300 * USD_TO_PHP,
+  },
+  {
+    title: "Osaka + Kyoto + Nara",
+    subtitle: "Japan (3 in 1)",
+    duration: "5D4N",
+    dates: "Jan. 13–17, 2027",
+    city: "MNL",
+    price: 859 * USD_TO_PHP,
+    slots: 30,
+    deposit: 300 * USD_TO_PHP,
+  },
+  {
+    title: "Discover Osaka Kyoto Nara",
+    subtitle: "Japan (3 in 1)",
+    duration: "5D4N",
+    dates: "Jan. 14–18, 2027",
+    city: "CEB",
+    price: 899 * USD_TO_PHP,
+    slots: 17,
+    deposit: 300 * USD_TO_PHP,
+  },
+  {
+    title: "Osaka + Kyoto + Nara",
+    subtitle: "Japan (3 in 1)",
+    duration: "5D4N",
+    dates: "Jan. 14–18, 2027",
+    city: "MNL",
+    price: 859 * USD_TO_PHP,
+    slots: 32,
+    deposit: 300 * USD_TO_PHP,
+  },
+  {
+    title: "Tokyo - Mt. Fuji - Kamakura",
+    subtitle: "Japan",
+    duration: "5D4N",
+    dates: "Jan. 14–18, 2027",
+    city: "MNL",
+    price: 899 * USD_TO_PHP,
+    slots: 21,
+    deposit: 300 * USD_TO_PHP,
+  },
+  {
+    title: "Osaka + Kyoto + Nara",
+    subtitle: "Japan (3 in 1)",
+    duration: "5D4N",
+    dates: "Jan. 15–19, 2027",
+    city: "MNL",
+    price: 859 * USD_TO_PHP,
+    slots: 10,
+    deposit: 300 * USD_TO_PHP,
+  },
+  {
+    title: "Osaka + Kyoto + Nara",
+    subtitle: "Japan (Via 5J)",
+    duration: "5D4N",
+    dates: "Jan. 16–20, 2027",
+    city: "DVO",
+    price: 999 * USD_TO_PHP,
+    slots: 28,
+    deposit: 300 * USD_TO_PHP,
+  },
+  {
+    title: "Tokyo + Mt. Fuji + Yokohama",
+    subtitle: "Japan",
+    duration: "5D4N",
+    dates: "Jan. 16–20, 2027",
+    city: "MNL",
+    price: 999 * USD_TO_PHP,
+    slots: 22,
+    deposit: 300 * USD_TO_PHP,
+  },
+  {
+    title: "Osaka + Kyoto + Nara",
+    subtitle: "Japan (3 in 1)",
+    duration: "5D4N",
+    dates: "Jan. 20–24, 2027",
+    city: "MNL",
+    price: 859 * USD_TO_PHP,
+    slots: 32,
+    deposit: 300 * USD_TO_PHP,
+  },
+  {
+    title: "Tokyo - Mt. Fuji - Enoshima",
+    subtitle: "Japan (Winter)",
+    duration: "5D4N",
+    dates: "Jan. 21–25, 2027",
+    city: "CEB",
+    price: 929 * USD_TO_PHP,
+    slots: 19,
+    deposit: 300 * USD_TO_PHP,
+  },
+  {
+    title: "Tokyo - Mt. Fuji - Kamakura",
+    subtitle: "Japan",
+    duration: "5D4N",
+    dates: "Jan. 21–25, 2027",
+    city: "MNL",
+    price: 899 * USD_TO_PHP,
+    slots: 0,
+    deposit: 300 * USD_TO_PHP,
+  },
+  {
+    title: "Osaka + Kyoto + Nara",
+    subtitle: "Japan (3 in 1)",
+    duration: "5D4N",
+    dates: "Jan. 21–25, 2027",
+    city: "MNL",
+    price: 859 * USD_TO_PHP,
+    slots: 0,
+    deposit: 300 * USD_TO_PHP,
+  },
+  {
+    title: "Tokyo - Mt. Fuji - Kamakura",
+    subtitle: "Japan",
+    duration: "5D4N",
+    dates: "Jan. 22–26, 2027",
+    city: "MNL",
+    price: 899 * USD_TO_PHP,
+    slots: 6,
+    deposit: 300 * USD_TO_PHP,
+  },
+  {
+    title: "Osaka + Kyoto + Nara",
+    subtitle: "Japan (3 in 1)",
+    duration: "5D4N",
+    dates: "Jan. 22–26, 2027",
+    city: "MNL",
+    price: 859 * USD_TO_PHP,
+    slots: 27,
+    deposit: 300 * USD_TO_PHP,
+  },
+  {
+    title: "Osaka + Kobe + Kyoto + Nara",
+    subtitle: "Japan (PAL)",
+    duration: "5D4N",
+    dates: "Jan. 23–27, 2027",
+    city: "DVO",
+    price: 1149 * USD_TO_PHP,
+    slots: 32,
+    deposit: 300 * USD_TO_PHP,
+  },
+  {
+    title: "Osaka + Kyoto + Nara",
+    subtitle: "Japan (3 in 1)",
+    duration: "5D4N",
+    dates: "Jan. 26–30, 2027",
+    city: "MNL",
+    price: 859 * USD_TO_PHP,
+    slots: 32,
+    deposit: 300 * USD_TO_PHP,
+  },
+  {
+    title: "Hokkaido Icebreaker",
+    subtitle: "Japan (VIA ANA) - No Shopping",
+    duration: "6D5N",
+    dates: "Feb. 2–7, 2027",
+    city: "MNL",
+    price: 2288 * USD_TO_PHP,
+    slots: 28,
+    deposit: 500 * USD_TO_PHP,
+  },
+  {
+    title: "Tokyo + Mt. Fuji + Yokohama",
+    subtitle: "Japan",
+    duration: "5D4N",
+    dates: "Feb. 10–14, 2027",
+    city: "MNL",
+    price: 899 * USD_TO_PHP,
+    slots: 1,
+    deposit: 300 * USD_TO_PHP,
+  },
+  {
+    title: "Tokyo + Mt. Fuji + Yokohama",
+    subtitle: "Japan",
+    duration: "5D4N",
+    dates: "Feb. 19–23, 2027",
+    city: "MNL",
+    price: 899 * USD_TO_PHP,
+    slots: 1,
+    deposit: 300 * USD_TO_PHP,
+  },
+  {
+    title: "Discover Osaka + Kyoto + Nara",
+    subtitle: "Japan (3 in 1)",
+    duration: "5D4N",
+    dates: "Feb. 19–23, 2027",
+    city: "MNL",
+    price: 799 * USD_TO_PHP,
+    slots: 0,
+    deposit: 300 * USD_TO_PHP,
+  },
+  {
+    title: "Nagoya + Takayama + Shirakawago + Osaka",
+    subtitle: "Japan (Winter)",
+    duration: "5D4N",
+    dates: "Feb. 20–24, 2027",
+    city: "MNL",
+    price: 1099 * USD_TO_PHP,
+    slots: 23,
+    deposit: 300 * USD_TO_PHP,
+  },
+  {
+    title: "Osaka + Kobe + Kyoto + Nara",
+    subtitle: "Japan (PAL)",
+    duration: "5D4N",
+    dates: "Feb. 20–24, 2027",
+    city: "DVO",
+    price: 1149 * USD_TO_PHP,
+    slots: 32,
+    deposit: 300 * USD_TO_PHP,
+  },
+  {
+    title: "Discover Osaka + Kyoto + Nara",
+    subtitle: "Japan (3 in 1)",
+    duration: "5D4N",
+    dates: "Feb. 26–Mar. 2, 2027",
+    city: "MNL",
+    price: 799 * USD_TO_PHP,
+    slots: 0,
+    deposit: 300 * USD_TO_PHP,
+  },
+  {
+    title: "Osaka + Kobe + Kyoto + Nara",
+    subtitle: "Japan (PAL)",
+    duration: "5D4N",
+    dates: "Mar. 4–8, 2027",
+    city: "DVO",
+    price: 1149 * USD_TO_PHP,
+    slots: 32,
+    deposit: 300 * USD_TO_PHP,
+  },
+  {
+    title: "Discover Osaka Kyoto Nara",
+    subtitle: "Japan (3 in 1)",
+    duration: "5D4N",
+    dates: "Mar. 4–8, 2027",
+    city: "CEB",
+    price: 899 * USD_TO_PHP,
+    slots: 21,
+    deposit: 300 * USD_TO_PHP,
+  },
+  {
+    title: "Tokyo - Mt. Fuji - Kamakura",
+    subtitle: "Japan",
+    duration: "5D4N",
+    dates: "Mar. 12–16, 2027",
+    city: "MNL",
+    price: 899 * USD_TO_PHP,
+    slots: 16,
+    deposit: 300 * USD_TO_PHP,
+  },
+  {
+    title: "Discover Osaka + Kyoto + Nara",
+    subtitle: "Japan (3 in 1)",
+    duration: "5D4N",
+    dates: "Mar. 12–16, 2027",
+    city: "MNL",
+    price: 899 * USD_TO_PHP,
+    slots: 23,
+    deposit: 300 * USD_TO_PHP,
+  },
+  {
+    title: "Discover Osaka + Kyoto + Nara",
+    subtitle: "Japan (3 in 1)",
+    duration: "5D4N",
+    dates: "Mar. 19–23, 2027",
+    city: "MNL",
+    price: 899 * USD_TO_PHP,
+    slots: 24,
+    deposit: 300 * USD_TO_PHP,
+  },
+  {
+    title: "Tokyo - Mt. Fuji - Kamakura",
+    subtitle: "Japan",
+    duration: "5D4N",
+    dates: "Mar. 19–23, 2027",
+    city: "MNL",
+    price: 949 * USD_TO_PHP,
+    slots: 4,
+    deposit: 300 * USD_TO_PHP,
+  },
+  {
+    title: "Tokyo - Mt. Fuji - Kamakura",
+    subtitle: "Japan",
+    duration: "5D4N",
+    dates: "Mar. 26–30, 2027",
+    city: "MNL",
+    price: 999 * USD_TO_PHP,
+    slots: 0,
+    deposit: 300 * USD_TO_PHP,
+  },
+  {
+    title: "Discover Osaka Kyoto Nara",
+    subtitle: "Japan (3 in 1)",
+    duration: "5D4N",
+    dates: "Mar. 27–31, 2027",
+    city: "CEB",
+    price: 999 * USD_TO_PHP,
+    slots: 25,
+    deposit: 300 * USD_TO_PHP,
+  },
+  {
+    title: "Discover Osaka + Kyoto + Nara",
+    subtitle: "Japan (3 in 1)",
+    duration: "5D4N",
+    dates: "Mar. 27–31, 2027",
+    city: "MNL",
+    price: 999 * USD_TO_PHP,
+    slots: 0,
+    deposit: 300 * USD_TO_PHP,
+  },
+  {
+    title: "Tokyo - Mt. Fuji - Kamakura",
+    subtitle: "Japan",
+    duration: "5D4N",
+    dates: "Mar. 28–Apr. 1, 2027",
+    city: "MNL",
+    price: 999 * USD_TO_PHP,
+    slots: 15,
+    deposit: 300 * USD_TO_PHP,
+  },
+  {
+    title: "Discover Osaka + Kyoto + Nara",
+    subtitle: "Japan (3 in 1)",
+    duration: "5D4N",
+    dates: "Mar. 28–Apr. 1, 2027",
+    city: "MNL",
+    price: 999 * USD_TO_PHP,
+    slots: 21,
+    deposit: 300 * USD_TO_PHP,
+  },
+  {
+    title: "Discover Osaka Kyoto Nara",
+    subtitle: "Japan (3 in 1)",
+    duration: "5D4N",
+    dates: "Apr. 1–5, 2027",
+    city: "CEB",
+    price: 999 * USD_TO_PHP,
+    slots: 19,
+    deposit: 300 * USD_TO_PHP,
+  },
+  {
+    title: "Discover Osaka Kyoto Nara",
+    subtitle: "Japan (3 in 1)",
+    duration: "5D4N",
+    dates: "Apr. 2–6, 2027",
+    city: "CEB",
+    price: 999 * USD_TO_PHP,
+    slots: 20,
+    deposit: 300 * USD_TO_PHP,
+  },
+  {
+    title: "Tokyo - Mt. Fuji - Kamakura",
+    subtitle: "Japan",
+    duration: "5D4N",
+    dates: "Apr. 3–7, 2027",
+    city: "MNL",
+    price: 949 * USD_TO_PHP,
+    slots: 5,
+    deposit: 300 * USD_TO_PHP,
+  },
+  {
+    title: "Discover Osaka Kyoto Nara",
+    subtitle: "Japan (3 in 1)",
+    duration: "5D4N",
+    dates: "Apr. 3–7, 2027",
+    city: "CEB",
+    price: 999 * USD_TO_PHP,
+    slots: 0,
+    deposit: 300 * USD_TO_PHP,
+  },
+  {
+    title: "Discover Osaka + Kyoto + Nara",
+    subtitle: "Japan (3 in 1)",
+    duration: "5D4N",
+    dates: "Apr. 5–9, 2027",
+    city: "MNL",
+    price: 899 * USD_TO_PHP,
+    slots: 18,
+    deposit: 300 * USD_TO_PHP,
+  },
+  {
+    title: "Discover Osaka Kyoto Nara",
+    subtitle: "Japan (3 in 1)",
+    duration: "5D4N",
+    dates: "Apr. 9–13, 2027",
+    city: "CEB",
+    price: 999 * USD_TO_PHP,
+    slots: 5,
+    deposit: 300 * USD_TO_PHP,
+  },
+  {
+    title: "Tokyo - Mt. Fuji - Kamakura",
+    subtitle: "Japan",
+    duration: "5D4N",
+    dates: "Apr. 9–13, 2027",
+    city: "MNL",
+    price: 949 * USD_TO_PHP,
+    slots: 0,
+    deposit: 300 * USD_TO_PHP,
+  },
+  {
+    title: "Tokyo - Mt. Fuji - Kamakura",
+    subtitle: "Japan",
+    duration: "5D4N",
+    dates: "Apr. 12–16, 2027",
+    city: "MNL",
+    price: 929 * USD_TO_PHP,
+    slots: 32,
+    deposit: 300 * USD_TO_PHP,
+  },
+  {
+    title: "Osaka + Kyoto + Nara",
+    subtitle: "Japan (3 in 1)",
+    duration: "5D4N",
+    dates: "Apr. 13–17, 2027",
+    city: "MNL",
+    price: 859 * USD_TO_PHP,
+    slots: 32,
+    deposit: 300 * USD_TO_PHP,
+  },
+  {
+    title: "Tokyo - Mt. Fuji - Kamakura",
+    subtitle: "Japan",
+    duration: "5D4N",
+    dates: "Apr. 14–18, 2027",
+    city: "MNL",
+    price: 949 * USD_TO_PHP,
+    slots: 25,
+    deposit: 300 * USD_TO_PHP,
+  },
+  {
+    title: "Osaka + Kyoto + Nara",
+    subtitle: "Japan (3 in 1)",
+    duration: "5D4N",
+    dates: "Apr. 14–18, 2027",
+    city: "MNL",
+    price: 859 * USD_TO_PHP,
+    slots: 0,
+    deposit: 300 * USD_TO_PHP,
+  },
+  {
+    title: "Discover Osaka Kyoto Nara",
+    subtitle: "Japan (3 in 1)",
+    duration: "5D4N",
+    dates: "Apr. 15–19, 2027",
+    city: "CEB",
+    price: 899 * USD_TO_PHP,
+    slots: 32,
+    deposit: 300 * USD_TO_PHP,
+  },
+  {
+    title: "Tokyo - Mt. Fuji - Kamakura",
+    subtitle: "Japan",
+    duration: "5D4N",
+    dates: "Apr. 15–19, 2027",
+    city: "MNL",
+    price: 929 * USD_TO_PHP,
+    slots: 30,
+    deposit: 300 * USD_TO_PHP,
+  },
+  {
+    title: "Tokyo + Mt. Fuji + Kamakura",
+    subtitle: "Japan (Via PAL)",
+    duration: "5D4N",
+    dates: "Apr. 15–19, 2027",
+    city: "DVO",
+    price: 1199 * USD_TO_PHP,
+    slots: 30,
+    deposit: 300 * USD_TO_PHP,
+  },
+  {
+    title: "Osaka + Kyoto + Nara",
+    subtitle: "Japan (3 in 1)",
+    duration: "5D4N",
+    dates: "Apr. 16–20, 2027",
+    city: "MNL",
+    price: 859 * USD_TO_PHP,
+    slots: 0,
+    deposit: 300 * USD_TO_PHP,
+  },
+  {
+    title: "Osaka + Kobe + Kyoto + Nara",
+    subtitle: "Japan (PAL)",
+    duration: "5D4N",
+    dates: "Apr. 17–21, 2027",
+    city: "DVO",
+    price: 1149 * USD_TO_PHP,
+    slots: 32,
+    deposit: 300 * USD_TO_PHP,
+  },
+  {
+    title: "Tokyo - Mt. Fuji - Kamakura",
+    subtitle: "Japan",
+    duration: "5D4N",
+    dates: "Apr. 17–21, 2027",
+    city: "MNL",
+    price: 929 * USD_TO_PHP,
+    slots: 0,
+    deposit: 300 * USD_TO_PHP,
+  },
+  {
+    title: "Osaka + Kyoto + Nara",
+    subtitle: "Japan (3 in 1)",
+    duration: "5D4N",
+    dates: "Apr. 19–23, 2027",
+    city: "MNL",
+    price: 859 * USD_TO_PHP,
+    slots: 29,
+    deposit: 300 * USD_TO_PHP,
+  },
+  {
+    title: "Discover Osaka Kyoto Nara",
+    subtitle: "Japan (3 in 1)",
+    duration: "5D4N",
+    dates: "Apr. 21–25, 2027",
+    city: "CEB",
+    price: 899 * USD_TO_PHP,
+    slots: 32,
+    deposit: 300 * USD_TO_PHP,
+  },
+  {
+    title: "Osaka + Kyoto + Nara",
+    subtitle: "Japan (3 in 1)",
+    duration: "5D4N",
+    dates: "Apr. 22–26, 2027",
+    city: "MNL",
+    price: 859 * USD_TO_PHP,
+    slots: 30,
+    deposit: 300 * USD_TO_PHP,
+  },
+  {
+    title: "Osaka + Kyoto + Nara",
+    subtitle: "Japan (3 in 1)",
+    duration: "5D4N",
+    dates: "Apr. 23–27, 2027",
+    city: "MNL",
+    price: 859 * USD_TO_PHP,
+    slots: 7,
+    deposit: 300 * USD_TO_PHP,
+  },
+  {
+    title: "Osaka + Kyoto + Nara",
+    subtitle: "Japan (3 in 1)",
+    duration: "5D4N",
+    dates: "Apr. 26–30, 2027",
+    city: "MNL",
+    price: 859 * USD_TO_PHP,
+    slots: 7,
+    deposit: 300 * USD_TO_PHP,
+  },
+  {
+    title: "Tokyo - Mt. Fuji - Kamakura",
+    subtitle: "Japan",
+    duration: "5D4N",
+    dates: "May 6–10, 2027",
+    city: "MNL",
+    price: 899 * USD_TO_PHP,
+    slots: 26,
+    deposit: 300 * USD_TO_PHP,
+  },
+  {
+    title: "Discover Osaka Kyoto Nara",
+    subtitle: "Japan (3 in 1)",
+    duration: "5D4N",
+    dates: "May 7–11, 2027",
+    city: "CEB",
+    price: 899 * USD_TO_PHP,
+    slots: 32,
+    deposit: 300 * USD_TO_PHP,
+  },
+  {
+    title: "Osaka + Kyoto + Nara",
+    subtitle: "Japan (3 in 1)",
+    duration: "5D4N",
+    dates: "May 9–13, 2027",
+    city: "MNL",
+    price: 859 * USD_TO_PHP,
+    slots: 32,
+    deposit: 300 * USD_TO_PHP,
+  },
+  {
+    title: "Tokyo + Mt. Fuji + Kamakura",
+    subtitle: "Japan (Via PAL)",
+    duration: "5D4N",
+    dates: "May 13–17, 2027",
+    city: "DVO",
+    price: 1199 * USD_TO_PHP,
+    slots: 19,
+    deposit: 300 * USD_TO_PHP,
+  },
+  {
+    title: "Tokyo - Mt. Fuji - Kamakura",
+    subtitle: "Japan",
+    duration: "5D4N",
+    dates: "May 13–17, 2027",
+    city: "MNL",
+    price: 899 * USD_TO_PHP,
+    slots: 32,
+    deposit: 300 * USD_TO_PHP,
+  },
+  {
+    title: "Osaka + Kyoto + Nara",
+    subtitle: "Japan (3 in 1)",
+    duration: "5D4N",
+    dates: "May 15–19, 2027",
+    city: "MNL",
+    price: 859 * USD_TO_PHP,
+    slots: 29,
+    deposit: 300 * USD_TO_PHP,
+  },
+  {
+    title: "Osaka + Kyoto + Nara",
+    subtitle: "Japan (Via 5J)",
+    duration: "5D4N",
+    dates: "May 19–23, 2027",
+    city: "DVO",
+    price: 999 * USD_TO_PHP,
+    slots: 27,
+    deposit: 300 * USD_TO_PHP,
+  },
+  {
+    title: "Tokyo - Mt. Fuji - Kamakura",
+    subtitle: "Japan",
+    duration: "5D4N",
+    dates: "May 20–24, 2027",
+    city: "MNL",
+    price: 899 * USD_TO_PHP,
+    slots: 32,
+    deposit: 300 * USD_TO_PHP,
+  },
+  {
+    title: "Osaka + Kyoto + Nara",
+    subtitle: "Japan (3 in 1)",
+    duration: "5D4N",
+    dates: "May 22–26, 2027",
+    city: "MNL",
+    price: 859 * USD_TO_PHP,
+    slots: 28,
+    deposit: 300 * USD_TO_PHP,
+  },
+  {
+    title: "Tokyo - Mt. Fuji - Kamakura",
+    subtitle: "Japan",
+    duration: "5D4N",
+    dates: "May 26–30, 2027",
+    city: "MNL",
+    price: 899 * USD_TO_PHP,
+    slots: 32,
+    deposit: 300 * USD_TO_PHP,
+  },
+  {
+    title: "Osaka + Kyoto + Nara",
+    subtitle: "Japan (3 in 1)",
+    duration: "5D4N",
+    dates: "May 27–31, 2027",
+    city: "MNL",
+    price: 859 * USD_TO_PHP,
+    slots: 0,
+    deposit: 300 * USD_TO_PHP,
+  },
 ];
 
 const peso = (amount: number) =>
@@ -903,11 +824,9 @@ const peso = (amount: number) =>
   }).format(amount);
 
 export default function JapanToursPage() {
-
   const handleInquiry = (pkg: Package) => {
-
     const message = encodeURIComponent(
-`Hello CHINGU Travel and Tours!
+      `Hello CHINGU Travel and Tours!
 
 I would like to inquire about:
 
@@ -921,322 +840,281 @@ Package From: ${peso(pkg.price)} per person
 
 Deposit: ${peso(pkg.deposit ?? 0)}
 
-Please send me the complete package details. Thank you!`
+Please send me the complete package details and booking requirements.
+
+Thank you!`
     );
 
     window.open(
       `https://wa.me/63919388999?text=${message}`,
       "_blank"
     );
-
   };
 
-
   return (
-    <main className="min-h-screen bg-gray-50 py-12 px-5">
-
-      <div className="max-w-[1600px] mx-auto">
-
+    <main className="min-h-screen bg-white py-10 px-4 md:px-8">
+      <div className="max-w-[1800px] mx-auto">
 
         {/* HEADER */}
-
         <div className="text-center mb-12">
-
-          <p className="
-            text-red-600 
-            font-semibold 
-            uppercase 
-            tracking-[4px] 
-            text-sm
-          ">
-            CHINGU Travel and Tours
-          </p>
-
-
-          <h1 className="
-            mt-3 
-            text-4xl 
-            md:text-5xl 
-            font-bold 
-            text-gray-900
-          ">
+          <h1 className="text-4xl md:text-5xl font-bold text-gray-900">
             Japan Tour Packages
           </h1>
 
+          <p className="mt-3 text-gray-600">
+            View available departure dates, tour packages and current rates.
+          </p>
+        </div>
 
-          <p className="
-            mt-4 
-            text-gray-500
-          ">
-            Explore our Japan tour packages, departure dates and rates.
+        {/* AVAILABILITY */}
+        <section>
+          <h2 className="text-3xl md:text-4xl font-bold text-gray-900">
+            Dates & Availability
+          </h2>
+
+          <p className="mt-3 text-gray-600">
+            View available dates and check current availability for your
+            preferred Japan tour package.
           </p>
 
-        </div>
+          {/* DESKTOP TABLE */}
+          <div className="hidden md:block mt-8 overflow-x-auto">
+            <div className="min-w-[1100px]">
 
-
-
-        {/* PACKAGE GRID */}
-
-        <div className="
-          grid 
-          grid-cols-1 
-          sm:grid-cols-2 
-          md:grid-cols-3 
-          lg:grid-cols-5 
-          gap-4
-        ">
-
-
-          {packages.map((pkg, index) => (
-
-            <div
-              key={`${pkg.title}-${pkg.dates}-${index}`}
-              className="
-                bg-white
-                rounded-2xl
-                border
-                border-gray-100
-                shadow-md
-                p-4
-                hover:shadow-xl
-                hover:-translate-y-1
-                transition-all
-                duration-300
-                flex
-                flex-col
-              "
-            >
-
-
-              {/* DURATION + STATUS */}
-
-              <div className="
-                flex 
-                justify-between 
-                items-center 
-                gap-2
-              ">
-
-
-                <span className="
-                  text-xs
-                  font-bold
-                  px-3
-                  py-1.5
-                  rounded-full
-                  bg-red-50
-                  text-red-600
-                ">
-                  {pkg.duration}
-                </span>
-
-
-
-                <span className={`
-                  text-xs
-                  font-semibold
-                  px-2.5
-                  py-1.5
-                  rounded-full
-                  ${
-                    pkg.slots && pkg.slots > 0
-                    ? "bg-green-50 text-green-600"
-                    : "bg-gray-100 text-gray-500"
-                  }
-                `}>
-                  {
-                    pkg.slots && pkg.slots > 0
-                    ? `${pkg.slots} slots`
-                    : "Available"
-                  }
-                </span>
-
-
+              {/* TABLE HEADER */}
+              <div className="grid grid-cols-[1.5fr_1.1fr_0.8fr_0.7fr_0.9fr_1fr] gap-4 border-b border-gray-200 pb-4 text-sm font-semibold text-gray-700">
+                <div>Package</div>
+                <div>Starting / Ending</div>
+                <div>Duration</div>
+                <div>City</div>
+                <div>Status</div>
+                <div className="text-right">Prices From</div>
               </div>
 
+              {/* TABLE ROWS */}
+              {packages.map((pkg, index) => {
+                const available = (pkg.slots ?? 0) > 0;
 
+                return (
+                  <div
+                    key={`${pkg.title}-${pkg.dates}-${index}`}
+                    className="
+                      grid
+                      grid-cols-[1.5fr_1.1fr_0.8fr_0.7fr_0.9fr_1fr]
+                      gap-4
+                      items-center
+                      border-b
+                      border-gray-200
+                      py-5
+                    "
+                  >
+                    {/* PACKAGE */}
+                    <div>
+                      <p className="font-semibold text-gray-900">
+                        {pkg.title}
+                      </p>
 
+                      <p className="mt-1 text-xs text-gray-500">
+                        {pkg.subtitle}
+                      </p>
+                    </div>
 
-              {/* TITLE */}
+                    {/* DATES */}
+                    <div>
+                      <p className="text-sm font-semibold text-gray-800">
+                        {pkg.dates}
+                      </p>
+                    </div>
 
-              <h2 className="
-                mt-4
-                text-sm
-                font-bold
-                text-gray-900
-                min-h-[45px]
-              ">
-                {pkg.title}
-              </h2>
+                    {/* DURATION */}
+                    <div>
+                      <span className="inline-block rounded-full bg-gray-100 px-3 py-1 text-xs font-bold text-gray-700">
+                        {pkg.duration}
+                      </span>
+                    </div>
 
+                    {/* CITY */}
+                    <div>
+                      <p className="text-sm font-semibold text-gray-800">
+                        {pkg.city}
+                      </p>
+                    </div>
 
+                    {/* STATUS */}
+                    <div>
+                      {available ? (
+                        <div>
+                          <p className="font-semibold text-green-600">
+                            Available
+                          </p>
+                          <p className="text-xs text-gray-500">
+                            {pkg.slots} slots
+                          </p>
+                        </div>
+                      ) : (
+                        <p className="font-semibold text-gray-400">
+                          Sold Out
+                        </p>
+                      )}
+                    </div>
 
-              {/* TYPE */}
+                    {/* PRICE */}
+                    <div className="text-right">
+                      <p className="font-bold text-gray-900">
+                        {peso(pkg.price)}
+                      </p>
 
-              <p className="
-                mt-2
-                text-xs
-                text-gray-400
-              ">
-                {pkg.subtitle}
-              </p>
+                      <p className="text-xs text-gray-500">
+                        per person
+                      </p>
 
-
-
-
-              {/* DATE */}
-
-              <div className="mt-4">
-
-                <p className="
-                  text-[10px]
-                  uppercase
-                  text-gray-400
-                ">
-                  Departure
-                </p>
-
-
-                <p className="
-                  mt-1
-                  text-xs
-                  font-semibold
-                  text-gray-700
-                ">
-                  {pkg.dates}
-                </p>
-
-              </div>
-
-
-
-
-              {/* CITY */}
-
-              <div className="mt-3">
-
-                <p className="
-                  text-[10px]
-                  uppercase
-                  text-gray-400
-                ">
-                  Departure City
-                </p>
-
-
-                <p className="
-                  mt-1
-                  text-xs
-                  font-semibold
-                  text-gray-700
-                ">
-                  {pkg.city}
-                </p>
-
-
-              </div>
-
-
-
-
-
-              {/* PRICE */}
-
-              <div className="mt-auto pt-5">
-
-                <p className="
-                  text-[10px]
-                  uppercase
-                  text-gray-400
-                ">
-                  Package From
-                </p>
-
-
-                <p className="
-                  mt-1
-                  text-lg
-                  font-bold
-                  text-gray-900
-                ">
-                  {peso(pkg.price)}
-                </p>
-
-
-                <p className="
-                  text-[10px]
-                  text-gray-400
-                ">
-                  per person
-                </p>
-
-
-              </div>
-
-
-
-
-              {/* DEPOSIT */}
-
-              <div className="mt-3">
-
-                <p className="
-                  text-[10px]
-                  uppercase
-                  text-gray-400
-                ">
-                  Deposit
-                </p>
-
-
-                <p className="
-                  text-xs
-                  font-bold
-                  text-gray-700
-                ">
-                  {peso(pkg.deposit ?? 0)}
-                </p>
-
-
-              </div>
-
-
-
-
-              {/* BUTTON */}
-
-              <button
-                onClick={() => handleInquiry(pkg)}
-                className="
-                  mt-5
-                  w-full
-                  py-2
-                  rounded-xl
-                  text-xs
-                  font-semibold
-                  border-2
-                  border-red-600
-                  text-red-600
-                  hover:bg-red-600
-                  hover:text-white
-                  transition
-                "
-              >
-                Inquire Now →
-              </button>
-
-
+                      <button
+                        onClick={() => handleInquiry(pkg)}
+                        disabled={!available}
+                        className={`
+                          mt-2
+                          text-xs
+                          font-semibold
+                          ${
+                            available
+                              ? "text-red-600 hover:text-red-700"
+                              : "text-gray-300 cursor-not-allowed"
+                          }
+                        `}
+                      >
+                        {available ? "Inquire →" : "Unavailable"}
+                      </button>
+                    </div>
+                  </div>
+                );
+              })}
             </div>
+          </div>
 
-          ))}
+          {/* MOBILE CARDS */}
+          <div className="md:hidden mt-8 space-y-4">
+            {packages.map((pkg, index) => {
+              const available = (pkg.slots ?? 0) > 0;
 
+              return (
+                <div
+                  key={`${pkg.title}-${pkg.dates}-${index}`}
+                  className="
+                    rounded-2xl
+                    border
+                    border-gray-200
+                    bg-white
+                    p-5
+                    shadow-sm
+                  "
+                >
+                  <div className="flex items-start justify-between gap-3">
+                    <div>
+                      <h3 className="font-bold text-gray-900">
+                        {pkg.title}
+                      </h3>
 
+                      <p className="mt-1 text-xs text-gray-500">
+                        {pkg.subtitle}
+                      </p>
+                    </div>
+
+                    <span className="shrink-0 rounded-full bg-gray-100 px-3 py-1 text-xs font-bold text-gray-700">
+                      {pkg.duration}
+                    </span>
+                  </div>
+
+                  <div className="mt-5 space-y-3">
+                    <div>
+                      <p className="text-[10px] uppercase text-gray-400">
+                        Departure
+                      </p>
+
+                      <p className="mt-1 text-sm font-semibold text-gray-800">
+                        {pkg.dates}
+                      </p>
+                    </div>
+
+                    <div>
+                      <p className="text-[10px] uppercase text-gray-400">
+                        Departure City
+                      </p>
+
+                      <p className="mt-1 text-sm font-semibold text-gray-800">
+                        {pkg.city}
+                      </p>
+                    </div>
+
+                    <div>
+                      <p className="text-[10px] uppercase text-gray-400">
+                        Status
+                      </p>
+
+                      {available ? (
+                        <p className="mt-1 font-semibold text-green-600">
+                          Available — {pkg.slots} slots
+                        </p>
+                      ) : (
+                        <p className="mt-1 font-semibold text-gray-400">
+                          Sold Out
+                        </p>
+                      )}
+                    </div>
+
+                    <div>
+                      <p className="text-[10px] uppercase text-gray-400">
+                        Price From
+                      </p>
+
+                      <p className="mt-1 text-xl font-bold text-gray-900">
+                        {peso(pkg.price)}
+                      </p>
+
+                      <p className="text-xs text-gray-500">
+                        per person
+                      </p>
+                    </div>
+                  </div>
+
+                  <button
+                    onClick={() => handleInquiry(pkg)}
+                    disabled={!available}
+                    className={`
+                      mt-5
+                      w-full
+                      rounded-xl
+                      py-3
+                      text-sm
+                      font-semibold
+                      transition
+                      ${
+                        available
+                          ? "bg-red-600 text-white hover:bg-red-700"
+                          : "bg-gray-100 text-gray-400 cursor-not-allowed"
+                      }
+                    `}
+                  >
+                    {available ? "Inquire Now →" : "Sold Out"}
+                  </button>
+                </div>
+              );
+            })}
+          </div>
+        </section>
+
+        {/* NOTE */}
+        <div className="mt-12 border-t border-gray-200 pt-6 text-center">
+          <p className="text-xs text-gray-500">
+            Rates and availability are subject to change and confirmation.
+          </p>
+
+          <p className="mt-1 text-xs text-gray-400">
+            Please contact Chingu Travel and Tours for complete itinerary,
+            inclusions, exclusions and booking requirements.
+          </p>
         </div>
-
 
       </div>
-
     </main>
   );
-
 }
