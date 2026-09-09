@@ -837,10 +837,9 @@ Departure: ${pkg.dates}
 Departure City: ${pkg.city}
 
 Package From: ${peso(pkg.price)} per person
+Deposit: ${peso(pkg.deposit ?? 0)} per person
 
-Deposit: ${peso(pkg.deposit ?? 0)}
-
-Please send me the complete package details and booking requirements.
+Please send me the complete package details, inclusions, exclusions, available dates, and booking requirements.
 
 Thank you!`
     );
@@ -853,7 +852,7 @@ Thank you!`
 
   return (
     <main className="min-h-screen bg-white py-10 px-4 md:px-8">
-      <div className="max-w-[1800px] mx-auto">
+      <div className="max-w-[1600px] mx-auto">
 
         {/* HEADER */}
         <div className="text-center mb-12">
@@ -878,20 +877,33 @@ Thank you!`
           </p>
 
           {/* DESKTOP TABLE */}
-          <div className="hidden md:block mt-8 overflow-x-auto">
-            <div className="min-w-[1100px]">
+          <div className="hidden lg:block mt-8 overflow-x-auto">
+            <div className="min-w-[1150px]">
 
-               {/* TABLE HEADER */}
-             <div className="grid grid-cols-[1.4fr_1.1fr_0.7fr_0.6fr_0.8fr_0.9fr_0.8fr] gap-4 border-b border-gray-200 pb-4 text-sm font-semibold text-gray-700">
-  <div>Package</div>
-  <div>Starting / Ending</div>
-  <div>Duration</div>
-  <div>City</div>
-  <div>Status</div>
-  <div className="text-right">Prices From</div>
-  <div className="text-right">Deposit</div>
-</div>
-              {/* TABLE ROWS */}
+              {/* HEADER */}
+              <div
+                className="
+                  grid
+                  grid-cols-[2fr_1.1fr_0.7fr_0.55fr_0.8fr_0.9fr_0.8fr]
+                  gap-5
+                  border-b
+                  border-gray-200
+                  pb-4
+                  text-xs
+                  font-semibold
+                  text-gray-600
+                "
+              >
+                <div>Package</div>
+                <div>Starting / Ending</div>
+                <div>Duration</div>
+                <div>City</div>
+                <div>Status</div>
+                <div className="text-right">Price From</div>
+                <div className="text-right">Deposit</div>
+              </div>
+
+              {/* ROWS */}
               {packages.map((pkg, index) => {
                 const available = (pkg.slots ?? 0) > 0;
 
@@ -900,17 +912,18 @@ Thank you!`
                     key={`${pkg.title}-${pkg.dates}-${index}`}
                     className="
                       grid
-                      grid-cols-[1.5fr_1.1fr_0.8fr_0.7fr_0.9fr_1fr]
-                      gap-4
+                      grid-cols-[2fr_1.1fr_0.7fr_0.55fr_0.8fr_0.9fr_0.8fr]
+                      gap-5
                       items-center
                       border-b
-                      border-gray-200
+                      border-gray-100
                       py-5
                     "
                   >
+
                     {/* PACKAGE */}
-                    <div>
-                      <p className="font-semibold text-gray-900">
+                    <div className="min-w-0">
+                      <p className="text-sm font-semibold text-gray-900">
                         {pkg.title}
                       </p>
 
@@ -919,23 +932,23 @@ Thank you!`
                       </p>
                     </div>
 
-                    {/* DATES */}
+                    {/* DATE */}
                     <div>
-                      <p className="text-sm font-semibold text-gray-800">
+                      <p className="text-xs font-semibold text-gray-800">
                         {pkg.dates}
                       </p>
                     </div>
 
                     {/* DURATION */}
                     <div>
-                      <span className="inline-block rounded-full bg-gray-100 px-3 py-1 text-xs font-bold text-gray-700">
+                      <span className="inline-block rounded-full bg-gray-100 px-3 py-1 text-[10px] font-bold text-gray-700">
                         {pkg.duration}
                       </span>
                     </div>
 
                     {/* CITY */}
                     <div>
-                      <p className="text-sm font-semibold text-gray-800">
+                      <p className="text-xs font-semibold text-gray-800">
                         {pkg.city}
                       </p>
                     </div>
@@ -943,16 +956,17 @@ Thank you!`
                     {/* STATUS */}
                     <div>
                       {available ? (
-                        <div>
-                          <p className="font-semibold text-green-600">
+                        <>
+                          <p className="text-sm font-semibold text-green-600">
                             Available
                           </p>
-                          <p className="text-xs text-gray-500">
+
+                          <p className="text-[10px] text-gray-500">
                             {pkg.slots} slots
                           </p>
-                        </div>
+                        </>
                       ) : (
-                        <p className="font-semibold text-gray-400">
+                        <p className="text-sm font-semibold text-gray-400">
                           Sold Out
                         </p>
                       )}
@@ -960,39 +974,50 @@ Thank you!`
 
                     {/* PRICE */}
                     <div className="text-right">
-                      <p className="font-bold text-gray-900">
+                      <p className="text-sm font-bold text-gray-900">
                         {peso(pkg.price)}
                       </p>
 
-                      <p className="text-xs text-gray-500">
+                      <p className="text-[10px] text-gray-500">
                         per person
                       </p>
 
-                      <button
-                        onClick={() => handleInquiry(pkg)}
-                        disabled={!available}
-                        className={`
-                          mt-2
-                          text-xs
-                          font-semibold
-                          ${
-                            available
-                              ? "text-red-600 hover:text-red-700"
-                              : "text-gray-300 cursor-not-allowed"
-                          }
-                        `}
-                      >
-                        {available ? "Inquire →" : "Unavailable"}
-                      </button>
+                      {available && (
+                        <button
+                          onClick={() => handleInquiry(pkg)}
+                          className="
+                            mt-2
+                            text-[11px]
+                            font-semibold
+                            text-red-600
+                            hover:text-red-700
+                          "
+                        >
+                          Inquire →
+                        </button>
+                      )}
                     </div>
+
+                    {/* DEPOSIT */}
+                    <div className="text-right">
+                      <p className="text-sm font-bold text-gray-900">
+                        {peso(pkg.deposit ?? 0)}
+                      </p>
+
+                      <p className="text-[10px] text-gray-500">
+                        per person
+                      </p>
+                    </div>
+
                   </div>
                 );
               })}
             </div>
           </div>
 
-          {/* MOBILE CARDS */}
-          <div className="md:hidden mt-8 space-y-4">
+          {/* TABLET + MOBILE CARDS */}
+          <div className="lg:hidden mt-8 grid grid-cols-1 md:grid-cols-2 gap-4">
+
             {packages.map((pkg, index) => {
               const available = (pkg.slots ?? 0) > 0;
 
@@ -1008,9 +1033,11 @@ Thank you!`
                     shadow-sm
                   "
                 >
+
+                  {/* TOP */}
                   <div className="flex items-start justify-between gap-3">
-                    <div>
-                      <h3 className="font-bold text-gray-900">
+                    <div className="min-w-0">
+                      <h3 className="text-sm font-bold text-gray-900">
                         {pkg.title}
                       </h3>
 
@@ -1019,28 +1046,30 @@ Thank you!`
                       </p>
                     </div>
 
-                    <span className="shrink-0 rounded-full bg-gray-100 px-3 py-1 text-xs font-bold text-gray-700">
+                    <span className="shrink-0 rounded-full bg-gray-100 px-3 py-1 text-[10px] font-bold text-gray-700">
                       {pkg.duration}
                     </span>
                   </div>
 
-                  <div className="mt-5 space-y-3">
+                  {/* DETAILS */}
+                  <div className="mt-5 grid grid-cols-2 gap-4">
+
                     <div>
                       <p className="text-[10px] uppercase text-gray-400">
                         Departure
                       </p>
 
-                      <p className="mt-1 text-sm font-semibold text-gray-800">
+                      <p className="mt-1 text-xs font-semibold text-gray-800">
                         {pkg.dates}
                       </p>
                     </div>
 
                     <div>
                       <p className="text-[10px] uppercase text-gray-400">
-                        Departure City
+                        City
                       </p>
 
-                      <p className="mt-1 text-sm font-semibold text-gray-800">
+                      <p className="mt-1 text-xs font-semibold text-gray-800">
                         {pkg.city}
                       </p>
                     </div>
@@ -1051,11 +1080,11 @@ Thank you!`
                       </p>
 
                       {available ? (
-                        <p className="mt-1 font-semibold text-green-600">
+                        <p className="mt-1 text-xs font-semibold text-green-600">
                           Available — {pkg.slots} slots
                         </p>
                       ) : (
-                        <p className="mt-1 font-semibold text-gray-400">
+                        <p className="mt-1 text-xs font-semibold text-gray-400">
                           Sold Out
                         </p>
                       )}
@@ -1063,19 +1092,50 @@ Thank you!`
 
                     <div>
                       <p className="text-[10px] uppercase text-gray-400">
+                        Duration
+                      </p>
+
+                      <p className="mt-1 text-xs font-semibold text-gray-800">
+                        {pkg.duration}
+                      </p>
+                    </div>
+
+                  </div>
+
+                  {/* PRICE + DEPOSIT */}
+                  <div className="mt-5 grid grid-cols-2 gap-4 border-t border-gray-100 pt-4">
+
+                    <div>
+                      <p className="text-[10px] uppercase text-gray-400">
                         Price From
                       </p>
 
-                      <p className="mt-1 text-xl font-bold text-gray-900">
+                      <p className="mt-1 text-lg font-bold text-gray-900">
                         {peso(pkg.price)}
                       </p>
 
-                      <p className="text-xs text-gray-500">
+                      <p className="text-[10px] text-gray-500">
                         per person
                       </p>
                     </div>
+
+                    <div>
+                      <p className="text-[10px] uppercase text-gray-400">
+                        Deposit
+                      </p>
+
+                      <p className="mt-1 text-lg font-bold text-gray-900">
+                        {peso(pkg.deposit ?? 0)}
+                      </p>
+
+                      <p className="text-[10px] text-gray-500">
+                        per person
+                      </p>
+                    </div>
+
                   </div>
 
+                  {/* BUTTON */}
                   <button
                     onClick={() => handleInquiry(pkg)}
                     disabled={!available}
@@ -1084,7 +1144,7 @@ Thank you!`
                       w-full
                       rounded-xl
                       py-3
-                      text-sm
+                      text-xs
                       font-semibold
                       transition
                       ${
@@ -1096,19 +1156,21 @@ Thank you!`
                   >
                     {available ? "Inquire Now →" : "Sold Out"}
                   </button>
+
                 </div>
               );
             })}
+
           </div>
         </section>
 
-        {/* NOTE */}
+        {/* FOOTER NOTE */}
         <div className="mt-12 border-t border-gray-200 pt-6 text-center">
-          <p className="text-xs text-gray-500">
+          <p className="text-xs font-semibold text-gray-600">
             Rates and availability are subject to change and confirmation.
           </p>
 
-          <p className="mt-1 text-xs text-gray-400">
+          <p className="mt-2 text-xs text-gray-400">
             Please contact Chingu Travel and Tours for complete itinerary,
             inclusions, exclusions and booking requirements.
           </p>
