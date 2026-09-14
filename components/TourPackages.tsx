@@ -4,106 +4,26 @@ import { useState } from "react";
 import Link from "next/link";
 
 const destinations = [
-  {
-    name: "Japan",
-    flag: "🇯🇵",
-    href: "/japan-tours",
-  },
-  {
-    name: "China",
-    flag: "🇨🇳",
-    href: "/china-tours",
-  },
-  {
-    name: "Hong Kong & Macau",
-    flag: "🇭🇰",
-    href: "/hongkong-macau-uos",
-  },
-  {
-    name: "Taiwan",
-    flag: "🇹🇼",
-    href: "/taiwan-tours",
-  },
-  {
-    name: "South Korea",
-    flag: "🇰🇷",
-    href: "/korea-tours",
-  },
-  {
-    name: "Thailand",
-    flag: "🇹🇭",
-    href: "/thailand-tours",
-  },
-  {
-    name: "Vietnam",
-    flag: "🇻🇳",
-    href: "/vietnam-tours",
-  },
-  {
-    name: "Mongolia",
-    flag: "🇲🇳",
-    href: "/mongolia-tours",
-  },
-  {
-    name: "Singapore",
-    flag: "🇸🇬",
-    href: "/singapore-tours",
-  },
-  {
-    name: "Malaysia",
-    flag: "🇲🇾",
-    href: "/malaysia-tours",
-  },
-  {
-    name: "Indonesia",
-    flag: "🇮🇩",
-    href: "/indonesia-tours",
-  },
-  {
-    name: "Laos",
-    flag: "🇱🇦",
-    href: "/laos-tours",
-  },
-  {
-    name: "India",
-    flag: "🇮🇳",
-    href: "/india-tours",
-  },
-  {
-    name: "Australia",
-    flag: "🇦🇺",
-    href: "/australia-tours",
-  },
-  {
-    name: "UAE",
-    flag: "🇦🇪",
-    href: "/uae-tours",
-  },
-  {
-    name: "Europe",
-    flag: "🇪🇺",
-    href: "/europe-tours",
-  },
-  {
-    name: "Central Asia",
-    flag: "🌏",
-    href: "/central-asia-tours",
-  },
-  {
-    name: "Russia",
-    flag: "🇷🇺",
-    href: "/russia-tours",
-  },
-  {
-    name: "Greece",
-    flag: "🇬🇷",
-    href: "/greece-tours",
-  },
-  {
-    name: "Turkey",
-    flag: "🇹🇷",
-    href: "/turkey-tours",
-  },
+  { name: "Japan", flag: "🇯🇵", href: "/japan-tours" },
+  { name: "China", flag: "🇨🇳", href: "/china-tours" },
+  { name: "Hong Kong & Macau", flag: "🇭🇰", href: "/hongkong-macau-uos" },
+  { name: "Taiwan", flag: "🇹🇼", href: "/taiwan-tours" },
+  { name: "South Korea", flag: "🇰🇷", href: "/korea-tours" },
+  { name: "Thailand", flag: "🇹🇭", href: "/thailand-tours" },
+  { name: "Vietnam", flag: "🇻🇳", href: "/vietnam-tours" },
+  { name: "Mongolia", flag: "🇲🇳", href: "/mongolia-tours" },
+  { name: "Singapore", flag: "🇸🇬", href: "/singapore-tours" },
+  { name: "Malaysia", flag: "🇲🇾", href: "/malaysia-tours" },
+  { name: "Indonesia", flag: "🇮🇩", href: "/indonesia-tours" },
+  { name: "Laos", flag: "🇱🇦", href: "/laos-tours" },
+  { name: "India", flag: "🇮🇳", href: "/india-tours" },
+  { name: "Australia", flag: "🇦🇺", href: "/australia-tours" },
+  { name: "UAE", flag: "🇦🇪", href: "/uae-tours" },
+  { name: "Europe", flag: "🇪🇺", href: "/europe-tours" },
+  { name: "Central Asia", flag: "🌏", href: "/central-asia-tours" },
+  { name: "Russia", flag: "🇷🇺", href: "/russia-tours" },
+  { name: "Greece", flag: "🇬🇷", href: "/greece-tours" },
+  { name: "Turkey", flag: "🇹🇷", href: "/turkey-tours" },
 ];
 
 export default function TourPackageSearch() {
@@ -111,7 +31,6 @@ export default function TourPackageSearch() {
   const [from, setFrom] = useState("Manila");
   const [region, setRegion] = useState("Asia");
   const [country, setCountry] = useState("");
-  const [tourDate, setTourDate] = useState("");
   const [searched, setSearched] = useState(false);
 
   const filteredDestinations =
@@ -129,7 +48,6 @@ export default function TourPackageSearch() {
 
   const handleClear = () => {
     setCountry("");
-    setTourDate("");
     setSearched(false);
   };
 
@@ -151,11 +69,11 @@ export default function TourPackageSearch() {
             </h2>
 
             <p className="mt-2 text-sm text-gray-500">
-              Search available tour packages by destination and travel date.
+              Search available tour packages by destination.
             </p>
           </div>
 
-          {/* TOUR TYPE TABS */}
+          {/* TOUR TYPE */}
           <div className="px-6 md:px-10">
             <div className="flex gap-2 border-b border-gray-200">
 
@@ -183,7 +101,7 @@ export default function TourPackageSearch() {
           {/* SEARCH FIELDS */}
           <div className="p-6 md:p-10">
 
-            <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-4">
+            <div className="grid grid-cols-1 md:grid-cols-3 gap-4">
 
               {/* FROM */}
               <div>
@@ -228,7 +146,6 @@ export default function TourPackageSearch() {
                 </label>
 
                 <div className="relative">
-
                   <span className="absolute left-4 top-1/2 -translate-y-1/2 text-gray-400">
                     🔍
                   </span>
@@ -248,45 +165,27 @@ export default function TourPackageSearch() {
                     placeholder="Search country"
                     className="w-full bg-gray-50 border border-gray-200 rounded-xl pl-11 pr-4 py-4 text-sm font-medium text-gray-800 outline-none focus:border-red-500 focus:ring-2 focus:ring-red-100"
                   />
-
                 </div>
-              </div>
-
-              {/* TOUR DATE */}
-              <div>
-                <label className="block text-xs font-semibold text-gray-500 uppercase tracking-wide mb-2">
-                  Tour Date
-                </label>
-
-                <input
-                  type="date"
-                  value={tourDate}
-                  onChange={(e) => {
-                    setTourDate(e.target.value);
-                    setSearched(false);
-                  }}
-                  className="w-full bg-gray-50 border border-gray-200 rounded-xl px-4 py-4 text-sm font-medium text-gray-800 outline-none focus:border-red-500 focus:ring-2 focus:ring-red-100"
-                />
               </div>
 
             </div>
 
-            {/* BUTTONS */}
-            <div className="mt-6 flex flex-col sm:flex-row justify-center gap-3">
+            {/* SEARCH BUTTON */}
+            <div className="mt-6 flex justify-center gap-3">
 
               <button
                 type="button"
                 onClick={handleSearch}
-                className="w-full sm:w-auto min-w-[260px] bg-red-600 hover:bg-red-700 text-white font-bold px-8 py-4 rounded-xl shadow-md hover:shadow-lg transition-all"
+                className="w-full md:w-auto min-w-[280px] bg-red-600 hover:bg-red-700 text-white font-bold px-8 py-4 rounded-xl shadow-md hover:shadow-lg transition-all"
               >
                 🔍 INTERNATIONAL SEARCH
               </button>
 
-              {(country || tourDate || searched) && (
+              {country && (
                 <button
                   type="button"
                   onClick={handleClear}
-                  className="w-full sm:w-auto px-8 py-4 rounded-xl border border-gray-200 bg-white text-gray-600 font-semibold hover:bg-gray-50 transition"
+                  className="px-6 py-4 rounded-xl border border-gray-200 bg-white text-gray-600 font-semibold hover:bg-gray-50 transition"
                 >
                   Clear
                 </button>
@@ -297,7 +196,7 @@ export default function TourPackageSearch() {
           </div>
         </div>
 
-        {/* SEARCH RESULTS */}
+        {/* RESULTS */}
         {searched && (
           <div className="mt-8">
 
@@ -325,7 +224,6 @@ export default function TourPackageSearch() {
               <div>
 
                 <div className="mb-5">
-
                   <p className="text-xs uppercase tracking-widest text-red-600 font-semibold">
                     Search Results
                   </p>
@@ -348,7 +246,6 @@ export default function TourPackageSearch() {
                     </p>
 
                   </div>
-
                 </div>
 
                 <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-4">
@@ -374,12 +271,6 @@ export default function TourPackageSearch() {
                           <p className="text-sm text-gray-500 mt-1">
                             {tourType} packages
                           </p>
-
-                          {tourDate && (
-                            <p className="text-xs text-gray-400 mt-1">
-                              Date: {tourDate}
-                            </p>
-                          )}
 
                           <span className="inline-block mt-3 text-sm font-semibold text-red-600">
                             View Packages →
