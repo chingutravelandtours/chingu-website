@@ -23,7 +23,6 @@ const packages: Package[] = [
   price: 834 * USD_TO_PHP,
   slots: 1,
   deposit: 300 * USD_TO_PHP,
-  promo: "Less $100",
 },
   {
     title: "Discover Osaka + Kyoto + Nara",
