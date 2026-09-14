@@ -22,7 +22,6 @@ const packages: Package[] = [
     city: "MNL",
     price: 834 * USD_TO_PHP,
     slots: 1,
-    airline: Cebu pacific,
     deposit: 300 * USD_TO_PHP,
   },
   {
@@ -33,7 +32,6 @@ const packages: Package[] = [
     city: "MNL",
     price: 734 * USD_TO_PHP,
     slots: 1,
-    airline: Cebu pacific,
     deposit: 300 * USD_TO_PHP,
   },
   {
