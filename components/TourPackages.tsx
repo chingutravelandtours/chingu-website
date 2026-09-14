@@ -112,14 +112,25 @@ export default function TourPackageSearch() {
   const [region, setRegion] = useState("Asia");
   const [country, setCountry] = useState("");
   const [tourDate, setTourDate] = useState("");
-  const [showResults, setShowResults] = useState(false);
+  const [searched, setSearched] = useState(false);
 
-  const filteredDestinations = destinations.filter((destination) =>
-    destination.name.toLowerCase().includes(country.toLowerCase())
-  );
+  const filteredDestinations =
+    country.trim() === ""
+      ? []
+      : destinations.filter((destination) =>
+          destination.name
+            .toLowerCase()
+            .includes(country.trim().toLowerCase())
+        );
 
   const handleSearch = () => {
-    setShowResults(true);
+    setSearched(true);
+  };
+
+  const handleClear = () => {
+    setCountry("");
+    setTourDate("");
+    setSearched(false);
   };
 
   return (
@@ -144,14 +155,18 @@ export default function TourPackageSearch() {
             </p>
           </div>
 
-          {/* TOUR TYPE */}
+          {/* TOUR TYPE TABS */}
           <div className="px-6 md:px-10">
             <div className="flex gap-2 border-b border-gray-200">
 
               {["GIT", "FIT Land", "Tour"].map((type) => (
                 <button
                   key={type}
-                  onClick={() => setTourType(type)}
+                  type="button"
+                  onClick={() => {
+                    setTourType(type);
+                    setSearched(false);
+                  }}
                   className={`px-5 py-3 text-sm font-semibold transition ${
                     tourType === type
                       ? "text-red-600 border-b-2 border-red-600"
@@ -190,7 +205,7 @@ export default function TourPackageSearch() {
               {/* TO / REGION */}
               <div>
                 <label className="block text-xs font-semibold text-gray-500 uppercase tracking-wide mb-2">
-                  To
+                  To / Region
                 </label>
 
                 <select
@@ -213,6 +228,7 @@ export default function TourPackageSearch() {
                 </label>
 
                 <div className="relative">
+
                   <span className="absolute left-4 top-1/2 -translate-y-1/2 text-gray-400">
                     🔍
                   </span>
@@ -222,11 +238,17 @@ export default function TourPackageSearch() {
                     value={country}
                     onChange={(e) => {
                       setCountry(e.target.value);
-                      setShowResults(false);
+                      setSearched(false);
+                    }}
+                    onKeyDown={(e) => {
+                      if (e.key === "Enter") {
+                        handleSearch();
+                      }
                     }}
                     placeholder="Search country"
                     className="w-full bg-gray-50 border border-gray-200 rounded-xl pl-11 pr-4 py-4 text-sm font-medium text-gray-800 outline-none focus:border-red-500 focus:ring-2 focus:ring-red-100"
                   />
+
                 </div>
               </div>
 
@@ -239,92 +261,165 @@ export default function TourPackageSearch() {
                 <input
                   type="date"
                   value={tourDate}
-                  onChange={(e) => setTourDate(e.target.value)}
+                  onChange={(e) => {
+                    setTourDate(e.target.value);
+                    setSearched(false);
+                  }}
                   className="w-full bg-gray-50 border border-gray-200 rounded-xl px-4 py-4 text-sm font-medium text-gray-800 outline-none focus:border-red-500 focus:ring-2 focus:ring-red-100"
                 />
               </div>
 
             </div>
 
-            {/* SEARCH BUTTON */}
-            <div className="mt-6 flex justify-center">
+            {/* BUTTONS */}
+            <div className="mt-6 flex flex-col sm:flex-row justify-center gap-3">
+
               <button
+                type="button"
                 onClick={handleSearch}
-                className="w-full md:w-auto min-w-[260px] bg-red-600 hover:bg-red-700 text-white font-bold px-8 py-4 rounded-xl shadow-md hover:shadow-lg transition-all"
+                className="w-full sm:w-auto min-w-[260px] bg-red-600 hover:bg-red-700 text-white font-bold px-8 py-4 rounded-xl shadow-md hover:shadow-lg transition-all"
               >
                 🔍 INTERNATIONAL SEARCH
               </button>
+
+              {(country || tourDate || searched) && (
+                <button
+                  type="button"
+                  onClick={handleClear}
+                  className="w-full sm:w-auto px-8 py-4 rounded-xl border border-gray-200 bg-white text-gray-600 font-semibold hover:bg-gray-50 transition"
+                >
+                  Clear
+                </button>
+              )}
+
             </div>
 
           </div>
         </div>
 
-        {/* RESULTS */}
-        {showResults && (
+        {/* SEARCH RESULTS */}
+        {searched && (
           <div className="mt-8">
 
-            <div className="flex items-center justify-between mb-5">
-              <div>
-                <p className="text-xs uppercase tracking-widest text-red-600 font-semibold">
-                  Search Results
-                </p>
-
-                <h3 className="text-xl font-bold text-gray-900 mt-1">
-                  Available Destinations
-                </h3>
-              </div>
-
-              <span className="text-sm text-gray-500">
-                {filteredDestinations.length} result
-                {filteredDestinations.length !== 1 ? "s" : ""}
-              </span>
-            </div>
-
-            {filteredDestinations.length > 0 ? (
-              <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-4">
-
-                {filteredDestinations.map((destination) => (
-                  <Link
-                    key={destination.name}
-                    href={destination.href}
-                    className="group bg-white border border-gray-200 rounded-2xl p-5 hover:border-red-300 hover:shadow-lg transition-all"
-                  >
-                    <div className="flex items-center gap-4">
-
-                      <div className="text-4xl">
-                        {destination.flag}
-                      </div>
-
-                      <div className="flex-1">
-                        <h4 className="font-bold text-gray-900 group-hover:text-red-600 transition">
-                          {destination.name}
-                        </h4>
-
-                        <p className="text-sm text-gray-500 mt-1">
-                          {tourType} packages
-                        </p>
-
-                        <span className="inline-block mt-3 text-sm font-semibold text-red-600">
-                          View Packages →
-                        </span>
-                      </div>
-
-                    </div>
-                  </Link>
-                ))}
-
-              </div>
-            ) : (
+            {/* NO COUNTRY */}
+            {country.trim() === "" ? (
               <div className="bg-white border border-gray-200 rounded-2xl p-10 text-center">
-                <div className="text-4xl mb-3">🔍</div>
 
-                <h4 className="font-bold text-gray-900">
-                  No destination found
-                </h4>
+                <div className="text-4xl mb-4">
+                  🔍
+                </div>
 
-                <p className="text-sm text-gray-500 mt-2">
-                  Try another country or destination.
+                <h3 className="text-lg font-bold text-gray-900">
+                  Search for a destination
+                </h3>
+
+                <p className="mt-2 text-sm text-gray-500">
+                  Please enter a country or destination above.
                 </p>
+
+              </div>
+
+            ) : filteredDestinations.length > 0 ? (
+
+              /* RESULTS FOUND */
+              <div>
+
+                <div className="mb-5">
+
+                  <p className="text-xs uppercase tracking-widest text-red-600 font-semibold">
+                    Search Results
+                  </p>
+
+                  <div className="flex flex-col sm:flex-row sm:items-end sm:justify-between gap-2">
+
+                    <div>
+                      <h3 className="text-xl font-bold text-gray-900 mt-1">
+                        Available Destinations
+                      </h3>
+
+                      <p className="text-sm text-gray-500 mt-1">
+                        Results for "{country}"
+                      </p>
+                    </div>
+
+                    <p className="text-sm text-gray-500">
+                      {filteredDestinations.length} result
+                      {filteredDestinations.length !== 1 ? "s" : ""}
+                    </p>
+
+                  </div>
+
+                </div>
+
+                <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-4">
+
+                  {filteredDestinations.map((destination) => (
+                    <Link
+                      key={destination.name}
+                      href={destination.href}
+                      className="group bg-white border border-gray-200 rounded-2xl p-5 hover:border-red-300 hover:shadow-lg transition-all"
+                    >
+                      <div className="flex items-center gap-4">
+
+                        <div className="text-4xl">
+                          {destination.flag}
+                        </div>
+
+                        <div className="flex-1">
+
+                          <h4 className="font-bold text-gray-900 group-hover:text-red-600 transition">
+                            {destination.name}
+                          </h4>
+
+                          <p className="text-sm text-gray-500 mt-1">
+                            {tourType} packages
+                          </p>
+
+                          {tourDate && (
+                            <p className="text-xs text-gray-400 mt-1">
+                              Date: {tourDate}
+                            </p>
+                          )}
+
+                          <span className="inline-block mt-3 text-sm font-semibold text-red-600">
+                            View Packages →
+                          </span>
+
+                        </div>
+
+                      </div>
+                    </Link>
+                  ))}
+
+                </div>
+
+              </div>
+
+            ) : (
+
+              /* NO RESULTS */
+              <div className="bg-white border border-gray-200 rounded-2xl p-10 text-center">
+
+                <div className="text-4xl mb-4">
+                  🔍
+                </div>
+
+                <h3 className="text-lg font-bold text-gray-900">
+                  No destination found
+                </h3>
+
+                <p className="mt-2 text-sm text-gray-500">
+                  We couldn't find a tour package matching "{country}".
+                </p>
+
+                <button
+                  type="button"
+                  onClick={handleClear}
+                  className="mt-5 bg-red-600 hover:bg-red-700 text-white px-6 py-3 rounded-xl text-sm font-semibold transition"
+                >
+                  Search Again
+                </button>
+
               </div>
             )}
 
