@@ -117,6 +117,7 @@ export default function TourPackageSearch() {
                   <option value="Manila">Manila</option>
                   <option value="Clark">Clark</option>
                   <option value="Cebu">Cebu</option>
+                  <option value="Davao">Davao</option>
                 </select>
               </div>
 
