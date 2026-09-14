@@ -1,264 +1,335 @@
 "use client";
 
+import { useState } from "react";
 import Link from "next/link";
 
 const destinations = [
   {
-    title: "Japan",
-    subtitle: "Japan Tour Packages",
-    description:
-      "Explore our Japan tour packages, departure dates, prices and available slots.",
-    icon: "🇯🇵",
+    name: "Japan",
+    flag: "🇯🇵",
     href: "/japan-tours",
   },
   {
-    title: "China",
-    subtitle: "China Tour Packages",
-    description:
-      "Explore our available China tour packages, destinations, dates and rates.",
-    icon: "🇨🇳",
+    name: "China",
+    flag: "🇨🇳",
     href: "/china-tours",
   },
   {
-    title: "Hong Kong & Macau",
-    subtitle: "Hong Kong & Macau Packages",
-    description:
-      "Explore our available Hong Kong and Macau tour packages.",
-    icon: "🇭🇰",
+    name: "Hong Kong & Macau",
+    flag: "🇭🇰",
     href: "/hongkong-macau-uos",
   },
   {
-  title: "Taiwan",
-  subtitle: "Taiwan Packages",
-  description: "Explore our available Taiwan tour packages.",
-  icon: "🇹🇼",
-  href: "/taiwan-tours",
-},
-{
-  title: "South Korea",
-  subtitle: "Korea Packages",
-  description: "Explore our available South Korea tour packages.",
-  icon: "🇰🇷",
-  href: "/korea-tours",
-},
-{
-  title: "Thailand",
-  subtitle: "Thailand Packages",
-  description: "Explore our available Thailand tour packages.",
-  icon: "🇹🇭",
-  href: "/thailand-tours",
-},
-{
-  title: "Vietnam",
-  subtitle: "Vietnam Packages",
-  description: "Explore our available Vietnam tour packages.",
-  icon: "🇻🇳",
-  href: "/vietnam-tours",
-},
-{
-  title: "Mongolia",
-  subtitle: "Mongolia Packages",
-  description: "Explore our available Mongolia tour packages.",
-  icon: "🇲🇳",
-  href: "/mongolia-tours",
-},
-{
-  title: "Singapore",
-  subtitle: "Singapore Packages",
-  description: "Explore our available Singapore tour packages.",
-  icon: "🇸🇬",
-  href: "/singapore-tours",
-},
-{
-  title: "Malaysia",
-  subtitle: "Malaysia Packages",
-  description: "Explore our available Malaysia tour packages.",
-  icon: "🇲🇾",
-  href: "/malaysia-tours",
-},
-{
-  title: "Indonesia",
-  subtitle: "Indonesia Packages",
-  description: "Explore our available Indonesia tour packages.",
-  icon: "🇮🇩",
-  href: "/indonesia-tours",
-},
-{
-  title: "Laos",
-  subtitle: "Laos Packages",
-  description: "Explore our available Laos tour packages.",
-  icon: "🇱🇦",
-  href: "/laos-tours",
-},
-{
-  title: "India",
-  subtitle: "India Packages",
-  description: "Explore our available India tour packages.",
-  icon: "🇮🇳",
-  href: "/india-tours",
-},
+    name: "Taiwan",
+    flag: "🇹🇼",
+    href: "/taiwan-tours",
+  },
   {
-  title: "Australia",
-  subtitle: "Australia Packages",
-  description: "Explore our available Australia tour packages.",
-  icon: "🇦🇺",
-  href: "/australia-tours",
-},
-{
-  title: "UAE",
-  subtitle: "UAE Packages",
-  description: "Explore our available UAE tour packages.",
-  icon: "🇦🇪",
-  href: "/uae-tours",
-},
-{
-  title: "Europe",
-  subtitle: "Europe Packages",
-  description: "Explore our available Europe tour packages.",
-  icon: "🇪🇺",
-  href: "/europe-tours",
-},
-{
-  title: "Central Asia",
-  subtitle: "Central Asia Packages",
-  description: "Explore our available Central Asia tour packages.",
-  icon: "🌏",
-  href: "/central-asia-tours",
-},
-{
-  title: "Russia",
-  subtitle: "Russia Packages",
-  description: "Explore our available Russia tour packages.",
-  icon: "🇷🇺",
-  href: "/russia-tours",
-},
-{
-  title: "Laos",
-  subtitle: "Laos Packages",
-  description: "Explore our available Laos tour packages.",
-  icon: "🇱🇦",
-  href: "/laos-tours",
-},
-{
-  title: "India",
-  subtitle: "India Packages",
-  description: "Explore our available India tour packages.",
-  icon: "🇮🇳",
-  href: "/india-tours",
-},
-{
-  title: "Greece",
-  subtitle: "Greece Packages",
-  description: "Explore our available Greece tour packages.",
-  icon: "🇬🇷",
-  href: "/greece-tours",
-},
-{
-  title: "Turkey",
-  subtitle: "Turkey Packages",
-  description: "Explore our available Turkey tour packages.",
-  icon: "🇹🇷",
-  href: "/turkey-tours",
-},
-{
-  title: "Filchi",
-  subtitle: "Filchi Packages",
-  description: "Explore our available Filchi tour packages.",
-  icon: "🌏",
-  href: "/filchi-tours",
-},
-{
-  title: "Adora Mediterranea Cruise",
-  subtitle: "Cruise Packages",
-  description: "Explore our available Adora Mediterranea Cruise packages.",
-  icon: "🚢",
-  href: "/adora-cruise",
-},
-{
-  title: "Agent Fam Tour",
-  subtitle: "Fam Tour Packages",
-  description: "Explore our available Agent Fam Tour packages.",
-  icon: "✈️",
-  href: "/fam-tour",
-},
-{
-  title: "Fly + Cruise",
-  subtitle: "Fly + Cruise Packages",
-  description: "Explore our available Fly + Cruise packages.",
-  icon: "🛳️",
-  href: "/fly-cruise",
-},
-{
-  title: "No Shopping Packages",
-  subtitle: "No Shopping Tour Packages",
-  description: "Explore our available No Shopping tour packages.",
-  icon: "🌍",
-  href: "/no-shopping-tours",
-},
+    name: "South Korea",
+    flag: "🇰🇷",
+    href: "/korea-tours",
+  },
+  {
+    name: "Thailand",
+    flag: "🇹🇭",
+    href: "/thailand-tours",
+  },
+  {
+    name: "Vietnam",
+    flag: "🇻🇳",
+    href: "/vietnam-tours",
+  },
+  {
+    name: "Mongolia",
+    flag: "🇲🇳",
+    href: "/mongolia-tours",
+  },
+  {
+    name: "Singapore",
+    flag: "🇸🇬",
+    href: "/singapore-tours",
+  },
+  {
+    name: "Malaysia",
+    flag: "🇲🇾",
+    href: "/malaysia-tours",
+  },
+  {
+    name: "Indonesia",
+    flag: "🇮🇩",
+    href: "/indonesia-tours",
+  },
+  {
+    name: "Laos",
+    flag: "🇱🇦",
+    href: "/laos-tours",
+  },
+  {
+    name: "India",
+    flag: "🇮🇳",
+    href: "/india-tours",
+  },
+  {
+    name: "Australia",
+    flag: "🇦🇺",
+    href: "/australia-tours",
+  },
+  {
+    name: "UAE",
+    flag: "🇦🇪",
+    href: "/uae-tours",
+  },
+  {
+    name: "Europe",
+    flag: "🇪🇺",
+    href: "/europe-tours",
+  },
+  {
+    name: "Central Asia",
+    flag: "🌏",
+    href: "/central-asia-tours",
+  },
+  {
+    name: "Russia",
+    flag: "🇷🇺",
+    href: "/russia-tours",
+  },
+  {
+    name: "Greece",
+    flag: "🇬🇷",
+    href: "/greece-tours",
+  },
+  {
+    name: "Turkey",
+    flag: "🇹🇷",
+    href: "/turkey-tours",
+  },
 ];
 
-export default function TourPackages() {
+export default function TourPackageSearch() {
+  const [tourType, setTourType] = useState("GIT");
+  const [from, setFrom] = useState("Manila");
+  const [region, setRegion] = useState("Asia");
+  const [country, setCountry] = useState("");
+  const [tourDate, setTourDate] = useState("");
+  const [showResults, setShowResults] = useState(false);
+
+  const filteredDestinations = destinations.filter((destination) =>
+    destination.name.toLowerCase().includes(country.toLowerCase())
+  );
+
+  const handleSearch = () => {
+    setShowResults(true);
+  };
+
   return (
-    <section className="bg-gray-50 py-16 px-6">
-      <div className="max-w-7xl mx-auto">
+    <section className="bg-gray-50 py-12 px-4 md:px-6">
+      <div className="max-w-6xl mx-auto">
 
-        {/* SECTION HEADER */}
-        <div className="text-center mb-10">
-          <p className="text-red-600 font-semibold uppercase tracking-widest text-sm">
-            Explore With Us
-          </p>
+        {/* SEARCH PANEL */}
+        <div className="bg-white rounded-3xl shadow-lg border border-gray-100 overflow-hidden">
 
-          <h2 className="mt-2 text-3xl md:text-4xl font-bold text-gray-900">
-            Featured Tour Packages
-          </h2>
+          {/* HEADER */}
+          <div className="px-6 md:px-10 pt-8 pb-5">
+            <p className="text-red-600 text-sm font-semibold uppercase tracking-widest">
+              Chingu Travel & Tours
+            </p>
 
-          <p className="mt-3 max-w-2xl mx-auto text-gray-500">
-            Discover our available tour destinations and packages for your
-            next adventure.
-          </p>
+            <h2 className="mt-2 text-2xl md:text-3xl font-bold text-gray-900">
+              International Tour
+            </h2>
+
+            <p className="mt-2 text-sm text-gray-500">
+              Search available tour packages by destination and travel date.
+            </p>
+          </div>
+
+          {/* TOUR TYPE */}
+          <div className="px-6 md:px-10">
+            <div className="flex gap-2 border-b border-gray-200">
+
+              {["GIT", "FIT Land", "Tour"].map((type) => (
+                <button
+                  key={type}
+                  onClick={() => setTourType(type)}
+                  className={`px-5 py-3 text-sm font-semibold transition ${
+                    tourType === type
+                      ? "text-red-600 border-b-2 border-red-600"
+                      : "text-gray-500 hover:text-gray-800"
+                  }`}
+                >
+                  {type}
+                </button>
+              ))}
+
+            </div>
+          </div>
+
+          {/* SEARCH FIELDS */}
+          <div className="p-6 md:p-10">
+
+            <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-4">
+
+              {/* FROM */}
+              <div>
+                <label className="block text-xs font-semibold text-gray-500 uppercase tracking-wide mb-2">
+                  From
+                </label>
+
+                <select
+                  value={from}
+                  onChange={(e) => setFrom(e.target.value)}
+                  className="w-full bg-gray-50 border border-gray-200 rounded-xl px-4 py-4 text-sm font-medium text-gray-800 outline-none focus:border-red-500 focus:ring-2 focus:ring-red-100"
+                >
+                  <option value="Manila">Manila</option>
+                  <option value="Clark">Clark</option>
+                  <option value="Cebu">Cebu</option>
+                </select>
+              </div>
+
+              {/* TO / REGION */}
+              <div>
+                <label className="block text-xs font-semibold text-gray-500 uppercase tracking-wide mb-2">
+                  To
+                </label>
+
+                <select
+                  value={region}
+                  onChange={(e) => setRegion(e.target.value)}
+                  className="w-full bg-gray-50 border border-gray-200 rounded-xl px-4 py-4 text-sm font-medium text-gray-800 outline-none focus:border-red-500 focus:ring-2 focus:ring-red-100"
+                >
+                  <option value="Asia">Asia</option>
+                  <option value="Europe">Europe</option>
+                  <option value="Middle East">Middle East</option>
+                  <option value="Australia">Australia</option>
+                  <option value="Worldwide">Worldwide</option>
+                </select>
+              </div>
+
+              {/* COUNTRY */}
+              <div>
+                <label className="block text-xs font-semibold text-gray-500 uppercase tracking-wide mb-2">
+                  Country
+                </label>
+
+                <div className="relative">
+                  <span className="absolute left-4 top-1/2 -translate-y-1/2 text-gray-400">
+                    🔍
+                  </span>
+
+                  <input
+                    type="text"
+                    value={country}
+                    onChange={(e) => {
+                      setCountry(e.target.value);
+                      setShowResults(false);
+                    }}
+                    placeholder="Search country"
+                    className="w-full bg-gray-50 border border-gray-200 rounded-xl pl-11 pr-4 py-4 text-sm font-medium text-gray-800 outline-none focus:border-red-500 focus:ring-2 focus:ring-red-100"
+                  />
+                </div>
+              </div>
+
+              {/* TOUR DATE */}
+              <div>
+                <label className="block text-xs font-semibold text-gray-500 uppercase tracking-wide mb-2">
+                  Tour Date
+                </label>
+
+                <input
+                  type="date"
+                  value={tourDate}
+                  onChange={(e) => setTourDate(e.target.value)}
+                  className="w-full bg-gray-50 border border-gray-200 rounded-xl px-4 py-4 text-sm font-medium text-gray-800 outline-none focus:border-red-500 focus:ring-2 focus:ring-red-100"
+                />
+              </div>
+
+            </div>
+
+            {/* SEARCH BUTTON */}
+            <div className="mt-6 flex justify-center">
+              <button
+                onClick={handleSearch}
+                className="w-full md:w-auto min-w-[260px] bg-red-600 hover:bg-red-700 text-white font-bold px-8 py-4 rounded-xl shadow-md hover:shadow-lg transition-all"
+              >
+                🔍 INTERNATIONAL SEARCH
+              </button>
+            </div>
+
+          </div>
         </div>
 
-        {/* DESTINATION CARDS */}
-        <div className="grid grid-cols-1 md:grid-cols-3 gap-6 max-w-6xl mx-auto">
-          {destinations.map((destination) => (
-            <Link
-              key={destination.title}
-              href={destination.href}
-              className="group"
-            >
-              <div className="bg-white border border-gray-100 rounded-2xl p-6 shadow-md hover:shadow-xl hover:-translate-y-1 transition-all duration-300 h-full flex flex-col">
+        {/* RESULTS */}
+        {showResults && (
+          <div className="mt-8">
 
-                {/* ICON */}
-                <div className="text-5xl mb-5">
-                  {destination.icon}
-                </div>
+            <div className="flex items-center justify-between mb-5">
+              <div>
+                <p className="text-xs uppercase tracking-widest text-red-600 font-semibold">
+                  Search Results
+                </p>
 
-                {/* TITLE */}
-                <h3 className="text-2xl font-bold text-gray-900 group-hover:text-red-600 transition">
-                  {destination.title}
+                <h3 className="text-xl font-bold text-gray-900 mt-1">
+                  Available Destinations
                 </h3>
+              </div>
 
-                {/* SUBTITLE */}
-                <p className="mt-2 text-sm font-semibold text-red-600">
-                  {destination.subtitle}
-                </p>
+              <span className="text-sm text-gray-500">
+                {filteredDestinations.length} result
+                {filteredDestinations.length !== 1 ? "s" : ""}
+              </span>
+            </div>
 
-                {/* DESCRIPTION */}
-                <p className="mt-3 text-sm text-gray-500 leading-relaxed flex-grow">
-                  {destination.description}
-                </p>
+            {filteredDestinations.length > 0 ? (
+              <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-4">
 
-                {/* BUTTON */}
-                <div className="mt-6">
-                  <span className="block w-full text-center bg-red-600 text-white py-3 rounded-xl text-sm font-semibold group-hover:bg-red-700 transition">
-                    View Tour Packages →
-                  </span>
-                </div>
+                {filteredDestinations.map((destination) => (
+                  <Link
+                    key={destination.name}
+                    href={destination.href}
+                    className="group bg-white border border-gray-200 rounded-2xl p-5 hover:border-red-300 hover:shadow-lg transition-all"
+                  >
+                    <div className="flex items-center gap-4">
+
+                      <div className="text-4xl">
+                        {destination.flag}
+                      </div>
+
+                      <div className="flex-1">
+                        <h4 className="font-bold text-gray-900 group-hover:text-red-600 transition">
+                          {destination.name}
+                        </h4>
+
+                        <p className="text-sm text-gray-500 mt-1">
+                          {tourType} packages
+                        </p>
+
+                        <span className="inline-block mt-3 text-sm font-semibold text-red-600">
+                          View Packages →
+                        </span>
+                      </div>
+
+                    </div>
+                  </Link>
+                ))}
 
               </div>
-            </Link>
-          ))}
-        </div>
+            ) : (
+              <div className="bg-white border border-gray-200 rounded-2xl p-10 text-center">
+                <div className="text-4xl mb-3">🔍</div>
+
+                <h4 className="font-bold text-gray-900">
+                  No destination found
+                </h4>
+
+                <p className="text-sm text-gray-500 mt-2">
+                  Try another country or destination.
+                </p>
+              </div>
+            )}
+
+          </div>
+        )}
 
       </div>
     </section>
