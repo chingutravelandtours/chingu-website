@@ -1,13 +1,5 @@
-import Navbar from "../components/Navbar";
-import Hero from "../components/Hero";
-import TourPackages from "../components/TourPackages";
+import TravelHome from "../components/TravelHome";
 
 export default function Home() {
-  return (
-    <>
-      <Navbar />
-      <Hero />
-      <TourPackages />
-    </>
-  );
+  return <TravelHome />;
 }
