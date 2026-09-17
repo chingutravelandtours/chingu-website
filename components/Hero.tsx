@@ -30,18 +30,6 @@ export default function Hero() {
           px-6
         "
       >
-
-
-        <p
-          className="
-            text-white
-            font-semibold
-            text-sm
-            tracking-[2px]
-            uppercase
-          "
-        >
-          WELCOME TO CHINGU TRAVEL AND TOURS
         </p>
 
 
