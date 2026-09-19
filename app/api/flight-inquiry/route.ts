@@ -27,7 +27,6 @@ export async function POST(request: Request) {
     await resend.emails.send({
       from: "CHINGU Travel <onboarding@resend.dev>",
       
-      // PALITAN ITO NG EMAIL MO
       to: "chingutravelandtours@gmail.com",
 
       subject: "New Flight Booking Inquiry - CHINGU Travel",
