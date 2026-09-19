@@ -25,18 +25,18 @@ export async function POST(request: Request) {
 
 
     await resend.emails.send({
-      from: "CHINGU Travel <onboarding@resend.dev>",
-      to: "chingutravelandtours@gmail.com",
+  from: "CHINGU Travel <onboarding@resend.dev>",
+  to: "chingutravelandtours@gmail.com",
 
-      subject: "New Flight Booking Inquiry - CHINGU Travel",
+  subject: "New Flight Booking Inquiry - CHINGU Travel",
 
-      html: `
-        <h2>New Flight Booking Inquiry</h2>
+  html: `
+    <h2>New Flight Booking Inquiry</h2>
 
-        <p><b>Agent Name:</b> ${agentName}</p>
-        <p><b>Agency:</b> ${agency}</p>
-        <p><b>Email:</b> ${email}</p>
-        <p><b>Contact Number:</b> ${contact}</p>
+    <p><b>Agent Name:</b> ${agentName}</p>
+    <p><b>Agency:</b> ${agency}</p>
+    <p><b>Email:</b> ${email}</p>
+    <p><b>Contact Number:</b> ${contact}</p>
 
         <hr/>
 
