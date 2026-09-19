@@ -31,19 +31,7 @@ export default function Hero() {
         "
       >
         </p>
-
-
-
-
-
-        
-
-
-
-
-
-
-        <h2
+ <h2
           className="
             mt-5
             text-white
