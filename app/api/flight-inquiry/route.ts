@@ -28,7 +28,7 @@ export async function POST(request: Request) {
       from: "CHINGU Travel <onboarding@resend.dev>",
       
       // PALITAN ITO NG EMAIL MO
-      to: "YOUR_EMAIL@gmail.com",
+      to: "chingutravelandtours@gmail.com",
 
       subject: "New Flight Booking Inquiry - CHINGU Travel",
 
